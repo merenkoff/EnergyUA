@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Дерево категорій (як «Тепла підлога → Нагрівальні мати»).
+model Category {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  nameUk      String     @map("name_uk")
+  nameRu      String?    @map("name_ru")
+  description String?    @db.Text
+  parentId    String?    @map("parent_id")
+  parent      Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children    Category[] @relation("CategoryTree")
+  sortOrder   Int        @default(0) @map("sort_order")
+  products    Product[]
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+
+  @@index([parentId])
+  @@map("categories")
+}
+
+model Brand {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  name      String
+  logoUrl   String?   @map("logo_url")
+  products  Product[]
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@map("brands")
+}
+
+/// Товарна позиція каталогу (без кошика поки що — лише відображення).
+model Product {
+  id               String         @id @default(cuid())
+  slug             String         @unique
+  /// Внутрішній або зовнішній артикул (на кшталт «Код: 132814» на ЕТ-маркет).
+  sku              String?        @unique
+  nameUk           String         @map("name_uk")
+  nameRu           String?        @map("name_ru")
+  shortDescription String?        @map("short_description") @db.Text
+  description      String?        @db.Text
+  priceUah         Decimal?       @map("price_uah") @db.Decimal(12, 2)
+  /// Показувати ціну в каталозі чи лише «за запитом».
+  priceVisible     Boolean        @default(false) @map("price_visible")
+  categoryId       String         @map("category_id")
+  category         Category       @relation(fields: [categoryId], references: [id])
+  brandId          String?        @map("brand_id")
+  brand            Brand?         @relation(fields: [brandId], references: [id])
+  published        Boolean        @default(false)
+  sortOrder        Int            @default(0) @map("sort_order")
+  seoTitle         String?        @map("seo_title")
+  seoDescription   String?        @map("seo_description") @db.Text
+  /// Ідемпотентний імпорт (et_market, in_heat, …).
+  externalSource   String?        @map("external_source")
+  /// Зовнішній id картки на донорі — головний ключ разом із externalSource для upsert.
+  externalId       String?        @map("external_id")
+  /// Канонічний URL товару на донорі (оновлюється кожним імпортом).
+  externalUrl      String?        @map("external_url") @db.Text
+  /// URL розділу донора (для плоского мапінгу категорій при повторних імпортах).
+  sourceCategoryUrl String?       @map("source_category_url") @db.Text
+  images           ProductImage[]
+  specs            ProductSpec[]
+  createdAt        DateTime       @default(now()) @map("created_at")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+
+  @@unique([externalSource, externalId])
+  @@index([categoryId])
+  @@index([brandId])
+  @@index([published, sortOrder])
+  @@map("products")
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String  @map("product_id")
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  altUk     String? @map("alt_uk")
+  sortOrder Int     @default(0) @map("sort_order")
+
+  @@index([productId])
+  @@map("product_images")
+}
+
+/// Визначення характеристики (площа, Вт/м², напруга) — під фільтри та картку товару.
+model SpecDefinition {
+  id         String        @id @default(cuid())
+  slug       String        @unique
+  labelUk    String        @map("label_uk")
+  labelRu    String?       @map("label_ru")
+  unit       String?
+  groupSlug  String?       @map("group_slug")
+  filterable Boolean       @default(false)
+  sortOrder  Int           @default(0) @map("sort_order")
+  values     ProductSpec[]
+
+  @@map("spec_definitions")
+}
+
+model ProductSpec {
+  id           String         @id @default(cuid())
+  productId    String         @map("product_id")
+  product      Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  definitionId String         @map("definition_id")
+  definition   SpecDefinition @relation(fields: [definitionId], references: [id])
+  valueText    String?        @map("value_text")
+  valueNumber  Decimal?       @map("value_number") @db.Decimal(18, 6)
+
+  @@unique([productId, definitionId])
+  @@index([definitionId, valueNumber])
+  @@map("product_specs")
+}

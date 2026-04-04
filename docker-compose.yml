@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: electroheat-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: electroheat
+      POSTGRES_PASSWORD: electroheat
+      POSTGRES_DB: electroheat
+    ports:
+      - "5432:5432"
+    volumes:
+      - electroheat_pgdata:/var/lib/postgresql/data
+
+volumes:
+  electroheat_pgdata:

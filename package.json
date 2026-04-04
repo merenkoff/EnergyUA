@@ -4,23 +4,47 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "parse:in-heat": "tsx scripts/cli/scrape-in-heat-category.ts",
+    "parse:in-heat-catalog": "tsx scripts/cli/crawl-in-heat-catalog.ts",
+    "parse:et-file": "tsx scripts/cli/parse-et-market-file.ts",
+    "parse:et-category": "tsx scripts/cli/scrape-et-market-category.ts",
+    "parse:et-catalog": "tsx scripts/cli/crawl-et-market-catalog.ts",
+    "import:catalog": "tsx scripts/cli/import-unified-json.ts",
+    "import:catalog-trees": "tsx scripts/cli/import-manifest-categories.ts",
+    "import:prune-legacy-cats": "tsx scripts/cli/prune-legacy-import-categories.ts",
+    "import:verify": "tsx scripts/cli/verify-import-health.ts",
+    "import:full-detail-pipeline": "bash scripts/run-full-detail-import.sh"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/client": "6.19.0",
+    "cheerio": "^1.2.0",
     "next": "16.2.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "slugify": "^1.6.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/cheerio": "^0.22.35",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "prisma": "6.19.0",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

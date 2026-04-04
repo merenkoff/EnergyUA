@@ -1,0 +1,60 @@
+Повний допарс карток + імпорт
+=============================
+
+ОНОВЛЕННЯ (плоскі категорії)
+----------------------------
+- Імпорт тепер кладе товари в короткі категорії: et-teplyj-pol, inh-otoplenie тощо (див. docs/IMPORT-UK.md).
+- Повторний імпорт оновлює ті самі товари за externalSource+externalId.
+- Після переходу: npm run import:prune-legacy-cats (прибрати порожні старі etm- / inh-ua-).
+- Перевірка: npm run import:verify
+
+Старий текст (checkpoint тощо) нижче.
+================================================================
+
+ЩО ЗРОБЛЕНО
+-----------
+- et-catalog-DETAIL.json: 3350 товарів ЕТ-маркет з описом/характеристиками (після видалення «фантомів»).
+- in-heat-catalog-DETAIL.json: 217 товарів IN-HEAT з повними картками.
+- Імпорт: npm run import:catalog-trees для обох файлів (оновлення БД).
+
+ФАЙЛИ
+------
+- data/scrape/et-catalog-DETAIL.json
+- data/scrape/in-heat-catalog-DETAIL.json
+
+ЯКЩО ОБІРВАЛОСЬ НА ДОПАРСІ ЕТ
+----------------------------
+1) Подивіться останній рядок checkpoint у терміналі (індекс N).
+2) Продовжіть з індексу N+1:
+   npx tsx scripts/cli/crawl-et-market-catalog.ts \
+     --detail-from data/scrape/et-catalog-DETAIL.json \
+     --out data/scrape/et-catalog-DETAIL.json \
+     --detail-start ВСТАВИТИ_N+1 \
+     --detail-end 3509 \
+     --checkpoint-every 50 --delay 250
+
+   Або знову цикл батчами по 400 (див. історію команд у чаті / docs/IMPORT-UK.md).
+
+ЯКЩО ANTI-BOT / 429
+-------------------
+- Збільште --delay (500–800).
+- Збережіть HTML картки з браузера й використайте scrape-et-market-category з --file.
+
+ПАРСЕР (важливо для НОВИХ зборів списків ЕТ)
+--------------------------------------------
+У списку категорії інколи трапляються посилання на підрозділ (URL без .html), а не на товар.
+У scripts/parsers/etMarket.ts додано фільтр: у список потрапляють лише посилання, що закінчуються на .html.
+Після зміни парсера варто перезібрати et-catalog-FULL.json, якщо потрібні «чисті» лічильники.
+
+ЯКЩО ПОТРІБНО ПОВТОРИТИ ІМПОРТ У БД
+----------------------------------
+cd /корінь/ElectroHeat
+docker compose up -d
+npm run import:catalog-trees -- --file data/scrape/et-catalog-DETAIL.json
+npm run import:catalog-trees -- --file data/scrape/in-heat-catalog-DETAIL.json
+
+АВТОМАТИЗАЦІЯ ОДНИМ СКРИПТОМ (з нуля: listing → detail → import)
+-----------------------------------------------------------------
+npm run import:full-detail-pipeline
+
+(потрібні готові *-FULL.json listing-файли; детальний допарс довгий).

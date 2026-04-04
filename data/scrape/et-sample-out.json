@@ -1,0 +1,24 @@
+{
+  "scrapedAt": "2026-04-04T21:26:04.911Z",
+  "listingUrl": "data/fixtures/et-market-category.sample.html",
+  "products": [
+    {
+      "source": "et_market",
+      "externalId": "demo-mat-example",
+      "sourceUrl": "https://et-market.com.ua/demo-mat-example.html",
+      "slug": "demo-mat-example",
+      "nameUk": "Нагрівальний мат Demo 2 м²",
+      "sku": "999001",
+      "priceUah": 12344,
+      "priceVisible": true,
+      "imageUrl": "https://et-market.com.ua/image/cache/catalog/demo-220x200.jpg",
+      "images": [
+        {
+          "url": "https://et-market.com.ua/image/cache/catalog/demo-220x200.jpg",
+          "alt": "Нагрівальний мат Demo 2 м²"
+        }
+      ],
+      "specs": []
+    }
+  ]
+}
