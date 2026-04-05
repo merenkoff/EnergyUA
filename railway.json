@@ -5,7 +5,7 @@
     "buildCommand": "npm ci && npm run build"
   },
   "deploy": {
-    "preDeployCommand": ["npm run db:predeploy"],
+    "preDeployCommand": ["npm run db:predeploy", "npm run db:railway-rebuild-catalog-if-enabled"],
     "startCommand": "bash scripts/railway-entrypoint.sh",
     "healthcheckPath": "/",
     "healthcheckTimeout": 120,

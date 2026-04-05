@@ -46,38 +46,52 @@ echo "(якщо обрив або таймаут — спробуй менший
 echo "Крок 1/2: mkdir -p на віддаленому хості…"
 railway ssh -s "$SERVICE" -- mkdir -p "$REMOTE_ROOT"
 
-# 1) GNU tar на віддаленій стороні не любить читати архів з «терміналу» → раніше був cat | tar.
-# 2) cat | tar xzf - одночасно розпаковує на volume — сильний backpressure: мережа «стоїть», pv показує ~64 KiB і 0 B/s.
-# Тому: спочатку cat > файл у контейнері (pv показує реальне завантаження), потім tar xzf з диска.
-echo "Крок 2/2: передача gzip на контейнер, далі розпаковка на volume…" >&2
+# 1) Стрім у tar xzf - на volume дає backpressure (~0 B/s у pv).
+# 2) Один рядок bash -c на railway ssh ламається (rm без шляху, panic Rust на $'…').
+# Тому: окремі виклики — rm, dd (stdin→файл), tar xzf, rm; без оболонки на віддаленій стороні.
 STAGING_PATH="${PUSH_MEDIA_STAGING:-/tmp/eh-media-staging.tgz}"
-REMOTE_UNPACK_MSG="push-media[remote]: gzip written to container disk, unpacking to volume (1–5 min for thousands of files)…"
-REMOTE_INNER=$(printf 'rm -f %q && cat > %q && echo %q >&2 && tar xzf %q -C %q && rm -f %q' \
-  "$STAGING_PATH" "$STAGING_PATH" "$REMOTE_UNPACK_MSG" "$STAGING_PATH" "$REMOTE_ROOT" "$STAGING_PATH")
 
+echo "Крок 2a: прибрати старий staging на контейнері…" >&2
+railway ssh -s "$SERVICE" -- rm -f -- "$STAGING_PATH"
+
+# dd без if= читає stdin; of= один аргумент (шлях без пробілів надійніший).
+stream_to_staging() {
+  railway ssh -s "$SERVICE" -- dd bs=1048576 "of=${STAGING_PATH}"
+}
+
+echo "Крок 2b: gzip-потік → ${STAGING_PATH} (dd)…" >&2
 if [ "${PUSH_MEDIA_QUIET:-}" = "1" ]; then
-  tar czf - -C storage/media . | railway ssh -s "$SERVICE" -- bash -c "$REMOTE_INNER"
+  tar czf - -C storage/media . | stream_to_staging
 else
   if command -v pv >/dev/null 2>&1; then
-    echo "[push-media] pv: у першій фазі має бути видно МБ і швидкість; після завершення gzip на сервері піде розпаковка (рядок push-media[remote]: …), pv тоді не рухається — це нормально" >&2
-    tar czf - -C storage/media . | pv -f -i 2 -trb | railway ssh -s "$SERVICE" -- bash -c "$REMOTE_INNER"
+    echo "[push-media] pv: фаза запису на контейнер; потім крок 2c (розпаковка) — без оновлення pv" >&2
+    tar czf - -C storage/media . | pv -f -i 2 -trb | stream_to_staging
   else
     HB_SEC="${PUSH_MEDIA_HEARTBEAT_SEC:-12}"
-    echo "[push-media] без pv: кожні ${HB_SEC} с heartbeat + tar -v; або brew install pv для МБ/с" >&2
+    echo "[push-media] без pv: heartbeat кожні ${HB_SEC} с + tar -v; brew install pv — для МБ/с" >&2
     (
       t0="$(date +%s)"
       while sleep "$HB_SEC"; do
         now="$(date +%s)"
-        echo "[push-media] передача триває… $((now - t0)) с, $(date '+%H:%M:%S')" >&2
+        echo "[push-media] передача… $((now - t0)) с, $(date '+%H:%M:%S')" >&2
       done
     ) &
     HB_PID=$!
     trap 'kill "$HB_PID" 2>/dev/null || true; wait "$HB_PID" 2>/dev/null || true' EXIT INT TERM
-    tar czvf - -C storage/media . | railway ssh -s "$SERVICE" -- bash -c "$REMOTE_INNER"
+    tar czvf - -C storage/media . | stream_to_staging
     kill "$HB_PID" 2>/dev/null || true
     wait "$HB_PID" 2>/dev/null || true
     trap - EXIT INT TERM
   fi
 fi
+
+echo "Крок 2c: tar xzf на volume ${REMOTE_ROOT}…" >&2
+if ! railway ssh -s "$SERVICE" -- tar xzf "$STAGING_PATH" -C "$REMOTE_ROOT"; then
+  echo "[push-media] розпаковка не вдалася; staging лишився: ${STAGING_PATH}" >&2
+  exit 1
+fi
+
+echo "Крок 2d: видалити staging…" >&2
+railway ssh -s "$SERVICE" -- rm -f -- "$STAGING_PATH"
 
 echo "Готово. Перевір: railway ssh -s $SERVICE -- bash /app/scripts/railway-media-diagnose.sh"

@@ -244,6 +244,12 @@ npm run import:merge-manifests -- --out data/scrape/COMBINED.json -- \\
 
 ---
 
+## 2.9. Прод (Railway): реімпорт без парсингу
+
+Якщо в репозиторії вже є **`data/scrape/et-catalog-DETAIL.json`**, **`in-heat-catalog-DETAIL.json`**, **`vsesezon-catalog.json`**, на сервері можна **перезалити каталог лише з файлів** (pre-deploy за **`RAILWAY_REBUILD_CATALOG=yes`**, див. [`DEPLOY-RAILWAY.md`](DEPLOY-RAILWAY.md)). Щоб оновити дані **з сайтів**, спочатку прогоняєш парсери локально, коміт, push.
+
+---
+
 ## 3. Імпорт JSON у базу ElectroHeat
 
 Файл має бути у форматі **manifest** (масив `products` — так збирають CLI-скрипти вище).
