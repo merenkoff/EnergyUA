@@ -11,7 +11,27 @@
 - Локально: робоча БД у `.env` як `DATABASE_URL` **або** змінна `SOURCE_DATABASE_URL`.
 - Віддалено: повний URL Railway Postgres, зазвичай з **`?sslmode=require`** (скопіюй з Railway → Postgres → Connect / Variables).
 
-## Кроки (одноразово)
+**Важливо:** з Cursor/CI **неможливо** зробити дамп твоєї локальної БД — потрібен запуск **на твоїй машині**, де крутиться Postgres і є `.env`.
+
+## Автоматично (одна команда)
+
+Джерело: `DATABASE_URL` з `.env` (або `SOURCE_DATABASE_URL`). Ціль: змінна оточення.
+
+```bash
+REALLY_REPLACE_REMOTE=yes \
+TARGET_DATABASE_URL='postgresql://USER:PASS@HOST:PORT/railway?sslmode=require' \
+npm run db:ot:transfer
+```
+
+Після успіху файл `out/electroheat.dump` лишається (можна повторити restore). Щоб видалити дамп одразу після успішного restore:
+
+```bash
+REMOVE_DUMP_AFTER_OK=yes REALLY_REPLACE_REMOTE=yes TARGET_DATABASE_URL='...' npm run db:ot:transfer
+```
+
+Лог у тому ж **`out/last-transfer.log`**.
+
+## Кроки (одноразово, вручну двома кроками)
 
 ### 1) Дамп локальної БД
 
@@ -33,7 +53,7 @@ SOURCE_DATABASE_URL='postgresql://...' bash scripts/one-time-db-transfer/dump-fr
 
 ### Логи (діагностика)
 
-Після кожного запуску `db:ot:dump` / `db:ot:restore` оновлюється **`scripts/one-time-db-transfer/out/last-transfer.log`** (також у `.gitignore`). Там — кроки, версії `pg_dump`/`pg_restore`, повний вивід утиліт і **URL з прихованим паролем**. Якщо щось зламалось — надішли цей файл (або його вміст) в чат. На **етапі B** разом із папкою `one-time-db-transfer` це прибирається з проєкту.
+Після кожного запуску `db:ot:transfer` / `db:ot:dump` / `db:ot:restore` оновлюється **`scripts/one-time-db-transfer/out/last-transfer.log`** (також у `.gitignore`). Там — кроки, версії `pg_dump`/`pg_restore`, повний вивід утиліт і **URL з прихованим паролем**. Якщо щось зламалось — надішли цей файл (або його вміст) в чат. На **етапі B** разом із папкою `one-time-db-transfer` це прибирається з проєкту.
 
 ### 2) Відновлення на сервері (заміна вмісту)
 
@@ -56,7 +76,7 @@ bash scripts/one-time-db-transfer/restore-to-remote.sh
 rm -rf scripts/one-time-db-transfer
 ```
 
-Видали з `package.json` скрипти `db:ot:dump` та `db:ot:restore`, з `.gitignore` — секцію `One-time DB transfer`. Закоміть — другий етап завершено.
+Видали з `package.json` скрипти `db:ot:transfer`, `db:ot:dump` та `db:ot:restore`, з `.gitignore` — секцію `One-time DB transfer`. Закоміть — другий етап завершено.
 
 ## Якщо `pg_restore` падає (extensions / права)
 
