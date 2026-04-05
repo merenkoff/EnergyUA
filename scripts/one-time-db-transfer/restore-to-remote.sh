@@ -8,18 +8,21 @@ DUMP_FILE="$ROOT/scripts/one-time-db-transfer/out/electroheat.dump"
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-bin.sh"
 
 cd "$ROOT"
 transfer_log_init "restore-to-remote.sh"
 trap 'ec=$?; [[ $ec -ne 0 ]] && transfer_log_fail "$ec"; exit "$ec"' ERR
 
 transfer_log "Крок: перевірка pg_restore"
-if ! command -v pg_restore >/dev/null 2>&1; then
-  transfer_log "FAIL: pg_restore не знайдено в PATH"
-  echo "Потрібен pg_restore. macOS: brew install libpq && brew link --force libpq" >&2
+PG_RESTORE_EXE="$(resolve_pg_restore)" || true
+if [[ -z "$PG_RESTORE_EXE" || ! -x "$PG_RESTORE_EXE" ]]; then
+  transfer_log "FAIL: немає pg_restore. macOS: brew install postgresql@16"
+  echo "Потрібен pg_restore тієї ж або новішої major-версії, ніж сервер. macOS: brew install postgresql@16" >&2
   exit 1
 fi
-transfer_log "pg_restore: $(pg_restore --version 2>&1)"
+transfer_log "pg_restore: $PG_RESTORE_EXE — $("$PG_RESTORE_EXE" --version 2>&1)"
 
 if [[ ! -f "$DUMP_FILE" ]]; then
   transfer_log "FAIL: немає файлу дампу $DUMP_FILE"
@@ -47,7 +50,7 @@ TARGET_PG_URL="$(pg_url_for_libpq "$TARGET_DATABASE_URL")"
 transfer_log "Крок: pg_restore --clean --if-exists --no-owner --no-acl --verbose (URI без Prisma schema=)"
 
 set +e
-pg_restore \
+"$PG_RESTORE_EXE" \
   --dbname="$TARGET_PG_URL" \
   --clean \
   --if-exists \

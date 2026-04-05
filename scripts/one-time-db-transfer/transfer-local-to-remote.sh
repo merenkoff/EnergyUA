@@ -10,6 +10,8 @@ DUMP_FILE="$OUT_DIR/electroheat.dump"
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-bin.sh"
 
 cd "$ROOT"
 transfer_log_init "transfer-local-to-remote.sh (dump + restore)"
@@ -17,13 +19,15 @@ trap 'ec=$?; [[ $ec -ne 0 ]] && transfer_log_fail "$ec"; exit "$ec"' ERR
 
 transfer_log "Режим: автоматичний перенос локальна БД → віддалена (один запуск)"
 
-if ! command -v pg_dump >/dev/null 2>&1 || ! command -v pg_restore >/dev/null 2>&1; then
-  transfer_log "FAIL: потрібні pg_dump і pg_restore (brew install libpq)"
-  echo "Потрібні pg_dump і pg_restore. macOS: brew install libpq && brew link --force libpq" >&2
+PG_DUMP_EXE="$(resolve_pg_dump)" || true
+PG_RESTORE_EXE="$(resolve_pg_restore)" || true
+if [[ -z "$PG_DUMP_EXE" || ! -x "$PG_DUMP_EXE" || -z "$PG_RESTORE_EXE" || ! -x "$PG_RESTORE_EXE" ]]; then
+  transfer_log "FAIL: потрібні pg_dump і pg_restore (brew install postgresql@16)"
+  echo "Потрібні pg_dump і pg_restore ≥ версії сервера. macOS: brew install postgresql@16" >&2
   exit 1
 fi
-transfer_log "pg_dump: $(pg_dump --version 2>&1)"
-transfer_log "pg_restore: $(pg_restore --version 2>&1)"
+transfer_log "pg_dump: $PG_DUMP_EXE — $("$PG_DUMP_EXE" --version 2>&1)"
+transfer_log "pg_restore: $PG_RESTORE_EXE — $("$PG_RESTORE_EXE" --version 2>&1)"
 
 if [[ -z "${SOURCE_DATABASE_URL:-}" ]]; then
   if [[ -f .env ]]; then
@@ -66,7 +70,7 @@ rm -f "$DUMP_FILE"
 
 transfer_log "Крок 1/2: pg_dump → electroheat.dump (URI без Prisma schema=)"
 set +e
-pg_dump "$SOURCE_PG_URL" \
+"$PG_DUMP_EXE" "$SOURCE_PG_URL" \
   --format=custom \
   --no-owner \
   --file="$DUMP_FILE" \
@@ -82,7 +86,7 @@ transfer_log "OK: дамп $(ls -lh "$DUMP_FILE" 2>&1)"
 
 transfer_log "Крок 2/2: pg_restore на ціль"
 set +e
-pg_restore \
+"$PG_RESTORE_EXE" \
   --dbname="$TARGET_PG_URL" \
   --clean \
   --if-exists \

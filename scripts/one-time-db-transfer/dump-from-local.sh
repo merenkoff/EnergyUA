@@ -9,18 +9,21 @@ DUMP_FILE="$OUT_DIR/electroheat.dump"
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-bin.sh"
 
 cd "$ROOT"
 transfer_log_init "dump-from-local.sh"
 trap 'ec=$?; [[ $ec -ne 0 ]] && transfer_log_fail "$ec"; exit "$ec"' ERR
 
 transfer_log "Крок: перевірка pg_dump"
-if ! command -v pg_dump >/dev/null 2>&1; then
-  transfer_log "FAIL: pg_dump не знайдено в PATH"
-  echo "Потрібен pg_dump (PostgreSQL client). macOS: brew install libpq && brew link --force libpq" >&2
+PG_DUMP_EXE="$(resolve_pg_dump)" || true
+if [[ -z "$PG_DUMP_EXE" || ! -x "$PG_DUMP_EXE" ]]; then
+  transfer_log "FAIL: немає pg_dump. macOS: brew install postgresql@16"
+  echo "Потрібен pg_dump тієї ж або новішої major-версії, ніж сервер. macOS: brew install postgresql@16" >&2
   exit 1
 fi
-transfer_log "pg_dump: $(pg_dump --version 2>&1)"
+transfer_log "pg_dump: $PG_DUMP_EXE — $("$PG_DUMP_EXE" --version 2>&1)"
 
 if [[ -z "${SOURCE_DATABASE_URL:-}" ]]; then
   if [[ -f .env ]]; then
@@ -52,7 +55,7 @@ rm -f "$DUMP_FILE"
 
 transfer_log "Крок: pg_dump → $DUMP_FILE (custom format, URI без Prisma schema=)"
 set +e
-pg_dump "$SOURCE_PG_URL" \
+"$PG_DUMP_EXE" "$SOURCE_PG_URL" \
   --format=custom \
   --no-owner \
   --file="$DUMP_FILE" \

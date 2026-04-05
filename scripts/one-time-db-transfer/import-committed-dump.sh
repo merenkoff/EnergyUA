@@ -12,6 +12,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DUMP_FILE="$ROOT/scripts/one-time-db-transfer/committed-dump/electroheat.dump"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-bin.sh"
 
 if [[ ! -f "$DUMP_FILE" ]]; then
   echo "[import-committed-dump] ПОМИЛКА: немає файлу $DUMP_FILE — закоміть electroheat.dump (npm run db:ot:dump-for-commit)." >&2
@@ -23,17 +25,19 @@ if [[ -z "${DATABASE_URL:-}" ]]; then
   exit 1
 fi
 
-if ! command -v pg_restore >/dev/null 2>&1; then
-  echo "[import-committed-dump] ПОМИЛКА: немає pg_restore у образі." >&2
+PG_RESTORE_EXE="$(resolve_pg_restore)" || true
+if [[ -z "$PG_RESTORE_EXE" || ! -x "$PG_RESTORE_EXE" ]]; then
+  echo "[import-committed-dump] ПОМИЛКА: немає pg_restore у образі або в PATH." >&2
   echo "У Railway → Variables додай (тимчасово або постійно):" >&2
   echo "  RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client" >&2
   exit 1
 fi
+echo "[import-committed-dump] pg_restore: $PG_RESTORE_EXE ($("$PG_RESTORE_EXE" --version 2>&1))"
 
 DATABASE_PG_URL="$(pg_url_for_libpq "$DATABASE_URL")"
 echo "[import-committed-dump] Одноразовий pg_restore з репозиторію → DATABASE_URL (масковано: $(echo "$DATABASE_URL" | sed -E 's#(postgres(ql)?://[^:/@]+:)[^@]*@#\1***@#'), без Prisma schema= у URI для libpq)"
 set +e
-pg_restore \
+"$PG_RESTORE_EXE" \
   --dbname="$DATABASE_PG_URL" \
   --clean \
   --if-exists \

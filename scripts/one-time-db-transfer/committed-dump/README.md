@@ -2,7 +2,7 @@
 
 ## Як згенерувати
 
-З кореня репозиторію (локально, є `.env` з `DATABASE_URL`):
+З кореня репозиторію (локально, є `.env` з `DATABASE_URL`). Якщо сервер Postgres **16+**, а `pg_dump` з `libpq` **15**, встанови клієнт тієї ж гілки: `brew install postgresql@16`.
 
 ```bash
 npm run db:ot:dump-for-commit

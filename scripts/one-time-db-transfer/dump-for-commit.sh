@@ -9,6 +9,8 @@ DUMP_FILE="$DEST_DIR/electroheat.dump"
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-bin.sh"
 
 cd "$ROOT"
 transfer_log_init "dump-for-commit.sh"
@@ -16,10 +18,12 @@ trap 'ec=$?; [[ $ec -ne 0 ]] && transfer_log_fail "$ec"; exit "$ec"' ERR
 
 transfer_log "УВАГА: дамп може містити персональні дані / внутрішню інформацію — не публікуй репо публічно без оцінки ризику."
 
-if ! command -v pg_dump >/dev/null 2>&1; then
-  transfer_log "FAIL: потрібен pg_dump (brew install libpq)"
+PG_DUMP_EXE="$(resolve_pg_dump)" || true
+if [[ -z "$PG_DUMP_EXE" || ! -x "$PG_DUMP_EXE" ]]; then
+  transfer_log "FAIL: немає pg_dump. macOS: brew install postgresql@16 (клієнт має бути ≥ major версії сервера)"
   exit 1
 fi
+transfer_log "pg_dump бінарник: $PG_DUMP_EXE ($("$PG_DUMP_EXE" --version 2>&1))"
 
 if [[ -z "${SOURCE_DATABASE_URL:-}" ]]; then
   if [[ -f .env ]]; then
@@ -46,7 +50,7 @@ rm -f "$DUMP_FILE"
 
 transfer_log "pg_dump → $DUMP_FILE (custom, для коміту)"
 set +e
-pg_dump "$SOURCE_PG_URL" --format=custom --no-owner --file="$DUMP_FILE" 2>&1 | tee -a "$TRANSFER_LOG_FILE"
+"$PG_DUMP_EXE" "$SOURCE_PG_URL" --format=custom --no-owner --file="$DUMP_FILE" 2>&1 | tee -a "$TRANSFER_LOG_FILE"
 EC=${PIPESTATUS[0]}
 set -e
 if [[ "$EC" -ne 0 ]]; then
@@ -66,6 +70,6 @@ echo "Далі:"
 echo "  1) git add scripts/one-time-db-transfer/committed-dump/electroheat.dump"
 echo "  2) Закоміть разом зі змінами db:predeploy (якщо ще не в main)."
 echo "  3) У Railway Variables: IMPORT_COMMITTED_DUMP=yes"
-echo "  4) Опційно для pg_restore: RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client"
+echo "  4) Для pg_restore на Railway: RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client"
 echo "  5) Після успішного деплою: прибери IMPORT_COMMITTED_DUMP, видали дамп і скрипти (етап прибирання)."
 echo "Лог: $TRANSFER_LOG_FILE"

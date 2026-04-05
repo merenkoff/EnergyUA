@@ -7,7 +7,7 @@
 
 ## Вимоги
 
-- Встановлені клієнти PostgreSQL: `pg_dump`, `pg_restore` (macOS: `brew install libpq`, інколи `brew link --force libpq`).
+- **Версія клієнта ≥ major версії сервера** (інакше `pg_dump` падає). macOS: `brew install postgresql@16` (або @17) — скрипти самі беруть `pg_dump` з `$(brew --prefix postgresql@16)/bin`, навіть якщо в PATH лишився старий `libpq`. Явний шлях: `PG_DUMP_BIN` / `PG_RESTORE_BIN`.
 - Локально: робоча БД у `.env` як `DATABASE_URL` **або** змінна `SOURCE_DATABASE_URL`.
 - Віддалено: повний URL Railway Postgres, зазвичай з **`?sslmode=require`** (скопіюй з Railway → Postgres → Connect / Variables).
 
