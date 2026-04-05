@@ -18,7 +18,7 @@ npm run db:ot:dump-for-commit
 ## На Railway (один деплой)
 
 1. Variables → **`IMPORT_COMMITTED_DUMP=yes`**
-2. Variables → **`RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client`** (щоб був `pg_restore` у контейнері)
+2. У образі має бути `pg_restore`: у репо додано [`railpack.json`](../../railpack.json) з `postgresql-client`. Якщо після деплою все одно помилка — Variables → **`RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client`**
 3. Деплой. У логах pre-deploy має з’явитися `[import-committed-dump]`.
 
 ## Після успіху (прибирання)

@@ -18,7 +18,7 @@
 |--------|------|
 | `DATABASE_URL` | Обов’язково для runtime і для **pre-deploy** (міграції). |
 | `IMPORT_COMMITTED_DUMP` | Лише для **одного** деплою: значення `yes` — виконати `pg_restore` з файлу в репо (`committed-dump/electroheat.dump`). Після успіху **обов’язково прибрати**, інакше кожен деплой знову перезапише БД. |
-| `RAILPACK_DEPLOY_APT_PACKAGES` | Для імпорту дампу на Railway: додай `postgresql-client`, щоб у контейнері був `pg_restore` (див. [Railpack: Apt](https://railpack.com/guides/installing-packages)). |
+| `RAILPACK_DEPLOY_APT_PACKAGES` | Зазвичай **не потрібно**: у репо є [`railpack.json`](../railpack.json) з `postgresql-client` у фінальному образі (для `pg_restore` при `IMPORT_COMMITTED_DUMP=yes`). Якщо збірка ігнорує файл — задай змінну вручну ([Railpack: Apt](https://railpack.com/guides/installing-packages)). |
 
 Інші змінні (наприклад для імпорту каталогу) додавай у Variables того ж сервісу, якщо потрібні в рантаймі.
 
