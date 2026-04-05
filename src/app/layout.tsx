@@ -9,6 +9,9 @@ const manrope = Manrope({
   subsets: ["latin", "cyrillic-ext"],
 });
 
+/** Без цього `next build` викликає Prisma з layout (шапка) під час пререндеру — на Railway Build часто немає DATABASE_URL. */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: {
     default: "ElectroHeat — електрична тепла підлога",

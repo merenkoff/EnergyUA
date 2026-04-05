@@ -276,7 +276,7 @@ export function parseInHeatProductPage(html: string, baseUrl: string = BASE, lis
     }
     const nameCell = tr.find("td.name span[itemprop=name], td.name").first();
     const valCell = tr.find("td[itemprop=value]").first();
-    let label = nameCell.attr("content")?.trim() || nameCell.text().trim();
+    const label = nameCell.attr("content")?.trim() || nameCell.text().trim();
     let value = valCell.text().replace(/\s+/g, " ").trim();
     if (valCell.find("a").length) {
       value = valCell.find("a").first().text().trim() || value;

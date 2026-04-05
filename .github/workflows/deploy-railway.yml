@@ -1,0 +1,26 @@
+# Опційно: деплой через GitHub Actions (якщо не використовуєш «Deploy from GitHub» у самому Railway).
+# 1. Railway → Account → Tokens → створити токен
+# 2. Repo → Settings → Secrets → RAILWAY_TOKEN
+# 3. За потреби: RAILWAY_SERVICE_ID (ID сервісу з Railway → Settings)
+# 4. Зміни if: false нижче на if: true або прибери умову
+name: Deploy Railway
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy
+        run: railway up --detach
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
