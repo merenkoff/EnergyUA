@@ -13,6 +13,10 @@
 
 **Важливо:** з Cursor/CI **неможливо** зробити дамп твоєї локальної БД — потрібен запуск **на твоїй машині**, де крутиться Postgres і є `.env`.
 
+## Дамп у git → один деплой на Railway
+
+Якщо хочеш **закомітити** дамп і один раз імпортувати на сервері: [`committed-dump/README.md`](committed-dump/README.md), команда **`npm run db:ot:dump-for-commit`**, змінні **`IMPORT_COMMITTED_DUMP=yes`** та **`RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client`**. Після імпорту прибери змінні й видали дамп з репо.
+
 ## Автоматично (одна команда)
 
 Джерело: `DATABASE_URL` з `.env` (або `SOURCE_DATABASE_URL`). Ціль: змінна оточення.
@@ -76,7 +80,7 @@ bash scripts/one-time-db-transfer/restore-to-remote.sh
 rm -rf scripts/one-time-db-transfer
 ```
 
-Видали з `package.json` скрипти `db:ot:transfer`, `db:ot:dump` та `db:ot:restore`, з `.gitignore` — секцію `One-time DB transfer`. Закоміть — другий етап завершено.
+Видали з `package.json` скрипти `db:ot:transfer`, `db:ot:dump-for-commit`, `db:ot:dump` та `db:ot:restore`, поверни **`db:predeploy`** до `prisma migrate deploy && prisma db seed` без `import-committed-dump.sh`, з `.gitignore` — секцію `One-time DB transfer`. Закоміть — другий етап завершено.
 
 ## Якщо `pg_restore` падає (extensions / права)
 

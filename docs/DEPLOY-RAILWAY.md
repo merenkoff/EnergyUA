@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, перед стартом виконується **`npm run db:predeploy`** (`prisma migrate deploy` + **`prisma db seed`** — базові категорії та демо-товари), потім `npm run start`.
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, перед стартом виконується **`npm run db:predeploy`**: спочатку (якщо увімкнено) **одноразовий імпорт дампу з репо**, далі `prisma migrate deploy` і **`prisma db seed`**, потім `npm run start`. Деталі одноразового дампу — [`scripts/one-time-db-transfer/committed-dump/README.md`](../scripts/one-time-db-transfer/committed-dump/README.md).
 
 ## Що зробити в Railway (один раз)
 
@@ -17,6 +17,8 @@
 | Змінна | Опис |
 |--------|------|
 | `DATABASE_URL` | Обов’язково для runtime і для **pre-deploy** (міграції). |
+| `IMPORT_COMMITTED_DUMP` | Лише для **одного** деплою: значення `yes` — виконати `pg_restore` з файлу в репо (`committed-dump/electroheat.dump`). Після успіху **обов’язково прибрати**, інакше кожен деплой знову перезапише БД. |
+| `RAILPACK_DEPLOY_APT_PACKAGES` | Для імпорту дампу на Railway: додай `postgresql-client`, щоб у контейнері був `pg_restore` (див. [Railpack: Apt](https://railpack.com/guides/installing-packages)). |
 
 Інші змінні (наприклад для імпорту каталогу) додавай у Variables того ж сервісу, якщо потрібні в рантаймі.
 
