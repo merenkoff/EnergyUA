@@ -39,3 +39,22 @@ resolve_pg_restore() {
   command -v pg_restore 2>/dev/null && return 0
   return 1
 }
+
+resolve_psql() {
+  if [[ -n "${PSQL_BIN:-}" ]]; then
+    printf '%s' "$PSQL_BIN"
+    return 0
+  fi
+  local p
+  for p in \
+    /opt/homebrew/opt/postgresql@17/bin/psql \
+    /opt/homebrew/opt/postgresql@16/bin/psql \
+    /usr/local/opt/postgresql@17/bin/psql \
+    /usr/local/opt/postgresql@16/bin/psql \
+    /opt/homebrew/opt/libpq/bin/psql \
+    /usr/local/opt/libpq/bin/psql; do
+    [[ -x "$p" ]] && { printf '%s' "$p"; return 0; }
+  done
+  command -v psql 2>/dev/null && return 0
+  return 1
+}

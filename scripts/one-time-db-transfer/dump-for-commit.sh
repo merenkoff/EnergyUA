@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Локально: зняти дамп у committed-dump/electroheat.dump — файл призначений для ОДНОГО коміту в git, потім видалити.
+# Локально: зняти дамп у committed-dump/electroheat.sql (plain SQL) — для ОДНОГО коміту, потім видалити.
+# Plain SQL відновлюється через psql; custom (.dump) на Railway часто ламається (pg_restore 15 vs архів v1.15 від pg_dump 16).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DEST_DIR="$ROOT/scripts/one-time-db-transfer/committed-dump"
-DUMP_FILE="$DEST_DIR/electroheat.dump"
+SQL_FILE="$DEST_DIR/electroheat.sql"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
 # shellcheck source=/dev/null
@@ -46,11 +47,17 @@ SOURCE_PG_URL="$(pg_url_for_libpq "$SOURCE_DATABASE_URL")"
 transfer_log "Для pg_dump прибрано Prisma-параметр schema= з URI (libpq його не підтримує)"
 
 mkdir -p "$DEST_DIR"
-rm -f "$DUMP_FILE"
+rm -f "$SQL_FILE" "$DEST_DIR/electroheat.dump"
 
-transfer_log "pg_dump → $DUMP_FILE (custom, для коміту)"
+transfer_log "pg_dump → $SQL_FILE (plain SQL, --clean --if-exists для одноразового перезапису на цілі)"
 set +e
-"$PG_DUMP_EXE" "$SOURCE_PG_URL" --format=custom --no-owner --file="$DUMP_FILE" 2>&1 | tee -a "$TRANSFER_LOG_FILE"
+"$PG_DUMP_EXE" "$SOURCE_PG_URL" \
+  --format=plain \
+  --no-owner \
+  --clean \
+  --if-exists \
+  --file="$SQL_FILE" \
+  2>&1 | tee -a "$TRANSFER_LOG_FILE"
 EC=${PIPESTATUS[0]}
 set -e
 if [[ "$EC" -ne 0 ]]; then
@@ -59,17 +66,15 @@ if [[ "$EC" -ne 0 ]]; then
   exit "$EC"
 fi
 
-SZ=$(wc -c <"$DUMP_FILE" | tr -d ' ')
-transfer_log "OK: $(ls -lh "$DUMP_FILE") байт=$SZ"
+SZ=$(wc -c <"$SQL_FILE" | tr -d ' ')
+transfer_log "OK: $(ls -lh "$SQL_FILE") байт=$SZ"
 if [[ "$SZ" -gt 90000000 ]]; then
   transfer_log "Попередження: >~90 MiB — на GitHub ліміт 100 MiB; розглянь Git LFS або стиснення окремим кроком."
 fi
 
 echo ""
 echo "Далі:"
-echo "  1) git add scripts/one-time-db-transfer/committed-dump/electroheat.dump"
-echo "  2) Закоміть разом зі змінами db:predeploy (якщо ще не в main)."
-echo "  3) У Railway Variables: IMPORT_COMMITTED_DUMP=yes"
-echo "  4) Для pg_restore на Railway: RAILPACK_DEPLOY_APT_PACKAGES=postgresql-client"
-echo "  5) Після успішного деплою: прибери IMPORT_COMMITTED_DUMP, видали дамп і скрипти (етап прибирання)."
+echo "  1) git add scripts/one-time-db-transfer/committed-dump/electroheat.sql"
+echo "  2) Закоміть; у Railway: IMPORT_COMMITTED_DUMP=yes (і postgresql-client у образі — railpack.json)."
+echo "  3) Після успіху: прибери IMPORT_COMMITTED_DUMP, видали electroheat.sql і скрипти."
 echo "Лог: $TRANSFER_LOG_FILE"
