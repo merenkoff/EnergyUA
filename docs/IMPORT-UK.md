@@ -1,4 +1,4 @@
-# Імпорт каталогу з in-heat.kiev.ua та et-market.com.ua
+# Імпорт каталогу з in-heat.kiev.ua, et-market.com.ua та vsesezon.com.ua (Prom.ua)
 
 > **ВАЖЛИВО (категорії vs товари):** slug-и на кшталт `et-teplyj-pol`, `inh-otoplenie` — це **цільові рядки категорій у вашій БД** для поля `categoryId` товару (мапінг з `sourceCategoryUrl` донора). Вони **не** відтворюють дерево сайту ЕТ/IN-HEAT як окрему навігацію. Усі такі категорії мають батьком **`tepla-pidloga`**. Ключ ідемпотентності товару: **`externalSource` + `externalId`**. Змінюючи мапінг категорій у `scripts/lib/importCategoryMapping.ts`, пам’ятайте: ви перекладаєте товари між **нашими** розділами, а не «імпортуєте дерева».
 
@@ -217,6 +217,33 @@ npm run parse:et-category -- --file ./збережена-сторінка.html -
 
 ---
 
+## 2.5. Vsesezon (Prom.ua)
+
+Краул збирає посилання на групи `/ua/g…` з головної та `product_list`, обходить пагінацію (`rel=next`), витягує товари з **JSON-LD** (`application/ld+json`, тип `Product`).
+
+```bash
+npm run parse:vsesezon-catalog -- --out data/scrape/vsesezon-catalog.json --delay 450
+```
+
+| Параметр | Значення |
+|----------|----------|
+| `--detail` | Додатковий запит на кожну картку (довший опис із сторінки товару) |
+| `--max-groups N` | Лише перші N груп (тест) |
+| `--origin` | За замовчуванням `https://vsesezon.com.ua` |
+
+У БД категорії мають вигляд **`vs-{числовий id групи}`** (батько — `tepla-pidloga`). Імпорт: **`npm run import:catalog-trees -- --file data/scrape/vsesezon-catalog.json`**.
+
+Об’єднати кілька manifest-ів у один (останній файл перезаписує збіг за `source`+`externalId`):
+
+```bash
+npm run import:merge-manifests -- --out data/scrape/COMBINED.json -- \\
+  data/scrape/et-catalog-DETAIL.json \\
+  data/scrape/in-heat-catalog-DETAIL.json \\
+  data/scrape/vsesezon-catalog.json
+```
+
+---
+
 ## 3. Імпорт JSON у базу ElectroHeat
 
 Файл має бути у форматі **manifest** (масив `products` — так збирають CLI-скрипти вище).
@@ -235,6 +262,7 @@ npm run import:catalog-trees -- --file data/scrape/in-heat-catalog-FULL.json
 - **Корінь вітрини:** усі імпортовані плоскі категорії — **діти `tepla-pidloga`** (на `/catalog` показуються лише такі підрозділи, без окремих карток «ЕТ-маркет» / «IN-HEAT»). Старі корені `et-market-import` / `in-heat-import` після повторного імпорту можна прибрати: `npm run import:prune-legacy-cats`.
 - **ЕТ-маркет:** `et-teplyj-pol`, `et-termoregulyatory`, `et-snegotayanie`, `et-avtomatika`, `et-kondicionery`, `et-akvastorozh`, `et-shitovoe-oborudovanie` (перший сегмент шляху `/teplyj-pol/...`).
 - **IN-HEAT:** плоскі категорії за другим сегментом шляху `/ua/…`: `inh-otoplenie`, `inh-termoregulyatory`, `inh-sistema-antiobledeneniya`, `inh-electrotovary`, `inh-tovary` (повний обхід — `parse:in-heat-catalog`).
+- **Vsesezon:** `vs-{id}` за числом у slug групи `g2181672-…` (див. розділ 2.5).
 - У товарі в БД зберігаються **`externalUrl`** (URL картки на донорі) та **`sourceCategoryUrl`** (URL розділу) — для аудиту та майбутніх перекласифікацій.
 - Головний ключ імпорту без змін: **`externalSource` + `externalId`** (upsert, без дублікатів карток).
 
@@ -253,7 +281,7 @@ npm run import:verify
 
 Глибоке дерево за повним шляхом URL (старий варіант): **`--deep`** на `import-manifest-categories` (через `npx tsx scripts/cli/import-manifest-categories.ts --deep --file ...`).
 
-**Дублікати ЕТ ↔ IN-HEAT:** після `import:catalog-trees` автоматично викликається зведення схожих назв (Levenshtein): **≥90%** — `merged_into_product_id` на канонічну картку (пріоритет `et_market`), **75–90%** — лише попередження в stderr. Вимкнути: **`--skip-duplicate-reconcile`**. Повтор без імпорту: **`npm run import:reconcile-dupes`** (або `--json` для звіту). Перевірка кандидатів без злиття: **`npm run import:analyze-dupes`**.
+**Дублікати між джерелами** (`et_market`, `in_heat`, `vsesezon`, …): після `import:catalog-trees` автоматично викликається зведення схожих назв (Levenshtein): **≥90%** — `merged_into_product_id` на канонічну картку (пріоритет **et_market → in_heat → vsesezon**), **75–90%** — лише попередження в stderr. Вимкнути: **`--skip-duplicate-reconcile`**. Повтор без імпорту: **`npm run import:reconcile-dupes`** (або `--json` для звіту). Перевірка кандидатів без злиття: **`npm run import:analyze-dupes`**.
 
 ### Одна плоска категорія в БД
 

@@ -14,6 +14,7 @@
  * ============================================================================
  */
 import type { PrismaClient } from "@prisma/client";
+import { canonicalVsesezonCategoryUrl, vsesezonGroupNumericId } from "../parsers/vsesezonProm";
 
 /** Єдиний корінь вітрини для навігації; seed + імпорт зобов’язані узгоджуватися з ним. */
 export const CANONICAL_CATALOG_ROOT_SLUG = "tepla-pidloga";
@@ -236,6 +237,41 @@ export async function ensureEtFlatCategory(
 /**
  * IN-HEAT: tepla-pidloga → inh-otoplenie / inh-termoregulyatory (плоско).
  */
+/** Плоскі категорії Vsesezon (Prom): tepla-pidloga → vs-2181672 … */
+const VS_SORT_BASE = 400;
+
+export async function ensureVsesezonFlatCategory(
+  prisma: PrismaClient,
+  sourceCategoryUrl: string,
+  titleMap: Map<string, string>,
+): Promise<string> {
+  const u = new URL(sourceCategoryUrl);
+  if (!u.hostname.includes("vsesezon.com.ua")) {
+    throw new Error(`Очікувався vsesezon.com.ua URL: ${sourceCategoryUrl}`);
+  }
+  const rootId = await ensureCanonicalCatalogRootId(prisma);
+  const gid = vsesezonGroupNumericId(sourceCategoryUrl);
+  const slug = `vs-${gid}`.slice(0, 200);
+  const key = canonicalVsesezonCategoryUrl(sourceCategoryUrl);
+  const nameUk = titleMap.get(key) ?? `Vsesezon · група ${gid}`;
+  const sortOrder = VS_SORT_BASE + (parseInt(gid, 10) % 8000);
+
+  const cat = await prisma.category.upsert({
+    where: { slug },
+    create: {
+      slug,
+      nameUk,
+      parentId: rootId,
+      sortOrder,
+    },
+    update: {
+      nameUk,
+      parentId: rootId,
+    },
+  });
+  return cat.id;
+}
+
 export async function ensureInHeatFlatCategory(
   prisma: PrismaClient,
   sourceCategoryUrl: string,

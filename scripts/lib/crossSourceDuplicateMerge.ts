@@ -6,6 +6,14 @@ const DEFAULT_MERGE = 0.9;
 const MIN_NORM_LEN = 15;
 const BUCKET_PREFIX_LEN = 12;
 
+/** Пріоритет канону при злитті: ЕТ → IN-HEAT → Vsesezon → інше (за датою створення). */
+const IMPORT_SOURCE_PRIORITY = ["et_market", "in_heat", "vsesezon"] as const;
+
+function sourceRank(source: string | null | undefined): number {
+  const i = (IMPORT_SOURCE_PRIORITY as readonly string[]).indexOf(source ?? "");
+  return i === -1 ? 999 : i;
+}
+
 type RootRow = {
   id: string;
   nameUk: string;
@@ -15,12 +23,12 @@ type RootRow = {
 };
 
 function pickCanonicalId(ids: string[], byId: Map<string, RootRow>): string {
-  const et = ids.filter((id) => byId.get(id)?.externalSource === "et_market");
-  if (et.length === 1) return et[0];
-  if (et.length > 1) {
-    return [...et].sort((a, b) => byId.get(a)!.createdAt.getTime() - byId.get(b)!.createdAt.getTime())[0];
-  }
-  return [...ids].sort((a, b) => byId.get(a)!.createdAt.getTime() - byId.get(b)!.createdAt.getTime())[0];
+  return [...ids].sort((a, b) => {
+    const ra = sourceRank(byId.get(a)?.externalSource);
+    const rb = sourceRank(byId.get(b)?.externalSource);
+    if (ra !== rb) return ra - rb;
+    return byId.get(a)!.createdAt.getTime() - byId.get(b)!.createdAt.getTime();
+  })[0];
 }
 
 function ultimateCanonicalId(id: string, pointsTo: Map<string, string>): string {
@@ -45,7 +53,7 @@ export type CrossSourceReconcileReport = {
 };
 
 /**
- * Після імпорту: між et_market та in_heat шукає пари зі схожістю назв.
+ * Після імпорту: між різними джерелами (et_market, in_heat, vsesezon, …) шукає пари зі схожістю назв.
  * ≥ mergeThreshold (0.9) — `mergedIntoProductId` на канонічну картку (пріоритет ЕТ-маркет).
  * [warnThreshold, mergeThreshold) — лише попередження в stderr.
  */
@@ -77,7 +85,7 @@ export async function reconcileCrossSourceDuplicates(
   const roots = await prisma.product.findMany({
     where: {
       mergedIntoProductId: null,
-      externalSource: { in: ["et_market", "in_heat"] },
+      externalSource: { in: [...IMPORT_SOURCE_PRIORITY] },
     },
     select: {
       id: true,

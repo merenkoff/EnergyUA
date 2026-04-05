@@ -46,7 +46,7 @@ export default async function CatalogIndexPage() {
       <h1 className="mt-4 text-3xl font-semibold tracking-tight">Каталог</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
         {root?.description ??
-          "Оберіть розділ. Імпортовані товари з ЕТ-маркет та IN-HEAT згруповані в підрозділах поруч із власними категоріями; прив’язка йде до товару (externalSource + externalId), а не до «дерева донора»."}
+          "Оберіть розділ. Імпортовані товари з ЕТ-маркет, IN-HEAT та Vsesezon згруповані в підрозділах поруч із власними категоріями; прив’язка йде до товару (externalSource + externalId), а не до «дерева донора»."}
       </p>
       {!root ? (
         <p className="mt-8 text-sm text-[var(--muted)]">

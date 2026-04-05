@@ -1,6 +1,6 @@
 /** Уніфікований запис для імпорту в ElectroHeat / JSON. */
 export type UnifiedListingItem = {
-  source: "in_heat" | "et_market";
+  source: "in_heat" | "et_market" | "vsesezon";
   externalId: string;
   sourceUrl: string;
   slug: string;
@@ -79,6 +79,19 @@ export type EtMarketCrawlMeta = {
   perCategory: EtMarketCategoryDiscoverRow[];
 };
 
+export type VsesezonCategoryStat = {
+  categoryUrl: string;
+  title?: string;
+  pages: number;
+  productRows: number;
+};
+
+export type VsesezonCrawlMeta = {
+  seedUrls: string[];
+  groupUrls: string[];
+  perCategory: VsesezonCategoryStat[];
+};
+
 export type ScrapeManifest = {
   scrapedAt: string;
   listingUrl: string;
@@ -89,4 +102,6 @@ export type ScrapeManifest = {
   inHeat?: InHeatCrawlMeta;
   /** Повний обхід et-market: список URL категорій і заголовки. */
   etMarketCrawl?: EtMarketCrawlMeta;
+  /** Обхід Vsesezon (Prom.ua). */
+  vsesezon?: VsesezonCrawlMeta;
 };

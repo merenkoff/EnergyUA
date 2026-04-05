@@ -21,6 +21,7 @@ import {
   ensureCanonicalCatalogRootId,
   ensureEtFlatCategory,
   ensureInHeatFlatCategory,
+  ensureVsesezonFlatCategory,
 } from "../lib/importCategoryMapping";
 import type { ScrapeManifest } from "../parsers/types";
 
@@ -72,6 +73,11 @@ function buildTitleMap(manifest: ScrapeManifest): Map<string, string> {
   }
   if (manifest.inHeat?.perCategory) {
     for (const row of manifest.inHeat.perCategory) {
+      if (row.title) m.set(categoryUrlKey(row.categoryUrl), row.title);
+    }
+  }
+  if (manifest.vsesezon?.perCategory) {
+    for (const row of manifest.vsesezon.perCategory) {
       if (row.title) m.set(categoryUrlKey(row.categoryUrl), row.title);
     }
   }
@@ -169,6 +175,12 @@ async function resolveCategoryId(
       ? ensureInHeatCategoryTreeDeep(p.sourceCategoryUrl, titleMap)
       : ensureInHeatFlatCategory(prisma, p.sourceCategoryUrl, titleMap);
   }
+  if (p.source === "vsesezon") {
+    if (!p.sourceCategoryUrl) {
+      return ensureCanonicalCatalogRootId(prisma);
+    }
+    return ensureVsesezonFlatCategory(prisma, p.sourceCategoryUrl, titleMap);
+  }
   throw new Error(`Невідоме джерело: ${p.source}`);
 }
 
@@ -199,7 +211,7 @@ async function main() {
   }
 
   if (!skipDuplicateReconcile()) {
-    console.error("Зведення дублікатів між et_market та in_heat (назви, Levenshtein)…");
+    console.error("Зведення дублікатів між джерелами (назви, Levenshtein)…");
     await reconcileCrossSourceDuplicates(prisma);
   } else {
     console.error("Пропущено reconcile дублікатів (--skip-duplicate-reconcile).");

@@ -38,7 +38,7 @@ async function main() {
   const rows = await prisma.product.findMany({
     where: {
       sourceCategoryUrl: { not: null },
-      externalSource: { in: ["et_market", "in_heat"] },
+      externalSource: { in: ["et_market", "in_heat", "vsesezon"] },
     },
     select: {
       id: true,

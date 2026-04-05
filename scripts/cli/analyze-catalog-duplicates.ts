@@ -17,7 +17,7 @@ const prisma = new PrismaClient();
 /** Витяг артикулу з формату importProductSku: `CODE__et_market__ext` */
 export function extractImportBaseCode(sku: string | null): string | null {
   if (!sku?.trim()) return null;
-  const m = sku.match(/^(.+?)__(et_market|in_heat)__/);
+  const m = sku.match(/^(.+?)__(et_market|in_heat|vsesezon)__/);
   if (m) return m[1].trim().toUpperCase().replace(/\s+/g, "");
   return sku.trim().toUpperCase().replace(/\s+/g, "");
 }
@@ -172,7 +172,12 @@ async function main() {
 
   const summary = {
     totalProducts: rows.length,
-    withCompositeSku: rows.filter((r) => r.sku?.includes("__et_market__") || r.sku?.includes("__in_heat__")).length,
+    withCompositeSku: rows.filter(
+      (r) =>
+        r.sku?.includes("__et_market__") ||
+        r.sku?.includes("__in_heat__") ||
+        r.sku?.includes("__vsesezon__"),
+    ).length,
     groupsBaseCodeCrossSource: groups.filter((g) => g.kind === "base_code_cross_source").length,
     groupsUrlLeafCrossSource: groups.filter((g) => g.kind === "url_leaf_cross_source").length,
     groupsNameCrossSource: groups.filter((g) => g.kind === "name_cross_source").length,
