@@ -6,6 +6,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { PrismaClient } from "@prisma/client";
+import { reconcileCrossSourceDuplicates } from "../lib/crossSourceDuplicateMerge";
 import { importUnifiedProduct } from "../lib/catalogProductImport";
 import type { ScrapeManifest } from "../parsers/types";
 
@@ -36,6 +37,10 @@ async function main() {
   for (const p of raw.products) {
     await importUnifiedProduct(prisma, p, category.id, publish);
     console.error(`imported: ${p.source} / ${p.externalId} — ${p.nameUk.slice(0, 50)}…`);
+  }
+
+  if (!process.argv.includes("--skip-duplicate-reconcile")) {
+    await reconcileCrossSourceDuplicates(prisma);
   }
 
   await prisma.$disconnect();

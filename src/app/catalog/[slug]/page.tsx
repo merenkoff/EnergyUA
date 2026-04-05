@@ -28,17 +28,29 @@ export default async function CatalogCategoryPage({ params }: Props) {
       parent: { select: { slug: true, nameUk: true } },
       children: {
         orderBy: { sortOrder: "asc" },
-        include: { _count: { select: { products: true, children: true } } },
+        include: {
+          _count: {
+            select: {
+              products: { where: { published: true, mergedIntoProductId: null } },
+              children: true,
+            },
+          },
+        },
       },
       products: {
-        where: { published: true },
+        where: { published: true, mergedIntoProductId: null },
         orderBy: { sortOrder: "asc" },
         include: {
           brand: true,
           images: { orderBy: { sortOrder: "asc" }, take: 1, select: { url: true, altUk: true } },
         },
       },
-      _count: { select: { products: true, children: true } },
+      _count: {
+        select: {
+          products: { where: { published: true, mergedIntoProductId: null } },
+          children: true,
+        },
+      },
     },
   });
 

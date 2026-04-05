@@ -1,5 +1,7 @@
 /**
- * Обхід підрозділів in-heat з меню на `/ua/`, опційно повні картки товарів.
+ * Обхід каталогу IN-HEAT з меню на https://in-heat.kiev.ua/ua/ (усі гілки: otoplenie, termoregulyatory,
+ * sistema-antiobledeneniya, electrotovary, tovary). Товари з різних URL зводяться в один manifest; дублікати за
+ * sourceUrl віддають глибшу категорію. Імпорт: npm run import:catalog-trees.
  *
  * Лише списки:
  *   npx tsx scripts/cli/crawl-in-heat-catalog.ts --listing-only --out data/scrape/in-heat-catalog-FULL.json --delay 400
@@ -16,6 +18,7 @@ import { dirname, resolve } from "node:path";
 import { fetchHtml } from "../parsers/http";
 import { unifiedProductAsListingStub } from "../lib/manifestListing";
 import {
+  IN_HEAT_DEFAULT_CATALOG_PREFIXES,
   discoverInHeatCategoryUrls,
   inHeatCategoryListingUrl,
   parseInHeatCategoryHeading,
@@ -117,8 +120,7 @@ async function readExtraUrls(path: string): Promise<string[]> {
 async function main() {
   const seed = arg("--seed") || DEFAULT_SEED;
   const outPath = resolve(arg("--out") || "data/scrape/in-heat-catalog.json");
-  const prefixArg =
-    arg("--prefix") || "/ua/otoplenie,/ua/termoregulyatory";
+  const prefixArg = arg("--prefix") ?? IN_HEAT_DEFAULT_CATALOG_PREFIXES.join(",");
   const pathPrefixes = prefixArg.split(",").map((s) => s.trim()).filter(Boolean);
   const delayMs = arg("--delay") ? parseInt(arg("--delay")!, 10) : 400;
   const listingOnly = hasFlag("--listing-only");

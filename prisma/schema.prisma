@@ -66,15 +66,23 @@ model Product {
   externalUrl      String?        @map("external_url") @db.Text
   /// URL розділу донора (для плоского мапінгу категорій при повторних імпортах).
   sourceCategoryUrl String?       @map("source_category_url") @db.Text
-  images           ProductImage[]
-  specs            ProductSpec[]
-  createdAt        DateTime       @default(now()) @map("created_at")
-  updatedAt        DateTime       @updatedAt @map("updated_at")
+  /// Нормалізована назва для евристик дублікатів між джерелами (імпорт).
+  nameNormKey          String?  @map("name_norm_key")
+  /// Якщо задано — цей рядок прихований з каталогу; канонічна картка `mergedInto`.
+  mergedIntoProductId  String?   @map("merged_into_product_id")
+  mergedInto           Product?  @relation("ProductDuplicateMerge", fields: [mergedIntoProductId], references: [id], onDelete: SetNull)
+  mergedDuplicates     Product[] @relation("ProductDuplicateMerge")
+  images               ProductImage[]
+  specs                ProductSpec[]
+  createdAt            DateTime  @default(now()) @map("created_at")
+  updatedAt            DateTime  @updatedAt @map("updated_at")
 
   @@unique([externalSource, externalId])
   @@index([categoryId])
   @@index([brandId])
   @@index([published, sortOrder])
+  @@index([nameNormKey])
+  @@index([mergedIntoProductId])
   @@map("products")
 }
 

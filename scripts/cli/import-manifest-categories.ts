@@ -8,10 +8,14 @@
  *   npx tsx scripts/cli/import-manifest-categories.ts --file data/scrape/et-catalog-DETAIL.json
  *
  * Глибокі дерева за URL (--deep): лише для відладки / старої поведінки (також під tepla-pidloga).
+ *
+ * Після імпорту: злиття карток ЕТ ↔ IN-HEAT при схожості назви ≥90% (merged_into_product_id).
+ * Попередження в stderr для 75–90%. Вимкнути: --skip-duplicate-reconcile.
  */
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { PrismaClient } from "@prisma/client";
+import { reconcileCrossSourceDuplicates } from "../lib/crossSourceDuplicateMerge";
 import { importUnifiedProduct } from "../lib/catalogProductImport";
 import {
   ensureCanonicalCatalogRootId,
@@ -30,6 +34,10 @@ function arg(name: string): string | undefined {
 
 function hasFlag(name: string) {
   return process.argv.includes(name);
+}
+
+function skipDuplicateReconcile() {
+  return hasFlag("--skip-duplicate-reconcile");
 }
 
 function categoryUrlKey(url: string): string {
@@ -188,6 +196,13 @@ async function main() {
     await importUnifiedProduct(prisma, p, categoryId, publish);
     n++;
     if (n % 50 === 0) console.error(`… ${n} / ${manifest.products.length}`);
+  }
+
+  if (!skipDuplicateReconcile()) {
+    console.error("Зведення дублікатів між et_market та in_heat (назви, Levenshtein)…");
+    await reconcileCrossSourceDuplicates(prisma);
+  } else {
+    console.error("Пропущено reconcile дублікатів (--skip-duplicate-reconcile).");
   }
 
   await prisma.$disconnect();

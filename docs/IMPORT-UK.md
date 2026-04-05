@@ -56,9 +56,9 @@ npm run parse:in-heat -- \
   --all-pages --listing-only --out data/scrape/in-heat-maty-all-pages.json --delay 400
 ```
 
-### Обхід підрозділів з меню (тепла підлога + терморегулятори)
+### Обхід повного каталогу з меню [in-heat.kiev.ua/ua/](https://in-heat.kiev.ua/ua/)
 
-Скрипт завантажує головну `/ua/`, знімає посилання з `#catalog-menu-dialog`, залишає шляхи під заданими префіксами (за замовчуванням `/ua/otoplenie` та `/ua/termoregulyatory`), без `.html`, без `/tag/`, `/filter/`, `/apply/`. Для кожної категорії підтягує всі сторінки списку (`PAGEN_1`), об’єднує товари **без дублікатів** за `sourceUrl`. У кожному рядку списку є **`sourceCategoryUrl`** — з якого URL розділу він потрапив у вибірку.
+Скрипт завантажує головну `/ua/`, знімає посилання з `#catalog-menu-dialog`. За замовчуванням обходяться **усі товарні гілки**: `otoplenie`, `termoregulyatory`, `sistema-antiobledeneniya`, `electrotovary`, `tovary` (див. `IN_HEAT_DEFAULT_CATALOG_PREFIXES` у `scripts/parsers/inHeat.ts`). Відкидаються `.html`, `/tag/`, `/filter/`, бренди, блог, сервіси. Є й **сторінки-хаби** з двома сегментами шляху (`/ua/termoregulyatory/`). Для кожної категорії — усі сторінки списку (`PAGEN_1`), товари **без дублікатів** за `sourceUrl` (пріоритет глибшому `sourceCategoryUrl`). У JSON — **`sourceCategoryUrl`** для імпорту.
 
 ```bash
 npm run parse:in-heat-catalog -- --listing-only --out data/scrape/in-heat-catalog-list.json --delay 400
@@ -69,7 +69,7 @@ npm run parse:in-heat-catalog -- --listing-only --out data/scrape/in-heat-catalo
 | Параметр | Значення |
 |----------|----------|
 | `--seed` | Сторінка з меню (за замовчуванням `https://in-heat.kiev.ua/ua/`) |
-| `--prefix` | Список префіксів через кому, напр. `/ua/otoplenie,/ua/termoregulyatory` |
+| `--prefix` | Префікси через кому; за замовчуванням усі 5 гілок каталогу (див. вище) |
 | `--extra-urls path.txt` | Додаткові URL категорій (по одному в рядку), якщо чогось немає в меню |
 | `--max-categories N` | Обмежити кількість категорій (тест) |
 
@@ -234,7 +234,7 @@ npm run import:catalog-trees -- --file data/scrape/in-heat-catalog-FULL.json
 
 - **Корінь вітрини:** усі імпортовані плоскі категорії — **діти `tepla-pidloga`** (на `/catalog` показуються лише такі підрозділи, без окремих карток «ЕТ-маркет» / «IN-HEAT»). Старі корені `et-market-import` / `in-heat-import` після повторного імпорту можна прибрати: `npm run import:prune-legacy-cats`.
 - **ЕТ-маркет:** `et-teplyj-pol`, `et-termoregulyatory`, `et-snegotayanie`, `et-avtomatika`, `et-kondicionery`, `et-akvastorozh`, `et-shitovoe-oborudovanie` (перший сегмент шляху `/teplyj-pol/...`).
-- **IN-HEAT:** `inh-otoplenie`, `inh-termoregulyatory` (сегмент після `/ua/`).
+- **IN-HEAT:** плоскі категорії за другим сегментом шляху `/ua/…`: `inh-otoplenie`, `inh-termoregulyatory`, `inh-sistema-antiobledeneniya`, `inh-electrotovary`, `inh-tovary` (повний обхід — `parse:in-heat-catalog`).
 - У товарі в БД зберігаються **`externalUrl`** (URL картки на донорі) та **`sourceCategoryUrl`** (URL розділу) — для аудиту та майбутніх перекласифікацій.
 - Головний ключ імпорту без змін: **`externalSource` + `externalId`** (upsert, без дублікатів карток).
 
@@ -252,6 +252,8 @@ npm run import:verify
 ```
 
 Глибоке дерево за повним шляхом URL (старий варіант): **`--deep`** на `import-manifest-categories` (через `npx tsx scripts/cli/import-manifest-categories.ts --deep --file ...`).
+
+**Дублікати ЕТ ↔ IN-HEAT:** після `import:catalog-trees` автоматично викликається зведення схожих назв (Levenshtein): **≥90%** — `merged_into_product_id` на канонічну картку (пріоритет `et_market`), **75–90%** — лише попередження в stderr. Вимкнути: **`--skip-duplicate-reconcile`**. Повтор без імпорту: **`npm run import:reconcile-dupes`** (або `--json` для звіту). Перевірка кандидатів без злиття: **`npm run import:analyze-dupes`**.
 
 ### Одна плоска категорія в БД
 

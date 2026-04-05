@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { formatUah } from "@/lib/format";
 import { prisma } from "@/lib/prisma";
 
@@ -8,14 +8,30 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = await prisma.product.findFirst({
+  const row = await prisma.product.findFirst({
     where: { slug, published: true },
-    select: { nameUk: true, seoTitle: true, seoDescription: true, shortDescription: true },
+    select: {
+      nameUk: true,
+      seoTitle: true,
+      seoDescription: true,
+      shortDescription: true,
+      mergedIntoProductId: true,
+      mergedInto: {
+        select: {
+          published: true,
+          nameUk: true,
+          seoTitle: true,
+          seoDescription: true,
+          shortDescription: true,
+        },
+      },
+    },
   });
-  if (!product) return { title: "Не знайдено" };
+  if (!row) return { title: "Не знайдено" };
+  const c = row.mergedIntoProductId && row.mergedInto?.published ? row.mergedInto : row;
   return {
-    title: product.seoTitle ?? product.nameUk,
-    description: product.seoDescription ?? product.shortDescription ?? undefined,
+    title: c.seoTitle ?? c.nameUk,
+    description: c.seoDescription ?? c.shortDescription ?? undefined,
   };
 }
 
@@ -34,6 +50,18 @@ function specDisplay(row: {
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
+  const dup = await prisma.product.findFirst({
+    where: { slug, published: true },
+    select: {
+      mergedIntoProductId: true,
+      mergedInto: { select: { slug: true, published: true } },
+    },
+  });
+  if (!dup) notFound();
+  if (dup.mergedIntoProductId && dup.mergedInto?.published) {
+    redirect(`/product/${dup.mergedInto.slug}`);
+  }
+
   const product = await prisma.product.findFirst({
     where: { slug, published: true },
     include: {

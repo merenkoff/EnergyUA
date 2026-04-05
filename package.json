@@ -20,7 +20,11 @@
     "import:catalog": "tsx scripts/cli/import-unified-json.ts",
     "import:catalog-trees": "tsx scripts/cli/import-manifest-categories.ts",
     "import:prune-legacy-cats": "tsx scripts/cli/prune-legacy-import-categories.ts",
+    "import:prune-empty-cats": "tsx scripts/cli/prune-empty-categories.ts",
+    "import:rebucket-showcase-cats": "tsx scripts/cli/rebucket-showcase-categories.ts",
     "import:verify": "tsx scripts/cli/verify-import-health.ts",
+    "import:analyze-dupes": "tsx scripts/cli/analyze-catalog-duplicates.ts",
+    "import:reconcile-dupes": "tsx scripts/cli/reconcile-duplicate-merge.ts",
     "import:full-detail-pipeline": "bash scripts/run-full-detail-import.sh"
   },
   "prisma": {

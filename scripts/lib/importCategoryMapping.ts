@@ -18,6 +18,10 @@ import type { PrismaClient } from "@prisma/client";
 /** Єдиний корінь вітрини для навігації; seed + імпорт зобов’язані узгоджуватися з ним. */
 export const CANONICAL_CATALOG_ROOT_SLUG = "tepla-pidloga";
 
+/** Канонічні підрозділи «Тепла підлога» з seed — сюди направляємо мати/кабелі за URL донора. */
+export const SHOWCASE_MAT_SLUG = "nagrivalni-maty";
+export const SHOWCASE_CABLE_SLUG = "griuchi-kabeli";
+
 /** @deprecated Старі slug коренів імпорту; після повторного import + prune можуть бути видалені з БД. */
 export const ET_ROOT_SLUG = "et-market-import";
 /** @deprecated Див. ET_ROOT_SLUG. */
@@ -47,6 +51,19 @@ const ET_TOP_LABELS: Record<string, string> = {
 const IN_HUB_LABELS: Record<string, string> = {
   otoplenie: "Опалення та тепла підлога",
   termoregulyatory: "Терморегулятори",
+  "sistema-antiobledeneniya": "Сніготанення та антиобледеніння",
+  electrotovary: "Реле напруги та зарядні станції",
+  tovary: "Супутні товари (підлога)",
+};
+
+/** Порядок блоків IN-HEAT у каталозі (sortOrder = 200 + value). */
+const IN_HUB_SORT: Record<string, number> = {
+  otoplenie: 10,
+  termoregulyatory: 20,
+  "sistema-antiobledeneniya": 30,
+  electrotovary: 40,
+  tovary: 50,
+  misc: 5,
 };
 
 function etTopSortOrder(segment: string): number {
@@ -85,6 +102,56 @@ export function etFlatCategorySlug(segment: string): string {
 
 export function inHeatFlatCategorySlug(hub: string): string {
   return `inh-${hub}`.slice(0, 200);
+}
+
+/**
+ * Якщо URL розділу донора однозначно вказує на мати або гріючі кабелі — повертаємо slug вітрини (seed).
+ * Інакше null (залишаємо плоский et-* / inh-*).
+ */
+export function showcaseCategorySlugFromImporterSourceUrl(
+  source: string,
+  sourceCategoryUrl: string,
+): string | null {
+  try {
+    const path = new URL(sourceCategoryUrl).pathname;
+    if (source === "in_heat") return inHeatShowcaseCategorySlug(path);
+    if (source === "et_market") return etMarketShowcaseCategorySlug(path);
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function inHeatShowcaseCategorySlug(pathname: string): string | null {
+  const p = pathname.toLowerCase();
+  if (p.includes("kabel-pod-plitku") || p.includes("nagrevatelnyj-kabel")) {
+    return SHOWCASE_CABLE_SLUG;
+  }
+  if (p.includes("alyuminivye-nagrevatelnye-maty") || p.includes("nagrevatelnye-maty")) {
+    return SHOWCASE_MAT_SLUG;
+  }
+  return null;
+}
+
+function etMarketShowcaseCategorySlug(pathname: string): string | null {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts[0]?.toLowerCase() !== "teplyj-pol") return null;
+  const p = pathname.toLowerCase();
+  if (p.includes("nagrevatelnyj-kabel") || p.includes("woks-pol")) {
+    return SHOWCASE_CABLE_SLUG;
+  }
+  if (p.includes("nagrevatelnye-maty")) {
+    return SHOWCASE_MAT_SLUG;
+  }
+  return null;
+}
+
+async function categoryIdBySlugOrThrow(prisma: PrismaClient, slug: string): Promise<string> {
+  const c = await prisma.category.findUnique({ where: { slug }, select: { id: true } });
+  if (!c) {
+    throw new Error(`Немає категорії slug="${slug}" (потрібен seed: npm run db:seed).`);
+  }
+  return c.id;
 }
 
 function bestTitleFromMap(
@@ -128,6 +195,10 @@ export async function ensureEtFlatCategory(
   const u = new URL(sourceCategoryUrl);
   if (!u.hostname.includes("et-market.com.ua")) {
     throw new Error(`Очікувався et-market URL: ${sourceCategoryUrl}`);
+  }
+  const showcase = showcaseCategorySlugFromImporterSourceUrl("et_market", sourceCategoryUrl);
+  if (showcase) {
+    return categoryIdBySlugOrThrow(prisma, showcase);
   }
   const segment = etFlatSegmentFromCategoryUrl(sourceCategoryUrl);
   const slug = etFlatCategorySlug(segment);
@@ -174,6 +245,10 @@ export async function ensureInHeatFlatCategory(
   if (!u.hostname.includes("in-heat.kiev.ua")) {
     throw new Error(`Очікувався in-heat URL: ${sourceCategoryUrl}`);
   }
+  const showcase = showcaseCategorySlugFromImporterSourceUrl("in_heat", sourceCategoryUrl);
+  if (showcase) {
+    return categoryIdBySlugOrThrow(prisma, showcase);
+  }
   const hub = inHeatFlatHubFromCategoryUrl(sourceCategoryUrl);
   const slug = inHeatFlatCategorySlug(hub);
   const rootId = await ensureCanonicalCatalogRootId(prisma);
@@ -188,8 +263,7 @@ export async function ensureInHeatFlatCategory(
       labelDefault,
     );
 
-  const sortOrder =
-    200 + (hub === "otoplenie" ? 10 : hub === "termoregulyatory" ? 20 : hub === "misc" ? 5 : 50);
+  const sortOrder = 200 + (IN_HUB_SORT[hub] ?? 60);
 
   const cat = await prisma.category.upsert({
     where: { slug },

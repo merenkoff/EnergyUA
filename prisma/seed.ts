@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { normalizeNameKey } from "../scripts/lib/productDuplicateSimilarity";
 
 const prisma = new PrismaClient();
 
@@ -90,6 +91,7 @@ async function main() {
       slug: "demo-mat-2-0",
       sku: "EH-DEMO-200",
       nameUk: "Нагрівальний мат ElectroHeat 2,0 м²",
+      nameNormKey: normalizeNameKey("Нагрівальний мат ElectroHeat 2,0 м²"),
       shortDescription: "Двожильний мат для укладання під плитку в клей.",
       description:
         "<p>Приклад картки товару під структуру як на маркетплейсах: короткий опис, характеристики, артикул.</p>",
@@ -101,7 +103,11 @@ async function main() {
       sortOrder: 10,
       seoTitle: "Нагрівальний мат 2 м² — каталог ElectroHeat",
     },
-    update: { published: true, categoryId: mats.id },
+    update: {
+      published: true,
+      categoryId: mats.id,
+      nameNormKey: normalizeNameKey("Нагрівальний мат ElectroHeat 2,0 м²"),
+    },
   });
 
   const p2 = await prisma.product.upsert({
@@ -110,6 +116,7 @@ async function main() {
       slug: "demo-mat-3-5",
       sku: "EH-DEMO-350",
       nameUk: "Нагрівальний мат ElectroHeat 3,5 м²",
+      nameNormKey: normalizeNameKey("Нагрівальний мат ElectroHeat 3,5 м²"),
       shortDescription: "Збільшена площа — для ванної чи коридору.",
       priceVisible: false,
       categoryId: mats.id,
@@ -117,7 +124,10 @@ async function main() {
       published: true,
       sortOrder: 20,
     },
-    update: { published: true },
+    update: {
+      published: true,
+      nameNormKey: normalizeNameKey("Нагрівальний мат ElectroHeat 3,5 м²"),
+    },
   });
 
   async function setSpecs(

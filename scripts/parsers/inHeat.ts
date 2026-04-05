@@ -63,18 +63,48 @@ export function inHeatCategoryListingUrl(categoryUrl: string, page: number, base
 }
 
 /**
- * Посилання на підрозділи каталогу з модального меню `#catalog-menu-dialog` (головна сторінка /ua/).
+ * Усі корені товарного каталогу на [in-heat.kiev.ua/ua/](https://in-heat.kiev.ua/ua/) (меню «Каталог товарів»).
+ * Не включає /ua/brands, /ua/blog, послуги тощо.
+ */
+export const IN_HEAT_DEFAULT_CATALOG_PREFIXES = [
+  "/ua/otoplenie",
+  "/ua/termoregulyatory",
+  "/ua/sistema-antiobledeneniya",
+  "/ua/electrotovary",
+  "/ua/tovary",
+] as const;
+
+function normalizePathPrefix(p: string): string {
+  const t = p.trim();
+  return t.endsWith("/") ? t.slice(0, -1) : t;
+}
+
+function pathnameMatchesCatalogPrefixes(pathname: string, pathPrefixes: string[]): boolean {
+  const path =
+    pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  return pathPrefixes.some((raw) => {
+    const p = normalizePathPrefix(raw);
+    return path === p || path.startsWith(`${p}/`);
+  });
+}
+
+/** Сторінки з фільтрами, тегами, брендами, блогом — не окремі «категорії» для обходу. */
+function pathnameIsSkippedCatalogNoise(pathname: string): boolean {
+  if (/\/(tag|filter)\//i.test(pathname)) return true;
+  if (/\/apply\/?$/i.test(pathname)) return true;
+  return /\/(brands|blog|statti|about|services|personal|auth|reviews|sales|prices-info)\//i.test(pathname);
+}
+
+/**
+ * Посилання на підрозділи каталогу з модального меню `#catalog-menu-dialog` (головна /ua/).
+ * Беруться лише шляхи під заданими префіксами; хаби з 2 сегментами (/ua/termoregulyatory/) теж потрапляють у список.
  */
 export function discoverInHeatCategoryUrls(menuHtml: string, pathPrefixes: string[], baseUrl: string = BASE): string[] {
   assertNotAntiBot(menuHtml, "in-heat");
   const $ = load(menuHtml);
   const found = new Set<string>();
 
-  const matchesPrefix = (pathname: string) =>
-    pathPrefixes.some((prefix) => {
-      const p = prefix.endsWith("/") ? prefix.slice(0, -1) : prefix;
-      return pathname === p || pathname.startsWith(`${p}/`);
-    });
+  const prefixes = pathPrefixes.map(normalizePathPrefix).filter(Boolean);
 
   $("#catalog-menu-dialog a[href]").each((_, el) => {
     const href = $(el).attr("href")?.trim();
@@ -88,11 +118,18 @@ export function discoverInHeatCategoryUrls(menuHtml: string, pathPrefixes: strin
       return;
     }
     if (/\.html?$/i.test(pathname)) return;
-    if (/\/(tag|filter)\//i.test(pathname)) return;
-    if (pathname.includes("/apply/")) return;
-    if (!matchesPrefix(pathname)) return;
+    if (pathnameIsSkippedCatalogNoise(pathname)) return;
+    if (!pathnameMatchesCatalogPrefixes(pathname, prefixes)) return;
+
     const parts = pathname.split("/").filter(Boolean);
-    if (parts.length < 3) return;
+    if (parts.length < 2 || parts[0] !== "ua") return;
+
+    if (parts.length === 2) {
+      const path = "/" + parts.join("/") + "/";
+      found.add(new URL(path, baseUrl).toString());
+      return;
+    }
+
     const path = "/" + parts.join("/") + "/";
     found.add(new URL(path, baseUrl).toString());
   });

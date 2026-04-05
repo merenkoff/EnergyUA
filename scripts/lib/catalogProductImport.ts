@@ -1,6 +1,7 @@
 import slugify from "slugify";
 import { Prisma } from "@prisma/client";
 import type { PrismaClient } from "@prisma/client";
+import { normalizeNameKey } from "./productDuplicateSimilarity";
 import type { UnifiedProduct } from "../parsers/types";
 
 export function specSlug(label: string): string {
@@ -91,6 +92,7 @@ export async function importUnifiedProduct(
   const slug = importProductSlug(p);
 
   const sku = importProductSku(p);
+  const nameNormKey = normalizeNameKey(p.nameUk) || null;
 
   const product = await prisma.product.upsert({
     where: {
@@ -100,6 +102,7 @@ export async function importUnifiedProduct(
       slug,
       sku,
       nameUk: p.nameUk,
+      nameNormKey,
       shortDescription: p.shortDescription ?? null,
       description: p.descriptionHtml ?? null,
       priceUah: p.priceUah != null ? new Prisma.Decimal(p.priceUah) : null,
@@ -115,6 +118,7 @@ export async function importUnifiedProduct(
     update: {
       slug,
       nameUk: p.nameUk,
+      nameNormKey,
       sku: sku ?? undefined,
       shortDescription: p.shortDescription ?? undefined,
       description: p.descriptionHtml ?? undefined,
