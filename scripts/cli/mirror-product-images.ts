@@ -162,7 +162,7 @@ async function main() {
     const newUrl = `/api/media/${filename}`;
     const r = await prisma.productImage.updateMany({
       where: { url },
-      data: { url: newUrl },
+      data: { url: newUrl, sourceUrl: url },
     });
     if (r.count === 0) console.warn(`[mirror] updateMany 0 rows for url (можливо вже оновлено)`);
   }

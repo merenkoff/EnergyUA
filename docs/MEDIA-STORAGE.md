@@ -40,10 +40,19 @@
 
 **Варіанти відновлення:**
 
-1. **Скопіювати файли** з машини, де mirror уже відпрацював у правильний `storage/media` (наприклад локально): заархівуй `storage/media`, розпакуй у volume на Railway (`railway run`, `tar`, тощо) у каталог **`$MEDIA_ROOT`**.
-2. **Відкотити БД** до стану з **зовнішніми** `http(s)` URL у `product_images`, виправити `MEDIA_ROOT` + volume, знову увімкнути **`MIRROR_PRODUCT_IMAGES=yes`** і задеплоїти з новим entrypoint.
+1. **Найшвидше, якщо локально вже є той самий `storage/media`** (ті самі `sha256.ext`, що в БД): з Mac виконай передачу на volume через SSH-потік:
+   ```bash
+   npm run db:push-media-railway
+   ```
+   (за замовчуванням сервіс `EnergyUA`; інший: `npm run db:push-media-railway -- ІмяСервісу`. Каталог на сервері: `RAILWAY_REMOTE_MEDIA_ROOT=/data/media`.) Потім знову `bash /app/scripts/railway-media-diagnose.sh`.
+2. **Після міграції з колонкою `source_url`**: якщо в рядках заповнено `source_url`, а файлу немає — докачка з інтернету:
+   ```bash
+   railway ssh -s EnergyUA -- bash -lc 'cd /app && npx tsx scripts/cli/repair-missing-product-images.ts'
+   ```
+   або локально з публічним `DATABASE_URL` і правильним `MEDIA_ROOT`: `npm run db:repair-images`. Для **старих** рядків без `source_url` repair нічого не зробить — лише п.1 або реімпорт.
+3. **Відкотити БД** до зовнішніх `http(s)` у `product_images` + знову mirror на контейнері з volume (якщо є бекап БД).
 
-Скрипт mirror **не зберігає** оригінальний URL після заміни — без бекапу БД або копії файлів відновити лише з реімпорту каталогу.
+З **нових** деплоїв mirror записує **`source_url`** (оригінальний URL) при заміні на `/api/media/…`, щоб можна було **repair** без копії файлів.
 
 ## Локально
 
@@ -116,9 +125,11 @@ npm run db:media-diagnose
 
 ## Скрипти
 
+- **`scripts/push-media-to-railway-volume.sh`** — стиснення локального `storage/media` і розпаковка в `$MEDIA_ROOT` на сервісі через `railway ssh` (`npm run db:push-media-railway`).
 - **`scripts/railway-media-diagnose.sh`** — діагностика **в контейнері** Railway без залежності від cwd SSH (`bash /app/scripts/railway-media-diagnose.sh`).
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
-- **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url`.
+- **`scripts/cli/repair-missing-product-images.ts`** — докачка відсутніх файлів за `source_url` (`npm run db:repair-images`).
+- **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url` + заповнення `source_url`.
 - **`scripts/railway-entrypoint.sh`** — опційний mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
 
 **Pre-deploy** (`db:predeploy`) лише: `prisma migrate deploy` + `prisma db seed` — **без** mirror.

@@ -195,7 +195,7 @@ async function main() {
   } else if (missing > 0) {
     log(
       "result",
-      "ПРОБЛЕМА: у БД є /api/media/… без файлів. Варіанти: (1) скопіюй storage/media на volume у MEDIA_ROOT; (2) відкотити product_images до зовнішніх URL і знову npm run db:mirror-images з правильним MEDIA_ROOT + entrypoint; (3) реімпорт каталогу.",
+      "ПРОБЛЕМА: у БД є /api/media/… без файлів. Швидко: з машини з повним storage/media виконай npm run db:push-media-railway. Якщо в БД є source_url — npm run db:repair-images у контейнері або з публічним DATABASE_URL. Інакше реімпорт або бекап БД.",
     );
   } else if (needed.size === 0 && external > 0) {
     log("result", "У БД лише зовнішні URL — запусти mirror (MIRROR_PRODUCT_IMAGES=yes або npm run db:mirror-images).");

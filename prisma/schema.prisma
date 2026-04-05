@@ -91,6 +91,8 @@ model ProductImage {
   productId String  @map("product_id")
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   url       String
+  /// Після mirror — зовнішній URL, з якого зроблено файл (для repair, якщо volume порожній).
+  sourceUrl String? @map("source_url") @db.Text
   altUk     String? @map("alt_uk")
   sortOrder Int     @default(0) @map("sort_order")
 
