@@ -53,8 +53,52 @@ npm run db:mirror-images
 
 Файли в `storage/media/` (у `.gitignore`).
 
+## Діагностика (скопіюй вивід у чат)
+
+Усі рядки мають префікс **`[media-diagnose]`** — зручно фільтрувати й надсилати асистенту цілком.
+
+### Важливо: `railway run` ≠ контейнер на Railway
+
+Команда **`railway run npm run …`** виконується **на твоєму комп’ютері** (Mac/PC), лише **підставляючи змінні** з проєкту Railway. Тому типово:
+
+- **`DATABASE_URL` з хостом `*.railway.internal`** — **не підключається** з дому (цей хост лише всередині мережі Railway).
+- **`MEDIA_ROOT=/data/media`** — на Mac **немає** змонтованого volume → `ENOENT` для `/data` — **очікувано**, не баг застосунку.
+
+### Повна діагностика (БД + файли на volume)
+
+Потрібен доступ до **того самого** середовища, що й у проді: **SSH у контейнер сервісу застосунку** (де змонтований volume і працює internal DB):
+
+```bash
+railway ssh -s EnergyUA -- npm run db:media-diagnose
+```
+
+(заміни `EnergyUA` на ім’я свого **сервісу з Next**, не Postgres.)
+
+### Лише перевірка БД з домашнього Mac
+
+1. У **Railway** → сервіс **PostgreSQL** → вкладка **Variables** або **Connect** — скопіюй рядок з **публічним** хостом (на кшталт `postgres-production-xxxx.up.railway.app`), з **SSL** якщо платформа просить (`sslmode=require` у query).
+2. Тимчасово підстав його й **локальний** каталог для файлів (або свій клон `storage/media`), наприклад:
+
+```bash
+export DATABASE_URL='postgresql://USER:PASSWORD@postgres-production-5919.up.railway.app:PORT/railway?sslmode=require'
+export MEDIA_ROOT="$(pwd)/storage/media"
+unset RAILWAY_ENVIRONMENT
+npm run db:media-diagnose
+```
+
+`unset RAILWAY_ENVIRONMENT` прибирає «хмарні» підказки в логах, якщо вони лишилися в shell.
+
+### Локально проти своєї БД
+
+```bash
+npm run db:media-diagnose
+```
+
+Скрипт перевіряє: `MEDIA_ROOT`, запис у каталог, `df`, кількість файлів `sha256.ext` на диску, у Prisma — скільки рядків з `http(s)` і з `/api/media/`, і для локальних URL — чи існує файл.
+
 ## Скрипти
 
+- **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url`.
 - **`scripts/railway-entrypoint.sh`** — опційний mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
 
