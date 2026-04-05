@@ -65,9 +65,22 @@ export default async function Home() {
             ))}
           </div>
         ) : (
-          <p className="mt-6 text-sm text-[var(--muted)]">
-            Немає підрозділів — виконайте <code className="rounded bg-[var(--card)] px-1">npm run db:seed</code> та імпорт.
-          </p>
+          <div className="mt-6 space-y-3">
+            <p className="text-sm text-[var(--muted)]">
+              Поки що тут немає розділів. Загальний каталог і пошук по товарах — у розділі «Каталог».
+            </p>
+            <Link
+              href="/catalog"
+              className="inline-flex text-sm font-medium text-[var(--accent)] underline-offset-4 hover:underline"
+            >
+              Перейти в каталог
+            </Link>
+            {process.env.NODE_ENV === "development" ? (
+              <p className="text-xs text-[var(--muted)]">
+                Локально: <code className="rounded bg-[var(--card)] px-1">npm run db:seed</code> та імпорт згідно з docs.
+              </p>
+            ) : null}
+          </div>
         )}
       </section>
     </main>

@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, перед стартом виконується `prisma migrate deploy`, потім `npm run start`.
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, перед стартом виконується **`npm run db:predeploy`** (`prisma migrate deploy` + **`prisma db seed`** — базові категорії та демо-товари), потім `npm run start`.
 
 ## Що зробити в Railway (один раз)
 
@@ -8,7 +8,9 @@
 2. **Додати сервіс** з репозиторію GitHub (або підключити існуючий репо в Settings → Source).
 3. У сервісі застосунку: **Variables** → додати **`DATABASE_URL`**. Найпростіше: **Reference** на змінну з Postgres-сервісу (`${{Postgres.DATABASE_URL}}` або аналог у UI).
 4. Переконатися, що деплой іде з потрібної гілки (наприклад `main`).
-5. Після push Railway сам збере образ, виконає **Pre-deploy** (міграції) і **Deploy** (start).
+5. Після push Railway сам збере образ, виконає **Pre-deploy** (міграції + seed) і **Deploy** (start).
+
+Якщо сайт уже був задеплоєний **до** появи seed у pre-deploy: зроби **Redeploy** (або порожній commit), щоб прогнався новий крок. Або один раз у консолі: `railway run npm run db:seed` (з `DATABASE_URL`).
 
 ## Змінні оточення
 
@@ -30,5 +32,7 @@
 ## Локально
 
 ```bash
-npm run db:migrate:deploy   # застосувати міграції до продакшен-БД (потрібен DATABASE_URL)
+npm run db:migrate:deploy   # лише міграції
+npm run db:predeploy        # міграції + seed (як на Railway pre-deploy)
+npm run db:seed             # лише seed (ідемпотентний upsert)
 ```
