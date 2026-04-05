@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — **`npm run db:predeploy`** (`prisma migrate deploy` + **`prisma db seed`**), другий крок — **`npm run db:railway-rebuild-catalog-if-enabled`** (нічого не робить, доки не задано **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (опційно mirror фото за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + опційно реімпорт, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (опційно mirror фото за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
 
 ## Що зробити в Railway (один раз)
 

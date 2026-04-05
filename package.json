@@ -11,6 +11,7 @@
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:predeploy": "prisma migrate deploy && prisma db seed",
+    "db:predeploy:railway": "npm run db:predeploy && npm run db:railway-rebuild-catalog-if-enabled",
     "db:reset-imported": "tsx scripts/cli/reset-imported-catalog.ts",
     "db:rebuild-catalog": "bash scripts/railway-catalog-rebuild.sh",
     "db:railway-rebuild-catalog-if-enabled": "bash scripts/railway-rebuild-catalog-if-enabled.sh",
