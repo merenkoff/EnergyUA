@@ -3,7 +3,7 @@
  * Увесь вивід з префіксом [media-diagnose] — скопіюй повністю в чат.
  *
  *   npm run db:media-diagnose
- *   railway ssh -s <app-service> -- npm run db:media-diagnose   # у контейнері (volume + internal DB)
+ *   railway ssh -s <app> -- bash /app/scripts/railway-media-diagnose.sh   # у контейнері (cwd SSH ігнорується)
  *
  * Важливо: `railway run` виконує команду НА ТВОЄМУ КОМП'ЮТЕРІ з підставленими змінними з Railway.
  * Тоді недоступні postgres.railway.internal і каталог /data/media (volume) — це нормально, див. hint у логах.

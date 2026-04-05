@@ -66,13 +66,31 @@ npm run db:mirror-images
 
 ### Повна діагностика (БД + файли на volume)
 
-Потрібен доступ до **того самого** середовища, що й у проді: **SSH у контейнер сервісу застосунку** (де змонтований volume і працює internal DB):
+Потрібен доступ до **того самого** середовища, що й у проді: **SSH у контейнер сервісу застосунку** (де змонтований volume і працює internal DB).
+
+**Не використовуй** `railway ssh … -- npm run …` без `cd` у корінь застосунку: SSH часто стартує в `/root`, тоді npm не бачить твій `package.json` або бачить інший → `Missing script`.
+
+Надійно — оболонка з **`scripts/railway-media-diagnose.sh`** (той самий прийом, що в `railway-entrypoint.sh`: перехід у корінь репо за шляхом скрипта):
 
 ```bash
-railway ssh -s EnergyUA -- npm run db:media-diagnose
+railway ssh -s EnergyUA -- bash /app/scripts/railway-media-diagnose.sh
 ```
 
 (заміни `EnergyUA` на ім’я свого **сервісу з Next**, не Postgres.)
+
+Якщо **`No such file`** для `/app` — зайди в інтерактивний `railway ssh -s EnergyUA`, знайди `package.json` (`ls /app`, `pwd`) і запусти звідти:
+
+```bash
+bash scripts/railway-media-diagnose.sh
+```
+
+Або явний `cd`:
+
+```bash
+railway ssh -s EnergyUA -- sh -lc 'cd /app && npm run db:media-diagnose'
+```
+
+Якщо **`Missing script: db:media-diagnose`** навіть після `cd /app` — на Railway задеплоєна **стара** версія репозиторію: зроби deploy з гілки, де в `package.json` уже є `db:media-diagnose` (і є `scripts/cli/media-storage-diagnose.ts`).
 
 ### Лише перевірка БД з домашнього Mac
 
@@ -98,6 +116,7 @@ npm run db:media-diagnose
 
 ## Скрипти
 
+- **`scripts/railway-media-diagnose.sh`** — діагностика **в контейнері** Railway без залежності від cwd SSH (`bash /app/scripts/railway-media-diagnose.sh`).
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url`.
 - **`scripts/railway-entrypoint.sh`** — опційний mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
