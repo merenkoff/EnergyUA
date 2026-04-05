@@ -7,6 +7,8 @@ DEST_DIR="$ROOT/scripts/one-time-db-transfer/committed-dump"
 DUMP_FILE="$DEST_DIR/electroheat.dump"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
 
 cd "$ROOT"
 transfer_log_init "dump-for-commit.sh"
@@ -36,12 +38,15 @@ if [[ -z "${SOURCE_DATABASE_URL:-}" ]]; then
 fi
 
 transfer_log "Джерело (масковано): $(transfer_mask_url "$SOURCE_DATABASE_URL")"
+SOURCE_PG_URL="$(pg_url_for_libpq "$SOURCE_DATABASE_URL")"
+transfer_log "Для pg_dump прибрано Prisma-параметр schema= з URI (libpq його не підтримує)"
+
 mkdir -p "$DEST_DIR"
 rm -f "$DUMP_FILE"
 
 transfer_log "pg_dump → $DUMP_FILE (custom, для коміту)"
 set +e
-pg_dump "$SOURCE_DATABASE_URL" --format=custom --no-owner --file="$DUMP_FILE" 2>&1 | tee -a "$TRANSFER_LOG_FILE"
+pg_dump "$SOURCE_PG_URL" --format=custom --no-owner --file="$DUMP_FILE" 2>&1 | tee -a "$TRANSFER_LOG_FILE"
 EC=${PIPESTATUS[0]}
 set -e
 if [[ "$EC" -ne 0 ]]; then

@@ -8,6 +8,8 @@ OUT_DIR="$ROOT/scripts/one-time-db-transfer/out"
 DUMP_FILE="$OUT_DIR/electroheat.dump"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
 
 cd "$ROOT"
 transfer_log_init "transfer-local-to-remote.sh (dump + restore)"
@@ -56,13 +58,15 @@ fi
 
 transfer_log "Джерело (масковано): $(transfer_mask_url "$SOURCE_DATABASE_URL")"
 transfer_log "Ціль (масковано): $(transfer_mask_url "$TARGET_DATABASE_URL")"
+SOURCE_PG_URL="$(pg_url_for_libpq "$SOURCE_DATABASE_URL")"
+TARGET_PG_URL="$(pg_url_for_libpq "$TARGET_DATABASE_URL")"
 
 mkdir -p "$OUT_DIR"
 rm -f "$DUMP_FILE"
 
-transfer_log "Крок 1/2: pg_dump → electroheat.dump"
+transfer_log "Крок 1/2: pg_dump → electroheat.dump (URI без Prisma schema=)"
 set +e
-pg_dump "$SOURCE_DATABASE_URL" \
+pg_dump "$SOURCE_PG_URL" \
   --format=custom \
   --no-owner \
   --file="$DUMP_FILE" \
@@ -79,7 +83,7 @@ transfer_log "OK: дамп $(ls -lh "$DUMP_FILE" 2>&1)"
 transfer_log "Крок 2/2: pg_restore на ціль"
 set +e
 pg_restore \
-  --dbname="$TARGET_DATABASE_URL" \
+  --dbname="$TARGET_PG_URL" \
   --clean \
   --if-exists \
   --no-owner \

@@ -7,6 +7,8 @@ OUT_DIR="$ROOT/scripts/one-time-db-transfer/out"
 DUMP_FILE="$OUT_DIR/electroheat.dump"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
 
 cd "$ROOT"
 transfer_log_init "dump-from-local.sh"
@@ -43,13 +45,14 @@ if [[ -z "${SOURCE_DATABASE_URL:-}" ]]; then
 fi
 
 transfer_log "Джерело (URL з прихованим паролем): $(transfer_mask_url "$SOURCE_DATABASE_URL")"
+SOURCE_PG_URL="$(pg_url_for_libpq "$SOURCE_DATABASE_URL")"
 
 mkdir -p "$OUT_DIR"
 rm -f "$DUMP_FILE"
 
-transfer_log "Крок: pg_dump → $DUMP_FILE (custom format)"
+transfer_log "Крок: pg_dump → $DUMP_FILE (custom format, URI без Prisma schema=)"
 set +e
-pg_dump "$SOURCE_DATABASE_URL" \
+pg_dump "$SOURCE_PG_URL" \
   --format=custom \
   --no-owner \
   --file="$DUMP_FILE" \

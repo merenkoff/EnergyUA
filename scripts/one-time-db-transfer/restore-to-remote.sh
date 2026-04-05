@@ -6,6 +6,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DUMP_FILE="$ROOT/scripts/one-time-db-transfer/out/electroheat.dump"
 # shellcheck source=/dev/null
 source "$ROOT/scripts/one-time-db-transfer/lib-transfer-log.sh"
+# shellcheck source=/dev/null
+source "$ROOT/scripts/one-time-db-transfer/lib-pg-url.sh"
 
 cd "$ROOT"
 transfer_log_init "restore-to-remote.sh"
@@ -41,11 +43,12 @@ if [[ "${REALLY_REPLACE_REMOTE:-}" != "yes" ]]; then
 fi
 
 transfer_log "Ціль (URL з прихованим паролем): $(transfer_mask_url "$TARGET_DATABASE_URL")"
-transfer_log "Крок: pg_restore --clean --if-exists --no-owner --no-acl --verbose"
+TARGET_PG_URL="$(pg_url_for_libpq "$TARGET_DATABASE_URL")"
+transfer_log "Крок: pg_restore --clean --if-exists --no-owner --no-acl --verbose (URI без Prisma schema=)"
 
 set +e
 pg_restore \
-  --dbname="$TARGET_DATABASE_URL" \
+  --dbname="$TARGET_PG_URL" \
   --clean \
   --if-exists \
   --no-owner \
