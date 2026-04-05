@@ -6,7 +6,7 @@
   },
   "deploy": {
     "preDeployCommand": ["npm run db:predeploy"],
-    "startCommand": "npm run start",
+    "startCommand": "bash scripts/railway-entrypoint.sh",
     "healthcheckPath": "/",
     "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE"

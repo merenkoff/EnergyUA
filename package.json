@@ -10,7 +10,7 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
-    "db:predeploy": "prisma migrate deploy && bash scripts/mirror-product-images-if-enabled.sh && prisma db seed",
+    "db:predeploy": "prisma migrate deploy && prisma db seed",
     "db:mirror-images": "tsx scripts/cli/mirror-product-images.ts",
     "db:ot:dump": "bash scripts/one-time-db-transfer/dump-from-local.sh",
     "db:ot:restore": "bash scripts/one-time-db-transfer/restore-to-remote.sh",

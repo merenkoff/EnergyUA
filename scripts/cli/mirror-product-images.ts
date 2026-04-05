@@ -3,7 +3,7 @@
  * Ідемпотентно: вже локальні /api/media/ пропускає; файл за тим самим sha256 не качає повторно.
  *
  *   npx tsx scripts/cli/mirror-product-images.ts
- *   MIRROR_PRODUCT_IMAGES=yes у Railway pre-deploy (одноразово, потім прибрати змінну)
+ *   MIRROR_PRODUCT_IMAGES=yes на Railway — у scripts/railway-entrypoint.sh перед next start (див. docs/MEDIA-STORAGE.md)
  */
 import { createHash } from "crypto";
 import { createWriteStream } from "fs";
