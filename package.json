@@ -11,6 +11,8 @@
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:predeploy": "prisma migrate deploy && prisma db seed",
+    "db:ot:dump": "bash scripts/one-time-db-transfer/dump-from-local.sh",
+    "db:ot:restore": "bash scripts/one-time-db-transfer/restore-to-remote.sh",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",

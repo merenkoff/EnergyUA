@@ -44,3 +44,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# One-time DB transfer (не комітити дампи)
+/scripts/one-time-db-transfer/out/
