@@ -44,7 +44,7 @@
    ```bash
    npm run db:push-media-railway
    ```
-   (за замовчуванням сервіс `EnergyUA`; інший: `npm run db:push-media-railway -- ІмяСервісу`. Каталог на сервері: `RAILWAY_REMOTE_MEDIA_ROOT=/data/media`.) Потім знову `bash /app/scripts/railway-media-diagnose.sh`.
+   (за замовчуванням сервіс `EnergyUA`; інший: `npm run db:push-media-railway -- ІмяСервісу`. Каталог на сервері: `RAILWAY_REMOTE_MEDIA_ROOT=/data/media`.) Потім знову `bash /app/scripts/railway-media-diagnose.sh`. Спочатку gzip-потік пишеться у **тимчасовий файл** у контейнері (`/tmp/eh-media-staging.tgz` або `PUSH_MEDIA_STAGING`), потім `tar xzf` на volume — так уникаємо «зависання» з ~64 KiB і 0 B/s у `pv` через backpressure одночасної розпаковки. Показує кількість файлів і розмір; під час передачі — `pv` (`brew install pv`) або heartbeat + `tar -v`. `PUSH_MEDIA_QUIET=1` — без цього.
 2. **Після міграції з колонкою `source_url`**: якщо в рядках заповнено `source_url`, а файлу немає — докачка з інтернету:
    ```bash
    railway ssh -s EnergyUA -- bash -lc 'cd /app && npx tsx scripts/cli/repair-missing-product-images.ts'
