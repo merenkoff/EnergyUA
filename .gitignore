@@ -47,3 +47,6 @@ next-env.d.ts
 
 # One-time DB transfer (не комітити дампи)
 /scripts/one-time-db-transfer/out/
+
+# Локальні зеркалені зображення (на Railway — Volume, див. docs/MEDIA-STORAGE.md)
+/storage/media/

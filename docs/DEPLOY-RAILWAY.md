@@ -38,3 +38,5 @@ npm run db:seed             # лише seed (ідемпотентний upsert)
 ```
 
 Повне копіювання локальної БД на прод **без коміту дампу в репозиторій**: [`scripts/one-time-db-transfer/README.md`](../scripts/one-time-db-transfer/README.md) (`npm run db:ot:transfer` та варіанти з `pg_dump`/`pg_restore`).
+
+Зображення товарів (Volume, одноразове дзеркалення URL): [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
