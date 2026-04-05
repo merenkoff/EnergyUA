@@ -1,3 +1,17 @@
+ElectroHeat — каталог електричної теплої підлоги (**Next.js**, **Prisma**, **PostgreSQL**).
+
+## Документація
+
+| Тема | Файл |
+|------|------|
+| Деплой на **Railway** (`railway.json`, pre-deploy: міграції + seed) | [`docs/DEPLOY-RAILWAY.md`](docs/DEPLOY-RAILWAY.md) |
+| Імпорт/парсинг каталогу | [`docs/IMPORT-UK.md`](docs/IMPORT-UK.md) |
+| Перенос БД **локально → віддалений Postgres** (`db:ot:transfer`, дамп не в git) | [`scripts/one-time-db-transfer/README.md`](scripts/one-time-db-transfer/README.md) |
+
+Локально: скопіюй [`.env.example`](.env.example) у `.env` і підстав `DATABASE_URL`.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

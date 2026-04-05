@@ -36,3 +36,5 @@ npm run db:migrate:deploy   # лише міграції
 npm run db:predeploy        # міграції + seed (як на Railway pre-deploy)
 npm run db:seed             # лише seed (ідемпотентний upsert)
 ```
+
+Повне копіювання локальної БД на прод **без коміту дампу в репозиторій**: [`scripts/one-time-db-transfer/README.md`](../scripts/one-time-db-transfer/README.md) (`npm run db:ot:transfer` та варіанти з `pg_dump`/`pg_restore`).
