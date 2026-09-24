@@ -7,12 +7,32 @@
  * гасить різний вміст і лишає контур знака (ідея Dekel et al., CVPR 2017). Далі для кожного фото
  * рахуємо нормовану кореляцію його градієнтів із цим шаблоном у зоні знака.
  */
-import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { isSafeMediaFilename } from "../../src/lib/mediaStorage";
+import { nameSimilarityRatio, normalizeNameKey } from "./productDuplicateSimilarity";
+
+/** Ті самі межі, що в crossSourceDuplicateMerge: коротка назва не є доказом дубліката. */
+const MIN_NORM_LEN = 15;
+const BUCKET_PREFIX_LEN = 12;
 
 export type ImageDonor = "et_market" | "in_heat" | "vsesezon" | "upload" | "other";
+
+/** Рядок «фото товару» — з БД або з манифестів data/scrape. */
+export type ImageRow = {
+  /** id рядка product_images; для манифестів — синтетичний. */
+  imageId: string;
+  url: string;
+  sourceUrl: string | null;
+  sortOrder: number;
+  productId: string;
+  productName: string;
+  productSource: string | null;
+  productExternalId: string | null;
+  mergedIntoProductId: string | null;
+};
 
 /** Звідки фото: за оригінальним URL (після mirror він у sourceUrl), інакше за url. */
 export function imageDonor(url: string, sourceUrl: string | null | undefined): ImageDonor {
@@ -49,20 +69,56 @@ async function fetchBytes(url: string, opts: LoadOptions): Promise<Buffer> {
   return buf;
 }
 
-export async function loadImageBytes(url: string, opts: LoadOptions): Promise<Buffer> {
+/** Імена файлів у MEDIA_ROOT — читаємо каталог один раз (mirror кладе сюди тисячі файлів). */
+let mediaIndex: { root: string; names: Set<string> } | null = null;
+
+async function mediaNames(root: string): Promise<Set<string>> {
+  if (mediaIndex?.root === root) return mediaIndex.names;
+  const names = new Set<string>();
+  try {
+    for (const n of await readdir(root)) if (!n.startsWith(".")) names.add(n);
+  } catch {
+    /* каталогу ще немає */
+  }
+  mediaIndex = { root, names };
+  return names;
+}
+
+/** mirror називає файл sha256(оригінальний URL) — тож зовнішній URL теж може вже лежати на диску. */
+async function localFileForUrl(externalUrl: string, root: string): Promise<string | null> {
+  const hash = createHash("sha256").update(externalUrl, "utf8").digest("hex");
+  const names = await mediaNames(root);
+  for (const ext of ["jpg", "jpeg", "png", "webp", "gif", "bin"]) {
+    const name = `${hash}.${ext}`;
+    if (names.has(name)) return path.join(root, name);
+  }
+  return null;
+}
+
+/**
+ * Байти фото: спершу локальний файл (volume або storage/media), потім мережа.
+ * `sourceUrl` — оригінальний URL донора, за яким mirror іменував файл.
+ */
+export async function loadImageBytes(url: string, sourceUrl: string | null | undefined, opts: LoadOptions): Promise<Buffer> {
   if (url.startsWith("/api/media/")) {
     const name = url.slice("/api/media/".length).split("?")[0] ?? "";
     if (isSafeMediaFilename(name)) {
       try {
         return await readFile(path.join(opts.mediaRoot, name));
       } catch {
-        /* немає на цьому диску — спробуємо сайт */
+        /* немає на цьому диску — пробуємо далі */
       }
     }
-    if (!opts.mediaBaseUrl) throw new Error("файлу немає в MEDIA_ROOT, MEDIA_BASE_URL не задано");
-    return fetchBytes(opts.mediaBaseUrl.replace(/\/$/, "") + url, opts);
+    if (opts.mediaBaseUrl) return fetchBytes(opts.mediaBaseUrl.replace(/\/$/, "") + url, opts);
+    const src = sourceUrl?.trim();
+    if (src) return loadImageBytes(src, null, opts);
+    throw new Error("файлу немає в MEDIA_ROOT, MEDIA_BASE_URL не задано");
   }
-  if (url.startsWith("http://") || url.startsWith("https://")) return fetchBytes(url, opts);
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    const local = await localFileForUrl(url, opts.mediaRoot);
+    if (local) return readFile(local);
+    return fetchBytes(url, opts);
+  }
   throw new Error("невідомий формат url");
 }
 
@@ -241,6 +297,9 @@ export async function gradientField(buf: Buffer, w: number, h: number): Promise<
   return { gx, gy };
 }
 
+/** Менша частка площі під маскою — це шум усереднення, а не знак (у донорів зі знаком: 4–7 %). */
+const MIN_MASK_SHARE = 0.005;
+
 /** Накопичує середнє поле градієнтів групи фото одного розміру. */
 export class WatermarkEstimator {
   readonly sumGx: Float64Array;
@@ -303,11 +362,15 @@ export class WatermarkEstimator {
       w: this.w,
       h: this.h,
       count: this.count,
+      zones: splitMaskIntoZones(mask, this.w, this.h),
       mx,
       my,
       strength,
       mask,
       maskArea: area,
+      // Порожній шаблон (донор без знака) дає лише дрібний шум — так ми й відрізняємо «знака немає».
+      valid: area / size >= MIN_MASK_SHARE,
+      minMaskShare: MIN_MASK_SHARE,
       bbox: area ? { x0, y0, x1, y1 } : null,
       noiseMedian: median,
       cut,
@@ -325,6 +388,11 @@ export type WatermarkTemplate = {
   strength: Float32Array;
   mask: Uint8Array;
   maskArea: number;
+  /** Зв'язні частини маски: донор ставить той самий знак у кількох місцях, і не завжди в усіх. */
+  zones: Uint32Array[];
+  /** Чи схожий шаблон на справжній знак, а не на шум (маска ≥ minMaskShare площі). */
+  valid: boolean;
+  minMaskShare: number;
   bbox: { x0: number; y0: number; x1: number; y1: number } | null;
   noiseMedian: number;
   cut: number;
@@ -332,16 +400,65 @@ export type WatermarkTemplate = {
 };
 
 /** Нормована кореляція градієнтів фото з шаблоном у зоні маски: ~0 — знака немає, ближче до 1 — є. */
-export function watermarkScore(t: WatermarkTemplate, f: { gx: Float32Array; gy: Float32Array }): number {
+/** Зв'язні області маски (8-зв'язність); дрібні шумові плями відкидаємо. */
+function splitMaskIntoZones(mask: Uint8Array, w: number, h: number): Uint32Array[] {
+  const seen = new Uint8Array(mask.length);
+  const zones: number[][] = [];
+  const stack: number[] = [];
+  for (let start = 0; start < mask.length; start++) {
+    if (!mask[start] || seen[start]) continue;
+    const zone: number[] = [];
+    stack.push(start);
+    seen[start] = 1;
+    while (stack.length) {
+      const i = stack.pop()!;
+      zone.push(i);
+      const x = i % w;
+      const y = (i / w) | 0;
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+          const nx = x + dx;
+          const ny = y + dy;
+          if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+          const n = ny * w + nx;
+          if (mask[n] && !seen[n]) {
+            seen[n] = 1;
+            stack.push(n);
+          }
+        }
+      }
+    }
+    zones.push(zone);
+  }
+  zones.sort((a, b) => b.length - a.length);
+  const biggest = zones[0]?.length ?? 0;
+  return zones.filter((z) => z.length >= Math.max(30, biggest * 0.05)).map((z) => Uint32Array.from(z));
+}
+
+function zoneScore(t: WatermarkTemplate, f: { gx: Float32Array; gy: Float32Array }, zone: Uint32Array): number {
   let dot = 0, ff = 0, tt = 0;
-  for (let i = 0; i < t.mask.length; i++) {
-    if (!t.mask[i]) continue;
+  for (const i of zone) {
     dot += f.gx[i] * t.mx[i] + f.gy[i] * t.my[i];
     ff += f.gx[i] * f.gx[i] + f.gy[i] * f.gy[i];
     tt += t.mx[i] * t.mx[i] + t.my[i] * t.my[i];
   }
   if (ff <= 0 || tt <= 0) return 0;
   return dot / Math.sqrt(ff * tt);
+}
+
+/**
+ * Наскільки фото збігається зі шаблоном знака. Донор ставить знак у кількох місцях,
+ * але на конкретному фото може бути лише частина з них, тому беремо найкращу зону,
+ * а не середнє по всій масці — інакше присутній знак «розбавляється» порожніми зонами.
+ */
+export function watermarkScore(t: WatermarkTemplate, f: { gx: Float32Array; gy: Float32Array }): number {
+  if (!t.zones.length) return 0;
+  let best = -1;
+  for (const z of t.zones) {
+    const s = zoneScore(t, f, z);
+    if (s > best) best = s;
+  }
+  return best;
 }
 
 /** ASCII-карта сили шаблону — щоб побачити форму й місце знака прямо в логах. */
@@ -364,4 +481,114 @@ export function asciiMap(values: Float32Array, w: number, h: number, cols = 100,
     out.push(line);
   }
   return out;
+}
+
+/** Шаблон знака для набору фото, приведених до w×h. null — фото замало для усереднення. */
+export async function buildTemplate(buffers: Buffer[], w: number, h: number, minCount = 40): Promise<WatermarkTemplate | null> {
+  if (buffers.length < minCount) return null;
+  const est = new WatermarkEstimator(w, h);
+  for (const b of buffers) est.add(await gradientField(b, w, h));
+  return est.build();
+}
+
+// ---------- джерело: манифести data/scrape ----------
+
+type ManifestProduct = {
+  source: string;
+  externalId: string;
+  nameUk: string;
+  images?: ({ url: string; alt?: string } | string)[];
+};
+
+/**
+ * Рядки «фото товару» прямо з манифестів — щоб аналізувати каталог без БД
+ * (ті самі файли, що й після імпорту: ключ товару — source + externalId).
+ */
+export async function manifestImageRows(scrapeDir: string): Promise<ImageRow[]> {
+  const files = ["et-catalog-DETAIL.json", "in-heat-catalog-DETAIL.json", "vsesezon-catalog.json"];
+  const rows: ImageRow[] = [];
+  for (const f of files) {
+    let parsed: { products?: ManifestProduct[] };
+    try {
+      parsed = JSON.parse(await readFile(path.join(scrapeDir, f), "utf8"));
+    } catch {
+      continue;
+    }
+    for (const p of parsed.products ?? []) {
+      const productId = `${p.source}-${p.externalId}`;
+      let sortOrder = 0;
+      for (const im of p.images ?? []) {
+        const url = typeof im === "string" ? im : im.url;
+        if (!url) continue;
+        rows.push({
+          imageId: `${productId}#${sortOrder}`,
+          url,
+          sourceUrl: null,
+          sortOrder: sortOrder++,
+          productId,
+          productName: p.nameUk,
+          productSource: p.source,
+          productExternalId: p.externalId,
+          mergedIntoProductId: null,
+        });
+      }
+    }
+  }
+  return rows;
+}
+
+// ---------- групи товарів-дублікатів ----------
+
+/**
+ * Ті самі групи, що їх робить імпорт (`crossSourceDuplicateMerge`): назви різних донорів
+ * зі схожістю ≥ 0.9 — це один товар. Потрібно, щоб узяти фото того самого товару в донора,
+ * який не ставить водяних знаків.
+ */
+export function groupDuplicateProducts(
+  products: { productId: string; name: string; source: string | null }[],
+  mergeThreshold = 0.9,
+): Map<string, string> {
+  const parent = new Map<string, string>();
+  const find = (x: string): string => {
+    let r = x;
+    while (parent.get(r) !== r) r = parent.get(r)!;
+    let c = x;
+    while (parent.get(c) !== r) {
+      const n = parent.get(c)!;
+      parent.set(c, r);
+      c = n;
+    }
+    return r;
+  };
+  const union = (a: string, b: string) => {
+    const ra = find(a);
+    const rb = find(b);
+    if (ra !== rb) parent.set(ra, rb);
+  };
+
+  const norm = new Map<string, string>();
+  for (const p of products) {
+    parent.set(p.productId, p.productId);
+    norm.set(p.productId, normalizeNameKey(p.name));
+  }
+
+  // Бакети за префіксом — щоб не порівнювати кожен з кожним.
+  const buckets = new Map<string, string[]>();
+  for (const p of products) {
+    const k = norm.get(p.productId)!;
+    if (k.length < MIN_NORM_LEN) continue;
+    const b = k.slice(0, BUCKET_PREFIX_LEN);
+    if (!buckets.has(b)) buckets.set(b, []);
+    buckets.get(b)!.push(p.productId);
+  }
+  const sourceOf = new Map(products.map((p) => [p.productId, p.source ?? ""]));
+  for (const ids of buckets.values()) {
+    for (let i = 0; i < ids.length; i++) {
+      for (let j = i + 1; j < ids.length; j++) {
+        if (sourceOf.get(ids[i]) === sourceOf.get(ids[j])) continue;
+        if (nameSimilarityRatio(norm.get(ids[i])!, norm.get(ids[j])!) >= mergeThreshold) union(ids[i], ids[j]);
+      }
+    }
+  }
+  return new Map(products.map((p) => [p.productId, find(p.productId)]));
 }
