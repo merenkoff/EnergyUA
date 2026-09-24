@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + опційно реімпорт, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (опційно mirror фото за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + опційно реімпорт, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (`next start` + опційно фоновий mirror фото за `MIRROR_PRODUCT_IMAGES=yes`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
 
 ## Що зробити в Railway (один раз)
 
@@ -20,14 +20,14 @@
 | `RAILWAY_REBUILD_CATALOG` | Якщо **`yes`**, після seed у pre-deploy виконується скидання імпортованих товарів/категорій і повторний імпорт з **`data/scrape/*.json`** у образі (без парсингу сайтів). Після успішного деплою **прибери** змінну, щоб кожен deploy не перезатирав каталог. |
 | `RAILWAY_CATALOG_WIPE_ALL` | Разом з ребілдом: **`yes`** — видалити **всі** товари (включно з демо seed), потім `prisma db seed`, потім імпорт JSON. |
 | `MEDIA_ROOT` | Каталог volume для фото; див. [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md). |
-| `MIRROR_PRODUCT_IMAGES` | **`yes`** у start: завантажити зовнішні URL у `MEDIA_ROOT` і замінити на `/api/media/…`. Потрібно після реімпорту, поки в БД знову `https://…` для картинок. |
+| `MIRROR_PRODUCT_IMAGES` | **`yes`** у start: у фоні (сайт уже працює) завантажити зовнішні URL у `MEDIA_ROOT` і замінити на `/api/media/…`. Потрібно після реімпорту, поки в БД знову `https://…` для картинок; можна лишати ввімкненим. |
 
 ### Рімпорт каталогу на проді + локальні картинки на volume
 
 1. Закоміть актуальні маніфести в **`data/scrape/`** (оновлення з донорів — локально, див. [`IMPORT-UK.md`](IMPORT-UK.md): `parse:*`, `run-full-detail-import.sh`).
 2. У Variables тимчасово: **`RAILWAY_REBUILD_CATALOG=yes`**, **`MIRROR_PRODUCT_IMAGES=yes`**, коректні **`MEDIA_ROOT`** і volume.
-3. Deploy. У pre-deploy підуть міграції, seed, потім реімпорт з JSON; при старті контейнера mirror стягне фото на диск.
-4. Після перевірки сайту: **вимкни** `RAILWAY_REBUILD_CATALOG` (і за бажанням `MIRROR_PRODUCT_IMAGES`).
+3. Deploy. У pre-deploy підуть міграції, seed, потім реімпорт з JSON; після старту контейнера mirror у фоні стягне фото на диск.
+4. Після перевірки сайту: **вимкни** `RAILWAY_REBUILD_CATALOG` (постав `no`), інакше кожен deploy перезатиратиме каталог. `MIRROR_PRODUCT_IMAGES` можна лишити.
 
 Локально той самий реімпорт без зміни Railway: **`npm run db:rebuild-catalog`** (потрібен `DATABASE_URL`).
 
