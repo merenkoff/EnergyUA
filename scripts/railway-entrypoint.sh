@@ -8,6 +8,20 @@ export NODE_ENV="${NODE_ENV:-production}"
 
 # Mirror іде у фоні паралельно з next start: healthcheck не чекає тисячі завантажень,
 # а кожен рядок product_images переключається на /api/media/… лише після того, як файл уже на диску.
+# Донор за Cloudflare (in-heat) не віддає фото ні контейнеру, ні CI — mirror на них отримує 403.
+# Тому їхні файли лежать у репозиторії архівом і розпаковуються на volume при старті.
+# tar -k не чіпає вже наявні, тож повторний деплой нічого не перезаписує.
+MEDIA_SEED_DIR="${MEDIA_SEED_DIR:-data/media-seed}"
+if [[ -d "$MEDIA_SEED_DIR" ]] && compgen -G "$MEDIA_SEED_DIR/*.tgz" > /dev/null; then
+  TARGET="${MEDIA_ROOT:-storage/media}"
+  mkdir -p "$TARGET"
+  for archive in "$MEDIA_SEED_DIR"/*.tgz; do
+    echo "[railway-entrypoint] media-seed: $archive → $TARGET"
+    tar xzkf "$archive" -C "$TARGET" 2>/dev/null || true
+  done
+  echo "[railway-entrypoint] файлів у $TARGET: $(find "$TARGET" -maxdepth 1 -type f ! -name '.*' | wc -l | tr -d ' ')"
+fi
+
 if [[ "${MIRROR_PRODUCT_IMAGES:-}" == "yes" ]]; then
   echo "[railway-entrypoint] MIRROR_PRODUCT_IMAGES=yes → mirror-product-images.ts у фоні"
   (

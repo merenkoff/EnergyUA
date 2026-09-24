@@ -36,6 +36,20 @@ Mirror працює **у фоні** паралельно з `next start`: сай
 4. Перевір у браузері прямий URL: `https://<твій-домен>/api/media/<перший-файл>.jpg` (ім’я візьми з БД або з логів mirror).
 5. **`MEDIA_ROOT` залиш**. `MIRROR_PRODUCT_IMAGES` можна лишити `yes` (див. таблицю вище) або вимкнути.
 
+## Донор за Cloudflare: фото в репозиторії (`data/media-seed/`)
+
+**in-heat.kiev.ua** закритий перевіркою Cloudflare («Just a moment…») і віддає **403** усім, крім браузера, який її пройшов. Ні mirror на контейнері, ні CI ці фото не завантажать, тому вони лежать у репозиторії архівом **`data/media-seed/in-heat.tgz`** (688 файлів, ~22 МБ) з тими самими іменами `sha256(URL).ext`, що їх очікує mirror.
+
+При старті [`railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) розпаковує кожен `data/media-seed/*.tgz` у `MEDIA_ROOT` через `tar -k` — наявні файли не перезаписуються, тож повторний деплой нічого не псує. Далі mirror бачить готові файли й переводить `product_images.url` на `/api/media/…` **без жодного мережевого запиту** (у логах — «повторне використання файлу»).
+
+Щоб додати новий набір: складіть файли з правильними іменами в архів і покладіть у `data/media-seed/`.
+
+```bash
+tar czf data/media-seed/<донор>.tgz -C <каталог з файлами> .
+```
+
+**Чому не `railway ssh`:** передача файлу через `railway ssh -- dd of=…` у неінтерактивній оболонці зависає — stdin у канал не проходить (файл створюється порожнім). Тому `db:push-media-railway` працює лише з термінала вручну, а автоматичний шлях — через `data/media-seed/`.
+
 ## Якщо в HTML є `/api/media/...`, але 404
 
 Це означає: **у БД вже локальні шляхи**, а **файлів на volume немає** (типово після mirror у pre-deploy без volume або з невірним `MEDIA_ROOT`).
@@ -132,7 +146,7 @@ npm run db:media-diagnose
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/repair-missing-product-images.ts`** — докачка відсутніх файлів за `source_url` (`npm run db:repair-images`).
 - **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url` + заповнення `source_url`.
-- **`scripts/railway-entrypoint.sh`** — опційний фоновий mirror за `MIRROR_PRODUCT_IMAGES=yes` + `next start`.
+- **`scripts/railway-entrypoint.sh`** — розпакування `data/media-seed/*.tgz` на volume, опційний фоновий mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
 
 **Pre-deploy** (`db:predeploy`) лише: `prisma migrate deploy` + `prisma db seed` — **без** mirror.
 
