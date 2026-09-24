@@ -53,6 +53,7 @@ Mirror працює **у фоні** паралельно з `next start`: сай
    ```
    або локально з публічним `DATABASE_URL` і правильним `MEDIA_ROOT`: `npm run db:repair-images`. Для **старих** рядків без `source_url` repair нічого не зробить — лише п.1 або реімпорт.
 3. **Відкотити БД** до зовнішніх `http(s)` у `product_images` + знову mirror на контейнері з volume (якщо є бекап БД).
+4. **Донор за Cloudflare (in-heat)**: ні mirror, ні repair з Railway його не скачають («Just a moment…»). Фото качаються вручну у власному браузері й відправляються на volume: [MANUAL-IMAGE-DOWNLOAD.md](MANUAL-IMAGE-DOWNLOAD.md).
 
 З **нових** деплоїв mirror записує **`source_url`** (оригінальний URL) при заміні на `/api/media/…`, щоб можна було **repair** без копії файлів.
 
@@ -127,7 +128,8 @@ npm run db:media-diagnose
 
 ## Скрипти
 
-- **`scripts/push-media-to-railway-volume.sh`** — стиснення локального `storage/media` і розпаковка в `$MEDIA_ROOT` на сервісі через `railway ssh` (`npm run db:push-media-railway`).
+- **`scripts/push-media-to-railway-volume.sh`** — стиснення локального `storage/media` (або каталогу з `PUSH_MEDIA_DIR`) і розпаковка в `$MEDIA_ROOT` на сервісі через `railway ssh` (`npm run db:push-media-railway`).
+- **`scripts/cli/manual-image-download.ts`** + **`scripts/browser/manual-image-downloader.js`** — ручне завантаження фото з донора за Cloudflare у своєму браузері (`npm run db:manual-images:prepare` / `db:manual-images:ingest`), див. [MANUAL-IMAGE-DOWNLOAD.md](MANUAL-IMAGE-DOWNLOAD.md).
 - **`scripts/railway-media-diagnose.sh`** — діагностика **в контейнері** Railway без залежності від cwd SSH (`bash /app/scripts/railway-media-diagnose.sh`).
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/repair-missing-product-images.ts`** — докачка відсутніх файлів за `source_url` (`npm run db:repair-images`).

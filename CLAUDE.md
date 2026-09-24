@@ -39,7 +39,8 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 ### Product images
 - Images are stored as `{sha256}.{ext}` under `MEDIA_ROOT` and served by `src/app/api/media/[filename]/route.ts`, which validates the filename and blocks path traversal. `MEDIA_ROOT` defaults to `storage/media`, which is gitignored. On Railway it is the volume at `/data/media`.
 - `product_images.url` holds either an external `http(s)` URL (right after an import) or `/api/media/…` (after mirroring). `sourceUrl` keeps the original URL so that `db:repair-images` can download missing files again.
-- `scripts/cli/mirror-product-images.ts` downloads external images and rewrites the URLs. Admin uploads go through `src/lib/saveProductImage.ts`.
+- `scripts/cli/mirror-product-images.ts` downloads external images and rewrites the URLs. Admin uploads go through `src/lib/saveProductImage.ts`. The `{sha256(url)}.{ext}` naming lives in `scripts/lib/mediaFileNaming.ts`.
+- in-heat is behind a Cloudflare challenge, so the mirror can't download its images from Railway. A person downloads them in their own browser: `db:manual-images:prepare` generates a DevTools snippet (`scripts/browser/manual-image-downloader.js`) that saves a ZIP of mirror-named files, and `db:manual-images:ingest` validates it into `MEDIA_ROOT` and stages a `push/` dir for `PUSH_MEDIA_DIR=… npm run db:push-media-railway`. See `docs/MANUAL-IMAGE-DOWNLOAD.md`.
 
 ### Scrape → import pipeline (`scripts/`, run with `tsx`)
 - `scripts/parsers/` contains cheerio scrapers for the three donor sites. `scripts/cli/crawl-*.ts` write manifest JSON to `data/scrape/`, and those files are committed. Production imports the `*-DETAIL.json` files and `vsesezon-catalog.json`.

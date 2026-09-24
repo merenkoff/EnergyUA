@@ -5,11 +5,11 @@
  *   npx tsx scripts/cli/mirror-product-images.ts
  *   MIRROR_PRODUCT_IMAGES=yes на Railway — у scripts/railway-entrypoint.sh перед next start (див. docs/MEDIA-STORAGE.md)
  */
-import { createHash } from "crypto";
 import { createWriteStream } from "fs";
 import { mkdir, readdir, rename, unlink } from "fs/promises";
 import path from "path";
 import { PrismaClient } from "@prisma/client";
+import { MEDIA_FILE_EXTS, extFromContentType, extFromPathname, hashUrl } from "../lib/mediaFileNaming";
 
 const prisma = new PrismaClient();
 
@@ -19,31 +19,6 @@ const CONCURRENCY = Math.min(16, Math.max(1, Number(process.env.MIRROR_IMAGE_CON
 const USER_AGENT =
   process.env.MIRROR_IMAGE_USER_AGENT ||
   "ElectroHeatBot/1.0 (+product image mirror)";
-
-function hashUrl(u: string): string {
-  return createHash("sha256").update(u, "utf8").digest("hex");
-}
-
-function extFromContentType(ct: string | null): string {
-  if (!ct) return "bin";
-  const s = ct.split(";")[0].trim().toLowerCase();
-  if (s.includes("jpeg")) return "jpg";
-  if (s.includes("png")) return "png";
-  if (s.includes("webp")) return "webp";
-  if (s.includes("gif")) return "gif";
-  return "bin";
-}
-
-function extFromPathname(urlStr: string): string | null {
-  try {
-    const p = new URL(urlStr).pathname.toLowerCase();
-    const m = p.match(/\.(jpe?g|png|webp|gif)(?:$|[?#])/);
-    if (!m) return null;
-    return m[1] === "jpeg" ? "jpg" : m[1];
-  } catch {
-    return null;
-  }
-}
 
 const existingNamesCache = new Set<string>();
 
@@ -61,7 +36,7 @@ async function loadNameCache(): Promise<void> {
 }
 
 async function findExistingFileForHash(hash: string): Promise<string | null> {
-  for (const ext of ["jpg", "jpeg", "png", "webp", "gif", "bin"]) {
+  for (const ext of MEDIA_FILE_EXTS) {
     const name = `${hash}.${ext}`;
     if (existingNamesCache.has(name)) return name;
   }

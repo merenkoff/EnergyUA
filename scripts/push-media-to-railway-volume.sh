@@ -4,6 +4,8 @@
 #
 #   npm run db:push-media-railway
 #   RAILWAY_REMOTE_MEDIA_ROOT=/data/media npm run db:push-media-railway -- OtherService
+#   PUSH_MEDIA_DIR=storage/manual-download/in-heat.kiev.ua/push npm run db:push-media-railway
+#     — відправити лише цей каталог (типово storage/media; див. docs/MANUAL-IMAGE-DOWNLOAD.md)
 #
 # Прогрес:
 #   brew install pv   → смуга / МБ / швидкість по gzip-потоку
@@ -15,19 +17,22 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SERVICE="${1:-EnergyUA}"
 REMOTE_ROOT="${RAILWAY_REMOTE_MEDIA_ROOT:-/data/media}"
+SRC_DIR="${PUSH_MEDIA_DIR:-storage/media}"
+# macOS tar інакше додає AppleDouble-файли ._* з xattr.
+export COPYFILE_DISABLE=1
 
 cd "$ROOT"
-if [ ! -d storage/media ]; then
-  echo "Немає каталогу storage/media (очікується $ROOT/storage/media)" >&2
+if [ ! -d "$SRC_DIR" ]; then
+  echo "Немає каталогу $SRC_DIR (відносно $ROOT)" >&2
   exit 1
 fi
 # Будь-яка глибина (не лише корінь): mirror кладе sha256.ext у storage/media, але перевірка maxdepth=1 давала хибне «порожньо».
-first_file="$(find storage/media -type f 2>/dev/null | head -n 1 || true)"
+first_file="$(find "$SRC_DIR" -type f 2>/dev/null | head -n 1 || true)"
 if [ -z "$first_file" ]; then
-  echo "storage/media: не знайдено жодного файлу (find -type f)." >&2
-  echo "Каталог: $ROOT/storage/media" >&2
-  ls -la storage/media 2>&1 | head -20 >&2 || true
-  echo "Якщо файли точно є — перевір права читання: chmod -R u+rX storage/media" >&2
+  echo "$SRC_DIR: не знайдено жодного файлу (find -type f)." >&2
+  echo "Каталог: $ROOT/$SRC_DIR" >&2
+  ls -la "$SRC_DIR" 2>&1 | head -20 >&2 || true
+  echo "Якщо файли точно є — перевір права читання: chmod -R u+rX $SRC_DIR" >&2
   exit 1
 fi
 
@@ -36,10 +41,10 @@ if [ -z "$REMOTE_ROOT" ]; then
   exit 1
 fi
 
-FILE_COUNT="$(find storage/media -type f 2>/dev/null | wc -l | tr -d ' ')"
-SIZE_H="$(du -sh storage/media 2>/dev/null | awk '{print $1}')"
+FILE_COUNT="$(find "$SRC_DIR" -type f 2>/dev/null | wc -l | tr -d ' ')"
+SIZE_H="$(du -sh "$SRC_DIR" 2>/dev/null | awk '{print $1}')"
 echo "[push-media] файлів: ${FILE_COUNT}, розмір на диску (орієнтир): ${SIZE_H} — gzip-потік буде менший; передача часто 5–30+ хв при тисячах файлів" >&2
-echo "Архів storage/media → railway ssh -s ${SERVICE} → ${REMOTE_ROOT}"
+echo "Архів ${SRC_DIR} → railway ssh -s ${SERVICE} → ${REMOTE_ROOT}"
 echo "(якщо обрив або таймаут — спробуй менший набір або повтори; великі каталоги можуть йти хвилини)"
 # Не використовуємо sh -c: railway ssh часто ламає квотування, тоді mkdir отримує порожній шлях («missing operand»),
 # а локальний tar отримує «Write error» через закритий пайп.
@@ -61,11 +66,11 @@ stream_to_staging() {
 
 echo "Крок 2b: gzip-потік → ${STAGING_PATH} (dd)…" >&2
 if [ "${PUSH_MEDIA_QUIET:-}" = "1" ]; then
-  tar czf - -C storage/media . | stream_to_staging
+  tar czf - -C "$SRC_DIR" . | stream_to_staging
 else
   if command -v pv >/dev/null 2>&1; then
     echo "[push-media] pv: фаза запису на контейнер; потім крок 2c (розпаковка) — без оновлення pv" >&2
-    tar czf - -C storage/media . | pv -f -i 2 -trb | stream_to_staging
+    tar czf - -C "$SRC_DIR" . | pv -f -i 2 -trb | stream_to_staging
   else
     HB_SEC="${PUSH_MEDIA_HEARTBEAT_SEC:-12}"
     echo "[push-media] без pv: heartbeat кожні ${HB_SEC} с + tar -v; brew install pv — для МБ/с" >&2
@@ -78,7 +83,7 @@ else
     ) &
     HB_PID=$!
     trap 'kill "$HB_PID" 2>/dev/null || true; wait "$HB_PID" 2>/dev/null || true' EXIT INT TERM
-    tar czvf - -C storage/media . | stream_to_staging
+    tar czvf - -C "$SRC_DIR" . | stream_to_staging
     kill "$HB_PID" 2>/dev/null || true
     wait "$HB_PID" 2>/dev/null || true
     trap - EXIT INT TERM
