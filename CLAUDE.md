@@ -56,6 +56,8 @@ The service deploys from `main` using the config in `railway.json`:
 
 The volume is not mounted during pre-deploy, so never write media files there. Mirroring belongs in the start step.
 
+On the current Railway service the deploy section of `railway.json` was not picked up: pre-deploy and the start command didn't run. The same commands are therefore also set directly in the service settings (build, pre-deploy, start, healthcheck). If you change them in `railway.json`, change them in Railway too. The Railway `redeploy` action reuses the old config snapshot, so to apply new settings trigger a fresh deploy with a push or a variable change.
+
 Environment variables:
 - `DATABASE_URL`
 - `MEDIA_ROOT`: must equal the volume mount path.
