@@ -52,7 +52,7 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 The service deploys from `main` using the config in `railway.json`:
 - **build:** `npm ci && npm run build`
 - **preDeploy:** `npm run db:predeploy:railway`, which runs migrations and the seed. If `RAILWAY_REBUILD_CATALOG=yes`, it then also wipes the imported catalog and re-imports it from `data/scrape/*.json` (`scripts/railway-catalog-rebuild.sh`).
-- **start:** `scripts/railway-entrypoint.sh`. If `MIRROR_PRODUCT_IMAGES=yes`, it mirrors images before starting, then runs `next start`.
+- **start:** `scripts/railway-entrypoint.sh`. It runs `next start`. If `MIRROR_PRODUCT_IMAGES=yes`, it also mirrors images in a background subshell, so the healthcheck doesn't wait for the downloads.
 
 The volume is not mounted during pre-deploy, so never write media files there. Mirroring belongs in the start step.
 

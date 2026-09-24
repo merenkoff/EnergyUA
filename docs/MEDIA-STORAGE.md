@@ -15,14 +15,16 @@
 
 ## Чому mirror не в pre-deploy
 
-**Pre-deploy** на Railway часто виконується в середовищі, де **ще немає** змонтованого volume (або запис іде в ephemeral шар). Тому дзеркалення запускається в **`scripts/railway-entrypoint.sh`** **перед** `next start`, коли volume уже доступний. У [`railway.json`](../railway.json) задано `startCommand: bash scripts/railway-entrypoint.sh`.
+**Pre-deploy** на Railway часто виконується в середовищі, де **ще немає** змонтованого volume (або запис іде в ephemeral шар). Тому дзеркалення запускається в **`scripts/railway-entrypoint.sh`**, коли volume уже доступний. У [`railway.json`](../railway.json) (і в налаштуваннях сервісу Railway) задано `startCommand: bash scripts/railway-entrypoint.sh`.
+
+Mirror працює **у фоні** паралельно з `next start`: сайт стартує одразу й проходить healthcheck, а тисячі завантажень не впираються в його таймаут. Кожен рядок `product_images` переключається на `/api/media/…` лише після того, як файл уже лежить на volume, тож поки mirror триває, фото просто віддаються з оригінальних URL. Прогрес видно в Deploy Logs (`… N / M`, наприкінці `[railway-entrypoint] mirror завершено`). Якщо контейнер зупинили посеред mirror, наступний старт прибирає недокачані `.tmp-*` і докачує решту.
 
 ## Змінні оточення
 
 | Змінна | Опис |
 |--------|------|
 | `MEDIA_ROOT` | Каталог файлів. Локально: `storage/media`. Railway: **той самий шлях, що й mount volume**. |
-| `MIRROR_PRODUCT_IMAGES` | Якщо `yes`, при **старті** контейнера (перед `next start`) виконується `mirror-product-images.ts`. Після першого успішного деплою з файлами на volume краще **прибрати** змінну (повторний запуск швидкий, якщо всі URL уже `/api/media/…`, але зайвий прохід по БД не потрібен). |
+| `MIRROR_PRODUCT_IMAGES` | Якщо `yes`, при **старті** контейнера у фоні (паралельно з `next start`) виконується `mirror-product-images.ts`. Можна лишати ввімкненим: повторний прохід швидкий (уже локальні `/api/media/…` пропускаються), зате після реімпорту каталогу нові фото підтягнуться самі. |
 | `MIRROR_IMAGE_MAX_BYTES` | Макс. розмір одного файлу (байти), за замовчуванням `15728640` (15 MiB). |
 | `MIRROR_IMAGE_CONCURRENCY` | Паралельні завантаження (1–16), за замовчуванням `6`. |
 
@@ -30,9 +32,9 @@
 
 1. Сервіс застосунку → **Volumes** → mount **`/data/media`** (або інший шлях — тоді підстав його всюди).
 2. **Variables:** `MEDIA_ROOT=/data/media` (той самий шлях).
-3. Для першого наповнення: **`MIRROR_PRODUCT_IMAGES=yes`**, deploy.
+3. **`MIRROR_PRODUCT_IMAGES=yes`**, deploy. Сайт стартує одразу, фото докачуються у фоні (див. Deploy Logs).
 4. Перевір у браузері прямий URL: `https://<твій-домен>/api/media/<перший-файл>.jpg` (ім’я візьми з БД або з логів mirror).
-5. Після успіху: **видали** `MIRROR_PRODUCT_IMAGES`, **`MEDIA_ROOT` залиш**.
+5. **`MEDIA_ROOT` залиш**. `MIRROR_PRODUCT_IMAGES` можна лишити `yes` (див. таблицю вище) або вимкнути.
 
 ## Якщо в HTML є `/api/media/...`, але 404
 
@@ -130,7 +132,7 @@ npm run db:media-diagnose
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/repair-missing-product-images.ts`** — докачка відсутніх файлів за `source_url` (`npm run db:repair-images`).
 - **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url` + заповнення `source_url`.
-- **`scripts/railway-entrypoint.sh`** — опційний mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
+- **`scripts/railway-entrypoint.sh`** — опційний фоновий mirror за `MIRROR_PRODUCT_IMAGES=yes` + `next start`.
 
 **Pre-deploy** (`db:predeploy`) лише: `prisma migrate deploy` + `prisma db seed` — **без** mirror.
 
