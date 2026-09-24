@@ -40,6 +40,8 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 - Images are stored as `{sha256}.{ext}` under `MEDIA_ROOT` and served by `src/app/api/media/[filename]/route.ts`, which validates the filename and blocks path traversal. `MEDIA_ROOT` defaults to `storage/media`, which is gitignored. On Railway it is the volume at `/data/media`.
 - `product_images.url` holds either an external `http(s)` URL (right after an import) or `/api/media/…` (after mirroring). `sourceUrl` keeps the original URL so that `db:repair-images` can download missing files again.
 - `scripts/cli/mirror-product-images.ts` downloads external images and rewrites the URLs. Admin uploads go through `src/lib/saveProductImage.ts`.
+- in-heat.kiev.ua sits behind a Cloudflare challenge and returns 403 to everything but a browser, so mirror can never fetch its photos. They ship in the repo as `data/media-seed/in-heat.tgz` and the entrypoint unpacks them onto the volume with `tar -k` before mirror runs. Pushing files with `railway ssh -- dd` hangs in a non-interactive shell, so `data/media-seed/` is the automated path.
+- `npm run img:analyze` finds donor watermarks (and pHash duplicates); `npm run img:cleanup` applies the result — clean photo as cover, swap a marked shot for a clean one. See `docs/IMAGE-WATERMARKS.md`.
 
 ### Scrape → import pipeline (`scripts/`, run with `tsx`)
 - `scripts/parsers/` contains cheerio scrapers for the three donor sites. `scripts/cli/crawl-*.ts` write manifest JSON to `data/scrape/`, and those files are committed. Production imports the `*-DETAIL.json` files and `vsesezon-catalog.json`.

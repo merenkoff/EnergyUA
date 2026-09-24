@@ -8,6 +8,7 @@ ElectroHeat — каталог електричної теплої підлог�
 | Імпорт/парсинг каталогу | [`docs/IMPORT-UK.md`](docs/IMPORT-UK.md) |
 | Перенос БД **локально → віддалений Postgres** (`db:ot:transfer`, дамп не в git) | [`scripts/one-time-db-transfer/README.md`](scripts/one-time-db-transfer/README.md) |
 | **Фото товарів** (Volume на Railway, `/api/media`, дзеркалення URL) | [`docs/MEDIA-STORAGE.md`](docs/MEDIA-STORAGE.md) |
+| **Водяні знаки донорів** на фото (аналіз, чисті обкладинки) | [`docs/IMAGE-WATERMARKS.md`](docs/IMAGE-WATERMARKS.md) |
 
 Локально: скопіюй [`.env.example`](.env.example) у `.env` і підстав `DATABASE_URL`.
 
