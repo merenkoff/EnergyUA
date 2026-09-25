@@ -1,0 +1,24 @@
+{
+  "id": "heat-plus/2m-iteo",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "2M iTeo",
+  "nameUk": "Зовнішній датчик регулятора температури - сенсор 2M iTeo, 10кОм при 25°С, максимальна чутливість.",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 215,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Зовнішній датчик регулятора температури - сенсор 2M iTeo, 10кОм при 25°С, максимальна чутливість.</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

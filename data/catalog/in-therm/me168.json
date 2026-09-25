@@ -1,0 +1,62 @@
+{
+  "id": "in-therm/me168",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "ME168",
+  "nameUk": "Термоголовка для радіатора IN-THERM ME168",
+  "category": "termorehuliatory",
+  "tags": [
+    "wi-fi",
+    "zigbee",
+    "kytai"
+  ],
+  "priceUah": 1800,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Перехідники до радіаторів: RA, RAV, RAVL</p>",
+  "specs": [
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Китай",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "5-35 С",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "2 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "protocol",
+      "labelUk": "Протокол",
+      "value": "Zigbee/Wi-Fi",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_supply",
+      "labelUk": "Живлення",
+      "value": "батарейки АА",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

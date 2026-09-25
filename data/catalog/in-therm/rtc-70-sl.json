@@ -1,0 +1,97 @@
+{
+  "id": "in-therm/rtc-70-sl",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "RTC 70 SL",
+  "nameUk": "Терморегулятор IN-THERM RTC 70 SL",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi",
+    "datchyk-pidlohy",
+    "kytai"
+  ],
+  "priceUah": 600,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Аналоговий",
+  "description": "<p>Ціна адаптеру Asfora - 50 грн</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "аналоговий",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Китай",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "sensor_floor",
+      "labelUk": "Датчик підлоги",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "5…40",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16 А",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 20",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "у підрозетник",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "compat",
+      "labelUk": "Сумісність з рамками",
+      "value": "Schneider Unica та Asfora, Legrand Valena",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий, біжевий, чорний мат",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

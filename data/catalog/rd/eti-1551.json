@@ -1,0 +1,34 @@
+{
+  "id": "rd/eti-1551",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETI-1551",
+  "nameUk": "Терморегулятор OJ Electronics ETI-1551",
+  "category": "antyobledeninnia",
+  "tags": [
+    "din-reika",
+    "truby",
+    "daniia"
+  ],
+  "priceUah": 4788,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор ETI-1551 для регулирования температуры в промислових системах",
+  "description": "<p>ETI - терморегулятор для регулювання температури в промислових системах, наприклад, в системах підтримки температур трубопроводів та ємностей. Також може використовуватися у всіх інших системах, де необхідно підтримування температури в діапазоні -10 ... + 50 ° С \nДодатково необхідно придбати датчик.У системах підтримки температури трубопроводів та ємностей використовується терморгулятор ETI-1551 з датчиком ETF-622. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "4148",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

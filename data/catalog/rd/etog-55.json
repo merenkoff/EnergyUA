@@ -1,0 +1,33 @@
+{
+  "id": "rd/etog-55",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETOG-55",
+  "nameUk": "Датчик OJ Electronics ETOG-55",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "daniia"
+  ],
+  "priceUah": 20475,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "датчик вологи та температури грунту",
+  "description": "<p>ETOG-55 - датчик грунту з кабелем довжиною 10 м. Реєструє температуру і вологість.Призначений для установки на поверхні ґрунту за межами приміщення на відкритих майданчиках. Можливо встановити два датчика типу ETOG. Розміри:висота - 32 мм, діаметр — 60мм. Довжина кабелю:10 м. Діапазон температур:-50 ... +70°С. Ступінь захисту:IP68. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "4078",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

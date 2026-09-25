@@ -1,0 +1,85 @@
+{
+  "id": "ar-ryxon-flex/fh-p-2160",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "FH P 2160",
+  "nameUk": "Нагрівальний мат Arnold Rak Premium FH P 2160 — 6 м², 1200 Вт (200 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "200-vt-m2",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 19300,
+  "priceKitUah": 19670,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний мат серії Premium 200 Вт/м² для укладання в плитковий клей.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1200",
+      "number": 1200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "6",
+      "number": 6.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5х12,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ, екран — алюмінієва фольга",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Premium_AR_кабель_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

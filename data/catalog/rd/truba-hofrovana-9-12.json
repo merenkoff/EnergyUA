@@ -1,0 +1,32 @@
+{
+  "id": "rd/truba-hofrovana-9-12",
+  "supplier": "rd",
+  "brand": null,
+  "sku": "Труба гофрована 9/12",
+  "nameUk": "Труба гофрована 9/12",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "vodostoky-ta-pokrivlia"
+  ],
+  "priceUah": 14,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "продається лише разом з нагрівальним кабелем",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "954",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "комплек-щі",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

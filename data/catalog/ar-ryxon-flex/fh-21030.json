@@ -1,0 +1,47 @@
+{
+  "id": "ar-ryxon-flex/fh-21030",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "FH 21030",
+  "nameUk": "Сушарка для взуття Arnold Rak FH 21030 — 0,3x1,00 м, 40 Вт",
+  "category": "kylymky-z-pidihrivom",
+  "tags": [
+    "dlia-domu",
+    "nimechchyna"
+  ],
+  "priceUah": 2100,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "40",
+      "number": 40.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,3x1,00",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "0,27",
+      "number": 0.27,
+      "unit": "м²"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Premium_AR_кабель_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "heat-plus/m8-716-wdz-bilyi-wifi",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M8.716 WDZ-Білий",
+  "nameUk": "Терморегулятор Heat Plus M8.716 WDZ-Білий, двозонний, з WI-FI",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi",
+    "dvozonnyi"
+  ],
+  "priceUah": 2640,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмований, сенсорний, двозонний",
+  "description": "<p>Колір дісплея - білий. Вимір температури тільки по виносних датчиках</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмований, сенсорний, двозонний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х15 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

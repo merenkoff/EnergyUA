@@ -1,0 +1,48 @@
+{
+  "id": "ar-ryxon-flex/ar-16-sl",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "AR 16 SL",
+  "nameUk": "Терморегулятор Arnold Rak AR 16 SL з датчиком підлоги",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi",
+    "datchyk-pidlohy",
+    "nimechchyna"
+  ],
+  "priceUah": 1970,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор з датчиком t˚ підлоги, 230В, 16А",
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий/сл.к",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Терморегулятори AR",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

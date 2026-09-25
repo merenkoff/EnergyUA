@@ -1,0 +1,67 @@
+{
+  "id": "in-therm/deye-sun-8k-sg01lp1-eu",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye SUN-8K-SG01LP1-EU",
+  "nameUk": "Гібридний інвертор Deye SUN-8K-SG01LP1-EU",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Однофазний</p><p>Номінальна потужність 8 кВт</p><p>Максимальна потужність 8,8 кВт</p><p>Температура розрядки: від -40 до +60℃</p><p>Мінімальна вхідна напруга PV-поля 125 В</p><p>Максимальна вхідна напруга PV-поля 500 В</p><p>Номінальна вхідна/вихідна напруга 220/230 В</p><p>Номінальний вхідний/вихідний змінний струм 36.4/34.8 A</p><p>Форма вихідного сигналу: чиста синусоїда</p><p>Індикація LCD дисплей</p><p>Клас захисту IP65</p><p>Оснащений двома MPPT контролерами.</p><p>Сумісний з акумуляторами Li-ion, LFP та Lead Acid (свинцево-кислотного типу) з напругою 40-60 В</p><p>Інтелектуальне повітряне охолодження</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "8000",
+      "number": 8000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "peak_power_w",
+      "labelUk": "Пікова потужність",
+      "value": "8800",
+      "number": 8800.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "30",
+      "number": 30.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "42х67х23,3",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "phases",
+      "labelUk": "Фази",
+      "value": "однофазний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

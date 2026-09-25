@@ -1,0 +1,74 @@
+{
+  "id": "in-therm/dtr-e",
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "sku": "DTR-E",
+  "nameUk": "Терморегулятор для зовнішнього обігріву Eberle DTR-E",
+  "category": "antyobledeninnia",
+  "tags": [
+    "nimechchyna"
+  ],
+  "priceUah": 2890,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Биметаллический термостат с верхним и нижним пределами по температуре",
+  "description": null,
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "биметаллический термостат с верхним и нижним пределами по температуре",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Німеччина",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16 А",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 67",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "настінний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "zones",
+      "labelUk": "Кількість зон",
+      "value": "одна",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

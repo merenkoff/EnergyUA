@@ -1,0 +1,67 @@
+{
+  "id": "in-therm/ecosun-s-plus-18",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "ECOSUN S+ 18",
+  "nameUk": "Інфрачервона панель Fenix ECOSUN S+ 18 — 1800 Вт",
+  "category": "infrachervoni-obihrivachi",
+  "tags": [
+    "chekhiia"
+  ],
+  "priceUah": 10370,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Високотемпературна стельова панель для приміщень з висотою стелі 3,5–8 м, локального обігріву та вулиці.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1800",
+      "number": 1800.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230/400",
+      "number": null,
+      "unit": "В"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "12,2",
+      "number": 12.2,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "1550х250х60 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 44",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІЧ ПАНЕЛІ FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

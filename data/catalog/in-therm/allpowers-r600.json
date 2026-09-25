@@ -1,0 +1,86 @@
+{
+  "id": "in-therm/allpowers-r600",
+  "supplier": "in-therm",
+  "brand": "allpowers",
+  "sku": "Allpowers R600",
+  "nameUk": "Зарядна станція Allpowers R600",
+  "category": "enerhetyka",
+  "tags": [],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Підключення пристроїв</p><p>Розетка AC 230В, USB Type-C, USB Type-A, DC,</p><p>Автомобільна розетка (прикурювач), XT60, Бездротова зарядка</p><p>Параметри заряду пристроїв</p><p>Номінальна потужність, Вт: 600</p><p>Пікова потужність, Вт: 1200</p><p>Форма вихідного сигналу: чиста синусоїда</p><p>Батарея: LiFePO4</p><p>Эмність, Вт·год: 299</p><p>Цикли зарядки: 3500</p><p>Параметри заряду станції</p><p>Потужність заряджання від розетки AC 230В, Вт: 400</p><p>Потужність зарядки від сонячної панелі, Вт: 220</p><p>Час зарядки від розетки, год: 1</p><p>Час зарядки від сонячної панелі, год: 5</p><p>Функція ДБЖ</p><p>Дисплей: є</p><p>Розміри, мм: 285x195x190</p><p>Вага, кг: 8</p><p>Ручка для переносу: є</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "600",
+      "number": 600.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "peak_power_w",
+      "labelUk": "Пікова потужність",
+      "value": "1200",
+      "number": 1200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "capacity_wh",
+      "labelUk": "Ємність",
+      "value": "299",
+      "number": 299.0,
+      "unit": "Вт·год"
+    },
+    {
+      "slug": "kilkist-tsykliv-akumuliatoru",
+      "labelUk": "Кількість циклів акумулятору",
+      "value": "3000+",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "8",
+      "number": 8.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "285x195x190",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "robota-za-mobilnym-dodatkom",
+      "labelUk": "Робота за мобільним додатком",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "12 міс",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ЗАРЯДНІ СТАНЦІЇ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

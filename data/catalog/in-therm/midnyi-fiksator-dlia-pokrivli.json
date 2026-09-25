@@ -1,0 +1,33 @@
+{
+  "id": "in-therm/midnyi-fiksator-dlia-pokrivli",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "Мідний фіксатор для покрівлі",
+  "nameUk": "Мідний фіксатор для покрівлі Fenix",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "chekhiia"
+  ],
+  "priceUah": 80,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціна за упаковку",
+  "shortDescription": "кратність замовлення 25 штук",
+  "description": null,
+  "specs": [
+    {
+      "slug": "step",
+      "labelUk": "Крок фіксації",
+      "value": "За ситуацією, використовується для мідних дахів та жолобів",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "САМРЕГ+КОМПЛ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

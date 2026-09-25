@@ -1,0 +1,70 @@
+{
+  "id": "rd/profi-therm-eko-mat-80-vt-0-5-m2",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM Eko mat 80 Вт 0,5 m2",
+  "nameUk": "Нагрівальний мат Profi Therm Eko 80 Вт 0,5 м2 — 0,5 м², 80 Вт (150 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "150-vt-m2",
+    "z-komplektom"
+  ],
+  "priceUah": 2292,
+  "priceKitUah": 2328,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний мат Profi Therm Eko — бюджетна серія для плиткового клею.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "80",
+      "number": 80.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "622,4",
+      "number": 622.4,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "14394",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Profitherm Eko ",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

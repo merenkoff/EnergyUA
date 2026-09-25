@@ -1,0 +1,85 @@
+{
+  "id": "easytherm-extherm/etl-300-200",
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "sku": "ETL 300-200",
+  "nameUk": "Нагрівальний мат Extherm ETL 300-200 — 3 м², 600 Вт (200 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "odnozhylnyi",
+    "200-vt-m2",
+    "ultratonkyi",
+    "nimechchyna"
+  ],
+  "priceUah": 12781,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Одножильний мат 200 Вт/м² для укладання в плитковий клей.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "600",
+      "number": 600.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "одножильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "1,5",
+      "number": 1.5,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "тефлон FEP (200° C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "тефлон FEP (200° C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Мати_супер_ тонкі_Extherm_1.5мм",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

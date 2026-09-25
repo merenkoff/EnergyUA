@@ -1,0 +1,36 @@
+{
+  "id": "magnum-tp/f32-smart-wifi",
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "sku": "F32 Smart WiFi",
+  "nameUk": "Терморегулятор Magnum F32 Smart WiFi (чорний / білий)",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi",
+    "datchyk-pidlohy",
+    "niderlandy"
+  ],
+  "priceUah": 7420,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 1584; 140,00 € за курсом 53",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 2,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

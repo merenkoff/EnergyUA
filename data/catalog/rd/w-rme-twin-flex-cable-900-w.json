@@ -1,0 +1,79 @@
+{
+  "id": "rd/w-rme-twin-flex-cable-900-w",
+  "supplier": "rd",
+  "brand": "warme",
+  "sku": "Wärme Twin flex cable 900 W",
+  "nameUk": "Нагрівальний кабель Wärme Twin flex cable 900 W — 60 м, 900 Вт (15 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "u-stiazhku",
+    "dvozhylnyi",
+    "tonkyi-kabel",
+    "15-vt-m",
+    "z-komplektom"
+  ],
+  "priceUah": 8742,
+  "priceKitUah": 9177,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Секція тонкого двожильного кабелю Wärme Twin flex 15 Вт/м. Ціна комплекту включає монтажну стрічку та гофру.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "900",
+      "number": 900.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "60",
+      "number": 60.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "4,8-6,0",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "58,32",
+      "number": 58.32,
+      "unit": "Ом"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "15",
+      "number": 15.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "21052",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Wärme",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

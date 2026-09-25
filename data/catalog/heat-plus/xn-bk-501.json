@@ -1,0 +1,32 @@
+{
+  "id": "heat-plus/xn-bk-501",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "XN-BK 501",
+  "nameUk": "Електрична рушникосушарка Heat Plus XN-BK 501 Black чорна",
+  "category": "rushnykosusharky",
+  "tags": [
+    "vanna"
+  ],
+  "priceUah": 8165,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "чорний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Рушникосушарки",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "heat-plus/m3380",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M3380",
+  "nameUk": "Зовнішній датчик регулятора температури - сенсор M3380, 10кОм при 25°С",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 246,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Зовнішній датчик регулятора температури - сенсор M3380, 10кОм при 25°С</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

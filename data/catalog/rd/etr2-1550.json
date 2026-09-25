@@ -1,0 +1,41 @@
+{
+  "id": "rd/etr2-1550",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETR2-1550",
+  "nameUk": "Терморегулятор OJ Electronics ETR2-1550",
+  "category": "antyobledeninnia",
+  "tags": [
+    "din-reika",
+    "dlia-snihotanennia",
+    "daniia"
+  ],
+  "priceUah": 15120,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор ETR2-1550 для систем антиобледеніння та сніготанення на невеликих об'єктах з можливістю підключення 2-х датчиків",
+  "description": "<p>ETR2 - використовується для розтоплення снігу і льоду в системах антиобледеніння та сніготанення на невеликих об'єктах. Реєструє температуру і вологість. Діапазон температур:0 …+10°C. Тип монтажу:на DIN-рейку. Розміри:86х52х59 мм (ДхШхВ). Навантаження:16А / 3600Вт. Напруга:220 В 50 Гц. Ступінь захисту:IP20. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "1385",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

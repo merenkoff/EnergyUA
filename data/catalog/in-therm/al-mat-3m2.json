@@ -1,0 +1,120 @@
+{
+  "id": "in-therm/al-mat-3m2",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "AL MAT 3m2",
+  "nameUk": "Алюмінієвий мат Fenix AL MAT 140 Вт/м² — 3 м², 420 Вт",
+  "category": "pid-laminat",
+  "tags": [
+    "pid-laminat",
+    "aliuminiievyi-mat",
+    "140-vt-m2",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 7910,
+  "priceKitUah": 7970,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Алюмінієві мати використовуються для укладання під ламінат, паркетну дошку та товстий ковролін (від 3 мм). За рахунок фольгованої основи тепло рівномірно розподіляється вздовж поверхні. При використанні паркетної дошки необхідно поставити максимальну межу температури на термостаті 24 С, а також не нагрівати (охолоджувати) паркетну дошку більше, ніж на 2 С за 12 годин. Не рокомендується укладання під тонкий кавролін (менше 3 мм) та лінолеум через те, що кабель продавить покриття і може пошкодитися сам.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "420",
+      "number": 420.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "140",
+      "number": 140.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "50",
+      "number": 50.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "9",
+      "number": 9.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "1,7",
+      "number": 1.7,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "Довічна гарантія",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

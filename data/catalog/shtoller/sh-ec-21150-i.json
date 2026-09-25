@@ -1,0 +1,105 @@
+{
+  "id": "shtoller/sh-ec-21150-i",
+  "supplier": "shtoller",
+  "brand": "shtoller",
+  "sku": "SH-EC 21150 i",
+  "nameUk": "Нагрівальний мат Shtoller Ecotherm SH-EC 21150 i — 15 м², 2700 Вт (180 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "180-vt-m2",
+    "nimechchyna"
+  ],
+  "priceUah": 33485,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильні нагрівальні мати Ecotherm тм Shtoller 180 Вт/м.кв. (Німеччина)",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2700",
+      "number": 2700.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "15",
+      "number": 15.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "180",
+      "number": 180.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (Тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ (Полівиіилхлорид)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "screen",
+      "labelUk": "Матеріал захистного екрану",
+      "value": "алюмінієва фольга",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "3",
+      "number": 3.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "max_temp",
+      "labelUk": "Максимальна робоча температура зовнішньої оболонки",
+      "value": "80 ° C",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2025-09-10-shtoller.docx",
+    "sheet": "Мати Ecotherm",
+    "date": "2025-09-10",
+    "supplierName": "Shtoller / Ecotherm (прайс 10.09.2025)"
+  }
+}

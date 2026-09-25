@@ -1,0 +1,67 @@
+{
+  "id": "in-therm/deye-se-g5-1-pro-b",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye SE-G5.1 Pro-B",
+  "nameUk": "Акумуляторна батарея Deye SE-G5.1 Pro-B (100 Аh)",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Акумуляяторна батарея</p><p>Номінальна ємність - 100 Аh</p><p>Номінальна напруга - 51.2 V</p><p>Номінальний струм заряду - 50 А</p><p>Максимальний струм заряду - 100 А</p><p>Піковий струм розряду (100 мс) - 150 А</p><p>Хімія (тип) - LiFePO4</p><p>Рекомендована глибина розряду - 90%</p><p>Головний LED-індикатор - 5 світлодіодів (SOC: 20% ≈ SOC 100%), 3 світлодіоди (Робота, небезпека, захист)</p><p>Порт зв’язку - CAN2.0, RS485</p><p>Кількість циклів ~ 6000</p><p>Робоча температура 0... +55° С</p><p>Клас захисту IP20</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "51,2",
+      "number": 51.2,
+      "unit": "В"
+    },
+    {
+      "slug": "capacity_ah",
+      "labelUk": "Ємність",
+      "value": "100",
+      "number": 100.0,
+      "unit": "А·год"
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "5120",
+      "number": 5120.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "48",
+      "number": 48.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "54х44х13.3",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

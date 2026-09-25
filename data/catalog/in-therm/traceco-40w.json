@@ -1,0 +1,63 @@
+{
+  "id": "in-therm/traceco-40w",
+  "supplier": "in-therm",
+  "brand": "eltrace",
+  "sku": "TRACECO 40W",
+  "nameUk": "Саморегулюючий кабель Eltrace TRACECO 40W — 40 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vodostoky-ta-pokrivlia",
+    "vidriznyi",
+    "frantsiia"
+  ],
+  "priceUah": 390,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": "Ціна за погонний метр. Комплект муфт з 2 м проводів живлення — окремо.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "40",
+      "number": 40.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "max_length_m",
+      "labelUk": "Макс. довжина секції",
+      "value": "50",
+      "number": 50.0,
+      "unit": "м"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "5,3х15,6 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "5 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "M2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "САМРЕГ+КОМПЛ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

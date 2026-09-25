@@ -1,0 +1,84 @@
+{
+  "id": "rd/profi-therm-eko-2-16-5-200",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM Eko-2 16,5 200",
+  "nameUk": "Нагрівальний кабель Profi Therm Eko 16,5 200 — 12 м, 200 Вт (16,5 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "16-5-vt-m",
+    "z-komplektom"
+  ],
+  "priceUah": 2661,
+  "priceKitUah": 2823,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний кабель Profi Therm Eko 16,5 Вт/м — бюджетна серія для укладання в стяжку.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "12",
+      "number": 12.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "16,5",
+      "number": 16.5,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "240,7",
+      "number": 240.7,
+      "unit": "Ом"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "1,2 - 1,5",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "5",
+      "number": 5.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "14324",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Profitherm Eko ",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

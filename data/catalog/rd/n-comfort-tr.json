@@ -1,0 +1,41 @@
+{
+  "id": "rd/n-comfort-tr",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "N-Comfort TR",
+  "nameUk": "Терморегулятор Nexans N-Comfort TR",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi",
+    "datchyk-pidlohy",
+    "norvehiia"
+  ],
+  "priceUah": 2118,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор N-Comfort TR містить датчик температури повітря (вбудований) і поставляється з зовнішнім датчиком (монтуется в підлогу)",
+  "description": "<p>Терморегулятор механічний Nexans N-COMFORT TR з двома датчиками навантаженняа макс.: 16 А / 3600 Вт\nдіапазон температур: +10…+50°С \nрозміри: 81,5×81,5×30,4 мм \nСтупінь захисту: IP21\nГарантія: 2 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "17904",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "easytherm-extherm/55527",
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "sku": "55527",
+  "nameUk": "Датчик температури для термостатів Extherm ET-21",
+  "category": "termorehuliatory",
+  "tags": [
+    "datchyk-pidlohy",
+    "nimechchyna"
+  ],
+  "priceUah": 557,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": " Самрег_Easytherm_Аксесуари",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

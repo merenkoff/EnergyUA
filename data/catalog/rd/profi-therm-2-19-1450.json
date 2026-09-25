@@ -1,0 +1,84 @@
+{
+  "id": "rd/profi-therm-2-19-1450",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM 2 19/1450",
+  "nameUk": "Нагрівальний кабель Profi Therm 2 19/1450 — 76 м, 1450 Вт (19 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "19-vt-m",
+    "z-komplektom"
+  ],
+  "priceUah": 11256,
+  "priceKitUah": 11790,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Нагрівальна секція Profi Therm 2 на основі двожильного кабелю 19 Вт/м для укладання в стяжку.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1450",
+      "number": 1450.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "76",
+      "number": 76.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "19",
+      "number": 19.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "33,4",
+      "number": 33.4,
+      "unit": "Ом"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "7,6-9,5",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "20",
+      "number": 20.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "13362",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Profitherm",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

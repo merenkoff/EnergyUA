@@ -1,0 +1,33 @@
+{
+  "id": "in-therm/aliuminiieve-kriplennia-dlia-fiksatsii-kabeliu-u-vodostoky",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "Алюмінієве кріплення для фіксації кабелю у водостоки",
+  "nameUk": "Алюмінієве кріплення для фіксації кабелю у водостоки Fenix",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "chekhiia"
+  ],
+  "priceUah": 320,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": "продається пометражно",
+  "description": null,
+  "specs": [
+    {
+      "slug": "step",
+      "labelUk": "Крок фіксації",
+      "value": "Кожні 0,25 м",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "САМРЕГ+КОМПЛ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

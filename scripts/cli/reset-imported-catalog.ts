@@ -9,6 +9,7 @@
  */
 import { PrismaClient } from "@prisma/client";
 import { ET_ROOT_SLUG, IN_ROOT_SLUG } from "../lib/importCategoryMapping";
+import { PRICELIST_SOURCE } from "../lib/pricelistTaxonomy";
 
 const prisma = new PrismaClient();
 
@@ -20,10 +21,11 @@ async function main() {
   const wipeAll = hasFlag("--wipe-all-products");
   const dry = hasFlag("--dry-run");
 
+  // Товари з прайсів (externalSource = "pricelist") не чіпаємо: їх перезаливає import-pricelist-catalog.
   const productFilter = wipeAll
     ? {}
     : {
-        externalSource: { not: null } as const,
+        AND: [{ externalSource: { not: null } }, { externalSource: { not: PRICELIST_SOURCE } }],
       };
 
   const nProd = await prisma.product.count({ where: productFilter });

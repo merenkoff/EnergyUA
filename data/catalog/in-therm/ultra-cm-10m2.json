@@ -1,0 +1,136 @@
+{
+  "id": "in-therm/ultra-cm-10m2",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "Ultra CM 10m2",
+  "nameUk": "Нагрівальний мат Fenix Ultra CM 150 Вт/м² — 10 м², 1500 Вт",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "ultratonkyi",
+    "ftoroplastova-izoliatsiia",
+    "150-vt-m2",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 23910,
+  "priceKitUah": 23970,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Fenix CM150/ 1 150W</p><p>Ультратонкий нагрівальний мат CM для укладання в плитковий клей для плитки або суміш, що самовирівнює. За рахунок товщини кабелю 2.7 мм необхідно в середньому 1.5 рази менше клею плиткового, ніж при укладанні стандартного мату. Монтується на готову стяжку, утоплюється у клейовий розчин для плитки. Рекомендується, щоб плитковий клей мав мінімальну кількість повітряних порожнин.</p><p>Fenix CM150/ 1.5 225W</p><p>Fenix CM150/ 2 300W</p><p>Fenix CM150/ 2,5 375W</p><p>Fenix CM150/ 3 450W</p><p>Fenix CM150/ 3,5 525W</p><p>Fenix CM150/ 4 600W</p><p>Fenix CM150/ 4,5 675W</p><p>Fenix CM150/ 5 750W</p><p>Fenix CM150/ 6 900W</p><p>Fenix CM150/ 7 1050W</p><p>Fenix CM150/ 8 1200W</p><p>Fenix CM150/ 9 1350W</p><p>Fenix CM150/10 1500W</p><p>Fenix CM150/12 1800W</p><p>Fenix CM150/15 2250W</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1500",
+      "number": 1500.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "10",
+      "number": 10.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "122,07",
+      "number": 122.065890198386,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "10",
+      "number": 10.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2,5",
+      "number": 2.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВДФ-фторопаст (темп. плавлення 170 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "2,7",
+      "number": 2.7,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "Довічна гарантія",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "laying_step_m",
+      "labelUk": "Крок укладання",
+      "value": "0,07",
+      "number": 0.065,
+      "unit": "м"
+    },
+    {
+      "slug": "mat_width_m",
+      "labelUk": "Ширина мату",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "FENIX ULTRA",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

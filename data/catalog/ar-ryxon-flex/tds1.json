@@ -1,0 +1,26 @@
+{
+  "id": "ar-ryxon-flex/tds1",
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "sku": "TDS1",
+  "nameUk": "Терморегулятор Flex TDS1 для систем сніготанення",
+  "category": "antyobledeninnia",
+  "tags": [
+    "din-reika",
+    "dlia-snihotanennia",
+    "latviia"
+  ],
+  "priceUah": 2570,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Призначений для керування системами сніготанення та підтримання температури в заданому діапазоні. Застосування: системи сніготанення, антикригові системи. Монтується: DIN-рейку.",
+  "description": "<p>Діапазон регулювання температур: -20˚…+10˚С. Нижня межа: -20˚…-1˚С. Верхня межа: 0˚…+10˚С. Максимальний струм: 40А (8кВт). Споживання приладу: не більше 2Вт.</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "FLEX_Терморегулятори",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

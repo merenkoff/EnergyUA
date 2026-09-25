@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + опційно реімпорт, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (`next start` + опційно фоновий mirror фото за `MIRROR_PRODUCT_IMAGES=yes`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + імпорт каталогу з прайсів `data/catalog` + опційно реімпорт архівного каталогу донорів, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (`next start` + опційно фоновий mirror фото за `MIRROR_PRODUCT_IMAGES=yes`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
 
 ## Що зробити в Railway (один раз)
 
@@ -8,7 +8,7 @@
 2. **Додати сервіс** з репозиторію GitHub (або підключити існуючий репо в Settings → Source).
 3. У сервісі застосунку: **Variables** → додати **`DATABASE_URL`**. Найпростіше: **Reference** на змінну з Postgres-сервісу (`${{Postgres.DATABASE_URL}}` або аналог у UI).
 4. Переконатися, що деплой іде з потрібної гілки (наприклад `main`).
-5. Після push Railway сам збере образ, виконає **Pre-deploy** (міграції + seed) і **Deploy** (start).
+5. Після push Railway сам збере образ, виконає **Pre-deploy** (міграції + seed + імпорт прайсів) і **Deploy** (start).
 
 Якщо сайт уже був задеплоєний **до** появи seed у pre-deploy: зроби **Redeploy** (або порожній commit), щоб прогнався новий крок. Або один раз у консолі: `railway run npm run db:seed` (з `DATABASE_URL`).
 
@@ -17,7 +17,7 @@
 | Змінна | Опис |
 |--------|------|
 | `DATABASE_URL` | Обов’язково для runtime і для **pre-deploy** (міграції). |
-| `RAILWAY_REBUILD_CATALOG` | Якщо **`yes`**, після seed у pre-deploy виконується скидання імпортованих товарів/категорій і повторний імпорт з **`data/scrape/*.json`** у образі (без парсингу сайтів). Після успішного деплою **прибери** змінну, щоб кожен deploy не перезатирав каталог. |
+| `RAILWAY_REBUILD_CATALOG` | Якщо **`yes`**, після seed у pre-deploy виконується скидання імпортованих з донорів товарів/категорій (товари з прайсів не чіпаються) і повторний імпорт з **`data/scrape/*.json`** у образі (без парсингу сайтів); ці товари одразу архівні. Наприкінці ще раз виконується імпорт прайсів. Після успішного деплою **прибери** змінну, щоб кожен deploy не перезатирав каталог. |
 | `RAILWAY_CATALOG_WIPE_ALL` | Разом з ребілдом: **`yes`** — видалити **всі** товари (включно з демо seed), потім `prisma db seed`, потім імпорт JSON. |
 | `MEDIA_ROOT` | Каталог volume для фото; див. [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md). |
 | `MIRROR_PRODUCT_IMAGES` | **`yes`** у start: у фоні (сайт уже працює) завантажити зовнішні URL у `MEDIA_ROOT` і замінити на `/api/media/…`. Потрібно після реімпорту, поки в БД знову `https://…` для картинок; можна лишати ввімкненим. |
@@ -46,7 +46,7 @@
 
 ```bash
 npm run db:migrate:deploy   # лише міграції
-npm run db:predeploy        # міграції + seed (як на Railway pre-deploy)
+npm run db:predeploy        # міграції + seed + import:pricelists (як на Railway pre-deploy)
 npm run db:seed             # лише seed (ідемпотентний upsert)
 ```
 

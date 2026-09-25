@@ -1,0 +1,33 @@
+{
+  "id": "rd/etf-744-99",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETF-744/99",
+  "nameUk": "Датчик OJ Electronics ETF-744/99",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "datchyk-pidlohy",
+    "daniia"
+  ],
+  "priceUah": 4410,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "зовнішній датчик температури повітря",
+  "description": "<p>ETF-744/99 - зовнішній датчик температури повітря. Реєструє температуру. Тип монтажу:настінний під навісом даху. Розміри (ДхШхВ):65х50х35 мм. Діапазон температур:-50 ... +70°С. Ступінь захисту:IP54. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "696",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ar-ryxon-flex/ehm-175-0-5",
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "sku": "EHM-175/0.5",
+  "nameUk": "Нагрівальний мат Flex EHM-175/0.5 — 0,5 м², 87,5 Вт (175 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "175-vt-m2",
+    "latviia",
+    "z-komplektom"
+  ],
+  "priceUah": 2047,
+  "priceKitUah": 2322,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний мат 175 Вт/м², Ø 4 мм. Комплект: мат + гофра + коробка.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "87.5",
+      "number": null,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5*1,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "175",
+      "number": 175.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "FLEX_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

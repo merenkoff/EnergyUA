@@ -1,0 +1,142 @@
+{
+  "id": "in-therm/br-im-z-600w",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "BR-IM-Z 600W",
+  "nameUk": "Нагрівальний кабель Hemstedt BR-IM-Z 17 Вт/м — 34,7 м, 600 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "odnozhylnyi",
+    "bezmuftove-ziednannia",
+    "17-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 6090,
+  "priceKitUah": 6390,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "600",
+      "number": 600.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "34,7",
+      "number": 34.7,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_113",
+      "labelUk": "Площа при 113 Вт/м² (крок 0,15 м)",
+      "value": "5,21",
+      "number": 5.21,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_136",
+      "labelUk": "Площа при 136 Вт/м² (крок 0,125 м)",
+      "value": "4,34",
+      "number": 4.34,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_170",
+      "labelUk": "Площа при 170 Вт/м² (крок 0,1 м)",
+      "value": "3,47",
+      "number": 3.47,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_227",
+      "labelUk": "Площа при 227 Вт/м² (крок 0,075 м)",
+      "value": "2,6",
+      "number": 2.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "одножильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2 х 2.5 м",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 110 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 105 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

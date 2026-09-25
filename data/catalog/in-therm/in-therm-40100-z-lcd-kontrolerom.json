@@ -1,0 +1,32 @@
+{
+  "id": "in-therm/in-therm-40100-z-lcd-kontrolerom",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "IN-THERM 40100 з LCD контролером",
+  "nameUk": "Нагрівальний килимок IN-THERM 40100 з LCD контролером",
+  "category": "kylymky-z-pidihrivom",
+  "tags": [
+    "dlia-domu"
+  ],
+  "priceUah": 2000,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>1. Низьке споживання енергії.</p><p>2. Час нагрівання близько 5-15 хвилин.</p><p>3. Напруга: 230 В, Потужність: 110 Вт.</p><p>4. Розмір: 100 х 40 см.</p><p>5. Матеріал поверхні нагрівального кабеля: поліетилен (поліефірне волокно).</p><p>6. Нагрівальний елемент: Aludirome.</p><p>7. Матеріал задньої сторони не ковзає.</p><p>8. LCD дає можливість налаштувати інтенсивність нагріву та час роботи.</p><p>9. Функція від перегріву.</p><p>10. Чотири рівні заданні температури (Low, Middle, Warm, High).</p>",
+  "specs": [
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "12 місяців",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "НАГРІВАЛЬНІ КИЛИМКИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

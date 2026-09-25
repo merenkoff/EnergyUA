@@ -1,0 +1,63 @@
+{
+  "id": "heat-plus/m-70-w-wifi",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M.70 W",
+  "nameUk": "Терморегулятор Heat Plus M.70 W сенсорний, WIFI,16А, білий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi"
+  ],
+  "priceUah": 1980,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмуємий, кнопковий, з WI-FI",
+  "description": "<p>1. Програматор (5 робочих+2вихідних (завод) або 6+1 ручний вибір); 2. Блокування панелі керування; 3. Програма віддаленого керування \"Smart Life\"; 4. Функція виявлення відкритого вікна OWD</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмуємий, кнопковий, з WI-FI",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х15 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "від 5 до 35 С (завод)/ от 5-95 С (ручна)",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

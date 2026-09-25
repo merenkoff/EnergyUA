@@ -1,0 +1,60 @@
+{
+  "id": "heat-plus/m17-16",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M17.16",
+  "nameUk": "Терморегулятор Heat Plus M17.16, Білий",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi"
+  ],
+  "priceUah": 961,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Механічне регулювання",
+  "description": "<p>Управління шляхом повороту колеса регулятора. Тонка зовнішня панель, видима товщина на стені 12,4 мм. Двухцветная светодиодная подсветка.</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Механічне регулювання",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х12,4 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Виносний: від 5 до 35 С (завод) / від 5-35 С (ручна), Вбудований: відсутній",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

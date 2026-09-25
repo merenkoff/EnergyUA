@@ -1,0 +1,87 @@
+{
+  "id": "ar-ryxon-flex/ehc-17-5-40",
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "sku": "EHC-17.5/40",
+  "nameUk": "Нагрівальний кабель Flex EHC-17.5/40 — 40 м, 700 Вт (17,5 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "u-stiazhku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "17-5-vt-m",
+    "latviia",
+    "z-komplektom"
+  ],
+  "priceUah": 4193,
+  "priceKitUah": 4468,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Тонкий двожильний кабель 17,5 Вт/м, Ø 4 мм — у плитковий клей або стяжку. Комплект: кабель + гофра + коробка.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "700",
+      "number": 700.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "40",
+      "number": 40.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "4",
+      "number": 4.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "4,0 м² – 4,8 м²",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17,5",
+      "number": 17.5,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "15",
+      "number": 15.0,
+      "unit": "м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "FLEX_кабель ",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

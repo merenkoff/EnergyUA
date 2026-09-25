@@ -1,0 +1,78 @@
+{
+  "id": "ar-ryxon-flex/6112-20",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "6112-20",
+  "nameUk": "Нагрівальний кабель Arnold Rak Premium 6112-20 — 100 м, 2000 Вт (20 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "20-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 17708,
+  "priceKitUah": 18078,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний кабель серії Premium 20 Вт/м для укладання в стяжку.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2000",
+      "number": 2000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "100",
+      "number": 100.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ, екран — алюмінієва фольга",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Premium_AR_кабель_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "rd/txlp-2r-500-17",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "TXLP/2R 500/17",
+  "nameUk": "Нагрівальний кабель Nexans TXLP/2R 500/17 — 29,4 м, 500 Вт (17 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "17-vt-m",
+    "norvehiia",
+    "z-komplektom"
+  ],
+  "priceUah": 6642,
+  "priceKitUah": 6828,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Секція двожильного екранованого кабелю Nexans TXLP/2R 17 Вт/м для укладання в стяжку.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "500",
+      "number": 500.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "29,4",
+      "number": 29.4,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "105,8",
+      "number": 105.8,
+      "unit": "Ом"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "2,9-3,7",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "5",
+      "number": 5.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "715",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Nexans",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

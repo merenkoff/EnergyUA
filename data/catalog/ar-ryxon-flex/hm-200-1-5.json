@@ -1,0 +1,71 @@
+{
+  "id": "ar-ryxon-flex/hm-200-1-5",
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "sku": "HM-200-1.5",
+  "nameUk": "Нагрівальний мат Ryxon HM-200-1.5 — 1,5 м², 300 Вт (200 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "200-vt-m2",
+    "latviia",
+    "z-komplektom"
+  ],
+  "priceUah": 4573,
+  "priceKitUah": 4848,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний мат 200 Вт/м², Ø 3,6 мм. Комплект: мат + гофра + коробка.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "300",
+      "number": 300.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "1,5",
+      "number": 1.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5*3,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "3,6",
+      "number": 3.6,
+      "unit": "мм"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "RYXON_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

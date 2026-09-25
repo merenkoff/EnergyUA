@@ -1,0 +1,114 @@
+{
+  "id": "in-therm/pwt-516",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "PWT 516",
+  "nameUk": "Терморегулятор IN-THERM PWT 516",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi",
+    "datchyk-pidlohy",
+    "datchyk-povitria",
+    "kytai"
+  ],
+  "priceUah": 2190,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Програмований; сенсорний дисплей",
+  "description": null,
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "програмований з Wi-Fi",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "display",
+      "labelUk": "Дисплей",
+      "value": "сенсорний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "adaptive",
+      "labelUk": "Адаптивна функція",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Китай",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "sensor_air",
+      "labelUk": "Датчик повітря",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "sensor_floor",
+      "labelUk": "Датчик підлоги",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "5…95",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16 А",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 20",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "у підрозетник",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий мат, чорний мат",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "in-therm/di-si-r-2250w",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "Di Si R 2250W",
+  "nameUk": "Нагрівальний кабель Hemstedt Di Si R 12,5 Вт/м — 180 м, 2250 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "bezmuftove-ziednannia",
+    "ftoroplastova-izoliatsiia",
+    "aktsiia",
+    "12-5-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 27550,
+  "priceKitUah": 28330,
+  "priceUnit": "шт",
+  "priceNote": "Акційна ціна; звичайна ціна 29000 грн. Рекомендовано використовувати з термостатами Eberle (навантаження понад 16 А)",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2250",
+      "number": 2250.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "12,5",
+      "number": 12.5,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "180",
+      "number": 180.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_104",
+      "labelUk": "Площа при 104 Вт/м² (крок 0,12 м)",
+      "value": "21,6",
+      "number": 21.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_125",
+      "labelUk": "Площа при 125 Вт/м² (крок 0,1 м)",
+      "value": "18",
+      "number": 18.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_156",
+      "labelUk": "Площа при 156 Вт/м² (крок 0,08 м)",
+      "value": "14,4",
+      "number": 14.4,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_208",
+      "labelUk": "Площа при 208 Вт/м² (крок 0,06 м)",
+      "value": "10,8",
+      "number": 10.8,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2,5",
+      "number": 2.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторполімер (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4,5",
+      "number": 4.5,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М1",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT DI SI",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

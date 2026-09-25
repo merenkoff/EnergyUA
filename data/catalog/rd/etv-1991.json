@@ -1,0 +1,41 @@
+{
+  "id": "rd/etv-1991",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETV-1991",
+  "nameUk": "Терморегулятор OJ Electronics ETV-1991",
+  "category": "termorehuliatory",
+  "tags": [
+    "din-reika",
+    "datchyk-pidlohy",
+    "daniia"
+  ],
+  "priceUah": 5985,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор ETV-1991 датчик підлоги (у комплекті)",
+  "description": "<p>ETV- терморегулятор для монтажу на DIN-рейку. Рекомендується для управління системами електричного підігріву підлоги та електричного опалення приміщень.Діапазон температур:+ 0 ... + 40 ° С. Розміри:86х36х58 мм (ДхШхВ). Навантаження:16А / 3500Вт. Ступінь захисту:IP20. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "3210",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

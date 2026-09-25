@@ -1,0 +1,40 @@
+{
+  "id": "rd/profi-therm-selftec-pro-33",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "Profi therm SelfTec®PRO 33",
+  "nameUk": "Саморегулюючий кабель Profi therm SelfTec®PRO 33 — 33 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vidriznyi"
+  ],
+  "priceUah": 843,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>33Вт/м.п., Для захисту побутових тробопроводів від замерзання, для захисту дахів, водостоків і жолобів від намерзання льоду; (при 10°С та 16А автоматичному вимикачу). Гарантія 3 роки</p>",
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "33",
+      "number": 33.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "MED000319",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Самрег",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

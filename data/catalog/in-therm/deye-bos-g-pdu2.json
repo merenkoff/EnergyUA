@@ -1,0 +1,39 @@
+{
+  "id": "in-therm/deye-bos-g-pdu2",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye BOS-G-PDU2",
+  "nameUk": "Акумуляторна батарея Deye BOS-G-PDU2",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Блок керування кластером високовольтної батареї</p><p>Робоча напруга 200-1000 В постійного струму</p><p>Номінальний струм заряду/розряду - 100 А</p><p>Максимальний струм заряду/розряду - 120 А</p><p>Номінальне значення вхідного постійного струму - 12±2%В/4.15A</p><p>Робоча температура -20... +55° С</p><p>Клас захисту IP20</p>",
+  "specs": [
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "19",
+      "number": 19.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "57х44х15",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

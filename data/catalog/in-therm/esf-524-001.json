@@ -1,0 +1,60 @@
+{
+  "id": "in-therm/esf-524-001",
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "sku": "ESF 524 001",
+  "nameUk": "Датчик Eberle ESF 524 001 — датчик льоду та снігу з підігрівом",
+  "category": "antyobledeninnia",
+  "tags": [
+    "nimechchyna"
+  ],
+  "priceUah": 8570,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Німеччина",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 67",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "грунт",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "purpose",
+      "labelUk": "Призначення",
+      "value": "грунт",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

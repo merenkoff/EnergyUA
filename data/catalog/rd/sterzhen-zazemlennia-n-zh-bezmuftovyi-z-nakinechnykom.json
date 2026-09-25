@@ -1,0 +1,22 @@
+{
+  "id": "rd/sterzhen-zazemlennia-n-zh-bezmuftovyi-z-nakinechnykom",
+  "supplier": "rd",
+  "brand": "zuver",
+  "sku": "Стержень заземлення н/ж безмуфтовий з накінечником",
+  "nameUk": "Стержень заземлення н/ж безмуфтовий з накінечником Zuver",
+  "category": "zazemlennia",
+  "tags": [],
+  "priceUah": 1719,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Накінечник ZUVER 4.4 (н/ж стержня заземлення безмуфтовий з накінечником d16/55мм)",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "заземлення Zuver",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

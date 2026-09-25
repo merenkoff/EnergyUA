@@ -1,0 +1,67 @@
+{
+  "id": "in-therm/deye-bos-a-pack7-68",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye BOS-A-Pack7.68",
+  "nameUk": "Акумуляторна батарея Deye BOS-A-Pack7.68 (200 Аh)",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Акумуляторна батарея (модульна)</p><p>Номінальна ємність - 200 Аh</p><p>Номінальна напруга - 38.4 V</p><p>Кількість послідовно з’єднаних акумуляторних модулів - мін 7 шт, макс 21 шт</p><p>Номінальна напруга системи - 268 V</p><p>Номінальна потужність постійного струму - 25.6 А</p><p>Струм заряду/розряду - 100 А</p><p>Піковий струм розряду (250 мс) - 125 А</p><p>Хімія (тип) - LiFePO4</p><p>Рекомендована глибина розряду - 90%</p><p>Порт зв’язку - CAN2.0, RS485</p><p>Кількість циклів ~ 6000</p><p>Робоча температура -20... +55° С</p><p>Клас захисту IP20</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "38,4",
+      "number": 38.4,
+      "unit": "В"
+    },
+    {
+      "slug": "capacity_ah",
+      "labelUk": "Ємність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "А·год"
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "7680",
+      "number": 7680.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "70",
+      "number": 70.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "60х52х15,5",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

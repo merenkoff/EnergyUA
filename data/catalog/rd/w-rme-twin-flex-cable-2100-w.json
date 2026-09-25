@@ -1,0 +1,79 @@
+{
+  "id": "rd/w-rme-twin-flex-cable-2100-w",
+  "supplier": "rd",
+  "brand": "warme",
+  "sku": "Wärme Twin flex cable 2100 W",
+  "nameUk": "Нагрівальний кабель Wärme Twin flex cable 2100 W — 140 м, 2100 Вт (15 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "u-stiazhku",
+    "dvozhylnyi",
+    "tonkyi-kabel",
+    "15-vt-m",
+    "z-komplektom"
+  ],
+  "priceUah": 17745,
+  "priceKitUah": 18438,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Секція тонкого двожильного кабелю Wärme Twin flex 15 Вт/м. Ціна комплекту включає монтажну стрічку та гофру.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2100",
+      "number": 2100.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "140",
+      "number": 140.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "11,2-14,0",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "24,64",
+      "number": 24.639999999999997,
+      "unit": "Ом"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "30",
+      "number": 30.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "21542",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Wärme",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

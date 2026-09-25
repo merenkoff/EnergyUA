@@ -1,0 +1,77 @@
+{
+  "id": "rd/profi-therm-eko-flex-565-vt",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM Eko Flex 565 Вт",
+  "nameUk": "Нагрівальний кабель Profi Therm Eko Flex — 47,3 м, 565 Вт (11 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "z-komplektom"
+  ],
+  "priceUah": 4413,
+  "priceKitUah": 4698,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Тонкий двожильний кабель Profi Therm Eko Flex для укладання в плитковий клей.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "565",
+      "number": 565.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "47,3",
+      "number": 47.3,
+      "unit": "м"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "2,8-3,8",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "88",
+      "number": 88.0,
+      "unit": "Ом"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "10",
+      "number": 10.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "15941",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Profitherm Eko ",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

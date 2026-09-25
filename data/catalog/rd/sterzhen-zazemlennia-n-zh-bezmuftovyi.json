@@ -1,0 +1,22 @@
+{
+  "id": "rd/sterzhen-zazemlennia-n-zh-bezmuftovyi",
+  "supplier": "rd",
+  "brand": "zuver",
+  "sku": "Стержень заземлення н/ж безмуфтовий",
+  "nameUk": "Стержень заземлення н/ж безмуфтовий Zuver",
+  "category": "zazemlennia",
+  "tags": [],
+  "priceUah": 1605,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Стержень заземлення ZUVER 4.4 (н/ж безмуфтовий d16/1500 мм)",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "заземлення Zuver",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

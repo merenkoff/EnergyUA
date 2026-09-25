@@ -29,7 +29,11 @@ type ProductPayload = {
   description: string | null;
   priceUah: string | null;
   priceVisible: boolean;
+  priceKitUah: string | null;
+  priceUnit: string | null;
+  priceNote: string | null;
   published: boolean;
+  archived: boolean;
   sortOrder: number;
   seoTitle: string | null;
   seoDescription: string | null;
@@ -114,7 +118,11 @@ export function AdminProductEditor({
     description: product.description ?? "",
     priceUah: product.priceUah ?? "",
     priceVisible: product.priceVisible,
+    priceKitUah: product.priceKitUah ?? "",
+    priceUnit: product.priceUnit ?? "",
+    priceNote: product.priceNote ?? "",
     published: product.published,
+    archived: product.archived,
     sortOrder: String(product.sortOrder),
     seoTitle: product.seoTitle ?? "",
     seoDescription: product.seoDescription ?? "",
@@ -157,7 +165,11 @@ export function AdminProductEditor({
         description: form.description || null,
         priceUah: form.priceUah.trim() ? form.priceUah.replace(",", ".") : null,
         priceVisible: form.priceVisible,
+        priceKitUah: form.priceKitUah.trim() ? form.priceKitUah.replace(",", ".") : null,
+        priceUnit: form.priceUnit.trim() || null,
+        priceNote: form.priceNote.trim() || null,
         published: form.published,
+        archived: form.archived,
         sortOrder: parseInt(form.sortOrder, 10) || 0,
         seoTitle: form.seoTitle.trim() || null,
         seoDescription: form.seoDescription.trim() || null,
@@ -339,6 +351,33 @@ export function AdminProductEditor({
                 placeholder="8990"
               />
             </label>
+            <label className={labelCls}>
+              Ціна комплекту (UAH)
+              <input
+                className={inputCls}
+                value={form.priceKitUah}
+                onChange={(e) => setForm((f) => ({ ...f, priceKitUah: e.target.value }))}
+                placeholder="порожньо — немає комплекту"
+              />
+            </label>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className={labelCls}>
+                Одиниця ціни
+                <select
+                  className={inputCls}
+                  value={form.priceUnit}
+                  onChange={(e) => setForm((f) => ({ ...f, priceUnit: e.target.value }))}
+                >
+                  <option value="">шт (за замовчуванням)</option>
+                  <option value="м">м (погонний)</option>
+                  <option value="м²">м²</option>
+                </select>
+              </label>
+              <label className={labelCls}>
+                Примітка до ціни
+                <input className={inputCls} value={form.priceNote} onChange={(e) => setForm((f) => ({ ...f, priceNote: e.target.value }))} />
+              </label>
+            </div>
             <label className="flex items-center gap-2 text-sm text-zinc-300">
               <input
                 type="checkbox"
@@ -354,6 +393,14 @@ export function AdminProductEditor({
                 onChange={(e) => setForm((f) => ({ ...f, published: e.target.checked }))}
               />
               Опубліковано
+            </label>
+            <label className="flex items-center gap-2 text-sm text-amber-300">
+              <input
+                type="checkbox"
+                checked={form.archived}
+                onChange={(e) => setForm((f) => ({ ...f, archived: e.target.checked }))}
+              />
+              Архівний (прихований з каталогу, поки прапорець стоїть)
             </label>
             <label className={labelCls}>
               Порядок сортування

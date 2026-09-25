@@ -1,18 +1,20 @@
 import Link from "next/link";
 import type { Brand, Product } from "@prisma/client";
 import { formatUah } from "@/lib/format";
+import { priceUnitSuffix } from "@/lib/publicCatalog";
 
 type ProductCardProduct = Pick<
   Product,
   "slug" | "nameUk" | "sku" | "priceUah" | "priceVisible" | "shortDescription"
 > & {
+  priceUnit?: string | null;
   brand: Pick<Brand, "name"> | null;
   images: { url: string; altUk: string | null }[];
 };
 
 export function ProductCard({ product }: { product: ProductCardProduct }) {
   const showPrice = product.priceVisible && product.priceUah != null;
-  const priceLabel = showPrice ? formatUah(product.priceUah) : "Ціну уточнюйте";
+  const priceLabel = showPrice ? `${formatUah(product.priceUah)}${priceUnitSuffix(product.priceUnit)}` : "Ціну уточнюйте";
   const cover = product.images[0];
 
   return (
@@ -46,7 +48,7 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
             <p className={`text-lg font-semibold ${showPrice ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
               {priceLabel}
             </p>
-            {product.sku ? <p className="text-xs text-[var(--muted)]">Код: {product.sku}</p> : null}
+            {product.sku ? <p className="text-xs text-[var(--muted)]">Арт. {product.sku}</p> : null}
           </div>
           <span className="rounded-full bg-[var(--surface-hover)] px-3 py-1 text-xs font-medium text-[var(--foreground)]">
             Детальніше

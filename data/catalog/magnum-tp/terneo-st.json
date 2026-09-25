@@ -1,0 +1,34 @@
+{
+  "id": "magnum-tp/terneo-st",
+  "supplier": "magnum-tp",
+  "brand": "terneo",
+  "sku": "terneo st",
+  "nameUk": "Терморегулятор Terneo st (цифровий)",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "datchyk-pidlohy",
+    "ukraina"
+  ],
+  "priceUah": 1268,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "наявність уточнюйте",
+  "shortDescription": "16 А, 3000 ВА, 5…40 °C, датчик R10-3. Найбільш затребувана модель.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 4,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

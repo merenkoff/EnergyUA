@@ -1,0 +1,134 @@
+{
+  "id": "in-therm/comfort-pdsv-20-870w",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "COMFORT PDSV 20 870W",
+  "nameUk": "Нагрівальний кабель IN-THERM COMFORT PDSV 20 Вт/м — 44 м, 870 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "20-vt-m",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 4650,
+  "priceKitUah": 4950,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель для теплої підлоги використовується для укладання в стяжку 3-8 см. Перед укладанням кабелю необхідно укладати утеплювач (рекомендується екструдований пінополістирол від 2 см, у крайньому випадку підкладку для ламінату 5 мм). Кабель не рекомендується укладати безпосередньо на утеплювач. Утеплювач необхідно залити чорновою стяжкою, у крайньому випадку покласти зверху металеву сітку (армовану або просічно-витяжну). У разі укладання сітки необхідно залишити простір між кабелем та утеплювачем, щоб при залитті рідким розчином для стяжки заповнити цей простір сумішшю. Стяжка має бути з мінімальною кількістю повітряних порожнин.</p><p>Переріз нагрівального кабелю 4 х 6.5 мм</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "870",
+      "number": 870.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "44",
+      "number": 44.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_114",
+      "labelUk": "Площа при 114 Вт/м² (крок 175 м)",
+      "value": "7,7",
+      "number": 7.7,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_133",
+      "labelUk": "Площа при 133 Вт/м² (крок 150 м)",
+      "value": "6,6",
+      "number": 6.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_160",
+      "labelUk": "Площа при 160 Вт/м² (крок 125 м)",
+      "value": "5,5",
+      "number": 5.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_200",
+      "labelUk": "Площа при 200 Вт/м² (крок 100 м)",
+      "value": "4,4",
+      "number": 4.4,
+      "unit": "м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "60,8",
+      "number": 60.8,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "1,5",
+      "number": 1.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 105 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "15 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "IN-THERM COMFORT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

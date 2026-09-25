@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { CategoryCard } from "@/components/catalog/CategoryCard";
-import { resolveMatsCatalogHref } from "@/lib/catalogLinks";
+import { ARCHIVE_ROOT_SLUG, CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
-
-const CATALOG_ROOT_SLUG = "tepla-pidloga";
+import { PUBLIC_PRODUCT_WHERE } from "@/lib/publicCatalog";
 
 export default async function Home() {
-  const matsHref = await resolveMatsCatalogHref();
-
   const root = await prisma.category.findUnique({
     where: { slug: CATALOG_ROOT_SLUG },
     select: { id: true },
@@ -18,10 +15,12 @@ export default async function Home() {
         where: { parentId: root.id },
         orderBy: [{ sortOrder: "asc" }, { nameUk: "asc" }],
         include: {
-          _count: { select: { products: true, children: true } },
+          _count: { select: { products: { where: PUBLIC_PRODUCT_WHERE }, children: true } },
         },
       })
     : [];
+
+  const archive = await prisma.category.findUnique({ where: { slug: ARCHIVE_ROOT_SLUG }, select: { slug: true } });
 
   return (
     <main>
@@ -33,8 +32,8 @@ export default async function Home() {
             Електрична тепла підлога для дому та комерції
           </h1>
           <p className="mt-4 max-w-xl text-lg text-[var(--muted)]">
-            Каркас під повноцінний магазин: категорії, картки товарів, характеристики під фільтри — як на ЕТ-маркет та
-            аналогах. Онлайн-оплату додамо на наступних кроках.
+            Нагрівальні мати й кабель Hemstedt, Fenix, Nexans, Arnold Rak, Magnum, терморегулятори, антиобледеніння та
+            суміжне обладнання — за актуальними прайсами постачальників.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -43,12 +42,12 @@ export default async function Home() {
             >
               Відкрити каталог
             </Link>
-            {matsHref ? (
+            {archive ? (
               <Link
-                href={matsHref}
+                href={`/catalog/${archive.slug}`}
                 className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:border-[var(--accent)]/50 hover:bg-[var(--surface)]"
               >
-                Нагрівальні мати
+                Архів
               </Link>
             ) : null}
           </div>
@@ -77,7 +76,8 @@ export default async function Home() {
             </Link>
             {process.env.NODE_ENV === "development" ? (
               <p className="text-xs text-[var(--muted)]">
-                Локально: <code className="rounded bg-[var(--card)] px-1">npm run db:seed</code> та імпорт згідно з docs.
+                Локально: <code className="rounded bg-[var(--card)] px-1">npm run db:seed</code> та{" "}
+                <code className="rounded bg-[var(--card)] px-1">npm run import:pricelists</code>.
               </p>
             ) : null}
           </div>

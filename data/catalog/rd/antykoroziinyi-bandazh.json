@@ -1,0 +1,22 @@
+{
+  "id": "rd/antykoroziinyi-bandazh",
+  "supplier": "rd",
+  "brand": "zuver",
+  "sku": "Антикорозійний бандаж",
+  "nameUk": "Антикорозійний бандаж Zuver",
+  "category": "zazemlennia",
+  "tags": [],
+  "priceUah": 234,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Антикорозійний бандаж пластичний 50 мм, 2 м.п.",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "заземлення Zuver",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { AdminCategoryTree } from "@/components/admin/AdminCategoryTree";
 import { buildCategoryTree } from "@/lib/categoryTree";
+import { CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
 
-const CATALOG_ROOT_SLUG = "tepla-pidloga";
 
 export default async function AdminCategoriesPage({ params }: { params: Promise<{ secret: string }> }) {
   const { secret } = await params;

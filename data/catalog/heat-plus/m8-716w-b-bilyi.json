@@ -1,0 +1,61 @@
+{
+  "id": "heat-plus/m8-716w-b-bilyi",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M8.716W/B-Білий",
+  "nameUk": "Терморегулятор Heat Plus M8.716W/B-Білий, чорний",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi"
+  ],
+  "priceUah": 1485,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмований",
+  "description": "<p>1.Програми: 5робочих+2 вихідних(завод) або 6+1 за власним налаштуванням); 2. Захист від дітей. 3.Передбачена функція реверсу</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмований",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х13,3 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Виносний: від 5-95 С (ручна), Вбудований:від 5 до 95 С. Функція OWD - відкрите вікно.",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий, чорний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}
