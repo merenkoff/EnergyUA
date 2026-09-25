@@ -53,3 +53,4 @@ next-env.d.ts
 # Резерв оригіналів перед стиранням підпису донора (docs/IMAGE-DEWATERMARK.md)
 /storage/media-original/
 /storage/media-dewatermarked.json
+__pycache__/

@@ -37,6 +37,7 @@
     "import:pricelists": "tsx scripts/cli/import-pricelist-catalog.ts",
     "parse:pricelists": "python3 scripts/pricelists/parse_pricelists.py",
     "extract:pricelist-images": "python3 scripts/pricelists/extract_pricelist_images.py",
+    "fetch:brand-images": "python3 scripts/pricelists/fetch_external_images.py",
     "import:catalog": "tsx scripts/cli/import-unified-json.ts",
     "import:catalog-trees": "tsx scripts/cli/import-manifest-categories.ts",
     "import:prune-legacy-cats": "tsx scripts/cli/prune-legacy-import-categories.ts",

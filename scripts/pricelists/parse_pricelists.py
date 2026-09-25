@@ -28,6 +28,8 @@ PRICES = ROOT / "data" / "pricelists"
 OUT = ROOT / "data" / "catalog"
 TAXONOMY_TS = ROOT / "scripts" / "lib" / "pricelistTaxonomy.ts"
 MEDIA_INDEX = ROOT / "data" / "catalog-media" / "index.json"
+EXTERNAL_SOURCES = ROOT / "data" / "catalog-media" / "external-sources.json"
+EXTERNAL_STATE = ROOT / "data" / "catalog-media" / "external.json"
 
 
 class ImageIndex:
@@ -60,7 +62,44 @@ class ImageIndex:
         return out
 
 
+class ExternalImages:
+    """Фото з офіційних сайтів (fetch_external_images.py) для товарів, у прайсі яких фото немає.
+    Правило з external-sources.json: точний артикул (match.sku) або префікс артикула (match.skuPrefix, без регістру);
+    з кількох збігів перемагає точний, далі — найдовший префікс."""
+
+    def __init__(self, sources: Path, state: Path):
+        self.rules: list[dict] = json.loads(sources.read_text(encoding="utf-8")) if sources.exists() else []
+        st = json.loads(state.read_text(encoding="utf-8")) if state.exists() else {}
+        self.file_by_url: dict[str, str] = {u: v["file"] for u, v in st.items()}
+
+    def for_product(self, supplier: str, sku: str) -> list[str]:
+        best: tuple[int, int, list[str]] | None = None
+        low = sku.lower()
+        for i, r in enumerate(self.rules):
+            if r.get("supplier") != supplier or not r.get("urls"):
+                continue
+            m = r.get("match", {})
+            score = -1
+            if sku in m.get("sku", []):
+                score = 10_000
+            else:
+                for p in m.get("skuPrefix", []):
+                    if low.startswith(p.lower()):
+                        score = max(score, len(p))
+            if score >= 0 and (best is None or score > best[0]):
+                best = (score, i, r["urls"])
+        if best is None:
+            return []
+        out: list[str] = []
+        for u in best[2]:
+            f = self.file_by_url.get(u)
+            if f and f not in out:
+                out.append(f)
+        return out
+
+
 MEDIA = ImageIndex(MEDIA_INDEX)
+EXTERNAL = ExternalImages(EXTERNAL_SOURCES, EXTERNAL_STATE)
 
 # ---------------------------------------------------------------------------
 # Таксономія (читаємо slug-и з TS-файлу, щоб не дублювати списки)
@@ -384,6 +423,8 @@ class Writer:
         if images is None and row is not None and sheet:
             images = MEDIA.at(self.file, sheet, row)
         images = self.override_images(sku, images or [])
+        if not images:
+            images = EXTERNAL.for_product(self.supplier, sku)
         clean_specs = []
         for s_ in specs or []:
             if s_ is None or s_["value"] in ("", "None"):

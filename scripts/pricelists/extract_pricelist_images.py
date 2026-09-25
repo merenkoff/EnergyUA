@@ -11,6 +11,7 @@
 Ім'я файлу = sha256 вмісту + розширення — так само, як у MEDIA_ROOT (див. src/lib/mediaStorage.ts),
 тому файли можна просто скопіювати на volume, а в БД записати /api/media/<ім'я>.
 Логотипи, бейджі («Wi-Fi», «Новинка», «Klasse M1»), схеми та графіки — у чорному списку BLACKLIST.
+Фото з сайтів брендів для товарів без фото в прайсі — fetch_external_images.py (external-sources.json → external.json).
 """
 from __future__ import annotations
 
@@ -106,7 +107,10 @@ def main() -> None:
                     "width": im.width,
                     "height": im.height,
                 })
-    # прибираємо файли, яких більше немає в жодному прайсі
+    # прибираємо файли, яких більше немає в жодному прайсі (фото з сайтів брендів — external.json — лишаємо)
+    external = OUT / "external.json"
+    if external.exists():
+        keep |= {v["file"] for v in json.loads(external.read_text(encoding="utf-8")).values()}
     for f in OUT.iterdir():
         if f.suffix in (".jpg", ".png") and f.name not in keep:
             f.unlink()
