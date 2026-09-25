@@ -42,6 +42,7 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 - `scripts/cli/mirror-product-images.ts` downloads external images and rewrites the URLs. Admin uploads go through `src/lib/saveProductImage.ts`.
 - in-heat.kiev.ua sits behind a Cloudflare challenge and returns 403 to everything but a browser, so mirror can never fetch its photos. They ship in the repo as `data/media-seed/in-heat.tgz` and the entrypoint unpacks them onto the volume with `tar -k` before mirror runs. Pushing files with `railway ssh -- dd` hangs in a non-interactive shell, so `data/media-seed/` is the automated path.
 - `npm run img:analyze` finds donor watermarks (and pHash duplicates); `npm run img:cleanup` applies the result — clean photo as cover, swap a marked shot for a clean one. See `docs/IMAGE-WATERMARKS.md`.
+- `npm run img:dewatermark` erases the overlaid site name from the image files themselves (the photos come from sites that used to be ours). It builds the watermark model per donor+size group, inpaints it, keeps originals in `MEDIA_ORIGINALS_ROOT` and the processed list in `storage/media-dewatermarked.json`; the DB is never touched. On Railway it runs from the entrypoint when `DEWATERMARK_IMAGES=yes`, because the donor sites are gone and the files can only be fixed on the volume. See `docs/IMAGE-DEWATERMARK.md`.
 
 ### Scrape → import pipeline (`scripts/`, run with `tsx`)
 - `scripts/parsers/` contains cheerio scrapers for the three donor sites. `scripts/cli/crawl-*.ts` write manifest JSON to `data/scrape/`, and those files are committed. Production imports the `*-DETAIL.json` files and `vsesezon-catalog.json`.
@@ -64,7 +65,7 @@ Environment variables:
 - `DATABASE_URL`
 - `MEDIA_ROOT`: must equal the volume mount path.
 - `ADMIN_PASSWORD`, `ADMIN_ROUTE_SECRET`, `ADMIN_SESSION_SECRET`
-- `RAILWAY_REBUILD_CATALOG`, `RAILWAY_CATALOG_WIPE_ALL`: one-off flags, turn them off afterwards.
+- `RAILWAY_REBUILD_CATALOG`, `RAILWAY_CATALOG_WIPE_ALL`, `DEWATERMARK_IMAGES`: one-off flags, turn them off afterwards.
 - `MIRROR_PRODUCT_IMAGES`, `MIRROR_IMAGE_*`
 
 Details are in `docs/DEPLOY-RAILWAY.md` and `docs/MEDIA-STORAGE.md`. Update those docs when you change deploy, import or media behavior.

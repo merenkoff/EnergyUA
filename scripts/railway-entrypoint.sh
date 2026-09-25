@@ -22,6 +22,20 @@ if [[ -d "$MEDIA_SEED_DIR" ]] && compgen -G "$MEDIA_SEED_DIR/*.tgz" > /dev/null;
   echo "[railway-entrypoint] файлів у $TARGET: $(find "$TARGET" -maxdepth 1 -type f ! -name '.*' | wc -l | tr -d ' ')"
 fi
 
+# Стирання підпису донора з файлів фото. Іде після mirror: спершу файли мають опинитися на volume.
+# Оригінали лишаються в MEDIA_ORIGINALS_ROOT, повернути їх можна прогоном з --restore.
+dewatermark() {
+  if [[ "${DEWATERMARK_IMAGES:-}" != "yes" ]]; then
+    return 0
+  fi
+  echo "[railway-entrypoint] DEWATERMARK_IMAGES=yes → remove-image-watermarks.ts --apply"
+  if npx tsx scripts/cli/remove-image-watermarks.ts --apply; then
+    echo "[railway-entrypoint] стирання підпису завершено"
+  else
+    echo "[railway-entrypoint] стирання підпису завершилося з помилкою (фото лишаються як були)" >&2
+  fi
+}
+
 if [[ "${MIRROR_PRODUCT_IMAGES:-}" == "yes" ]]; then
   echo "[railway-entrypoint] MIRROR_PRODUCT_IMAGES=yes → mirror-product-images.ts у фоні"
   (
@@ -33,7 +47,10 @@ if [[ "${MIRROR_PRODUCT_IMAGES:-}" == "yes" ]]; then
     else
       echo "[railway-entrypoint] mirror завершився з помилкою (сайт працює, фото лишаються зовнішніми URL)" >&2
     fi
+    dewatermark
   ) &
+elif [[ "${DEWATERMARK_IMAGES:-}" == "yes" ]]; then
+  ( dewatermark ) &
 fi
 
 exec ./node_modules/.bin/next start
