@@ -47,6 +47,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "86b7c85cdc12b3daebffe19386439d78909be3a117842e5f032b7647d02b19ee.png",
+      "alt": "Терморегулятор Heat Plus M95.716B WiFI сенсорний, 16А, чорний матовий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

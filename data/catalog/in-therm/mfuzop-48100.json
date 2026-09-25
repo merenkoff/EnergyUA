@@ -70,6 +70,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "4363b44c888776c960389c6f306d9c3f7c6e71bce2d62d86c5a1516f9630111f.jpg",
+      "alt": "Акумулятор LiFePO4 MFUZOP 48100 (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

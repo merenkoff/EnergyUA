@@ -52,6 +52,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "d776f2d5e75a8e349ca2f71c7bc784e3a31109f521bd63fec22f34be4f3ab218.jpg",
+      "alt": "Терморегулятор Heat Plus M6.716 W - білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

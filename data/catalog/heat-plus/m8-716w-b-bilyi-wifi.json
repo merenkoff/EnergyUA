@@ -54,6 +54,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "4ae576d7e0364959593772345e84f90c6bc0026615ac7083c245856d636c75d1.png",
+      "alt": "Терморегулятор Heat Plus M8.716W/B-Білий, чорний, WI-FI"
+    },
+    {
+      "file": "1561682fa6eb1bcd62c41f28f7ec712958fe720badab5a02c2ef07fffc904d18.png",
+      "alt": "Терморегулятор Heat Plus M8.716W/B-Білий, чорний, WI-FI"
+    },
+    {
+      "file": "972dc3a7857b124a5cd935bf8913e6d21f543fc6d9232acf09eda8192689fac1.png",
+      "alt": "Терморегулятор Heat Plus M8.716W/B-Білий, чорний, WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

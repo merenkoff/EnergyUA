@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ef4895dca88f488753608263ae82923e2a73727e5c8b1687725455504ab71fbe.jpg",
+      "alt": "Датчик OJ Electronics ETOG-55"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

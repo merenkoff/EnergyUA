@@ -69,6 +69,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0fcb7d7219e775d1425361e5b66d2188d0d7bc91c0105b1adad44b7e3d88e81b.png",
+      "alt": "Нагрівальний мат Nexans MILLIMAT/150 375W 2,5 m² — 2,5 м², 375 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Nexans",

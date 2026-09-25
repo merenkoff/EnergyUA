@@ -21,6 +21,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "dff2334855206c6988ecfcf1cc85338c564385ded84743d2ef656fe2c51df118.jpg",
+      "alt": "Стрічка електромонтажна вузька 2 см"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "комплек-щі",

@@ -103,6 +103,12 @@
       "unit": "м"
     }
   ],
+  "images": [
+    {
+      "file": "cb1a99fca256592e2235e87738a39a91eae3b551ece30ae6f647770b0ede3e88.jpg",
+      "alt": "Нагрівальний мат MHW MHW150-2250-15.0 — 15 м², 2250 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 3,

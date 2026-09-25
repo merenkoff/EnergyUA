@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c420cee87c0248999e50030da2bdc00efd78d961286cf819b77b584a304d23fc.png",
+      "alt": "Гібридний інвертор Deye SUN-50K-SG01HP3-EU-BM4"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

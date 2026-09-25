@@ -13,6 +13,12 @@
   "shortDescription": "Шайба мідна 12х16х1",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "624d97dc81a6bf49b0301855479b35057c4eb2c109964275cce88ae139a41db3.jpg",
+      "alt": "Мідна шайба Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

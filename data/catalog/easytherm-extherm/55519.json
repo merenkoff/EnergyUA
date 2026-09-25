@@ -24,6 +24,28 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "f88ce01a040817e2b0db85782e84d00575cbc686e413f4b02ee3f6bf43fb7539.jpg",
+      "alt": "Гумовий нагрівальний мат Easytherm 60х90 см"
+    },
+    {
+      "file": "f68787581d74da30e25127eec4caa1a48deb2a701d9ee9471aa68d1b68d4f06f.jpg",
+      "alt": "Гумовий нагрівальний мат Easytherm 60х90 см"
+    },
+    {
+      "file": "6596383a70239656b6f7a3104b4d37b54b45ade7569a670b32987ab6051a7f1c.jpg",
+      "alt": "Гумовий нагрівальний мат Easytherm 60х90 см"
+    },
+    {
+      "file": "3d01e73a470ff41cfe5790198983628a0dfbafb505e627fdb4749d5f6ca4076e.jpg",
+      "alt": "Гумовий нагрівальний мат Easytherm 60х90 см"
+    },
+    {
+      "file": "624b812d3102e515edd4d8df2af8a885da41dd3443cf74fcf96dd326132151e1.jpg",
+      "alt": "Гумовий нагрівальний мат Easytherm 60х90 см"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Easytherm_IP",

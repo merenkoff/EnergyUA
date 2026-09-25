@@ -133,6 +133,12 @@
       "unit": "м"
     }
   ],
+  "images": [
+    {
+      "file": "100791975cc64df66bc65dcb01d85ff352231463dc1f6f4081d53cf59cb236a3.jpg",
+      "alt": "Нагрівальний мат IN-THERM Mat 200 Вт/м² — 13,9 м², 2790 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "IN-THERM",

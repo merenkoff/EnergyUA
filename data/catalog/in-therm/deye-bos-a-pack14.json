@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": "<p>Стандартна стійка 19 дюймів</p><p>на 13 окремих батарей</p><p>та єдиним блоком керування кластером високовольтних акумуляторів</p><p>для модулів серії Deye BOS-А</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "ac4e5895c0299eaab685e455f11d29f7a5a710c57566086436ae58b8d6869f20.jpg",
+      "alt": "Акумуляторна батарея Deye BOS-A-Pack14"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

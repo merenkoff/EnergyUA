@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "01456c04cd6630559813bf4bfc0c34adb09eaa87380544e53dabd79473d82ef8.jpg",
+      "alt": "Гібридний інвертор Deye SUN-8K-SG01LP1-EU"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

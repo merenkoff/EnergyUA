@@ -47,6 +47,16 @@
       "unit": "°C"
     }
   ],
+  "images": [
+    {
+      "file": "57ebcbcf027ae92ae724921f556ef3b33bfa2d8562373a78b914982fd22a9f7a.jpg",
+      "alt": "Терморегулятор Heat Plus iTeo4 STEEL WIFI сенсорний, 16A"
+    },
+    {
+      "file": "a0fc2c6de7a07611117a4ffda197fa0f3bf678a7aca8c07d02be4e5d95bb70b0.png",
+      "alt": "Терморегулятор Heat Plus iTeo4 STEEL WIFI сенсорний, 16A"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

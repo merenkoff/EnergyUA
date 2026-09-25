@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "3b9308dade55458b43911e702121611e44a05ccb5d51bb460e8ef6c07286e5fb.png",
+      "alt": "Терморегулятор OJ Electronics ETO2-4550"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

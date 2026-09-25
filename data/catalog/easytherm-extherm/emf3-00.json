@@ -74,6 +74,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "9c398ddb12a9a87f2026c78b22386424b09c44d78e15bffe3ef9172befad72e8.jpg",
+      "alt": "Нагрівальний мат Easytherm EMF3.00 — 3 м², 480 Вт (160 Вт/м²) у фользі"
+    },
+    {
+      "file": "42a86eaee05de951ea188138a636ab8b5704ee4bfc8dfcca97e0a7610250ce8e.jpg",
+      "alt": "Нагрівальний мат Easytherm EMF3.00 — 3 м², 480 Вт (160 Вт/м²) у фользі"
+    },
+    {
+      "file": "46d073b1125c09283545671c592d3f1cc096f5f97f95539f7a55ffdcec8da245.jpg",
+      "alt": "Нагрівальний мат Easytherm EMF3.00 — 3 м², 480 Вт (160 Вт/м²) у фользі"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_фольга_Easytherm",

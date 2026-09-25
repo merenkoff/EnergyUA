@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "fa032a33fae0f12c335824b43a64b9f8efb902ac4f05a93d4af828deb4218715.png",
+      "alt": "Акумуляторна батарея Deye SE-F5 Pro (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

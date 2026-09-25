@@ -51,6 +51,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "d59370562cb159cf4fcf53d3846de6567dce8483177928157651a06746f5a877.jpg",
+      "alt": "Терморегулятор Heat Plus M79.716 чорний матовий"
+    },
+    {
+      "file": "4c2dba82919cd4e9932dfc7bc38038b83672d66e8e1fb6272932fc1be2c5f6ec.png",
+      "alt": "Терморегулятор Heat Plus M79.716 чорний матовий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

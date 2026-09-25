@@ -76,6 +76,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "f94eb2f097da132162937411da2fd50bc77c83fbe737ab3be624e8fd37d1fe67.png",
+      "alt": "Нагрівальний кабель Nexans TXLP/2R 1700/17 — 100 м, 1700 Вт (17 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Nexans",

@@ -120,6 +120,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "549e33637c2e0c6f1ded243df314a9499f25ae0397ef812362f7667fe3984424.jpg",
+      "alt": "Нагрівальний кабель Fenix ADSV 10 Вт/м — 63,9 м, 600 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "FENIX",

@@ -63,6 +63,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a1af255b349fe7fae40e1ec71d9e1f62e09579ecdf413e32d421919d932006f1.jpg",
+      "alt": "Акумулятор LiFePO4 Datou Boss 24100 (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

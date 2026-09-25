@@ -25,6 +25,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "75b3e4ae02efba5937e957c046cae128166b9fe359f6a57bb955ee7b12caa0a2.jpg",
+      "alt": "Терморегулятор OJ Electronics ETI-1551"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

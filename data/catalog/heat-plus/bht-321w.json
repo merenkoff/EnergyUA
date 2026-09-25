@@ -53,6 +53,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "541fc20a341e1fa1597650f83ad0c9733c80553e4703b33664052af0b32ffb05.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-321W- білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

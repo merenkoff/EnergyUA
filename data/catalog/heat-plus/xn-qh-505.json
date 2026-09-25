@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "48ebf9c33a5f06aa9e0a96b68659ff5b67dc5ed44b212245077bf9033fa67ff8.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-QH 505 матова сіра"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

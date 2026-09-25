@@ -46,6 +46,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "167ce0c568400d52fd8ca4e5c6d0e5ce07c2e8f2de76fd427247c99169a7d0b7.jpg",
+      "alt": "Електромеханічний цифровий терморегулятор Easytherm ET35, 16А, 3200Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

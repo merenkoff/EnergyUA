@@ -30,6 +30,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "22e3e19e1b634927f07b7a58fd7659696c3b82bd195ac43e0d71a29f803a6e1a.png",
+      "alt": "Терморегулятор Wärme Technik М"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

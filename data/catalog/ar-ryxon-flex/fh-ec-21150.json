@@ -90,6 +90,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c24343cd803b142ddb95d732327a7d8d64b5317b89692b6b03f362fedbcd22f7.jpg",
+      "alt": "Нагрівальний мат Arnold Rak Standart FH-EC 21150 — 15 м², 2700 Вт (180 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "Standart_AR_мати",

@@ -104,6 +104,24 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "27b77f0fd264b5e17724aa9b2acbffc5fe2f536e485741e9c2df0b54c7795bac.png",
+      "alt": "Терморегулятор IN-THERM E 91"
+    },
+    {
+      "file": "3748224072496c87f965c0893016097c02fe125bafe9adbed90c0bf033e683f3.png",
+      "alt": "Терморегулятор IN-THERM E 91"
+    },
+    {
+      "file": "49cbe61ba3c68131dff67843c1d012862388f8cb38f0cfa639c9cac4b2c93f43.jpg",
+      "alt": "Терморегулятор IN-THERM E 91"
+    },
+    {
+      "file": "76b873f5bd031bc01eaf592f996ac6b925f5cc7feba63ca5b671c54d45a630eb.jpg",
+      "alt": "Терморегулятор IN-THERM E 91"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

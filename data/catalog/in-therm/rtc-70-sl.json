@@ -88,6 +88,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "39c4b47ac524e1c37dcc47cfce65355bfc68e9526d17f1692f5ce2669d7d5b2c.png",
+      "alt": "Терморегулятор IN-THERM RTC 70 SL"
+    },
+    {
+      "file": "0b8e55a26e2fa277e5dce29032bd730f8c7f0a206448ad3d9bfb153b9ca3fea0.png",
+      "alt": "Терморегулятор IN-THERM RTC 70 SL"
+    },
+    {
+      "file": "7f7ed3baccf1dc62db6440074db34fcf98a47492c85692001b30dd4fa3ba3b82.png",
+      "alt": "Терморегулятор IN-THERM RTC 70 SL"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

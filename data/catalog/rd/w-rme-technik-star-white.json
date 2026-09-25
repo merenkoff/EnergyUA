@@ -26,6 +26,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "708fec262ca0e4519e7288cc792d55a7434efaae4bf69a8ea59a3bcbe55fb2b9.png",
+      "alt": "Терморегулятор Wärme Technik Star White"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

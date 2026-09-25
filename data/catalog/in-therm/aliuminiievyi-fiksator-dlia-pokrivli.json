@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0fd90d2eec9e6363ee1d8177d590f509fe28f5522b6e92a7b1686438131b1f48.png",
+      "alt": "Алюмінієвий фіксатор для покрівлі Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

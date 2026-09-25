@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "1ebdb3362378f67afc3cb09695f687503f02b9e9dc9595ed38b9e00f270f3cdb.jpg",
+      "alt": "Алюмінієве кріплення для фіксації кабелю у водостоки Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

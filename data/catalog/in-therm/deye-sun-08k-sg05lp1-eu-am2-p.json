@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "3182cc8b499efe38b1f549a251b44c06a7d77d975ff1e0eefe3043fdf5ecddf6.png",
+      "alt": "Гібридний інвертор Deye SUN-08K-SG05LP1-EU-АM2-P"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

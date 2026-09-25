@@ -52,6 +52,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0bdb9c5e02fe7bb7e74af0156435f76b974ba98ec76e168189df250b9e2fd6fb.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-306, білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

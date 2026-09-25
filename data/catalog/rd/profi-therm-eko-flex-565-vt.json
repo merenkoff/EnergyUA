@@ -68,6 +68,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ebf922b0bef63f6e8244d337e962fdfeb2f4e17609bbf7180f9dd2ecfd9bea51.jpg",
+      "alt": "Нагрівальний кабель Profi Therm Eko Flex — 47,3 м, 565 Вт (11 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Profitherm Eko ",

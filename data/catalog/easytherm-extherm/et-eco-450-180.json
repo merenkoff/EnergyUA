@@ -68,6 +68,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7a4d1014bfc7238174558eb8b4fdc2027e5113cb0ddeb10e1af1f7926b661ded.jpg",
+      "alt": "Нагрівальний мат Extherm ET ECO 450-180 — 4,5 м², 810 Вт (180 Вт/м²)"
+    },
+    {
+      "file": "597feae4f32e54970f965d384e4d0e6e45768d7fb087302011d02d74be88918f.jpg",
+      "alt": "Нагрівальний мат Extherm ET ECO 450-180 — 4,5 м², 810 Вт (180 Вт/м²)"
+    },
+    {
+      "file": "528bdec218048e1912f76d01be9c955f97f998b1deba656850ae844b849504c7.jpg",
+      "alt": "Нагрівальний мат Extherm ET ECO 450-180 — 4,5 м², 810 Вт (180 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Extherm",

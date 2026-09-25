@@ -44,6 +44,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "c3fde6a149d562314f34a7d2be1b235ce3e3b90c5e16bdbca1b0a779c8425940.jpg",
+      "alt": "Терморегулятор Easytherm ET-25, 3200 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

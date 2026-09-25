@@ -13,6 +13,12 @@
   "shortDescription": "З'єднувальна н/ж клема для підключення до штиря заземлення (d16 мм, та дроту/полоси з проміжною пластиною NI)",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "7e48be21fd7f3d7ffd76bbd9e3a289d2d747775fcfe3757ca683ccb4d6fe07fa.png",
+      "alt": "З'єднувальна н/ж клема Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

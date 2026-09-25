@@ -70,6 +70,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a33f6b8459b1f6583cf681af0248d96c8992c8b44f4f52906fff7bac7d6d24ea.png",
+      "alt": "Нагрівальний кабель Wärme Twin flex cable 300 W — 20 м, 300 Вт (15 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Wärme",

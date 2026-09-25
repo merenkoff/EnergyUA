@@ -105,6 +105,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "32f04738c4df8570df52facc876c8f6e03ef9cf1f567cf6203038324e4352619.png",
+      "alt": "Терморегулятор IN-THERM PWT 517"
+    },
+    {
+      "file": "606498e344e124c8334950c46c47f5b2f20f8f261065ef06fe702f25f414f4f8.png",
+      "alt": "Терморегулятор IN-THERM PWT 517"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

@@ -110,6 +110,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "1fc3ea11456c57f872d47f17b526694885b91c184799ecce55bd6a2122a567af.png",
+      "alt": "Терморегулятор IN-THERM PT 029"
+    },
+    {
+      "file": "17f6f3c510e454334ed3b5dc57036ef35a8ed63a2b11e2f21ccbf67e9fe72fe4.png",
+      "alt": "Терморегулятор IN-THERM PT 029"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

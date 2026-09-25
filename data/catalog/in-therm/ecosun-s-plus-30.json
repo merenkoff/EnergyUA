@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ebbdeba6c7ac6e6207b0d6f8ce55c4ca57a17e1912c8f1fe1aab785d9e5c827f.png",
+      "alt": "Інфрачервона панель Fenix ECOSUN S+ 30 — 3000 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІЧ ПАНЕЛІ FENIX",

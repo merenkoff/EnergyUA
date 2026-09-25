@@ -48,6 +48,15 @@ Mirror працює **у фоні** паралельно з `next start`: сай
 tar czf data/media-seed/<донор>.tgz -C <каталог з файлами> .
 ```
 
+## Фото з прайсів постачальників (`data/catalog-media/`)
+
+Фото нового каталогу (етап 2 у [`CATALOG-PRICELISTS-UK.md`](CATALOG-PRICELISTS-UK.md)) витягуються з xlsx-прайсів
+або завантажуються з сайтів брендів (`external-sources.json`) у `data/catalog-media/<sha256>.<ext>` (~400 файлів, ~30 МБ, комітяться) і потрапляють у БД одразу як `/api/media/<файл>`
+з `source_url = pricelist:<файл>` під час `import:pricelists` у pre-deploy. Mirror ці рядки не чіпає (URL уже локальний).
+Сам файл на volume кладе `railway-entrypoint.sh` при старті: копіює `data/catalog-media/*.jpg|png` у `MEDIA_ROOT`,
+пропускаючи наявні. Локально те саме робить імпорт у `storage/media`. Якщо на сторінці товару 404 на таке фото —
+перевірити лог entrypoint («catalog-media → …: скопійовано N нових») і `MEDIA_ROOT`.
+
 **Чому не `railway ssh`:** передача файлу через `railway ssh -- dd of=…` у неінтерактивній оболонці зависає — stdin у канал не проходить (файл створюється порожнім). Тому `db:push-media-railway` працює лише з термінала вручну, а автоматичний шлях — через `data/media-seed/`.
 
 ## Якщо в HTML є `/api/media/...`, але 404
@@ -146,9 +155,10 @@ npm run db:media-diagnose
 - **`scripts/cli/media-storage-diagnose.ts`** — діагностика volume + БД (`npm run db:media-diagnose`).
 - **`scripts/cli/repair-missing-product-images.ts`** — докачка відсутніх файлів за `source_url` (`npm run db:repair-images`).
 - **`scripts/cli/mirror-product-images.ts`** — завантаження, дедуп за SHA-256 URL, оновлення `product_images.url` + заповнення `source_url`.
-- **`scripts/railway-entrypoint.sh`** — розпакування `data/media-seed/*.tgz` на volume, опційний фоновий mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
+- **`scripts/railway-entrypoint.sh`** — розпакування `data/media-seed/*.tgz` на volume, копіювання `data/catalog-media/*` (фото з прайсів), опційний фоновий mirror за `MIRROR_PRODUCT_IMAGES=yes`, далі `next start`.
+- **`scripts/pricelists/extract_pricelist_images.py`** — витягування фото з xlsx-прайсів у `data/catalog-media/` (`npm run extract:pricelist-images`).
 
-**Pre-deploy** (`db:predeploy`) лише: `prisma migrate deploy` + `prisma db seed` — **без** mirror.
+**Pre-deploy** (`db:predeploy`) лише: `prisma migrate deploy` + `prisma db seed` + `import:pricelists` — **без** mirror і без запису файлів на volume.
 
 ## Перевірка
 

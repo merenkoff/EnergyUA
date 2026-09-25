@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6c5f4c0654e6e3006261978bfc36d33ff9863b3917f3afc66b1e94c6da1b1002.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-WH 202 біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

@@ -47,6 +47,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "862c6506d3faaca6b71706b5d6a436397bd994e615996bddd6bbb60ee99fe80e.png",
+      "alt": "Саморегулюючий кабель HTS eHeat Micro — 17 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

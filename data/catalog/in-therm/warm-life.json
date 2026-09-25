@@ -97,6 +97,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "e409c2d3a9be283a2f0a4ecea63edd85b60edeea54029d21c4489fac6df01413.png",
+      "alt": "Терморегулятор IN-THERM WARM LIFE"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

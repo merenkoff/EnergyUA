@@ -98,6 +98,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "2b061af38332cec8dff8ad502f9afd6c7e3ec1bbe3f7a0393348217a22762dee.jpg",
+      "alt": "Терморегулятор Fenix TFT"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

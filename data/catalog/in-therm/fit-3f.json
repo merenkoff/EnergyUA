@@ -81,6 +81,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "04438058fbbf1e50d8f508a2578968454eaa33c846ad520930690f1dd5812641.jpg",
+      "alt": "Терморегулятор Eberle FIT 3F"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

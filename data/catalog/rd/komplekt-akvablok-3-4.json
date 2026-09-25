@@ -44,6 +44,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "77cdfb91e225de5c30cc046de4cf25d161c33b884423fcd2a8977bd76d6d81c2.jpg",
+      "alt": "Комплект Акваблок 3/4 — бездротова система захисту від протікання"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Акваблок",

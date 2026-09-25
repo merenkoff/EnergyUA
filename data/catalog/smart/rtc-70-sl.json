@@ -23,6 +23,20 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "8b1eaa737bd6c8ba0eb79c0beb6c5970922c8ec3264f42cce6bc2e1b5d957680.jpg",
+      "alt": "Терморегулятор RTC-70 SL"
+    },
+    {
+      "file": "8560186c08544eb40edbaba11116573d0268b9dd1e07ac74437a805a174ba3ec.jpg",
+      "alt": "Терморегулятор RTC-70 SL"
+    },
+    {
+      "file": "5f7f253b501befc0166b70ec235a991bfdcd87cb63a7b7efc4258ab16881dabb.png",
+      "alt": "Терморегулятор RTC-70 SL"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-smart-thermostats.xlsx",
     "sheet": "Prices",

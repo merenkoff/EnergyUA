@@ -17,6 +17,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "9fa5f6d4f8751d563d08a57f2b28186872bc7abeceb70d0dab70b5240215a764.png",
+      "alt": "Трубний датчик температури OJ Electronics ETF-633/44/55"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 2,

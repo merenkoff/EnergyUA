@@ -69,6 +69,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "35e587d43380930b991b552d5d1c969baba89f07fb40434dab1a9889241ba8a3.jpg",
+      "alt": "Нагрівальний кабель Extherm ETT ECO 30-2190 — 73 м, 2190 Вт (30 Вт/м)"
+    },
+    {
+      "file": "76b4b96b5584f8503c37ecc5ba44e55d0fdf0c7dc5e877d24fc52b5852805c4e.jpg",
+      "alt": "Нагрівальний кабель Extherm ETT ECO 30-2190 — 73 м, 2190 Вт (30 Вт/м)"
+    },
+    {
+      "file": "a01a5a488336650624e316e476ceaa87e3ac839d2542faf093f84abc055863a8.jpg",
+      "alt": "Нагрівальний кабель Extherm ETT ECO 30-2190 — 73 м, 2190 Вт (30 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Кабелі_30Вт_Extherm",

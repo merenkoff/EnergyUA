@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6473896c6c97d5482640a6efbba11416c01a495c725ad6f2e81ed6ec6fe046cd.jpg",
+      "alt": "Датчик OJ Electronics ETF-622"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

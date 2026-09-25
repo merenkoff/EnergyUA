@@ -98,6 +98,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ae43cb5145fd9427920afdb29c1e4dbb6210fd62d265571cf377e66108ad6983.jpg",
+      "alt": "Нагрівальний кабель Magnum MHCX-30 — 80 м, 2400 Вт (30 Вт/м)"
+    },
+    {
+      "file": "699b9de023e1de33e07f2f6eb02668a91e68cd0aa3fcc05591ca1b1b196951bd.jpg",
+      "alt": "Нагрівальний кабель Magnum MHCX-30 — 80 м, 2400 Вт (30 Вт/м)"
+    },
+    {
+      "file": "fee9fe3f713159cf2bdcf21995fe9dd2c5ecddce0720f7815e143a9c811a9952.jpg",
+      "alt": "Нагрівальний кабель Magnum MHCX-30 — 80 м, 2400 Вт (30 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

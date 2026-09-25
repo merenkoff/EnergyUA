@@ -72,6 +72,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "17e0c6382392304de1e7bcbda9f304fef3f63334014c5e6c9155cff3f49edab2.jpg",
+      "alt": "Акумулятор LiFePO4 Bluesun BSM12104 (104 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

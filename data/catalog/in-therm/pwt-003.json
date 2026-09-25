@@ -98,6 +98,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "407f58c36cc318072a9680ea1f555c1ff8dc1bd29a9f8be5083f06a51a4098d5.png",
+      "alt": "Терморегулятор IN-THERM PWT 003"
+    },
+    {
+      "file": "bbd0f74dca01cdc3b5f178793bea32ca796d6ea0403ff5c86e3f525e4fdccfc7.png",
+      "alt": "Терморегулятор IN-THERM PWT 003"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

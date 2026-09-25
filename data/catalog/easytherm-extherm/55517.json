@@ -13,6 +13,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "f394cb5163029c9ce46433166febb986cf3b39ab5b367c725040d05b826fc5e7.jpg",
+      "alt": "Алюмінієвий скотч Easytherm, 50мм*30м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

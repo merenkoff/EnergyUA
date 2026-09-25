@@ -24,6 +24,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "9a028b39c81220035e7ef876f24e66289f170b8e92c74412a42953d10336d9e7.png",
+      "alt": "Датчик температури для термостатів Extherm ET-21"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

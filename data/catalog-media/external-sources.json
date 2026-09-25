@@ -1,0 +1,1418 @@
+[
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "skuPrefix": [
+    "FH-EC "
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static302.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=157",
+  "note": "Category page of the Standart FH-EC 21XX 180 W/m2 twin mat: red 'Standart' box with laying instructions + rolled black mat, white background. Phone photo, portrait, large; only photo of this family on"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "skuPrefix": [
+    "FH P "
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static58.jpg",
+   "https://arnoldrak.com.ua/images/static202.jpg",
+   "https://arnoldrak.com.ua/images/static47.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=1",
+  "note": "Premium twin mat FH P 21XX (200 W/m2): orange/black 'Fussbodenheizung' box + blue mat + cold lead, grey studio background. static58 (960x765) is an unreferenced file in the site's /images/ folder (sam"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "skuPrefix": [
+    "FH L "
+   ]
+  },
+  "urls": [
+   "https://www.rak-waermetechnik.de/images/userfiles/image/ausfuehrung_laminat.jpg.jpg"
+  ],
+  "page": "https://www.rak-waermetechnik.de/de/produkte/fussbodenheizung/ausfuehrungen/",
+  "note": "Only official photo for the single-core laminate mat FH L (distributor category image static50.jpg is 404): manufacturer page 'Ausfuehrungen', file named ausfuehrung_laminat, placed at the MONO (singl"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "6101-20",
+    "6102-20",
+    "6103-20",
+    "6104-20",
+    "6105-20",
+    "6106-20",
+    "6107-20",
+    "6108-20",
+    "6109-20",
+    "6110-20",
+    "6111-20",
+    "6112-20",
+    "6113-20",
+    "6114-20",
+    "6115-20"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static299.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/heizkabel_01.jpg",
+   "https://arnoldrak.com.ua/images/static51.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=3",
+  "note": "Premium twin cable 61xx-20 (20 W/m): white 'Heizkabel Heating Cable 5 mm' box + orange box + black cable coil, white background (static299, shown on shop.php). Same shot on manufacturer heizkabel page"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "6101-30",
+    "6102-30",
+    "6103-30",
+    "6104-30",
+    "6105-30",
+    "6106-30",
+    "6107-30",
+    "6108-30",
+    "6109-30",
+    "6110-30",
+    "6111-30",
+    "6112-30",
+    "6113-30",
+    "6114-30",
+    "6115-30"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static299.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/heizkabel_01.jpg",
+   "https://arnoldrak.com.ua/images/static51.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=4",
+  "note": "Premium twin cable 61xx-30 (30 W/m, snow melting). Manufacturer and distributor use one packaging photo for the 15/20/30 W twin cable (category image static52.jpg is byte-identical to static51.jpg), s"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "AR 16 SL"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static296.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/ST_AR_16.jpg",
+   "https://arnoldrak.com.ua/images/static294.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/unit.php?id=30",
+  "note": "Distributor lists AR16TH-SL (1970 UAH = price-list AR 16 SL) on unit.php?id=30 with static296 (thermostat in frame, 390x390; static300.jpg identical). ST_AR_16.jpg (476x466) is the manufacturer's ST-A"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "FH 21030"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static72.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/Heizteppiche_heatmaster04.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/unit.php?id=12",
+  "note": "Heat Master shoe dryer 30x100 cm, 40 W (Art. FH 21030, unit.php?id=12). static72 (453x453, page.php?id=43) = the long grey mat with shoes and plug, white background; heatmaster04 (510x402, manufacture"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "6101-15 EC",
+    "6102-15 EC",
+    "6103-15 EC",
+    "6104-15 EC",
+    "6105-15 EC",
+    "6106-15 EC",
+    "6107-15 EC",
+    "6108-15 EC",
+    "6109-15 EC",
+    "6110-15 EC",
+    "6111-15 EC",
+    "6112-15 EC",
+    "6113-15 EC",
+    "6114-15 EC",
+    "6115-15 EC"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static299.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/heizkabel_01.jpg",
+   "https://arnoldrak.com.ua/images/static51.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=180",
+  "note": "Standart EC: власного фото на сайтах немає; використано загальне фото пакування кабелю Arnold Rak (Premium)"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "match": {
+   "sku": [
+    "6101-20 EC",
+    "6102-20 EC",
+    "6103-20 EC",
+    "6104-20 EC",
+    "6105-20 EC",
+    "6106-20 EC",
+    "6107-20 EC",
+    "6108-20 EC",
+    "6109-20 EC",
+    "6110-20 EC",
+    "6111-20 EC",
+    "6112-20 EC",
+    "6113-20 EC",
+    "6114-20 EC",
+    "6115-20 EC"
+   ]
+  },
+  "urls": [
+   "https://arnoldrak.com.ua/images/static299.jpg",
+   "https://www.rak-waermetechnik.de/images/userfiles/image/heizkabel_01.jpg",
+   "https://arnoldrak.com.ua/images/static51.jpg"
+  ],
+  "page": "https://arnoldrak.com.ua/shop.php?id=180",
+  "note": "Standart EC: власного фото на сайтах немає; використано загальне фото пакування кабелю Arnold Rak (Premium)"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "match": {
+   "sku": [
+    "Ribex 0,38*0,57 cm"
+   ]
+  },
+  "urls": [],
+  "page": "https://arnoldrak.com.ua/shop.php?id=7",
+  "note": "NOT FOUND: 'Ribex' is a separate rug brand in the price list, not Arnold Rak; neither arnoldrak.com.ua nor rak-waermetechnik.de mentions Ribex. Only Heat Master rugs (different product, 40x60 etc.) ha"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "match": {
+   "sku": [
+    "Комплект муфт",
+    "Комплект муфт + робота"
+   ]
+  },
+  "urls": [],
+  "page": "https://arnoldrak.com.ua/shop.php",
+  "note": "NOT FOUND: coupling kits are not sold on arnoldrak.com.ua, arnoldrak.com or rak-waermetechnik.de; only text (page.php?id=25 'Секції нагрівального кабеля' has a small gif diagram of the joint)."
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "match": {
+   "sku": [
+    "Кріплення для кабеля"
+   ]
+  },
+  "urls": [],
+  "page": "https://arnoldrak.com.ua/shop.php",
+  "note": "NOT FOUND: no cable-fixing product or photo on any official Arnold Rak site."
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "match": {
+   "skuPrefix": [
+    "Монтажна стрічка "
+   ]
+  },
+  "urls": [],
+  "page": "https://arnoldrak.com.ua/shop.php",
+  "note": "NOT FOUND: mounting tape 20/25 mm is only mentioned in the price list; no product page or photo on any official site (manufacturer 'Zubehoer' image is a wood-fibre underlay board, not tape)."
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "match": {
+   "skuPrefix": [
+    "Трос з "
+   ]
+  },
+  "urls": [],
+  "page": "https://www.rak-waermetechnik.de/de/produkte/dachrinnenheizung/",
+  "note": "NOT FOUND: gutter rope with fixings has no product photo; the manufacturer gutter-heating page only has 200x150 installation thumbnails of cable in gutters/downpipes."
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "match": {
+   "skuPrefix": [
+    "HM-200-"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/heating-mats/main/heating_mats.jpg",
+   "https://www.ryxon.eu/products/heating-mats/others/heating_mats_1.jpg",
+   "https://www.ryxon.eu/products/heating-mats/others/heating_mats_3.jpg"
+  ],
+  "page": "https://www.ryxon.eu/products/heating-mats",
+  "note": "Official Ryxon HM-series studio photos on white/light-grey background (mat unrolled + roll + lead wire; roll with lead; close-up of roll). Sizes: 6000x4000, 600"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "match": {
+   "skuPrefix": [
+    "HC-20-"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/heating-cable/main/heating_cable.jpg",
+   "https://www.ryxon.eu/products/heating-cable/others/heating_cable_2.jpg",
+   "https://www.ryxon.eu/products/heating-cable/others/heating_cable_1.jpg"
+  ],
+  "page": "https://www.ryxon.eu/products/heating-cable",
+  "note": "Official Ryxon HC-series photos: red twin-core cable coils with black lead on white/light-grey background. Sizes: 6000x4000, 4967x3775, 6000x4000. One photo for"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "match": {
+   "sku": [
+    "LSR-17-CR",
+    "LSR-26-CR",
+    "LSR-33-CR",
+    "LSR-40-CR"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/self-regulating-cable/others/self_regulating_cable_LSR.png"
+  ],
+  "page": "https://www.ryxon.eu/products/self-regulating-cable",
+  "note": "Official Ryxon LSR-series render (black polyolefin -CR sheath, cut-away showing braid and conductors) on white background, palette PNG 2920x2080. /products/self"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "match": {
+   "sku": [
+    "LSR-33-CT",
+    "LSR-40-CT"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/self-regulating-cable/others/self_regulating_cable_LSR.png"
+  ],
+  "page": "https://www.ryxon.eu/products/self-regulating-cable",
+  "note": "ryxon.eu has one image per series, not per sheath variant, so the -CT (FEP jacket) cables get the same LSR render as -CR (black sheath). The red-sheath render s"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "match": {
+   "skuPrefix": [
+    "EHM-175/"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/heating-mats/main/heating_mats.jpg",
+   "https://www.ryxon.eu/products/heating-mats/others/heating_mats_1.jpg",
+   "https://www.ryxon.eu/products/heating-mats/others/heating_mats_3.jpg"
+  ],
+  "page": "https://www.ryxon.eu",
+  "note": "Flex — марка того ж імпортера/заводу, що й Ryxon; офіційного сайту немає. Фото Ryxon без брендування як ілюстрація"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "match": {
+   "skuPrefix": [
+    "EHC-17.5/"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/heating-cable/main/heating_cable.jpg",
+   "https://www.ryxon.eu/products/heating-cable/others/heating_cable_2.jpg",
+   "https://www.ryxon.eu/products/heating-cable/others/heating_cable_1.jpg"
+  ],
+  "page": "https://www.ryxon.eu",
+  "note": "Flex — марка того ж імпортера/заводу, що й Ryxon; офіційного сайту немає. Фото Ryxon без брендування як ілюстрація"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "match": {
+   "sku": [
+    "FLSR-17-2CR",
+    "FLSR-26-2CR",
+    "FLSR-33-2CR",
+    "FLSR-40-2CR"
+   ]
+  },
+  "urls": [
+   "https://www.ryxon.eu/products/self-regulating-cable/others/self_regulating_cable_LSR.png"
+  ],
+  "page": "https://www.ryxon.eu",
+  "note": "Flex — марка того ж імпортера/заводу, що й Ryxon; офіційного сайту немає. Фото Ryxon без брендування як ілюстрація"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "match": {
+   "sku": [
+    "TDF1",
+    "TDU1"
+   ]
+  },
+  "urls": [],
+  "note": "Термостати Flex: офіційного сайту немає, фото не знайдено"
+ },
+ {
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "match": {
+   "sku": [
+    "TDS1"
+   ]
+  },
+  "urls": [],
+  "note": "Термостати Flex: офіційного сайту немає, фото не знайдено"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "match": {
+   "sku": [
+    "EM0.50",
+    "EM1.00",
+    "EM1.50",
+    "EM10.00",
+    "EM12.00",
+    "EM15.00",
+    "EM2.00",
+    "EM2.50",
+    "EM3.00",
+    "EM3.50",
+    "EM4.00",
+    "EM5.00",
+    "EM6.00",
+    "EM7.00",
+    "EM8.00"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/EM_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EM_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EM_4.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://easytherm.com.ua/",
+  "note": "EM 200 W/m2 dual-core mat (box + blue rolls + unrolled mat). official Onteplo (importer) product photo from the Easytherm/Hot Fly YML feed; 1000x1000 JPEG on wh | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "match": {
+   "sku": [
+    "EMF1.00",
+    "EMF1.50",
+    "EMF10.00",
+    "EMF12.00",
+    "EMF2.00",
+    "EMF2.50",
+    "EMF3.00",
+    "EMF3.50",
+    "EMF4.00",
+    "EMF5.00",
+    "EMF6.00",
+    "EMF7.00",
+    "EMF8.00"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/EMF_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EMF_4.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EMF_2.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://easytherm.com.ua/",
+  "note": "EMF 160 W/m2 foil mat under laminate (box + foil rolls). official Onteplo (importer) product photo from the Easytherm/Hot Fly YML feed; 1000x1000 JPEG on white, | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "match": {
+   "sku": [
+    "EC105.0",
+    "EC11.0",
+    "EC120.0",
+    "EC135.0",
+    "EC16.0",
+    "EC21.0",
+    "EC26.0",
+    "EC32.0",
+    "EC42.0",
+    "EC53.0",
+    "EC65.0",
+    "EC75.0",
+    "EC8.0",
+    "EC85.0",
+    "EC95.0"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/EC_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EC_4.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/EC_1.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://easytherm.com.ua/",
+  "note": "EC 18 W/m dual-core cable (box + red cable coil); EC_5.jpg is the bare coil. official Onteplo (importer) product photo from the Easytherm/Hot Fly YML feed; 1000 | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "match": {
+   "sku": [
+    "SR30"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/SR17_SR30_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/SR17_SR30_4.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/SR17_SR30_5.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://easytherm.com.ua/",
+  "note": "SELFREG self-regulating cable on wooden drum; the feed lists exactly these three photos for SR-30 (SR17_SR30_3.jpg is a label close-up reading SR17, so skip it) | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "match": {
+   "sku": [
+    "ET ECO 050-180",
+    "ET ECO 075-180",
+    "ET ECO 100-180",
+    "ET ECO 1000-180",
+    "ET ECO 1100-180",
+    "ET ECO 1200-180",
+    "ET ECO 1300-180",
+    "ET ECO 1400-180",
+    "ET ECO 150-180",
+    "ET ECO 1500-180",
+    "ET ECO 200-180",
+    "ET ECO 250-180",
+    "ET ECO 300-180",
+    "ET ECO 350-180",
+    "ET ECO 400-180",
+    "ET ECO 450-180",
+    "ET ECO 500-180",
+    "ET ECO 600-180",
+    "ET ECO 700-180",
+    "ET ECO 800-180",
+    "ET ECO 900-180"
+   ]
+  },
+  "urls": [
+   "https://extherm.com.ua/wp-content/uploads/2025/05/ET-ECO-1.png",
+   {
+    "url": "https://extherm.com.ua/img/ET_ECO_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ET_ECO_2.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://extherm.com.ua/nagrivalni_mat/",
+  "note": "First URL: large transparent-background PNG from the official Extherm mat page (alt='ET ECO'), no footer. Others: 1000x1000 feed JPEGs on white with the small ' | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "match": {
+   "sku": [
+    "ETL 100-200",
+    "ETL 1000-200",
+    "ETL 150-200",
+    "ETL 200-200",
+    "ETL 250-200",
+    "ETL 300-200",
+    "ETL 350-200",
+    "ETL 400-200",
+    "ETL 450-200",
+    "ETL 500-200",
+    "ETL 600-200",
+    "ETL 700-200",
+    "ETL 800-200",
+    "ETL 900-200"
+   ]
+  },
+  "urls": [
+   "https://extherm.com.ua/wp-content/uploads/2025/05/ETL-2.png",
+   {
+    "url": "https://extherm.com.ua/img/ETL_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ETL_2.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://extherm.com.ua/nagrivalni_mat/",
+  "note": "First URL: large transparent-background PNG from the official Extherm mat page (blue single-core ETL mat), no footer. Others: 1000x1000 feed JPEGs on white with | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "match": {
+   "sku": [
+    "ETC ECO 20-1000",
+    "ETC ECO 20-1200",
+    "ETC ECO 20-1400",
+    "ETC ECO 20-1600",
+    "ETC ECO 20-1800",
+    "ETC ECO 20-200",
+    "ETC ECO 20-2000",
+    "ETC ECO 20-2300",
+    "ETC ECO 20-2500",
+    "ETC ECO 20-300",
+    "ETC ECO 20-3000",
+    "ETC ECO 20-400",
+    "ETC ECO 20-500",
+    "ETC ECO 20-600",
+    "ETC ECO 20-800"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_1.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_4.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://extherm.com.ua/nagrivalni_cabel/",
+  "note": "Black Extherm 'Electric heating cable' box + coils; the feed uses one photo set for both ETC ECO and ETT ECO. official Onteplo (importer) product photo from the | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "match": {
+   "sku": [
+    "ETT ECO 30-1080",
+    "ETT ECO 30-1290",
+    "ETT ECO 30-1440",
+    "ETT ECO 30-1680",
+    "ETT ECO 30-1920",
+    "ETT ECO 30-2190",
+    "ETT ECO 30-240",
+    "ETT ECO 30-2400",
+    "ETT ECO 30-2790",
+    "ETT ECO 30-3150",
+    "ETT ECO 30-3570",
+    "ETT ECO 30-360",
+    "ETT ECO 30-480",
+    "ETT ECO 30-600",
+    "ETT ECO 30-840"
+   ]
+  },
+  "urls": [
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_3.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/ETC_ETT_5.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://extherm.com.ua/nagrivalni_cabel/",
+  "note": "Snow-melting cable ETT ECO 30 shares the ETC/ETT photo set (same black cable and box); listed in a different order so the cover differs from ETC ECO. official O | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "hot-fly",
+  "match": {
+   "sku": [
+    "HFM 0.50",
+    "HFM 1.00",
+    "HFM 1.50",
+    "HFM 10.00",
+    "HFM 12.00",
+    "HFM 15.00",
+    "HFM 2.00",
+    "HFM 2.50",
+    "HFM 3.00",
+    "HFM 4.00",
+    "HFM 5.00",
+    "HFM 6.00",
+    "HFM 7.00",
+    "HFM 8.00"
+   ]
+  },
+  "urls": [
+   "https://hot-fly.com.ua/img/prod-mat.webp",
+   {
+    "url": "https://extherm.com.ua/img/HFM_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/HFM_1.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://hot-fly.com.ua/",
+  "note": "First URL: very large clean WebP product shot from the Hot Fly home page (box + blue rolls + mat, white background, no footer, 4.3 MB). Others: 1000x1000 feed J | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "easytherm-extherm",
+  "brand": "hot-fly",
+  "match": {
+   "sku": [
+    "HFC 105.0",
+    "HFC 11.0",
+    "HFC 120.0",
+    "HFC 135.0",
+    "HFC 16.0",
+    "HFC 21.0",
+    "HFC 26.0",
+    "HFC 32.0",
+    "HFC 42.0",
+    "HFC 53.0",
+    "HFC 65.0",
+    "HFC 75.0",
+    "HFC 8.0",
+    "HFC 85.0",
+    "HFC 95.0"
+   ]
+  },
+  "urls": [
+   "https://hot-fly.com.ua/img/prod-cab.webp",
+   {
+    "url": "https://extherm.com.ua/img/HFC_2.jpg",
+    "cropBottom": 0.1
+   },
+   {
+    "url": "https://extherm.com.ua/img/HFC_4.jpg",
+    "cropBottom": 0.1
+   }
+  ],
+  "page": "https://hot-fly.com.ua/",
+  "note": "First URL: large clean WebP product shot from the Hot Fly home page (box + yellow/blue cable coil, white background, no footer, 1.7 MB). Others: 1000x1000 feed  | feed-фото Onteplo: обрізано підпис знизу (cropBottom)"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "skuPrefix": [
+    "Mat "
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/magnummat/1-13.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/magnummat/1-07.jpg",
+   "https://www.magnumheating.com/wp-content/uploads/2021/10/MAGNUM_Mat_Set_2021_2-edited-2048x1365.png"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/pod-plitku/komplekt-nagrevatelnogo-mata-dvuzhilnogo-magnum-mat-1-0-m-1566",
+  "note": "Magnum Mat 150 W/m2: пакування + мат (офіційний дистриб'ютор Magnum в Україні magnum-heating.com.ua); 2-ге фото — розгорнутий мат 2000x2000; 3-тє — рендер з magnumheating.com 2048x1365 (мат + термоста"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "skuPrefix": [
+    "Aluminium Mat "
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame59-2.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame62-4.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame58.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/pod-laminat/komplekt-aljuminievogo-mata-magnum-mat-2-0-m2-",
+  "note": "Алюмінієвий мат під ламінат: пакування + мат на білому тлі; на magnumheating.com цього продукту немає. Всі три 1080x1080."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "skuPrefix": [
+    "C&F-17 "
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-29.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-31.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-32.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/pod-kovrolin/komplekt-nagrevatelnogo-kabelya-dvuzhilnogo-magnum-cable-c-f-1000w-1583",
+  "note": "Кабель C&F (жовтий) з коробкою; 2-ге фото 2000x2000 — бухта з коробкою, 3-тє 2000x2000 — тільки бухта. Альтернатива з magnumheating.com: /2021/04/MAGNUM_Cable_Set_2020.png (2600x2600, рендер з термост"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "skuPrefix": [
+    "C&F HC 30/"
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-22.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-17.jpg",
+   "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-19.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/antiobledenenie/komplekt-nagrevatelnogo-kabelya-dvuzhilnogo-magnum-cable-c-f-hc-30-1200-40-1595",
+  "note": "MHCX-30 / Magnum Cable C&F HC 30 (чорний кабель антиобледеніння): бухта + коробка; 2-ге 2000x2000 бухта, 3-тє 4501x4501 бухта з етикеткою. На magnumheating.com це 'Outdoor Cable' (/2021/11/MAGNUM_Outd"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "skuPrefix": [
+    "Slim Cable "
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/slim/img_3884.jpg",
+   "https://magnum-heating.com.ua/image/catalog/slim/img_3888.jpg",
+   "https://magnum-heating.com.ua/image/catalog/slim/img_3890.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/index.php?path=20_24&product_id=1912&route=product%2Fproduct",
+  "note": "Slim Cable 3,5 mm: котушка на коробці Magnum; 2-ге і 3-тє — котушка без коробки (3500x3500, 3472x3471). Сторінка існує лише за index.php-URL (у sitemap її немає)."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "sku": [
+    "ET44 WiFi"
+   ]
+  },
+  "urls": [
+   "https://www.magnumheating.es/wp-content/uploads/2024/08/201210-ET-43-whiteblack.png",
+   "https://magnum-heating.com.ua/image/catalog/products/magnum-heating/magnum-et44w.jpg",
+   "https://magnum-heating.com.ua/image/catalog/products/magnum-heating/magnum-et44-wifi.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/termoregulyatory/termoregulyator-magnum-et44-wifi",
+  "note": "1-ше — білий ET44 (рендер з magnumheating.es, сторінка termostato-digital-wifi-et-44; PNG з прозорим тлом), 2-ге — чорний ET44W 1280x1344 з magnum-heating.com.ua, 3-тє — білий 344x327 (мале, лише як з"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "sku": [
+    "F32 Smart WiFi"
+   ]
+  },
+  "urls": [
+   "https://www.magnumheating.com/wp-content/uploads/2023/10/F32_thermostat_Black.jpg",
+   "https://www.magnumheating.com/wp-content/uploads/2023/10/F32_thermostat.png",
+   "https://magnum-heating.com.ua/image/catalog/reginew/magnumf32smartwifiwhite/photo_2024-05-31_12-06-34.jpg"
+  ],
+  "page": "https://www.magnumheating.com/product/f32-wifi/",
+  "note": "F32 WiFi: чорний (JPEG 1920x1920) і білий (PNG 1000x1000, прозоре тло) з magnumheating.com; 3-тє — чорний 1280x1280 з magnum-heating.com.ua."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "sku": [
+    "Intelligent Control"
+   ]
+  },
+  "urls": [
+   "https://magnum-heating.com.ua/image/catalog/reginew/magnumintelligentcontrolsilver4.jpg",
+   "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-36.jpg",
+   "https://magnum-heating.com.ua/image/catalog/reginew/magnumintelligentcontrolsilver.jpg"
+  ],
+  "page": "https://magnum-heating.com.ua/katalog/termoregulyatory/termoregulyator-magnum-intelligent-control",
+  "note": "Intelligent Control: лише невеликі фото (500 px) на сайті дистриб'ютора: 1-ше — сріблястий з коробкою, 2-ге — білий 500x406, 3-тє — сріблястий 500x443. На magnumheating.com продукту немає."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "match": {
+   "sku": [
+    "Standard Control"
+   ]
+  },
+  "urls": [
+   "https://www.magnumheating.com/wp-content/uploads/2021/04/MAGNUM_Standard_Control_2015.png",
+   "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-38(2).jpg",
+   "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-38(3).jpg"
+  ],
+  "page": "https://www.magnumheating.com/product/magnum-s-control/",
+  "note": "Standard Control = Magnum S-Control: 1-ше — офіційний рендер (PNG, прозоре тло) з magnumheating.com; 2-ге і 3-тє — фото 500x427 / 500x429 зі сторінки magnum-heating.com.ua/katalog/termoregulyatory/mag"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "mhw",
+  "match": {
+   "skuPrefix": [
+    "MHW150-"
+   ]
+  },
+  "urls": [
+   "https://kkplus.shop/image/catalog/kondicionery/heatwave/1-08.jpg"
+  ],
+  "page": "https://kkplus.shop/elektrychna-tepla-pidloga/nagrevatelnye_maty/dvozhylnyj-nagrivalnyj-mat-heatwave-1-0-m",
+  "note": "MHW = Heat Wave: власний бренд українського дистриб'ютора Magnum Heating (KK Plus, kkplus.shop / magnum-heating.com.ua); на сторінці 'Країна виробник: Україна', назва 'Нагрівальний мат HeatWave MHW-15"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "mhw",
+  "match": {
+   "skuPrefix": [
+    "HW 20-"
+   ]
+  },
+  "urls": [
+   "https://kkplus.shop/image/catalog/kondicionery/heatwave/1-25.jpg"
+  ],
+  "page": "https://kkplus.shop/elektrychna-tepla-pidloga/nagrevatelnyj-kabel/dvozhylnyj-nagrivalnyj-kabel-heatwave-cekcyya-hw-20-200",
+  "note": "Кабель Heat Wave HW 20 (синя бухта + коробка Heat Wave); джерело те саме, що й для матів MHW150 (kkplus.shop, бренд дистриб'ютора)."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "terneo",
+  "match": {
+   "sku": [
+    "terneo mex"
+   ]
+  },
+  "urls": [
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_1.jpg",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_2.jpg",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_interior_3.jpg"
+  ],
+  "page": "https://ds-electronics.com.ua/termoregulyatory/terneo-mex/",
+  "note": "terneo.ua/catalog веде на сайт виробника DS Electronics; 1-ше — фронтальне фото, 2-ге — комплектація, 3-тє — в інтер'єрі. Усі 750x750."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "terneo",
+  "match": {
+   "sku": [
+    "terneo st"
+   ]
+  },
+  "urls": [
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_12.jpg",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_22.jpg",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_3.jpg"
+  ],
+  "page": "https://ds-electronics.com.ua/termoregulyatory/terneo-st/",
+  "note": "terneo st (DS Electronics, виробник terneo): фронтальне фото, комплектація, ще один ракурс. Усі 750x750."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "terneo",
+  "match": {
+   "sku": [
+    "terneo sx"
+   ]
+  },
+  "urls": [
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_11-2.jpg",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_21.png",
+   "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_interior_6.jpg"
+  ],
+  "page": "https://ds-electronics.com.ua/termoregulyatory/terneo-sx/",
+  "note": "terneo sx Wi-Fi (DS Electronics): 1-ше — термостат зі смартфоном, 2-ге — комплектація (PNG), 3-тє — в інтер'єрі. Усі 750x750."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "hts-global",
+  "match": {
+   "sku": [
+    "eHeat Micro"
+   ]
+  },
+  "urls": [
+   "https://image.jimcdn.com/app/cms/image/transf/none/path/s9114dd0ff2a8d77e/image/i14c77fad35725327/version/1535382692/image.png"
+  ],
+  "page": "https://www.hts-global.com/heat-tracing-products/self-regulating-heating-tapes/eheat-micro/",
+  "note": "На hts-global.com немає фото продукту — лише технічний рендер (розріз саморегулюючого кабелю eHeat Micro у помаранчевому колі, PNG 500x500, прозоре тло). Ширші банери (1936x524) — це схема будови, не "
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "hts-global",
+  "match": {
+   "sku": [
+    "28TTL2-BO"
+   ]
+  },
+  "urls": [
+   "https://image.jimcdn.com/app/cms/image/transf/none/path/s9114dd0ff2a8d77e/image/i4b11c3da694f3bba/version/1535123006/image.png"
+  ],
+  "page": "https://www.hts-global.com/heat-tracing-products/self-regulating-heating-tapes/thermtrace-lite/",
+  "note": "28TTL2-BO = ThermTrace Lite 28 W/m, версія -BO (у таблиці на сторінці: 12/17/23/28 TTL-2 і TTL-2-BO). Лише технічний рендер розрізу кабелю (PNG 500x500), фото немає."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "oj-electronics",
+  "match": {
+   "sku": [
+    "ETOR-55"
+   ]
+  },
+  "urls": [
+   "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etor-10cm-frit.png",
+   "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etor-wire.png"
+  ],
+  "page": "https://ojelectronics.com/thermostats/products/gutter-sensor/",
+  "note": "Офіційне фото датчика ETOR-55 (PNG, прозоре тло); 2-ге — схема підключення проводів 1200x599 (не фото, лише як довідка)."
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "oj-electronics",
+  "match": {
+   "sku": [
+    "ETF-633/44/55"
+   ]
+  },
+  "urls": [
+   "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etf-622-frit.png"
+  ],
+  "page": "https://ojelectronics.com/thermostats/products/temperature-sensor-for-pipes/",
+  "note": "УВАГА: на ojelectronics.com трубний датчик для систем сніготанення називається ETF-622 (пошук '633' на сайті нічого не дає); фото ETF-622 — єдиний офіційний кандидат для SKU ETF-633/44/55. Перевірити "
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "castle",
+  "match": {
+   "sku": [
+    "AC602H",
+    "AC602H WiFi",
+    "AC8400H",
+    "AC8400H WiFi",
+    "RTC-70"
+   ]
+  },
+  "urls": [],
+  "page": "",
+  "note": "Не знайдено. castle-ua.com відповідає (200), але це припаркований домен зі спам-sitemap (2111 сторінок про туризм/вітаміни, жодної про Castle); castle.in.ua — connection reset; castle.ua, castle.com.u"
+ },
+ {
+  "supplier": "magnum-tp",
+  "brand": "ecoterm",
+  "match": {
+   "sku": [
+    "EcoTerm LED",
+    "EcoTerm LED WIFI",
+    "ECOTERM MEX",
+    "EcoTerm SN",
+    "EcoTerm SN WI-FI"
+   ]
+  },
+  "urls": [],
+  "page": "",
+  "note": "Не знайдено. ecoterm.com.ua заблоковано політикою проксі (CONNECT tunnel failed, 502); ecoterm.ua, ecoterm.in.ua, eco-term.com.ua, ecoterm.kiev.ua, ecoterm.net.ua — недоступні. У пошуку лише роздрібні"
+ },
+ {
+  "supplier": "magnum-tp",
+  "match": {
+   "sku": [
+    "Комплект муфт саморег"
+   ]
+  },
+  "urls": [],
+  "page": "",
+  "note": "Пропущено: бренд відсутній, офіційного джерела немає."
+ },
+ {
+  "supplier": "shtoller",
+  "brand": "shtoller",
+  "match": {
+   "skuPrefix": [
+    "SH-EC "
+   ]
+  },
+  "urls": [
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma-1.jpg",
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma.jpg",
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma-4.jpg"
+  ],
+  "page": "https://www.shtoller.ua/katalog/",
+  "note": "Official 'Нагрівальні мати Shtoller Ecotherm' gallery (180 W/m2). 1st: two rolls on white; 2nd: single roll 1680x1138; 3rd: mat with label 'HEIZELEMENT SH-EC 2130i' 1680x1112. Photos with '-e16588...'"
+ },
+ {
+  "supplier": "shtoller",
+  "brand": "shtoller",
+  "match": {
+   "skuPrefix": [
+    "S61"
+   ]
+  },
+  "urls": [
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable.jpg",
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable_2.jpg",
+   "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable_3.jpg"
+  ],
+  "page": "https://www.shtoller.ua/katalog/",
+  "note": "Official 'Нагрівальний кабель Shtoller' gallery (20 W/m, 5 mm). 1st: black cable coil on white; 2nd: coil with Shtoller label 1024x695; 3rd: cable close-up 1680x983. Covers S6101-20 EC ... S6115-20 EC"
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "RTC-70 SL"
+   ]
+  },
+  "urls": [
+   "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/termostat-dlya-vnutrIshnogo-obIgrIvu-IN-THERM-RTC-70-SL-wh-1-min.jpg",
+   "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/termostat-dlya-vnutrIshnogo-obIgrIvu-IN-THERM-RTC-70-SL-wh-cr-2-min.jpg",
+   "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/RTC-70-SL-BLACK-MATTE.png"
+  ],
+  "page": "https://in-therm.ua/catalogs/in-therm-rtc-70-sl-white",
+  "note": "SMART official site not found (smart-thermostat.com.ua and similar hosts blocked/unresolvable; search shows only marketplaces). Photo is of the same OEM model sold as In-Therm on the manufacturer/impo"
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "SMART PWT002"
+   ]
+  },
+  "urls": [
+   "https://in-therm.ua/image/catalog/newregpwt002-min-980x980-590x590.jpg",
+   "https://in-therm.ua/image/cache/catalog/newregpwt002-min-980x980-590x590-950x950-product_thumb.jpg",
+   "https://in-therm.ua/image/catalog/PWT002black.png"
+  ],
+  "page": "https://in-therm.ua/catalogs/in-therm-pwt-002",
+  "note": "SMART official site not found (smart-thermostat.com.ua and similar hosts blocked/unresolvable; search shows only marketplaces). Photo is of the same OEM model sold as In-Therm on the manufacturer/impo"
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "PRO TERMO E-51"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/catalogs/in-therm-e-51-white-wifi",
+  "note": "No official SMART/PRO TERMO site found. Same OEM model exists on in-therm.ua (E 51, 980x980 and 4000x4000 photos) but every photo shows the 'in-therm' logo printed on the device, one even an in-therm."
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "PRO TERMO E-91"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/catalogs/in-therm-e-91-white",
+  "note": "No official site found. Same OEM model on in-therm.ua (E 91, 980x980 / 4000x4000) but with the in-therm logo on the device; not usable."
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "RTC-70"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/catalogs/in-therm-rtc-70-white",
+  "note": "No official site found. Same OEM model on in-therm.ua (RTC 70, 980x980 / 1500x1500 / 4000x4000) but all shots carry the in-therm logo on the device; not usable."
+ },
+ {
+  "supplier": "smart",
+  "brand": "smart",
+  "match": {
+   "sku": [
+    "SMART ET-450",
+    "SMART M3",
+    "SMART M4",
+    "SMART M4.1",
+    "SMART M5",
+    "SMART M5.1",
+    "SMART MH-1824",
+    "SMART MH-1825",
+    "SMART PRO",
+    "SMART PRO+"
+   ]
+  },
+  "urls": [],
+  "page": "",
+  "note": "Not found. No official SMART brand site reachable: shtoller.ua does not carry thermostats; smart-thermostat.com.ua, smarttermo.com.ua, smart-termo.com.ua, termosmart.com.ua and ~40 other guessed domai"
+ },
+ {
+  "supplier": "rd",
+  "brand": "nexans",
+  "match": {
+   "skuPrefix": [
+    "RED DEFROST SNOW "
+   ]
+  },
+  "urls": [
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/229113",
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/229113?variant=856x856&scaleType=FILL"
+  ],
+  "page": "https://www.nexans.no/en/products/Heating-cables/Series-resistant/DEFROST-SN-75893.html",
+  "note": "Official Nexans Norway DAM render of DEFROST SNOW 28 W/m red twin-conductor cable (nexans.com has no product pages; catalog lives on nexans.no). Second URL is the same asset upscaled to 856x856. One p"
+ },
+ {
+  "supplier": "rd",
+  "brand": "nexans",
+  "match": {
+   "sku": [
+    "DEFROST PIPE 10 AO"
+   ]
+  },
+  "urls": [
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/229318",
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/229318?variant=856x856&scaleType=FILL"
+  ],
+  "page": "https://www.nexans.no/en/products/Heating-cables/Self-limiting/DEFROST-PI-67373.html",
+  "note": "Official render of the DEFROST PIPE - AO self-limiting family (page lists variant 'DEFROST PIPE 10 - AO', item 10182113). Fetch with curl's default Accept (*/*) or a browser Accept list; a bare 'Accep"
+ },
+ {
+  "supplier": "rd",
+  "brand": "nexans",
+  "match": {
+   "sku": [
+    "DEFROST PIPE 20 LS/T",
+    "DEFROST PIPE 30 LS/T"
+   ]
+  },
+  "urls": [
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/256279",
+   "https://www.nexans.no/.rest/eservice/dam/v1/image/256279?variant=856x856&scaleType=FILL"
+  ],
+  "page": "https://www.nexans.no/en/products/Heating-cables/Self-limiting/DEFROST-PI36876.html",
+  "note": "Official render of the DEFROST PIPE - LS family (page lists 'DEFROST PIPE 20 - LS/T3000' and 'DEFROST PIPE 30 - LS/T3000'); one image shared by both SKUs. Fetch with curl's default Accept (*/*) or a b"
+ },
+ {
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "match": {
+   "sku": [
+    "M78.716"
+   ]
+  },
+  "urls": [
+   "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-12-52.jpg",
+   "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-13-13.jpg",
+   "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-13-01.jpg"
+  ],
+  "page": "https://heatplus.ua/produkcija/termoreguljatory/m-seria/thermostat-m8-716w/",
+  "note": "CAUTION, SKU mismatch: heatplus.ua (official product site; heatplus.com.ua is only a landing page) has no 'M78.716'. The closest official model is M8.716 (W = white, B = black), which fits the name 'M"
+ },
+ {
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "match": {
+   "sku": [
+    "M79.716"
+   ]
+  },
+  "urls": [
+   "https://heatplus.ua/wp-content/uploads/2018/08/M9.716-Black.jpg",
+   "https://heatplus.ua/wp-content/uploads/2019/01/m9-716-top.png"
+  ],
+  "page": "https://heatplus.ua/produkcija/termoreguljatory/m-seria/termoregulator-m9-716/",
+  "note": "CAUTION, SKU mismatch: heatplus.ua has no 'M79.716'; closest official model is M9.716 (black matte touch thermostat), which fits 'M79.716 чорний матовий'. Photo is only 500x500 (second URL 717x500 top"
+ },
+ {
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "match": {
+   "sku": [
+    "M79.716B"
+   ]
+  },
+  "urls": [],
+  "page": "https://heatplus.ua/produkcija/termoreguljatory/m-seria/",
+  "note": "Not found: heatplus.ua has no M79.716B and no Wi-Fi version of M9.716. The only black Wi-Fi touch model is M8.716B WIFI (https://heatplus.ua/produkcija/termoreguljatory/m-seria/thermostat-m8-716b-wifi"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "match": {
+   "skuPrefix": [
+    "ECOSUN S+ "
+   ]
+  },
+  "urls": [
+   "https://www.fenixgroup.cz/wp-content/uploads/2026/01/ecosun_s_plus_cut.png"
+  ],
+  "page": "https://www.fenixgroup.cz/en/product/radiant-heating-panels/industrial-and-agricultural/ecosun-s/",
+  "note": "Fenix: офіційний рендер (розріз панелі) з fenixgroup.cz; фото in-therm.ua з водяним знаком не беремо"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "match": {
+   "sku": [
+    "ESD 424 003"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/catalogs/eberle-esd-424-003",
+  "note": "Лише фото in-therm.ua з водяним знаком (300 px) або інший товар — пропущено"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "match": {
+   "sku": [
+    "TFF 524 004"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/catalogs/eberle-tft-524-004",
+  "note": "Лише фото in-therm.ua з водяним знаком (300 px) або інший товар — пропущено"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "bluetti",
+  "match": {
+   "sku": [
+    "Bluetti AC300+B300"
+   ]
+  },
+  "urls": [
+   "https://www.bluettipower.eu/cdn/shop/files/AC300-B300-EU-2024-08-31.png",
+   "https://www.bluettipower.eu/cdn/shop/files/AC300_B300_a9b0d197-27f8-4f9b-a9c8-a83001a947fe.png",
+   "https://www.bluettipower.eu/cdn/shop/files/AC300B300-ZT-EU-1.jpg"
+  ],
+  "page": "https://www.bluettipower.eu/products/ac300-b300",
+  "note": "Official BLUETTI EU shop images, clean white/transparent background (1st 1100x1100 og:image, 2nd and 3rd 2000x2000). Product page needs a cookie jar (302 loop otherwise). in-therm.ua sells the AC300+B"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "bluetti",
+  "match": {
+   "sku": [
+    "Bluetti AC70P"
+   ]
+  },
+  "urls": [
+   "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT1.png",
+   "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT2.png",
+   "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT3.png"
+  ],
+  "page": "https://www.bluettipower.eu/products/ac70p",
+  "note": "Official BLUETTI EU shop gallery, transparent-background PNGs 2000x2000 (ZT1 = front). in-therm page https://in-therm.ua/catalogs/aternativn/zaryadn/zaryadnaya-stanciya-bluetti-ac70p has the same shot"
+ },
+ {
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "match": {
+   "sku": [
+    "ME323"
+   ]
+  },
+  "urls": [],
+  "page": "https://in-therm.ua/termogolovki-dlya-radiatorov/in-therm-me323zgb-hub-zigbee-wi-fi",
+  "note": "Лише фото in-therm.ua з водяним знаком (300 px) або інший товар — пропущено"
+ },
+ {
+  "supplier": "rd",
+  "brand": "profitherm",
+  "match": {
+   "skuPrefix": [
+    "Profi therm PL",
+    "Profi therm new 15MSR",
+    "Profi therm SelfTec"
+   ]
+  },
+  "urls": [],
+  "page": "https://profitherm.ua/zahist-vid-zamerzannja",
+  "note": "Not found: profitherm.ua (ua/ru/en sitemaps, 162 URLs) lists no self-regulating cables at all; the frost-protection section only has the resistive 'Profi Therm 2-23 / Eko plus' cable. No PL10/PL16/PL2"
+ },
+ {
+  "supplier": "rd",
+  "brand": "profitherm",
+  "match": {
+   "skuPrefix": [
+    "Комплект муфт на саморег.кабель"
+   ]
+  },
+  "urls": [],
+  "page": "https://profitherm.ua/",
+  "note": "Not found: no coupling/termination kits on profitherm.ua."
+ },
+ {
+  "supplier": "rd",
+  "match": {
+   "skuPrefix": [
+    "Кріплення для монтажу в трубах",
+    "Кріплення для монтажу в жолобах",
+    "Кріплення для нагрівання в трубах"
+   ]
+  },
+  "urls": [],
+  "page": "https://profitherm.ua/",
+  "note": "Skipped: profitherm.ua has no pipe/gutter fixing accessories (aluminium/copper)."
+ },
+ {
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "match": {
+   "sku": [
+    "XN-WH 606"
+   ]
+  },
+  "urls": [],
+  "page": "https://heatplus.ua/produkcija/",
+  "note": "Not found: neither heatplus.com.ua (landing page) nor heatplus.ua (408 sitemap URLs, site search) has any towel rail / XN-WH product."
+ }
+]

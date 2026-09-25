@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "9dd345ace2bf1c71c8cf87b4cd7546d9cee409b7c53a67f18ed15df079e34ea9.png",
+      "alt": "Електрична рушникосушарка Heat Plus XN-BK 505 Black чорна"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

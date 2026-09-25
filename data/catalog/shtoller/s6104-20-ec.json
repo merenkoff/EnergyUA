@@ -96,6 +96,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "8be817f772302b686607ea51d22fc71102a815df7e5b669be428e9482aad1706.jpg",
+      "alt": "Нагрівальний кабель Shtoller Ecotherm S6104-20 EC — 25 м, 500 Вт (20 Вт/м)"
+    },
+    {
+      "file": "c5ad86e07afe4d4ddd1de3960fb87b48fabbef8613448025b9d25db9b1d2cd14.jpg",
+      "alt": "Нагрівальний кабель Shtoller Ecotherm S6104-20 EC — 25 м, 500 Вт (20 Вт/м)"
+    },
+    {
+      "file": "4b840feeb729ed33177454d74fd6d3a6bad36500f6f473fe206761fca11fcb9c.jpg",
+      "alt": "Нагрівальний кабель Shtoller Ecotherm S6104-20 EC — 25 м, 500 Вт (20 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2025-09-10-shtoller.docx",
     "sheet": "Кабель Ecotherm",

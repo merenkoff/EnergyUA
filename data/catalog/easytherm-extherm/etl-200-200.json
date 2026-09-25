@@ -76,6 +76,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "be7a60c48cd9e8ab5d4e19e3dc38713b2bce771e083897d742065661a4a22697.jpg",
+      "alt": "Нагрівальний мат Extherm ETL 200-200 — 2 м², 400 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "8736beb5bfeb171bf31f617c5ab2c06f8ecba118a4881d3ab6f15eb921e71311.jpg",
+      "alt": "Нагрівальний мат Extherm ETL 200-200 — 2 м², 400 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "a5c8ebea103a66417dc08f6ae1d96747ecbdbdc80aaebbc03421a639e20b3418.jpg",
+      "alt": "Нагрівальний мат Extherm ETL 200-200 — 2 м², 400 Вт (200 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_супер_ тонкі_Extherm_1.5мм",

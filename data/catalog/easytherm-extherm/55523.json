@@ -46,6 +46,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "e880431f475a41cbba057186874fe7b6345e43c82a0be7c29c102a493a00268d.jpg",
+      "alt": "Електромеханічний цифровий терморегулятор Easytherm ET30, 16А, 3200Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

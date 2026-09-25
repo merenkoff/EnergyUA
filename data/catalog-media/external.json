@@ -1,0 +1,637 @@
+{
+ "https://arnoldrak.com.ua/images/static202.jpg": {
+  "file": "c821289f47ab08b2d841e6a3bdd0cc235622fad3f681930d7e2916b02c0cec7a.jpg",
+  "width": 600,
+  "height": 478
+ },
+ "https://arnoldrak.com.ua/images/static294.jpg": {
+  "file": "8f3430ea5202fa7a142cc3afd3d2f1426ea276d264dac55cbc550efd5307ee83.jpg",
+  "width": 700,
+  "height": 700
+ },
+ "https://arnoldrak.com.ua/images/static296.jpg": {
+  "file": "f44cb9aba4cdb08453dd4a676f85ff35778a2ba84f77fcef74967e6977b30a1e.jpg",
+  "width": 390,
+  "height": 390
+ },
+ "https://arnoldrak.com.ua/images/static299.jpg": {
+  "file": "e38d0e80a832ca287535324470ed98e2aeef1b4383cef52272320674d7a6dec9.jpg",
+  "width": 500,
+  "height": 500
+ },
+ "https://arnoldrak.com.ua/images/static302.jpg": {
+  "file": "c24343cd803b142ddb95d732327a7d8d64b5317b89692b6b03f362fedbcd22f7.jpg",
+  "width": 900,
+  "height": 1200
+ },
+ "https://arnoldrak.com.ua/images/static47.jpg": {
+  "file": "61a889bf9c1c35e7f083cc79fa01fa14c679d6f0a238e368e86bae0e4b0e8a6a.jpg",
+  "width": 482,
+  "height": 600
+ },
+ "https://arnoldrak.com.ua/images/static51.jpg": {
+  "file": "2978073dcb2ccf27e335c32bccfff2e30388517df7488f990adaa546bd638144.jpg",
+  "width": 370,
+  "height": 468
+ },
+ "https://arnoldrak.com.ua/images/static58.jpg": {
+  "file": "0187d6ae630f9843524b3e6b23c53eb792fe93dd374f3aa6735570aeab352926.jpg",
+  "width": 960,
+  "height": 765
+ },
+ "https://arnoldrak.com.ua/images/static72.jpg": {
+  "file": "43c2feb30df17bf556591512394fccad0cdf7df4df2fcedb6a5d13b44ad3f081.jpg",
+  "width": 453,
+  "height": 453
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_1.jpg": {
+  "file": "41dfad1e270071eb243bd91c70ade7cfc5225cc34c446758f3b816da387666f2.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_2.jpg": {
+  "file": "e25e96953f5d3fb2c70fc393f0cbf8ca01c7c45e2cd0b0cecaff18e3ba70d0b8.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_mex_interior_3.jpg": {
+  "file": "f0b1de3515a53ca2c7ef271f5cb353f6f51fdc45f6b7c7e3633c67a6663600a1.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_12.jpg": {
+  "file": "2645b6ea83c647ce4e697290001d49920166c3f84f8f86d3ce201101ad31dc31.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_22.jpg": {
+  "file": "5c3213d899253de89278dcf8f4f9a460823cb4eee98b4c3809147ff793a7d095.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_st_3.jpg": {
+  "file": "a233859b8a12a9c668fb074d0885a08bfcf38c4832c992b8887c22a43910c472.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_11-2.jpg": {
+  "file": "b28ff4bb6aab197a5d418a995d47d1519c4b7051df9ce0110f401b07faa36a01.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_21.png": {
+  "file": "e04d0d6364ebc2efce448924cf6c43db2f16a13354ab086d12af12f811eeca00.png",
+  "width": 750,
+  "height": 750
+ },
+ "https://ds-electronics.com.ua/wp-content/uploads/2026/01/terneo_sx_interior_6.jpg": {
+  "file": "7ddcd947dcc051f28cea3577d72a7b79bfa457ffb2b81dc1b0a282c12460b954.jpg",
+  "width": 750,
+  "height": 750
+ },
+ "https://extherm.com.ua/img/EC_1.jpg": {
+  "file": "a1ff400c855b3ddce679e05845d5dcd6b4501fb8b5d4484b41b77057e0c94908.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EC_2.jpg": {
+  "file": "6c9caeef9fd890e62fff751890b8c2c83ee0fa4f5e130a30187ee4ea72c5c65b.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EC_4.jpg": {
+  "file": "708bde26c9c8a5ac575db41365d76073fae4b7bd17a4eb7cc71d308eb57c2132.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EMF_1.jpg": {
+  "file": "9c398ddb12a9a87f2026c78b22386424b09c44d78e15bffe3ef9172befad72e8.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EMF_2.jpg": {
+  "file": "46d073b1125c09283545671c592d3f1cc096f5f97f95539f7a55ffdcec8da245.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EMF_4.jpg": {
+  "file": "42a86eaee05de951ea188138a636ab8b5704ee4bfc8dfcca97e0a7610250ce8e.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EM_1.jpg": {
+  "file": "8a5276a2f6e4d09e747198cf9ce7fb09150ecd34ce4112efe74ef736e80f861c.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EM_2.jpg": {
+  "file": "b30354629841dfbf4de1c9f7b9dadb9895bca60c39d8136723a5946c963178a2.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/EM_4.jpg": {
+  "file": "ed7628f724f4e349fcd03e59006f525f1abc76493fd6aa051cf9ff38fe3b96bd.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETC_ETT_1.jpg": {
+  "file": "4141e1cf60e628a3d74265cc846bb959b52d62664dfd345b98a8aa2a26281d70.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETC_ETT_2.jpg": {
+  "file": "76b4b96b5584f8503c37ecc5ba44e55d0fdf0c7dc5e877d24fc52b5852805c4e.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETC_ETT_3.jpg": {
+  "file": "35e587d43380930b991b552d5d1c969baba89f07fb40434dab1a9889241ba8a3.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETC_ETT_4.jpg": {
+  "file": "0117ebf29d59e637632584f1df57d409be1036095c325670bc00a9a3be5861ae.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETC_ETT_5.jpg": {
+  "file": "a01a5a488336650624e316e476ceaa87e3ac839d2542faf093f84abc055863a8.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETL_1.jpg": {
+  "file": "8736beb5bfeb171bf31f617c5ab2c06f8ecba118a4881d3ab6f15eb921e71311.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ETL_2.jpg": {
+  "file": "a5c8ebea103a66417dc08f6ae1d96747ecbdbdc80aaebbc03421a639e20b3418.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ET_ECO_1.jpg": {
+  "file": "597feae4f32e54970f965d384e4d0e6e45768d7fb087302011d02d74be88918f.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/ET_ECO_2.jpg": {
+  "file": "528bdec218048e1912f76d01be9c955f97f998b1deba656850ae844b849504c7.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/HFC_2.jpg": {
+  "file": "28c7e4a7b0d0f7cd47207114085f1162642731d7e4684dfb1ed544b9dc4af989.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/HFC_4.jpg": {
+  "file": "eb25a07c01af61681808f8c02b64705a66900d69b518c07200d852c35a7b5d74.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/HFM_1.jpg": {
+  "file": "726e5d7c14c043f17e0f62007b237aed2483605373109ac3e7aa755d0592df43.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/HFM_2.jpg": {
+  "file": "80058fbd722167de828901f42a483b4eece32d5eccf30c9c54bc1c544d02e19d.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/SR17_SR30_1.jpg": {
+  "file": "5919ce88405ecdc81a817c4cd5050f76ff02e0a0de223406acaca5ff6586f1f1.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/SR17_SR30_4.jpg": {
+  "file": "b12dcc5134650d0cefafcfd8ed113184c84909c46d6a2c56808e91e54700fa30.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/img/SR17_SR30_5.jpg": {
+  "file": "c1b7a65aaf9aedce17a09d4bba973847e7e8dc27af2f5ec29556e10d652ded1b.jpg",
+  "width": 1000,
+  "height": 900,
+  "cropBottom": 0.1
+ },
+ "https://extherm.com.ua/wp-content/uploads/2025/05/ET-ECO-1.png": {
+  "file": "7a4d1014bfc7238174558eb8b4fdc2027e5113cb0ddeb10e1af1f7926b661ded.jpg",
+  "width": 1200,
+  "height": 1081
+ },
+ "https://extherm.com.ua/wp-content/uploads/2025/05/ETL-2.png": {
+  "file": "be7a60c48cd9e8ab5d4e19e3dc38713b2bce771e083897d742065661a4a22697.jpg",
+  "width": 1200,
+  "height": 1103
+ },
+ "https://heatplus.ua/wp-content/uploads/2018/08/M9.716-Black.jpg": {
+  "file": "d59370562cb159cf4fcf53d3846de6567dce8483177928157651a06746f5a877.jpg",
+  "width": 500,
+  "height": 500
+ },
+ "https://heatplus.ua/wp-content/uploads/2019/01/m9-716-top.png": {
+  "file": "4c2dba82919cd4e9932dfc7bc38038b83672d66e8e1fb6272932fc1be2c5f6ec.png",
+  "width": 717,
+  "height": 500
+ },
+ "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-12-52.jpg": {
+  "file": "40eafbfe822f4a6dc3a84435a21a477d9aeb3875bf8b895d92690a57b0ad5a01.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-13-01.jpg": {
+  "file": "a4765657d7726eb8a5403aad1030248c07c33798b124f592ca731ec5a74f5e98.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://heatplus.ua/wp-content/uploads/2024/04/photo_2024-04-11_13-13-13.jpg": {
+  "file": "7338cac8f310394707f46e1937def9edd6597375dd04b1ae243b552f029ebeeb.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://hot-fly.com.ua/img/prod-cab.webp": {
+  "file": "b20536dc8425dbeb7efa46800bd4efe31e26ac68303040fbe8b71f2340ad4379.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://hot-fly.com.ua/img/prod-mat.webp": {
+  "file": "cfda7321392c10f1dc12825722dc1add970aad47f7b900e19e20b9954bdf119c.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://image.jimcdn.com/app/cms/image/transf/none/path/s9114dd0ff2a8d77e/image/i14c77fad35725327/version/1535382692/image.png": {
+  "file": "862c6506d3faaca6b71706b5d6a436397bd994e615996bddd6bbb60ee99fe80e.png",
+  "width": 500,
+  "height": 500
+ },
+ "https://image.jimcdn.com/app/cms/image/transf/none/path/s9114dd0ff2a8d77e/image/i4b11c3da694f3bba/version/1535123006/image.png": {
+  "file": "e97f22cd455df4e56a7c1475f21166cf72891c8049db1fe6c15ffe880daf65ea.png",
+  "width": 500,
+  "height": 500
+ },
+ "https://in-therm.ua/image/cache/catalog/newregpwt002-min-980x980-590x590-950x950-product_thumb.jpg": {
+  "file": "68ced5d6f57ee2443e7eb1a5b799bb0737f6dbcc28426c99cdbdf4b4a71602c9.jpg",
+  "width": 950,
+  "height": 950
+ },
+ "https://in-therm.ua/image/catalog/PWT002black.png": {
+  "file": "a9ad8f21a16afcc3f88d86344ef4f700d54d3428af9dcb4bbe22be30eb3cf607.png",
+  "width": 509,
+  "height": 611
+ },
+ "https://in-therm.ua/image/catalog/newregpwt002-min-980x980-590x590.jpg": {
+  "file": "cfb052f032cdd6cafd0b4024f971e022b2c3fae087c26516cefdbeb893138efc.jpg",
+  "width": 590,
+  "height": 590
+ },
+ "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/RTC-70-SL-BLACK-MATTE.png": {
+  "file": "5f7f253b501befc0166b70ec235a991bfdcd87cb63a7b7efc4258ab16881dabb.png",
+  "width": 1000,
+  "height": 1000
+ },
+ "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/termostat-dlya-vnutrIshnogo-obIgrIvu-IN-THERM-RTC-70-SL-wh-1-min.jpg": {
+  "file": "8b1eaa737bd6c8ba0eb79c0beb6c5970922c8ec3264f42cce6bc2e1b5d957680.jpg",
+  "width": 980,
+  "height": 980
+ },
+ "https://in-therm.ua/image/catalog/tepla-pidloga/termostaty/termostat-dlya-vnutrIshnogo-obIgrIvu-IN-THERM-RTC-70-SL-wh-cr-2-min.jpg": {
+  "file": "8560186c08544eb40edbaba11116573d0268b9dd1e07ac74437a805a174ba3ec.jpg",
+  "width": 980,
+  "height": 980
+ },
+ "https://kkplus.shop/image/catalog/kondicionery/heatwave/1-08.jpg": {
+  "file": "cb1a99fca256592e2235e87738a39a91eae3b551ece30ae6f647770b0ede3e88.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://kkplus.shop/image/catalog/kondicionery/heatwave/1-25.jpg": {
+  "file": "960fd73104d97a5306317bee50c3fc42314c8e21c3af8decf94cfa8ff2416f75.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame58.jpg": {
+  "file": "25ebc6e72f773cb6eba76763b3509d5c0bc85e551f6680c13fedc8d56c2460f6.jpg",
+  "width": 1080,
+  "height": 1080
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame59-2.jpg": {
+  "file": "5d71bfd0505ffb2ec1538f7bb3267b4f2a8c0f4675dcbc58cabe3d1723987648.jpg",
+  "width": 1080,
+  "height": 1080
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/alumat/frame62-4.jpg": {
+  "file": "c15b1f7106c1d661b47aed8537005e0a6012dec5ee2e3a8b0bd550f5f84afd3a.jpg",
+  "width": 1080,
+  "height": 1080
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-17.jpg": {
+  "file": "699b9de023e1de33e07f2f6eb02668a91e68cd0aa3fcc05591ca1b1b196951bd.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-19.jpg": {
+  "file": "fee9fe3f713159cf2bdcf21995fe9dd2c5ecddce0720f7815e143a9c811a9952.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/cabelanti-ice/1-22.jpg": {
+  "file": "ae43cb5145fd9427920afdb29c1e4dbb6210fd62d265571cf377e66108ad6983.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-29.jpg": {
+  "file": "31ae7c5bc6263b97f2d4e9bf3e58932dd567240e353fbdc03254366db2c802f9.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-31.jpg": {
+  "file": "742f79a004f9ca98ec4a98d92e442166cb391b762d7169283189e44c1a6debdc.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/magnumcabel/1-32.jpg": {
+  "file": "c6a00c6ea84802b38ae44006314551a31d06888b7774ecc08cba190ceff9f85a.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/magnummat/1-07.jpg": {
+  "file": "4fca39a7a16b7c589e1aea06fa23546944b071406cd8589eeb0f108f552d4c11.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/magnumheating/magnummat/1-13.jpg": {
+  "file": "4430c2a8ebfd1d2ba4daea938eccacb7596c9c844c7452882fb1e9948fb39126.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/products/magnum-heating/magnum-et44-wifi.jpg": {
+  "file": "0f30bda2a438df7c555dafaefe58d66bd2b59921d501910231b7ceb068106c2e.jpg",
+  "width": 344,
+  "height": 327
+ },
+ "https://magnum-heating.com.ua/image/catalog/products/magnum-heating/magnum-et44w.jpg": {
+  "file": "4bcc54af5a35e6705697abc3317642b4a8bce0004ae45449c7164a7fe55abad2.jpg",
+  "width": 1143,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/magnumf32smartwifiwhite/photo_2024-05-31_12-06-34.jpg": {
+  "file": "0e2ef36dcb045b42c846d8a7024e8ed57854608723ea9fb888e711fc1c1e8265.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/magnumintelligentcontrolsilver.jpg": {
+  "file": "90e7b54fc958056d72b23a1b857715c196eee464e0fc274d94c86d7ac283f70b.jpg",
+  "width": 500,
+  "height": 443
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/magnumintelligentcontrolsilver4.jpg": {
+  "file": "5deaf6c21f83b458df34a9d1b7c9cd4ad56456a4dda6e73afe55f84a18536fab.jpg",
+  "width": 500,
+  "height": 427
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-36.jpg": {
+  "file": "f80800421db3da6b0435d28bdd011a08276b27a6b7ea705f5e967a4bcfe809c9.jpg",
+  "width": 500,
+  "height": 406
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-38(2).jpg": {
+  "file": "52061ea2032ba43671ae873f6611aabe615f6bf41c868bdcb268bf2372d8df7f.jpg",
+  "width": 500,
+  "height": 427
+ },
+ "https://magnum-heating.com.ua/image/catalog/reginew/photo_2023-03-23_17-00-38(3).jpg": {
+  "file": "478b75e55fd134be02f1bd48dcf1e1b57924f02eaba23d23cca72a68c4c5fdd5.jpg",
+  "width": 500,
+  "height": 429
+ },
+ "https://magnum-heating.com.ua/image/catalog/slim/img_3884.jpg": {
+  "file": "03eda7a426f6202f766322ff49aab47ef16c3637475ef8ba458039a6aa0e3ac7.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/slim/img_3888.jpg": {
+  "file": "36b9883e18116279f17faa3c2aa056a60c231e5fbf9b37d873496c11a8501706.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://magnum-heating.com.ua/image/catalog/slim/img_3890.jpg": {
+  "file": "22c038d5761fada574b88792e072005f0d1c34516049dca514941200bed769f5.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etf-622-frit.png": {
+  "file": "9fa5f6d4f8751d563d08a57f2b28186872bc7abeceb70d0dab70b5240215a764.png",
+  "width": 696,
+  "height": 572
+ },
+ "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etor-10cm-frit.png": {
+  "file": "6ac6463a961654e350aa44e35de1e1d52c6f0d4c705ec67f36fa68be7772d5a3.png",
+  "width": 1181,
+  "height": 873
+ },
+ "https://ojelectronics.com/thermostats/wp-content/uploads/sites/22/2020/03/etor-wire.png": {
+  "file": "9c5311b9177d6fbd0b251b834e28e293a03b57d951220f2dcf6269dcfca09400.png",
+  "width": 1200,
+  "height": 599
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC300-B300-EU-2024-08-31.png": {
+  "file": "dcd858a3904f381c7af02124c3651d908efa033539ee3888617ce96d7f57b461.png",
+  "width": 1100,
+  "height": 1100
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC300B300-ZT-EU-1.jpg": {
+  "file": "505ec1efceb944a7cd4cf3d42982d6ae21c5123958b95bf1854c739f9f75b32d.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC300_B300_a9b0d197-27f8-4f9b-a9c8-a83001a947fe.png": {
+  "file": "1e40ac68278b7a8720e4dc7dc9708bda72979cd681cc5c5d1fcd02734e091532.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT1.png": {
+  "file": "a8ef742db1bc2ab25b0516fabcf8dfc322626a75664c7ab71a8250d8df171dad.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT2.png": {
+  "file": "2473e6c91aa09ba04d6f765d4e97641759548d6cba09ebd821c09e51f3de1388.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.bluettipower.eu/cdn/shop/files/AC70P-ZT3.png": {
+  "file": "60fb5feef0a01cccbcd5c1edfe4db5fb10a61bdd738b6aa6e5aa231f020caf4e.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.fenixgroup.cz/wp-content/uploads/2026/01/ecosun_s_plus_cut.png": {
+  "file": "ebbdeba6c7ac6e6207b0d6f8ce55c4ca57a17e1912c8f1fe1aab785d9e5c827f.png",
+  "width": 1200,
+  "height": 515
+ },
+ "https://www.magnumheating.com/wp-content/uploads/2021/04/MAGNUM_Standard_Control_2015.png": {
+  "file": "cae8d300fc1221283f43a4b61869456ecf61eed423d96b2fca0af3c720c6ce40.png",
+  "width": 951,
+  "height": 945
+ },
+ "https://www.magnumheating.com/wp-content/uploads/2021/10/MAGNUM_Mat_Set_2021_2-edited-2048x1365.png": {
+  "file": "67ea59cffdbbcf231e25025a3d4debebf8ca8e7cf4a65891a8bc41fc28f07033.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://www.magnumheating.com/wp-content/uploads/2023/10/F32_thermostat.png": {
+  "file": "c250c81f80ab079f886ec41b7377d9ba261d93ab378066264026cb8a17f4956e.png",
+  "width": 1000,
+  "height": 1000
+ },
+ "https://www.magnumheating.com/wp-content/uploads/2023/10/F32_thermostat_Black.jpg": {
+  "file": "25f665a26c5e5b44692d5bad44bb3a4e5d0c5bb908f8f0e3fa5b62d35129740b.jpg",
+  "width": 1200,
+  "height": 1200
+ },
+ "https://www.magnumheating.es/wp-content/uploads/2024/08/201210-ET-43-whiteblack.png": {
+  "file": "fcdf99250142a2f13b7185dbf8e6d4018e650f31c2b5d43ac7655988792bb090.jpg",
+  "width": 1143,
+  "height": 1200
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/229113": {
+  "file": "b7bd7844d17521cfd710a2cd7e801c2687c184305327a0ea2c17b4511f5ce228.jpg",
+  "width": 744,
+  "height": 744
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/229113?variant=856x856&scaleType=FILL": {
+  "file": "91b4a424c6bc813d236ae3ab89303b576e73f02fd93a9621a48da71185494517.jpg",
+  "width": 856,
+  "height": 856
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/229318": {
+  "file": "8c520bcdf9db4c3b16338c642a988e3844565cf16e4976687da27fd056198817.jpg",
+  "width": 744,
+  "height": 744
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/229318?variant=856x856&scaleType=FILL": {
+  "file": "d8bd1e2ae965693624ee25af9b757e9df90dbbd6bf4d085c3f30ea1cf8463ac3.jpg",
+  "width": 856,
+  "height": 856
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/256279": {
+  "file": "6eb19ade134ceba068da72592c899df8d92d42b9d149ff655adb4e8b8d6e92b7.jpg",
+  "width": 744,
+  "height": 744
+ },
+ "https://www.nexans.no/.rest/eservice/dam/v1/image/256279?variant=856x856&scaleType=FILL": {
+  "file": "1f68571a1c5018f1650c9fc4a298aaa488e9735066264668ce80f2cbdfc2184c.jpg",
+  "width": 856,
+  "height": 856
+ },
+ "https://www.rak-waermetechnik.de/images/userfiles/image/Heizteppiche_heatmaster04.jpg": {
+  "file": "63a62f13bf7c4f3aeb211ab45d3cb17f680dbc37f3808e83ef658aae49d83866.jpg",
+  "width": 510,
+  "height": 402
+ },
+ "https://www.rak-waermetechnik.de/images/userfiles/image/ST_AR_16.jpg": {
+  "file": "e2f9ffa867155d1ca600e456f1a76d32fa7ac43ff55df0ac91d42c63ae2c9cad.jpg",
+  "width": 476,
+  "height": 466
+ },
+ "https://www.rak-waermetechnik.de/images/userfiles/image/ausfuehrung_laminat.jpg.jpg": {
+  "file": "65710f6e4fea1b090b74aaaa8f91fedbb7ba152eacf6b6cb714558d959d61a13.jpg",
+  "width": 350,
+  "height": 279
+ },
+ "https://www.rak-waermetechnik.de/images/userfiles/image/heizkabel_01.jpg": {
+  "file": "7f656b4d2cfbe0f2f07183f16a06914fbf3fb0942996ad77566198011aa34674.jpg",
+  "width": 400,
+  "height": 319
+ },
+ "https://www.ryxon.eu/products/heating-cable/main/heating_cable.jpg": {
+  "file": "a53fa2f939b5ec46f0153baa2d0a8824424a694c61097bf9cfe0026091b7f95f.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://www.ryxon.eu/products/heating-cable/others/heating_cable_1.jpg": {
+  "file": "29c3b30e18550bf558a64f7631cf15da3acd2b373fa6d19f3ebfb8d32c972ba1.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://www.ryxon.eu/products/heating-cable/others/heating_cable_2.jpg": {
+  "file": "b643d13e75e7c1dfe5cef41f3fc666fe0a6f050ea9f4f504cd4783ae59176e37.jpg",
+  "width": 1200,
+  "height": 912
+ },
+ "https://www.ryxon.eu/products/heating-mats/main/heating_mats.jpg": {
+  "file": "289eeb1849529cbfac8c4078cbfc4b80233990a6a2d2e893251ecdac007cab19.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://www.ryxon.eu/products/heating-mats/others/heating_mats_1.jpg": {
+  "file": "986e1cd43b1d701933c82ab88820894c670eb8f769a0cda4c38389c4527bbbdb.jpg",
+  "width": 1200,
+  "height": 800
+ },
+ "https://www.ryxon.eu/products/heating-mats/others/heating_mats_3.jpg": {
+  "file": "e79649af4cdc8b6c6cfcf598b89fb19e8ab3c60ec3b9b4ef8e262b6919a8dabc.jpg",
+  "width": 995,
+  "height": 1200
+ },
+ "https://www.ryxon.eu/products/self-regulating-cable/others/self_regulating_cable_LSR.png": {
+  "file": "26139b341438fcba1d7d4264b5c0ee88bebe91bfec5501bb0fa4ec4c4fd3a914.jpg",
+  "width": 1200,
+  "height": 855
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable.jpg": {
+  "file": "8be817f772302b686607ea51d22fc71102a815df7e5b669be428e9482aad1706.jpg",
+  "width": 1200,
+  "height": 794
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable_2.jpg": {
+  "file": "c5ad86e07afe4d4ddd1de3960fb87b48fabbef8613448025b9d25db9b1d2cd14.jpg",
+  "width": 1024,
+  "height": 695
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_cable_3.jpg": {
+  "file": "4b840feeb729ed33177454d74fd6d3a6bad36500f6f473fe206761fca11fcb9c.jpg",
+  "width": 1200,
+  "height": 702
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma-1.jpg": {
+  "file": "0a18a60cd7195d2f77028ae1fd011055a7c5ca838f6376241d217a3e791661b1.jpg",
+  "width": 1200,
+  "height": 796
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma-4.jpg": {
+  "file": "e2901c73ee709f30829fc19c3a262680a984360518fe13f7192973a201ed33c5.jpg",
+  "width": 1200,
+  "height": 794
+ },
+ "https://www.shtoller.ua/wp-content/uploads/2022/07/shtoller_ecotherm_ma.jpg": {
+  "file": "830f73c726a6dcec9469bfbfba7bf54119221545b5b6cfd00d8095c255c4c8b9.jpg",
+  "width": 1200,
+  "height": 813
+ }
+}

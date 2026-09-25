@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "1c99b4620e8707491646e1602d4b37a537f4875beb4bf7a623ecf567dc05a5c2.png",
+      "alt": "Терморегулятор Profi Therm температури підлоги"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

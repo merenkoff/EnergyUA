@@ -97,6 +97,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "e2e6e454a901323440cc1d11294770b85f6f9d6253550c56db2f94c413edc52c.png",
+      "alt": "Терморегулятор IN-THERM PLWT 012"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

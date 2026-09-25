@@ -17,6 +17,16 @@
   "shortDescription": "Встановлюється в жолобі або водостічній трубі, реєструє наявність вологи. Працює з ETR2/ETO2.",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "6ac6463a961654e350aa44e35de1e1d52c6f0d4c705ec67f36fa68be7772d5a3.png",
+      "alt": "Датчик вологи для ринви OJ Electronics ETOR-55 (кабель 10 м)"
+    },
+    {
+      "file": "9c5311b9177d6fbd0b251b834e28e293a03b57d951220f2dcf6269dcfca09400.png",
+      "alt": "Датчик вологи для ринви OJ Electronics ETOR-55 (кабель 10 м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 2,

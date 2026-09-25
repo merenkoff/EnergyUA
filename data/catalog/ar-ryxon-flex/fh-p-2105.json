@@ -76,6 +76,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0187d6ae630f9843524b3e6b23c53eb792fe93dd374f3aa6735570aeab352926.jpg",
+      "alt": "Нагрівальний мат Arnold Rak Premium FH P 2105 — 0,5 м², 100 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "c821289f47ab08b2d841e6a3bdd0cc235622fad3f681930d7e2916b02c0cec7a.jpg",
+      "alt": "Нагрівальний мат Arnold Rak Premium FH P 2105 — 0,5 м², 100 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "61a889bf9c1c35e7f083cc79fa01fa14c679d6f0a238e368e86bae0e4b0e8a6a.jpg",
+      "alt": "Нагрівальний мат Arnold Rak Premium FH P 2105 — 0,5 м², 100 Вт (200 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "Premium_AR_кабель_мати",

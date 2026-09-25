@@ -13,6 +13,12 @@
   "shortDescription": "Накінечник ZUVER 4.4 (н/ж стержня заземлення безмуфтовий з накінечником d16/55мм)",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "33911b32959550f83f2fe9ef042389264b097c9c29d8e0fec28e533e9f5c25e2.png",
+      "alt": "Стержень заземлення н/ж безмуфтовий з накінечником Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

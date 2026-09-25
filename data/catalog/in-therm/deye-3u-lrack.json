@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": "<p>Стандартна стійка 19 дюймів</p><p>на 8 окремих батарей</p><p>та єдиним блоком керування кластером високовольтних акумуляторів</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "a109b2b6c129dbcd050ff0d29f7725e2814e0c19180762d210be176532515d78.png",
+      "alt": "Акумуляторна батарея Deye 3U-LRACK"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

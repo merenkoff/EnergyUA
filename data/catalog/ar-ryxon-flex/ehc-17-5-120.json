@@ -78,6 +78,20 @@
       "unit": "м"
     }
   ],
+  "images": [
+    {
+      "file": "a53fa2f939b5ec46f0153baa2d0a8824424a694c61097bf9cfe0026091b7f95f.jpg",
+      "alt": "Нагрівальний кабель Flex EHC-17.5/120 — 120 м, 2100 Вт (17,5 Вт/м)"
+    },
+    {
+      "file": "b643d13e75e7c1dfe5cef41f3fc666fe0a6f050ea9f4f504cd4783ae59176e37.jpg",
+      "alt": "Нагрівальний кабель Flex EHC-17.5/120 — 120 м, 2100 Вт (17,5 Вт/м)"
+    },
+    {
+      "file": "29c3b30e18550bf558a64f7631cf15da3acd2b373fa6d19f3ebfb8d32c972ba1.jpg",
+      "alt": "Нагрівальний кабель Flex EHC-17.5/120 — 120 м, 2100 Вт (17,5 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "FLEX_кабель ",

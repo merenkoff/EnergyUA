@@ -68,6 +68,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "76b4b96b5584f8503c37ecc5ba44e55d0fdf0c7dc5e877d24fc52b5852805c4e.jpg",
+      "alt": "Нагрівальний кабель Extherm ETC ECO 20-3000 — 150 м, 3000 Вт (20 Вт/м)"
+    },
+    {
+      "file": "4141e1cf60e628a3d74265cc846bb959b52d62664dfd345b98a8aa2a26281d70.jpg",
+      "alt": "Нагрівальний кабель Extherm ETC ECO 20-3000 — 150 м, 3000 Вт (20 Вт/м)"
+    },
+    {
+      "file": "0117ebf29d59e637632584f1df57d409be1036095c325670bc00a9a3be5861ae.jpg",
+      "alt": "Нагрівальний кабель Extherm ETC ECO 20-3000 — 150 м, 3000 Вт (20 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Extherm",

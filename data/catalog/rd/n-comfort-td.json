@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "d38dabdb39c525124cc0fe95d013281655c7786d46ec3f3a1a220b339fd6f1b1.png",
+      "alt": "Терморегулятор Nexans N-Comfort TD"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

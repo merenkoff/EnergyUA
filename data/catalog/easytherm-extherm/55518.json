@@ -13,6 +13,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "ab9ed6a12e7e2e94399e53564b53d6610bd4b54d9981c4dc321eaa20f1b3c367.png",
+      "alt": "Набір для підключення до електромережі Easytherm (ізоляційні матеріали та муфти)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

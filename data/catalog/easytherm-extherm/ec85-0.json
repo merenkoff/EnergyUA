@@ -74,6 +74,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6c9caeef9fd890e62fff751890b8c2c83ee0fa4f5e130a30187ee4ea72c5c65b.jpg",
+      "alt": "Нагрівальний кабель Easytherm EC85.0 — 85 м, 1530 Вт (18 Вт/м)"
+    },
+    {
+      "file": "708bde26c9c8a5ac575db41365d76073fae4b7bd17a4eb7cc71d308eb57c2132.jpg",
+      "alt": "Нагрівальний кабель Easytherm EC85.0 — 85 м, 1530 Вт (18 Вт/м)"
+    },
+    {
+      "file": "a1ff400c855b3ddce679e05845d5dcd6b4501fb8b5d4484b41b77057e0c94908.jpg",
+      "alt": "Нагрівальний кабель Easytherm EC85.0 — 85 м, 1530 Вт (18 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Easytherm",

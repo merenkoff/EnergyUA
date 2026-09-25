@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "153df247309602158c371634ef651b200ae0feab2bb2f713955b65970960a088.jpg",
+      "alt": "Датчик OJ Electronics ETOR-55"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

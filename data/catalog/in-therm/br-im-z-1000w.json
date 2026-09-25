@@ -133,6 +133,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7128bc6682130f4788e91b32f38c5b74e44f6776baa9f9d301905a25b84fb51b.jpg",
+      "alt": "Нагрівальний кабель Hemstedt BR-IM-Z 17 Вт/м — 58,1 м, 1000 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT",

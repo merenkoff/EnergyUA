@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "1491f63a98b22ef3af4e311eefd13d871a5df91a449593cf3365eb196da78087.png",
+      "alt": "Кріплення Fenix для панелей ECOSUN S+ зі зміною кута нахилу"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІЧ ПАНЕЛІ FENIX",

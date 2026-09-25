@@ -25,6 +25,20 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "2645b6ea83c647ce4e697290001d49920166c3f84f8f86d3ce201101ad31dc31.jpg",
+      "alt": "Терморегулятор Terneo st (цифровий)"
+    },
+    {
+      "file": "5c3213d899253de89278dcf8f4f9a460823cb4eee98b4c3809147ff793a7d095.jpg",
+      "alt": "Терморегулятор Terneo st (цифровий)"
+    },
+    {
+      "file": "a233859b8a12a9c668fb074d0885a08bfcf38c4832c992b8887c22a43910c472.jpg",
+      "alt": "Терморегулятор Terneo st (цифровий)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 4,

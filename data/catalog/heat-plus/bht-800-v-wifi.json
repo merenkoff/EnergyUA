@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "16b95d5f1e0dcfc885295105e2164ca302e1c1b497e8a5e89f1e423d380a3b29.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-800 В - чорний, з WI FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

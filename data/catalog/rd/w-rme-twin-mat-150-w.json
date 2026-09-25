@@ -68,6 +68,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a91fc97f14fdca0bfd5544d4d05bf9f899b4452c593646fed1a8e0f19f0cd4e5.png",
+      "alt": "Нагрівальний мат Wärme Twin mat 150 W — 1 м², 150 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Wärme",

@@ -126,6 +126,12 @@
       "unit": "м"
     }
   ],
+  "images": [
+    {
+      "file": "71c1ad079baf1ef34f76cc6f4f2a797b8bb174e2adae31a3a89063560150e70a.jpg",
+      "alt": "Нагрівальний мат Fenix LDTS M 160 Вт/м² — 3 м², 480 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "FENIX",

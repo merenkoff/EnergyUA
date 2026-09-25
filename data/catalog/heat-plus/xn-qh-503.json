@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6c0df4c427da51d4362908c45e347fb9a056391d87cf8d61b8521db7547df2e4.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-QH 503 матова сіра"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

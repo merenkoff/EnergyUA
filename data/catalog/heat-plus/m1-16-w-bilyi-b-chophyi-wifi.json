@@ -52,6 +52,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "370e80601ff91901e000f593d848b93ba732254db60a1a17694f6b8cda1217e7.jpg",
+      "alt": "Терморегулятор Heat Plus M1.16 (W-білий / B-чophий), WI-FI"
+    },
+    {
+      "file": "4861333098619581bc7ff33cc897dbe6ca5fb238b6bf84fb26fb3435b945256a.jpg",
+      "alt": "Терморегулятор Heat Plus M1.16 (W-білий / B-чophий), WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

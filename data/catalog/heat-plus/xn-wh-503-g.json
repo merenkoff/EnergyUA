@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "e9197eecf7954ac7b57db3cde2bd1655709e48ff879a6f08f339533d5f45fe7c.png",
+      "alt": "Електрична рушникосушарка Heat Plus XN-WH 503 G біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

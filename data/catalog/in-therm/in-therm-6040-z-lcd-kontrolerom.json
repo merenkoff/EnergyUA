@@ -23,6 +23,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "4f9d4938bcb612b5a46d164ea2980b3f1499f8b544c0c5e2428ed89cf0f27329.jpg",
+      "alt": "Нагрівальний килимок IN-THERM 6040 з LCD контролером"
+    },
+    {
+      "file": "e6771059f3b16743b98e04c8cff80a078205ea95bbbe29b2b6d59103da50160b.jpg",
+      "alt": "Нагрівальний килимок IN-THERM 6040 з LCD контролером"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "НАГРІВАЛЬНІ КИЛИМКИ",

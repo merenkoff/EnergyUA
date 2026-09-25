@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c735d9237f6da007db6983b7240110cd2da4c8b355ae3bf47be6640503f20be3.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-BK 608 Black чорна матова"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

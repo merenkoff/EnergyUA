@@ -97,6 +97,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "1807b3ff33cc794a1507476032a44e25739efbaa7cf38154e0324c1410dfbe27.png",
+      "alt": "Терморегулятор для газового котла IN-THERM PWTG 081"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

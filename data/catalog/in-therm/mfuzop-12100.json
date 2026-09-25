@@ -70,6 +70,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "206c3aeb1cd6d504812296b7bca703fd22bb0afb2ef1b9e4e67d90fd89615983.png",
+      "alt": "Акумулятор LiFePO4 MFUZOP 12100 (100 Аh)"
+    },
+    {
+      "file": "f0b45ed8449562567228c45ef869e75e4cd7a1e80b075581ba46bc4334a2ecb6.jpg",
+      "alt": "Акумулятор LiFePO4 MFUZOP 12100 (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

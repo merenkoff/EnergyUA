@@ -24,6 +24,20 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "cfb052f032cdd6cafd0b4024f971e022b2c3fae087c26516cefdbeb893138efc.jpg",
+      "alt": "Терморегулятор SMART PWT002"
+    },
+    {
+      "file": "68ced5d6f57ee2443e7eb1a5b799bb0737f6dbcc28426c99cdbdf4b4a71602c9.jpg",
+      "alt": "Терморегулятор SMART PWT002"
+    },
+    {
+      "file": "a9ad8f21a16afcc3f88d86344ef4f700d54d3428af9dcb4bbe22be30eb3cf607.png",
+      "alt": "Терморегулятор SMART PWT002"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-smart-thermostats.xlsx",
     "sheet": "Prices",

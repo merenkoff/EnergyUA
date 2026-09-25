@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7cb5acafb32203bca8d6a73b870f99e9c5cb605264d8fe01b4caffa34af3e429.png",
+      "alt": "Мідний фіксатор для покрівлі Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

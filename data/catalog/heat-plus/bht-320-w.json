@@ -53,6 +53,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "26919fcccfa55f81cc196703e7e3850ef22b34b14413d72f901653209781cfc4.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-320 W- білий/ G- золото"
+    },
+    {
+      "file": "5607805ea1a384e358e3eb0fcea87cf5498c37f23c7baf6c02e1e4bc62f38162.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-320 W- білий/ G- золото"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

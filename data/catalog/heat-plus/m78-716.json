@@ -51,6 +51,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "40eafbfe822f4a6dc3a84435a21a477d9aeb3875bf8b895d92690a57b0ad5a01.jpg",
+      "alt": "Терморегулятор Heat Plus M78.716 білий/чорний"
+    },
+    {
+      "file": "7338cac8f310394707f46e1937def9edd6597375dd04b1ae243b552f029ebeeb.jpg",
+      "alt": "Терморегулятор Heat Plus M78.716 білий/чорний"
+    },
+    {
+      "file": "a4765657d7726eb8a5403aad1030248c07c33798b124f592ca731ec5a74f5e98.jpg",
+      "alt": "Терморегулятор Heat Plus M78.716 білий/чорний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

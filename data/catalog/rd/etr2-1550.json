@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "e908eb35c0e10858765c456e311c2c518acbdc4b9613cf0ba943ba1f33f241f2.jpg",
+      "alt": "Терморегулятор OJ Electronics ETR2-1550"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

@@ -96,6 +96,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "b1542d78de88002ba65d0660a4f22a9260f64ac13344e54dbd0e738ed1cc2548.png",
+      "alt": "Терморегулятор IN-THERM WL 51"
+    },
+    {
+      "file": "bf803b12f74710b723222e7320dfe93de6eb9601d286b38aa30be6f8c722ba22.png",
+      "alt": "Терморегулятор IN-THERM WL 51"
+    },
+    {
+      "file": "2d97c6364e032f8795d4e3138d43129144e77bbb04dab562c8af6587853b17ec.jpg",
+      "alt": "Терморегулятор IN-THERM WL 51"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

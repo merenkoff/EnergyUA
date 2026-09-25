@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "8ed04e5e37e8e7233c6284984e995e305d6e0bfd8514816f128f38df5ef99e78.png",
+      "alt": "Електрична рушникосушарка Heat Plus XN-WH 505 біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

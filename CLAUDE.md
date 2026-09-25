@@ -20,7 +20,9 @@ npm run lint                    # eslint (next core-web-vitals + typescript)
 npm run build                   # prisma generate && next build
 npm run db:migrate              # prisma migrate dev: create a migration after editing prisma/schema.prisma
 npm run db:predeploy            # migrate deploy + seed + import:pricelists, the same as Railway pre-deploy
-npm run parse:pricelists        # python3 scripts/pricelists/parse_pricelists.py: data/pricelists → data/catalog JSON
+npm run extract:pricelist-images # python3 scripts/pricelists/extract_pricelist_images.py: xlsx images → data/catalog-media + index.json
+npm run fetch:brand-images      # python3 scripts/pricelists/fetch_external_images.py: external-sources.json → data/catalog-media + external.json
+npm run parse:pricelists        # python3 scripts/pricelists/parse_pricelists.py: data/pricelists (+ catalog-media index) → data/catalog JSON
 npm run import:pricelists       # data/catalog JSON → DB (idempotent)
 ```
 
@@ -37,6 +39,7 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 ### Catalog from supplier price lists (`data/pricelists`, `data/catalog`)
 - Raw price lists are committed in `data/pricelists/` (index in its README). `npm run parse:pricelists` (Python: openpyxl, python-docx, pdfplumber) turns them into one JSON per product in `data/catalog/<supplier>/` (format: `scripts/lib/pricelistProduct.ts`). Those JSON files are generated, never hand-edited.
 - `npm run import:pricelists` (`scripts/cli/import-pricelist-catalog.ts`) upserts them into the DB with `externalSource = "pricelist"`, `archived: false`, and unpublishes products that disappeared from the files. It runs on every deploy as the last step of `db:predeploy`. Unknown section/tag/brand slugs fail the import on purpose.
+- **Photos:** `npm run extract:pricelist-images` pulls the images embedded in the xlsx files into `data/catalog-media/<sha256>.<ext>` (committed, generated; logos/badges are filtered by `BLACKLIST`) and writes `index.json` with the cell each image was anchored to. The parser maps them to products (same row, In-Therm block ranges, thermostat columns, or explicit `IMAGE_RULES`) into the `images` field. Products whose price list has no photo get one from the brand's official site: `data/catalog-media/external-sources.json` is a hand-maintained list of `{supplier, match: {sku|skuPrefix}, urls}` rules, `npm run fetch:brand-images` downloads them into `data/catalog-media/` and writes `external.json`, and the parser applies them only when no price-list photo was found (exact SKU beats longest prefix). The importer writes `product_images` rows with `url = /api/media/<file>` and `sourceUrl = pricelist:<file>`, replacing only rows with that prefix, and copies the files into `MEDIA_ROOT` locally. On Railway the volume isn't mounted in pre-deploy, so `railway-entrypoint.sh` copies `data/catalog-media/*` onto it at start.
 - Legacy donor imports (`importUnifiedProduct`) now always write `archived: true`. `reset-imported-catalog.ts` never touches `pricelist` products; the Railway rebuild script re-runs the price-list import at the end.
 - Details and the stage plan: `docs/CATALOG-PRICELISTS-UK.md`.
 

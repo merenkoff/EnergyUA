@@ -104,6 +104,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "f7c35348045cea35b16a7f76e55c0b5955245764ee41d5f1adfa2c45435074ae.png",
+      "alt": "Терморегулятор IN-THERM PT 601"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

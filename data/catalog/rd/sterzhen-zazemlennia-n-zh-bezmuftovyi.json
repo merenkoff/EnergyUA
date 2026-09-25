@@ -13,6 +13,12 @@
   "shortDescription": "Стержень заземлення ZUVER 4.4 (н/ж безмуфтовий d16/1500 мм)",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "62506a30541d54640002d295e335d1f5fe43a5f08de6e1a19a01e4a4a5aab17c.png",
+      "alt": "Стержень заземлення н/ж безмуфтовий Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

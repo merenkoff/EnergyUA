@@ -111,6 +111,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "31ae7c5bc6263b97f2d4e9bf3e58932dd567240e353fbdc03254366db2c802f9.jpg",
+      "alt": "Нагрівальний кабель Magnum C&F-17 — 123,5 м, 2100 Вт (17 Вт/м)"
+    },
+    {
+      "file": "742f79a004f9ca98ec4a98d92e442166cb391b762d7169283189e44c1a6debdc.jpg",
+      "alt": "Нагрівальний кабель Magnum C&F-17 — 123,5 м, 2100 Вт (17 Вт/м)"
+    },
+    {
+      "file": "c6a00c6ea84802b38ae44006314551a31d06888b7774ecc08cba190ceff9f85a.jpg",
+      "alt": "Нагрівальний кабель Magnum C&F-17 — 123,5 м, 2100 Вт (17 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

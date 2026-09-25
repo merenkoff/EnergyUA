@@ -96,6 +96,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "960fd73104d97a5306317bee50c3fc42314c8e21c3af8decf94cfa8ff2416f75.jpg",
+      "alt": "Нагрівальний кабель MHW HW 20-1200 — 60 м, 1200 Вт (20 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 3,

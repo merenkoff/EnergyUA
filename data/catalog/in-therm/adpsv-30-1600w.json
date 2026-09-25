@@ -127,6 +127,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "3c89d9bbf86502ac788971171406fb01d400de2b03e6b68f4dd2ced055a2c172.png",
+      "alt": "Нагрівальний кабель Fenix ADPSV 30 Вт/м — 52 м, 1600 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "FENIX",

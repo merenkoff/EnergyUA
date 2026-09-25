@@ -51,6 +51,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "fe9fd4c91a5940c6779ff7039c8250947142935fe24a80c4dd679741f7d14fa6.jpg",
+      "alt": "Датчик Eberle TFF 524 002 — датчик вологості та температури"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

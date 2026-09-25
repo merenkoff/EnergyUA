@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "eec5257a6fef8fe2e1be12b95b61b37987095e3d743e04054fc55db35c47a2dd.jpg",
+      "alt": "Нагрівальний килимок IN-THERM 6040"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "НАГРІВАЛЬНІ КИЛИМКИ",

@@ -54,6 +54,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6a7836742496efcf0f64d90596292c9865f3e1433ce5749a2d3e08ba90e319af.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-002W сенсорний, білий/чорний, WI-FI"
+    },
+    {
+      "file": "d811ad4442bf9189a936ed46e36ab96a079a3adaccc5309665a2966bd26b7855.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-002W сенсорний, білий/чорний, WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

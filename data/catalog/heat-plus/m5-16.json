@@ -51,6 +51,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "9095e98db489064e3d540ec43b542792c97dd10346871658660749c31f955981.png",
+      "alt": "Терморегулятор Heat Plus M5.16, Білий. Чорний"
+    },
+    {
+      "file": "b6f0467fef5cba956dddf993785829547a0fbaedf5d253946e586aeb2b18c5f4.png",
+      "alt": "Терморегулятор Heat Plus M5.16, Білий. Чорний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

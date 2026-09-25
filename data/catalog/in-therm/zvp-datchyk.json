@@ -16,6 +16,12 @@
   "shortDescription": "Комплектуючі для збірних комплектів",
   "description": "<p>Датчик для збірних комплектів</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "08d4c35707bf2f59d3a11922479ae09284411cca9be0f3072cf23442d85759df.png",
+      "alt": "Захист від протікання IN-THERM Датчик"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗВП",

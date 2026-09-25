@@ -104,6 +104,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "3c89d9bbf86502ac788971171406fb01d400de2b03e6b68f4dd2ced055a2c172.png",
+      "alt": "Кабель для обігріву труб Fenix PFP 30 Вт/м з термостатом — 7,01 м, 195 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "FENIX",

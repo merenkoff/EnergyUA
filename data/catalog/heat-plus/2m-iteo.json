@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": "<p>Зовнішній датчик регулятора температури - сенсор 2M iTeo, 10кОм при 25°С, максимальна чутливість.</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "54020b2e8c5746445232e78609c22c682d309d8dbc8bc394abbb0d5b0647ef15.png",
+      "alt": "Зовнішній датчик регулятора температури - сенсор 2M iTeo, 10кОм при 25°С, максимальна чутливість."
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

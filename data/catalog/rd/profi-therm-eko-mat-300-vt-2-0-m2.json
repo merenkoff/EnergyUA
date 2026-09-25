@@ -61,6 +61,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "eda4df5bd3332371c8845aa960f9a79514d4d8198e07117a19087a250fe9a7ba.png",
+      "alt": "Нагрівальний мат Profi Therm Eko 300 Вт 2,0 м2 — 2 м², 300 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Profitherm Eko ",

@@ -72,6 +72,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "06ff2fd876b948762fe1f7722528716535996b68d018f855257389808441f7c8.jpg",
+      "alt": "Акумулятор LiFePO4 Bluesun BSM12280 (280 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

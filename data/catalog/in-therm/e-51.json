@@ -96,6 +96,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ecbf73ccd064dc17b624d56aeb8f7f049287a88f1304ee296ac80a57c9cdeed1.png",
+      "alt": "Терморегулятор IN-THERM E 51"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

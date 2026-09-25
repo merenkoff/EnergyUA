@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "699ff748cac0f37e0f54651dd77612d808761598afcd80114080c1752fdeb0e6.png",
+      "alt": "Гібридний інвертор Deye SUN-20K-SG05LP3-EU-SM2"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

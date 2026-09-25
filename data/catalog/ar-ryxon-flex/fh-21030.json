@@ -38,6 +38,16 @@
       "unit": "м²"
     }
   ],
+  "images": [
+    {
+      "file": "43c2feb30df17bf556591512394fccad0cdf7df4df2fcedb6a5d13b44ad3f081.jpg",
+      "alt": "Сушарка для взуття Arnold Rak FH 21030 — 0,3x1,00 м, 40 Вт"
+    },
+    {
+      "file": "63a62f13bf7c4f3aeb211ab45d3cb17f680dbc37f3808e83ef658aae49d83866.jpg",
+      "alt": "Сушарка для взуття Arnold Rak FH 21030 — 0,3x1,00 м, 40 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "Premium_AR_кабель_мати",

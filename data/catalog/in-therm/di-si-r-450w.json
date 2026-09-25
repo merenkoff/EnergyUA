@@ -136,6 +136,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "d6cc2b47ae80593bec16e0d84d50691a110d88a7311967fc4d4e4d92f77af104.jpg",
+      "alt": "Нагрівальний кабель Hemstedt Di Si R 12,5 Вт/м — 36 м, 450 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT DI SI",

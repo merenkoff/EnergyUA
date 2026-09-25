@@ -70,6 +70,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "d12ca36d2bfed691a15179a8ba7923ca4ceea33588af899b4bd8329d12032b1b.png",
+      "alt": "Акумулятор LiFePO4 Hysincere 12100_mini (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

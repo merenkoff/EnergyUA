@@ -74,6 +74,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "cfda7321392c10f1dc12825722dc1add970aad47f7b900e19e20b9954bdf119c.jpg",
+      "alt": "Нагрівальний мат Hot Fly HFM 1.50 — 1,5 м², 300 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "80058fbd722167de828901f42a483b4eece32d5eccf30c9c54bc1c544d02e19d.jpg",
+      "alt": "Нагрівальний мат Hot Fly HFM 1.50 — 1,5 м², 300 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "726e5d7c14c043f17e0f62007b237aed2483605373109ac3e7aa755d0592df43.jpg",
+      "alt": "Нагрівальний мат Hot Fly HFM 1.50 — 1,5 м², 300 Вт (200 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Hot Fly",

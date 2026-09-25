@@ -77,6 +77,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "87b0099b24954eb490d5b6e4d6696d8a126355306b56f906c13c5a9b2a695fff.jpg",
+      "alt": "Зарядна станція Allpowers R600"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗАРЯДНІ СТАНЦІЇ",

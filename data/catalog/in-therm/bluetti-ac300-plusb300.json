@@ -70,6 +70,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "dcd858a3904f381c7af02124c3651d908efa033539ee3888617ce96d7f57b461.png",
+      "alt": "Зарядна станція Bluetti AC300+B300"
+    },
+    {
+      "file": "1e40ac68278b7a8720e4dc7dc9708bda72979cd681cc5c5d1fcd02734e091532.jpg",
+      "alt": "Зарядна станція Bluetti AC300+B300"
+    },
+    {
+      "file": "505ec1efceb944a7cd4cf3d42982d6ae21c5123958b95bf1854c739f9f75b32d.jpg",
+      "alt": "Зарядна станція Bluetti AC300+B300"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗАРЯДНІ СТАНЦІЇ",

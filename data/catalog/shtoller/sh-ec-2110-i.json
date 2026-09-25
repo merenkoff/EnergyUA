@@ -96,6 +96,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0a18a60cd7195d2f77028ae1fd011055a7c5ca838f6376241d217a3e791661b1.jpg",
+      "alt": "Нагрівальний мат Shtoller Ecotherm SH-EC 2110 i — 1 м², 180 Вт (180 Вт/м²)"
+    },
+    {
+      "file": "830f73c726a6dcec9469bfbfba7bf54119221545b5b6cfd00d8095c255c4c8b9.jpg",
+      "alt": "Нагрівальний мат Shtoller Ecotherm SH-EC 2110 i — 1 м², 180 Вт (180 Вт/м²)"
+    },
+    {
+      "file": "e2901c73ee709f30829fc19c3a262680a984360518fe13f7192973a201ed33c5.jpg",
+      "alt": "Нагрівальний мат Shtoller Ecotherm SH-EC 2110 i — 1 м², 180 Вт (180 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2025-09-10-shtoller.docx",
     "sheet": "Мати Ecotherm",

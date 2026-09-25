@@ -47,6 +47,12 @@
       "unit": "°C"
     }
   ],
+  "images": [
+    {
+      "file": "dca8c87813867d2ea95b74c5085e3a6bb4b7dbb28f8d6f578f416c0d17af1e51.jpg",
+      "alt": "Терморегулятор Heat Plus M2-1.716 W сенсорний, 16A, з WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

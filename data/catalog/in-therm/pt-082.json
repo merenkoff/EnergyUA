@@ -104,6 +104,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "11fd9d8e27a1b69960b1477d63cf1822b3bf58a952b831718474f7899da4bb49.png",
+      "alt": "Терморегулятор IN-THERM PT 082"
+    },
+    {
+      "file": "a3be85df74a24502682978d78e5763e3efcbedd060d093862b7c5544ec3fe867.png",
+      "alt": "Терморегулятор IN-THERM PT 082"
+    },
+    {
+      "file": "c393c0cd86ef7eaa3d3572de0d0b276f2cf15a83ace5c968ffe6fa448f4d31cd.png",
+      "alt": "Терморегулятор IN-THERM PT 082"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

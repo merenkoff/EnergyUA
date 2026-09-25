@@ -53,6 +53,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c1aaf29b9615de726c07522e0bc0971690664b758b8334c41d53b7bce6702312.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-324 W 30A - білий"
+    },
+    {
+      "file": "ef6890e5bc813a36f6db90973d3b17fe50ef79cd31790d01986b232f05a5e9f3.png",
+      "alt": "Терморегулятор Heat Plus BHT-324 W 30A - білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

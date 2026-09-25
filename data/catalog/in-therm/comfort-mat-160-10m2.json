@@ -125,6 +125,12 @@
       "unit": "м"
     }
   ],
+  "images": [
+    {
+      "file": "d5200043febafdd027ca857cd5a219609175bcff687687d3fc2b59e123836bb0.png",
+      "alt": "Нагрівальний мат IN-THERM COMFORT Mat 160 Вт/м² — 10 м², 1600 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "IN-THERM COMFORT",

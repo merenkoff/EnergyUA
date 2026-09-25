@@ -27,6 +27,79 @@ ROOT = Path(__file__).resolve().parents[2]
 PRICES = ROOT / "data" / "pricelists"
 OUT = ROOT / "data" / "catalog"
 TAXONOMY_TS = ROOT / "scripts" / "lib" / "pricelistTaxonomy.ts"
+MEDIA_INDEX = ROOT / "data" / "catalog-media" / "index.json"
+EXTERNAL_SOURCES = ROOT / "data" / "catalog-media" / "external-sources.json"
+EXTERNAL_STATE = ROOT / "data" / "catalog-media" / "external.json"
+
+
+class ImageIndex:
+    """Фото, витягнуті з прайсів (extract_pricelist_images.py): пошук за файлом/аркушем/рядком/стовпцем
+    або за першими символами sha256 (для явних правил у парсерах)."""
+
+    def __init__(self, path: Path):
+        self.rows: list[dict] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+        self.by_prefix: dict[str, str] = {}
+        for r in self.rows:
+            self.by_prefix.setdefault(r["file"][:10], r["file"])
+
+    def at(self, source: str, sheet: str, row: int, col: int | None = None) -> list[str]:
+        return [r["file"] for r in self.rows if r["source"] == source and r["sheet"] == sheet and r["row"] == row and (col is None or r["col"] == col)]
+
+    def in_rows(self, source: str, sheet: str, row_from: int, row_to: int, min_col: int = 0) -> list[str]:
+        """Фото, прив'язані до рядків row_from..row_to (1-based, включно) у стовпцях ≥ min_col."""
+        out: list[str] = []
+        for r in self.rows:
+            if r["source"] == source and r["sheet"] == sheet and row_from <= r["row"] <= row_to and r["col"] >= min_col and r["file"] not in out:
+                out.append(r["file"])
+        return out
+
+    def by_hash(self, *prefixes: str) -> list[str]:
+        out = []
+        for pfx in prefixes:
+            f = self.by_prefix.get(pfx)
+            if f and f not in out:
+                out.append(f)
+        return out
+
+
+class ExternalImages:
+    """Фото з офіційних сайтів (fetch_external_images.py) для товарів, у прайсі яких фото немає.
+    Правило з external-sources.json: точний артикул (match.sku) або префікс артикула (match.skuPrefix, без регістру);
+    з кількох збігів перемагає точний, далі — найдовший префікс."""
+
+    def __init__(self, sources: Path, state: Path):
+        self.rules: list[dict] = json.loads(sources.read_text(encoding="utf-8")) if sources.exists() else []
+        st = json.loads(state.read_text(encoding="utf-8")) if state.exists() else {}
+        self.file_by_url: dict[str, str] = {u: v["file"] for u, v in st.items()}
+
+    def for_product(self, supplier: str, sku: str) -> list[str]:
+        best: tuple[int, int, list[str]] | None = None
+        low = sku.lower()
+        for i, r in enumerate(self.rules):
+            if r.get("supplier") != supplier or not r.get("urls"):
+                continue
+            m = r.get("match", {})
+            score = -1
+            if sku in m.get("sku", []):
+                score = 10_000
+            else:
+                for p in m.get("skuPrefix", []):
+                    if low.startswith(p.lower()):
+                        score = max(score, len(p))
+            if score >= 0 and (best is None or score > best[0]):
+                best = (score, i, r["urls"])
+        if best is None:
+            return []
+        out: list[str] = []
+        for u in best[2]:
+            f = self.file_by_url.get(u["url"] if isinstance(u, dict) else u)
+            if f and f not in out:
+                out.append(f)
+        return out
+
+
+MEDIA = ImageIndex(MEDIA_INDEX)
+EXTERNAL = ExternalImages(EXTERNAL_SOURCES, EXTERNAL_STATE)
 
 # ---------------------------------------------------------------------------
 # Таксономія (читаємо slug-и з TS-файлу, щоб не дублювати списки)
@@ -320,6 +393,8 @@ class Writer:
         sheet: str | None = None,
         page: int | None = None,
         sku_suffix: str | None = None,
+        images: list[str] | None = None,
+        row: int | None = None,
     ):
         sku = fix_sku(sku)
         if category not in SECTIONS:
@@ -344,6 +419,12 @@ class Writer:
             return
         price_uah = money(price)
         kit_uah = money(kit) if kit is not None else None
+        # Фото: явний список, інакше — те, що стояло в цьому ж рядку прайсу
+        if images is None and row is not None and sheet:
+            images = MEDIA.at(self.file, sheet, row)
+        images = self.override_images(sku, images or [])
+        if not images:
+            images = EXTERNAL.for_product(self.supplier, sku)
         clean_specs = []
         for s_ in specs or []:
             if s_ is None or s_["value"] in ("", "None"):
@@ -366,6 +447,7 @@ class Writer:
             "shortDescription": short,
             "description": description,
             "specs": clean_specs,
+            "images": [{"file": f, "alt": re.sub(r"\s+", " ", name).strip()} for f in images],
             "source": {
                 "file": f"data/pricelists/{self.file}",
                 **({"sheet": sheet} if sheet else {}),
@@ -375,6 +457,36 @@ class Writer:
             },
         }
 
+    # Явні правила «артикул/префікс → фото» для позицій, де фото в прайсі стоїть не в рядку товару.
+    IMAGE_RULES: dict[str, list[tuple[str, list[str]]]] = {
+        "rd": [
+            ("TXLP/2R", ["f94eb2f097"]), ("MILLIMAT", ["0fcb7d7219"]),
+            ("Wärme Twin flex", ["a33f6b8459"]), ("Wärme Twin mat", ["a91fc97f14"]),
+            ("PROFI THERM 2 ", ["4aebb4f531"]), ("PROFI THERM 150", ["778a367183"]),
+            ("PROFI THERM Eko-2", ["ebf922b0be"]), ("PROFI THERM Eko Flex", ["ebf922b0be"]), ("PROFI THERM Eko mat", ["eda4df5bd3"]),
+            ("ZUVER 4.4", ["33911b3295"]), ("Стержень заземлення н/ж безмуфтовий з накінечником", ["33911b3295"]),
+            ("Profitherm-MEX Black", ["4133973908"]), ("Profitherm-MEX", ["cd257b6f0d"]), ("Wärme Technik М", ["22e3e19e1b"]), ("Комплект Акваблок", ["77cdfb91e2"]), ("Датчик Акваблок", ["77cdfb91e2"]),
+            ("Стрічка електромонтажна", ["dff2334855"]), ("Труба гофрована", ["89be7328d0"]),
+        ],
+        "in-therm": [
+            ("ZVP Датчик", ["08d4c35707"]), ("ZVP", ["ff420bd947"]),
+            ("ECOSUN S+ bracket", ["1491f63a98"]),
+            ("TRACECO", ["cc437d3c9f"]), ("SRL", ["cc437d3c9f"]),
+        ],
+        "easytherm-extherm": [
+            ("55531", ["a12e721e07"]), ("55532", ["90ffefe986"]),
+            ("55533", ["ebf4e5b1ce"]), ("55534", ["03f770b5be"]), ("55535", ["38614748dd"]),
+            ("55527", ["9a028b39c8"]),
+            ("55519", ["f88ce01a04", "f68787581d", "6596383a70", "3d01e73a47", "624b812d31"]),
+        ],
+    }
+
+    def override_images(self, sku: str, images: list[str]) -> list[str]:
+        for prefix, hashes in self.IMAGE_RULES.get(self.supplier, []):
+            if sku.lower().startswith(prefix.lower()):
+                return MEDIA.by_hash(*hashes)
+        return images
+
     def flush(self):
         d = OUT / self.supplier
         if d.exists():
@@ -383,7 +495,8 @@ class Writer:
         for key, p in self.products.items():
             (d / f"{key}.json").write_text(json.dumps(p, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         with_price = sum(1 for p in self.products.values() if p["priceUah"])
-        print(f"[{self.supplier}] {len(self.products)} товарів ({with_price} з ціною) → {d.relative_to(ROOT)}")
+        with_img = sum(1 for p in self.products.values() if p["images"])
+        print(f"[{self.supplier}] {len(self.products)} товарів ({with_price} з ціною, {with_img} з фото) → {d.relative_to(ROOT)}")
         for w in self.warnings:
             print(f"   ! {w}")
 
@@ -459,7 +572,7 @@ def parse_heat_plus():
     W = Writer("heat-plus", "Heat Plus (прайс 05.2026)", "2026-05-heat-plus.xlsx", "2026-05-01")
     wb = load_xlsx(W.file)
     ws = wb["Терморегулятори Heat_Plus"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         raw = text(cell(row, 3))
         if not raw or raw.startswith("Терморегулятори"):
             continue
@@ -470,7 +583,7 @@ def parse_heat_plus():
         rng = text(cell(row, 9))
         if raw.startswith(("Зовнішній датчик", "KSD")):
             sku = "KSD-9700-060-N" if raw.startswith("KSD") else re.sub(r".*сенсор\s+", "", raw.split(",")[0])
-            W.add(
+            W.add(row=rn, 
                 sku=sku, name=raw.split(";")[0] if raw.startswith("KSD") else raw, brand="heat-plus",
                 category="montazh-ta-aksesuary", tags=["datchyk-pidlohy"] if "датчик" in raw.lower() else [],
                 price=price, sheet=ws.title, description=desc_html([raw]),
@@ -496,21 +609,21 @@ def parse_heat_plus():
         raw_clean = re.sub(r"^Термостат\s+", "", raw)
         head_clean = re.sub(r"^Термостат\s+", "", head)
         name = "Терморегулятор Heat Plus " + (sku + raw_clean[len(head_clean):] if raw_clean.startswith(head_clean) else raw_clean)
-        W.add(
+        W.add(row=rn, 
             sku=sku, sku_suffix="wifi" if wifi and not re.search(r"wi\s*-?\s*fi", head, re.I) else None,
             name=name, brand="heat-plus", category="termorehuliatory", tags=tags, price=price,
             specs=specs, sheet=ws.title, short=typ or None, description=desc_html([feat]),
         )
 
     ws = wb["Рушникосушарки"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         if num(cell(row, 0)) is None or not text(cell(row, 2)):
             continue
         sku = fix_sku(text(cell(row, 2)))
         name = re.sub(r"\s*\(\s*Код УКТЗЕД.*$", "", text(cell(row, 5)))
         name = re.sub(r"(XN-\s*(?:WH|BK|QH)\s*\d+\s*(?:N|G)?|WH303)\s*", sku + " ", name, count=1)
         name = name.replace("Електрична рушникосушарка", "Електрична рушникосушарка Heat Plus")
-        W.add(
+        W.add(row=rn, 
             sku=sku, name=name, brand="heat-plus", category="rushnykosusharky", tags=["vanna"],
             price=cell(row, 20), specs=[_color_spec(name)], sheet=ws.title,
         )
@@ -543,7 +656,7 @@ def parse_ar_ryxon_flex():
     # --- Premium Arnold Rak: мати FH L / FH P, кабель 61xx-20 / 61xx-30, килимки
     ws = wb["Premium_AR_кабель_мати"]
     section = ""
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         vals = [(i, v) for i, v in enumerate(row) if text(v)]
         if len(vals) == 1 and isinstance(vals[0][1], str) and len(text(vals[0][1])) > 12:
             section = text(vals[0][1])
@@ -553,22 +666,22 @@ def parse_ar_ryxon_flex():
             continue
         power, size, area, price, kit = cell(row, 3), text(cell(row, 4)), num(cell(row, 5)), cell(row, 6), cell(row, 7)
         if re.search(r"FH L", section):
-            W.add(sku=sku, name=_mat_name("Arnold Rak", "Premium", sku, area, power, 200), brand="arnold-rak",
+            W.add(row=rn, sku=sku, name=_mat_name("Arnold Rak", "Premium", sku, area, power, 200), brand="arnold-rak",
                   category="nahrivalni-maty", tags=["pid-laminat", "odnozhylnyi", "200-vt-m2"], price=price, kit=kit,
                   specs=[sp("power_w", power), sp("area_m2", area), sp("size_m", size), sp("power_w_m2", 200.0), sp("cores", "одножильний"), *AR_COMMON],
                   short="Одножильний мат серії Premium для сухого монтажу під ламінат (у нівелюючу суміш).", sheet=ws.title)
         elif re.search(r"FH P", section):
-            W.add(sku=sku, name=_mat_name("Arnold Rak", "Premium", sku, area, power, 200), brand="arnold-rak",
+            W.add(row=rn, sku=sku, name=_mat_name("Arnold Rak", "Premium", sku, area, power, 200), brand="arnold-rak",
                   category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "200-vt-m2"], price=price, kit=kit,
                   specs=[sp("power_w", power), sp("area_m2", area), sp("size_m", size), sp("power_w_m2", 200.0), sp("cores", "двожильний"), *AR_COMMON],
                   short="Двожильний мат серії Premium 200 Вт/м² для укладання в плитковий клей.", sheet=ws.title)
         elif re.search(r"61xx-20", section):
-            W.add(sku=sku, name=_cable_name("Arnold Rak", "Premium", sku, num(size), power, 20), brand="arnold-rak",
+            W.add(row=rn, sku=sku, name=_cable_name("Arnold Rak", "Premium", sku, num(size), power, 20), brand="arnold-rak",
                   category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi", "20-vt-m"], price=price, kit=kit,
                   specs=[sp("power_w", power), sp("length_m", num(size)), sp("power_w_m", 20.0), sp("cores", "двожильний"), *AR_COMMON],
                   short="Двожильний кабель серії Premium 20 Вт/м для укладання в стяжку.", sheet=ws.title)
         elif re.search(r"61xx-30", section):
-            W.add(sku=sku, name=_cable_name("Arnold Rak", "Premium", sku, num(size), power, 30), brand="arnold-rak",
+            W.add(row=rn, sku=sku, name=_cable_name("Arnold Rak", "Premium", sku, num(size), power, 30), brand="arnold-rak",
                   category="antyobledeninnia", tags=["vidkryti-maidanchyky", "vodostoky-ta-pokrivlia", "dvozhylnyi", "30-vt-m"], price=price, kit=kit,
                   specs=[sp("power_w", power), sp("length_m", num(size)), sp("power_w_m", 30.0), sp("cores", "двожильний"), *AR_COMMON],
                   short="Двожильний кабель 30 Вт/м для зовнішнього обігріву: сходи, доріжки, водостоки.", sheet=ws.title)
@@ -577,18 +690,18 @@ def parse_ar_ryxon_flex():
                 continue
             kind = "Сушарка для взуття" if "Сушка" in section else "Килимок з підігрівом"
             brand = "arnold-rak" if "Arnold" in section or "Heat Master" in section else None
-            W.add(sku=sku, name=f"{kind} {'Arnold Rak ' if brand else ''}{sku} — {size} м, {fmt(num(power))} Вт", brand=brand,
+            W.add(row=rn, sku=sku, name=f"{kind} {'Arnold Rak ' if brand else ''}{sku} — {size} м, {fmt(num(power))} Вт", brand=brand,
                   category="kylymky-z-pidihrivom", tags=["dlia-domu"], price=price,
                   specs=[sp("power_w", power), sp("size_m", size), sp("area_m2", area)], sheet=ws.title)
 
     # --- Standart Arnold Rak: мати FH-EC 180 Вт/м²
     ws = wb["Standart_AR_мати"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         sku = text(cell(row, 1))
         if not sku.startswith("FH-EC"):
             continue
         area = num(cell(row, 4))
-        W.add(sku=sku, name=_mat_name("Arnold Rak", "Standart", sku, area, cell(row, 3), 180), brand="arnold-rak",
+        W.add(row=rn, sku=sku, name=_mat_name("Arnold Rak", "Standart", sku, area, cell(row, 3), 180), brand="arnold-rak",
               category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "180-vt-m2"], price=cell(row, 5), kit=cell(row, 6),
               specs=[sp("power_w", cell(row, 3)), sp("area_m2", area), sp("size_m", text(cell(row, 2))), sp("power_w_m2", 180.0),
                      sp("cores", "двожильний"), sp("cable_diameter_mm", 2.8), sp("ip", "IP X7, клас захисту II"), *AR_COMMON],
@@ -597,12 +710,12 @@ def parse_ar_ryxon_flex():
     # --- Standart кабель 20 Вт/м та 15 Вт/м
     for sheet_name, offset, linear, diam in (("Standart_AR_кабель 20 Вт", 0, 20.0, 5.0), ("Standart_AR_кабель 15 Вт", 1, 15.0, 5.0)):
         ws = wb[sheet_name]
-        for row in ws.iter_rows(values_only=True):
+        for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
             sku = text(cell(row, 1 + offset))
             if not re.match(r"^\d{4}-\d{2}", sku):
                 continue
             length = num(cell(row, 2 + offset))
-            W.add(sku=sku, name=_cable_name("Arnold Rak", "Standart", sku, length, cell(row, 4 + offset), linear), brand="arnold-rak",
+            W.add(row=rn, sku=sku, name=_cable_name("Arnold Rak", "Standart", sku, length, cell(row, 4 + offset), linear), brand="arnold-rak",
                   category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi", power_tag_m(linear)], price=cell(row, 5 + offset), kit=cell(row, 6 + offset),
                   specs=[sp("power_w", cell(row, 4 + offset)), sp("length_m", length), sp("area_range_m2", text(cell(row, 3 + offset))),
                          sp("power_w_m", linear), sp("cores", "двожильний"), sp("cable_diameter_mm", diam),
@@ -611,10 +724,10 @@ def parse_ar_ryxon_flex():
 
     # --- Терморегулятор Arnold Rak
     ws = wb["Терморегулятори AR"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         sku = text(cell(row, 1))
         if sku.startswith("AR ") and money(cell(row, 5)):
-            W.add(sku=sku, name=f"Терморегулятор Arnold Rak {sku} з датчиком підлоги", brand="arnold-rak", category="termorehuliatory",
+            W.add(row=rn, sku=sku, name=f"Терморегулятор Arnold Rak {sku} з датчиком підлоги", brand="arnold-rak", category="termorehuliatory",
                   tags=["mekhanichnyi", "datchyk-pidlohy"], price=cell(row, 5),
                   specs=[sp("max_load_a", "16", 16.0), sp("voltage_v", "230", 230.0), sp("color", text(cell(row, 4)))],
                   short=text(cell(row, 2)), sheet=ws.title)
@@ -626,12 +739,12 @@ def parse_ar_ryxon_flex():
     ):
         bn = BRAND_NAMES[brand]
         ws = wb[cab_sheet]
-        for row in ws.iter_rows(values_only=True):
+        for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
             sku = text(cell(row, 0))
             if not re.match(r"^(HC|EHC)", sku) or money(cell(row, 5)) is None:
                 continue
             length = num(cell(row, 1))
-            W.add(sku=sku, name=_cable_name(bn, "", sku, length, cell(row, 2), linear).replace("  ", " "), brand=brand,
+            W.add(row=rn, sku=sku, name=_cable_name(bn, "", sku, length, cell(row, 2), linear).replace("  ", " "), brand=brand,
                   category="nahrivalnyi-kabel", tags=["pid-plytku", "u-stiazhku", "tonkyi-kabel", "dvozhylnyi", power_tag_m(linear)],
                   price=cell(row, 5), kit=cell(row, 6),
                   specs=[sp("power_w", cell(row, 2)), sp("length_m", length), sp("area_m2", num(cell(row, 3))),
@@ -640,49 +753,49 @@ def parse_ar_ryxon_flex():
                   short=f"Тонкий двожильний кабель {fmt(linear)} Вт/м, Ø {fmt(diam)} мм — у плитковий клей або стяжку. Комплект: кабель + гофра + коробка.",
                   sheet=ws.title)
         ws = wb[mat_sheet]
-        for row in ws.iter_rows(values_only=True):
+        for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
             sku = text(cell(row, 0))
             if not re.match(r"^(HM|EHM)", sku) or money(cell(row, 4)) is None:
                 continue
             area = num(cell(row, 3))
-            W.add(sku=sku, name=_mat_name(bn, "", sku, area, cell(row, 2), density).replace("  ", " "), brand=brand,
+            W.add(row=rn, sku=sku, name=_mat_name(bn, "", sku, area, cell(row, 2), density).replace("  ", " "), brand=brand,
                   category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", power_tag_m2(density)], price=cell(row, 4), kit=cell(row, 5),
                   specs=[sp("power_w", cell(row, 2)), sp("area_m2", area), sp("size_m", text(cell(row, 1))), sp("power_w_m2", density),
                          sp("cable_diameter_mm", diam), sp("cores", "двожильний")],
                   short=f"Двожильний нагрівальний мат {fmt(density)} Вт/м², Ø {fmt(diam)} мм. Комплект: мат + гофра + коробка.", sheet=ws.title)
         ws = wb[sr_sheet]
-        for row in ws.iter_rows(values_only=True):
+        for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
             sku = text(cell(row, 0))
             if not re.match(r"^(LSR|FLSR)", sku) or money(cell(row, 3)) is None:
                 continue
             w_m = re.search(r"(\d+)\s*Вт", text(cell(row, 1)))
             fep = "FEP" in text(cell(row, 1))
-            W.add(sku=sku, name=f"Саморегулюючий кабель {bn} {sku}, {w_m.group(1) if w_m else '?'} Вт/м{' (FEP)' if fep else ''}", brand=brand,
+            W.add(row=rn, sku=sku, name=f"Саморегулюючий кабель {bn} {sku}, {w_m.group(1) if w_m else '?'} Вт/м{' (FEP)' if fep else ''}", brand=brand,
                   category="samorehuliuiuchyi-kabel", tags=["truby", "vodostoky-ta-pokrivlia", "vidriznyi"], price=cell(row, 3), unit="м",
                   specs=[sp("power_w_m", float(w_m.group(1))) if w_m else None, sp("outer_insulation", "FEP" if fep else "полімер")],
                   short="Саморегулюючий кабель для захисту труб і водостоків від замерзання. Ціна за погонний метр.", sheet=ws.title)
 
     # --- Кріплення та монтажна стрічка
     ws = wb["Кріплення"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         name = text(cell(row, 1))
         if not name or money(cell(row, 3)) is None or name.startswith("НАЙМЕНУВАННЯ"):
             continue
         name = name.capitalize()
         unit = "м" if "пог" in text(cell(row, 2)) else "шт"
         tags = ["vodostoky-ta-pokrivlia"] if "ВОДОСТОК" in text(cell(row, 1)) else []
-        W.add(sku=name, name=name, brand=None, category="montazh-ta-aksesuary", tags=tags, price=cell(row, 3), unit=unit,
+        W.add(row=rn, sku=name, name=name, brand=None, category="montazh-ta-aksesuary", tags=tags, price=cell(row, 3), unit=unit,
               specs=[sp("unit", text(cell(row, 2)))], sheet=ws.title)
 
     # --- Терморегулятори FLEX
     ws = wb["FLEX_Терморегулятори"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         sku = text(cell(row, 1))
         if not re.match(r"^TD", sku):
             continue
         app, tech = text(cell(row, 2)), text(cell(row, 3))
         outdoor = "сніготан" in app.lower()
-        W.add(sku=sku, name=f"Терморегулятор Flex {sku}" + (" для систем сніготанення" if outdoor else ""), brand="flex",
+        W.add(row=rn, sku=sku, name=f"Терморегулятор Flex {sku}" + (" для систем сніготанення" if outdoor else ""), brand="flex",
               category="antyobledeninnia" if outdoor else "termorehuliatory",
               tags=["din-reika", "dlia-snihotanennia"] if outdoor else ["tsyfrovyi", "datchyk-pidlohy"], price=cell(row, 4),
               short=app, description=desc_html([tech]), sheet=ws.title)
@@ -703,7 +816,7 @@ IT_BLOCKS = [
          category="nahrivalnyi-kabel", tags=["pid-plytku", "tonkyi-kabel", "dvozhylnyi", "bezmuftove-ziednannia", "ftoroplastova-izoliatsiia"]),
     dict(title=r"кабель двожильний Hemstedt BR-IM 17", brand="hemstedt", series="BR-IM", kind="cable", linear=17,
          category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi", "bezmuftove-ziednannia"]),
-    dict(title=r"кабель одножильний Hemstedt BR-IM-Z", brand="hemstedt", series="BR-IM-Z", kind="cable", linear=17,
+    dict(title=r"кабель одножильний Hemstedt BR-IM-Z", images=['7128bc6682'], brand="hemstedt", series="BR-IM-Z", kind="cable", linear=17,
          category="nahrivalnyi-kabel", tags=["u-stiazhku", "odnozhylnyi", "bezmuftove-ziednannia"]),
     dict(title=r"Hemstedt BRF-IM 27", brand="hemstedt", series="BRF-IM", kind="cable", linear=27,
          category="antyobledeninnia", tags=["vodostoky-ta-pokrivlia", "vidkryti-maidanchyky", "dvozhylnyi"]),
@@ -712,33 +825,33 @@ IT_BLOCKS = [
     dict(title=r"Hemstedt FS 10", brand="hemstedt", series="FS", kind="pipe", linear=10,
          category="antyobledeninnia", tags=["truby", "z-vbudovanym-termostatom"]),
     # HEMSTEDT DI SI
-    dict(title=r"Нагрівальний мат Hemstedt Di Si H", brand="hemstedt", series="Di Si H", kind="mat", density=150,
+    dict(title=r"Нагрівальний мат Hemstedt Di Si H", images=["78622891e5"], brand="hemstedt", series="Di Si H", kind="mat", density=150,
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "samokleiucha-sitka", "bezmuftove-ziednannia", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"кабель Hemstedt Di Si R", brand="hemstedt", series="Di Si R", kind="cable", linear=12.5,
+    dict(title=r"кабель Hemstedt Di Si R", images=["d6cc2b47ae"], brand="hemstedt", series="Di Si R", kind="cable", linear=12.5,
          category="nahrivalnyi-kabel", tags=["pid-plytku", "tonkyi-kabel", "dvozhylnyi", "bezmuftove-ziednannia", "ftoroplastova-izoliatsiia"]),
     # FENIX ULTRA
     dict(title=r"Ультратонкий нагрівальний мат Fenix", brand="fenix", series="Ultra CM", kind="mat", density=150,
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "ultratonkyi", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"Ультратонкий нагрівальний кабель Fenix", brand="fenix", series="Ultra ADSA", kind="cable", linear=12,
+    dict(title=r"Ультратонкий нагрівальний кабель Fenix", images=['549e33637c'], brand="fenix", series="Ultra ADSA", kind="cable", linear=12,
          category="nahrivalnyi-kabel", tags=["pid-plytku", "ultratonkyi", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
     # FENIX
     dict(title=r"Нагрівальний мат Fenix\s*LDTS 160", brand="fenix", series="LDTS", kind="mat", density=160,
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"Нагрівальний мат Fenix LDTS M 160", brand="fenix", series="LDTS M", kind="mat", density=160,
+    dict(title=r"Нагрівальний мат Fenix LDTS M 160", images=['71c1ad079b'], brand="fenix", series="LDTS M", kind="mat", density=160,
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
     dict(title=r"Тонкий двожильний кабель Fenix ADSV 10", brand="fenix", series="ADSV 10", kind="cable", linear=10,
          category="nahrivalnyi-kabel", tags=["pid-plytku", "tonkyi-kabel", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"Універсальний нагрівальний двожильний кабель Fenix ADSV 18", brand="fenix", series="ADSV 18", kind="cable", linear=18,
+    dict(title=r"Універсальний нагрівальний двожильний кабель Fenix ADSV 18", images=['549e33637c'], brand="fenix", series="ADSV 18", kind="cable", linear=18,
          category="nahrivalnyi-kabel", tags=["u-stiazhku", "pid-plytku", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"одножильний ASL1P 18", brand="fenix", series="ASL1P", kind="cable", linear=18,
+    dict(title=r"одножильний ASL1P 18", images=['549e33637c'], brand="fenix", series="ASL1P", kind="cable", linear=18,
          category="nahrivalnyi-kabel", tags=["u-stiazhku", "odnozhylnyi", "ftoroplastova-izoliatsiia"]),
     dict(title=r"Алюмінієві мати Fenix AL MAT 140", brand="fenix", series="AL MAT", kind="alu", density=140,
          category="pid-laminat", tags=["pid-laminat", "aliuminiievyi-mat"]),
-    dict(title=r"кабель двожильний ADPSV 30", brand="fenix", series="ADPSV 30", kind="cable", linear=30,
+    dict(title=r"кабель двожильний ADPSV 30", images=['3c89d9bbf8'], brand="fenix", series="ADPSV 30", kind="cable", linear=30,
          category="antyobledeninnia", tags=["vodostoky-ta-pokrivlia", "vidkryti-maidanchyky", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
-    dict(title=r"вбудованим термостатом PFP 12", brand="fenix", series="PFP 12", kind="pipe", linear=12,
+    dict(title=r"вбудованим термостатом PFP 12", images=['3c89d9bbf8'], brand="fenix", series="PFP 12", kind="pipe", linear=12,
          category="antyobledeninnia", tags=["truby", "z-vbudovanym-termostatom"]),
-    dict(title=r"вбудованим термостатом PFP 30", brand="fenix", series="PFP 30", kind="pipe", linear=30,
+    dict(title=r"вбудованим термостатом PFP 30", images=['3c89d9bbf8'], brand="fenix", series="PFP 30", kind="pipe", linear=30,
          category="antyobledeninnia", tags=["truby", "vodostoky-ta-pokrivlia", "z-vbudovanym-termostatom"]),
     # IN-THERM
     dict(title=r"кабель IN-THERM ADSV 20", brand="in-therm", series="ADSV 20", kind="cable", linear=20, country="chekhiia",
@@ -746,14 +859,14 @@ IT_BLOCKS = [
     dict(title=r"Нагрівальний мат двожильний IN-THERM 200", brand="in-therm", series="Mat 200", kind="mat", density=200, country="chekhiia",
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "ftoroplastova-izoliatsiia"]),
     # IN-THERM COMFORT
-    dict(title=r"IN-THERM COMFORT PDSV 20", brand="in-therm", series="COMFORT PDSV 20", kind="cable", linear=20, country="chekhiia",
+    dict(title=r"IN-THERM COMFORT PDSV 20", images=['dd72540f55'], brand="in-therm", series="COMFORT PDSV 20", kind="cable", linear=20, country="chekhiia",
          category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi"]),
-    dict(title=r"Нагрівальний мат двожильний IN-THERM COMFORT 160", brand="in-therm", series="COMFORT Mat 160", kind="mat", density=160, country="chekhiia",
+    dict(title=r"Нагрівальний мат двожильний IN-THERM COMFORT 160", images=["d5200043fe"], brand="in-therm", series="COMFORT Mat 160", kind="mat", density=160, country="chekhiia",
          category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi"]),
     # АЛЮМАТИ
     dict(title=r"Алюмінієві мати IN-THERM AFMAT 150", brand="in-therm", series="AFMAT", kind="alu", density=150, country="kytai",
          category="pid-laminat", tags=["pid-laminat", "aliuminiievyi-mat"]),
-    dict(title=r"Алюмінієві мати Fenix \(Чехія\)", brand="fenix", series="AL MAT", kind="alu", density=140,
+    dict(title=r"Алюмінієві мати Fenix \(Чехія\)", images=['67bf8cbd69', 'f8592b19fa'], brand="fenix", series="AL MAT", kind="alu", density=140,
          category="pid-laminat", tags=["pid-laminat", "aliuminiievyi-mat"]),
 ]
 
@@ -882,12 +995,14 @@ def _parse_it_blocks(W: Writer, ws, g: list[list]):
             d += 1
         block_specs, rest_notes = _notes_to_specs(notes)
         rest_notes = [x for x in rest_notes if not re.match(r"^(Нові ціни|Спеціальна позиція|дешевше|Рекомендуємо|Практично|У довгостроков|\d\.)", x)]
+        # Фото серії: стоїть праворуч від таблиці (стовпці приміток) у межах блоку, інакше — запасне з реєстру
+        block_images = MEDIA.in_rows(W.file, ws.title, r + 1, d, min_col=notes_from) or MEDIA.by_hash(*block.get("images", []))
         for row in rows:
-            _emit_it_row(W, ws, block, roles, row, block_specs, intro, rest_notes)
+            _emit_it_row(W, ws, block, roles, row, block_specs, intro, rest_notes, block_images)
         r = d
 
 
-def _emit_it_row(W, ws, b, roles, row, block_specs, intro, rest_notes):
+def _emit_it_row(W, ws, b, roles, row, block_specs, intro, rest_notes, images):
     bn = BRAND_NAMES[b["brand"]]
     power = num(cell(row, roles.get("power"))) if "power" in roles else None
     length = num(cell(row, roles.get("length"))) if "length" in roles else None
@@ -953,10 +1068,10 @@ def _emit_it_row(W, ws, b, roles, row, block_specs, intro, rest_notes):
         sku = f"{b['series']} {pw.replace(',', '.')}W"
     description = (bullets_html(intro) or "") + (desc_html(rest_notes) or "")
     W.add(sku=sku, name=name, brand=b["brand"], category=b["category"], tags=tags, price=price, kit=kit, price_note=note,
-          specs=specs, sheet=ws.title, description=description or None)
+          specs=specs, sheet=ws.title, description=description or None, images=images)
 
 
-def _parse_columnar(W: Writer, ws, g: list[list], r0: int, r1: int, *, category_for, extra_tags=None):
+def _parse_columnar(W: Writer, ws, g: list[list], r0: int, r1: int, *, category_for, extra_tags=None, image_rows=()):
     """Таблиці термостатів: рядки = характеристики, стовпці = моделі. r0/r1 — 1-based рядки включно."""
     rows = [g[i - 1] if i - 1 < len(g) else [] for i in range(r0, r1 + 1)]
     width = max(len(r) for r in rows)
@@ -980,6 +1095,7 @@ def _parse_columnar(W: Writer, ws, g: list[list], r0: int, r1: int, *, category_
         model = text(attrs.get("модель"))
         if not model or model == "модель":
             continue
+        col_images = [f for ir in image_rows for f in MEDIA.at(W.file, ws.title, ir, c)]
         brand_name = text(attrs.get("торгова марка")) or "IN-THERM"
         brand = {"in-therm": "in-therm", "eberle": "eberle", "fenix": "fenix"}.get(brand_name.lower(), "in-therm")
         variants = [(model, attrs.get("ціна, грн"), False)]
@@ -1027,7 +1143,7 @@ def _parse_columnar(W: Writer, ws, g: list[list], r0: int, r1: int, *, category_
             if descr:
                 name += f" — {descr}"
             extra = text(attrs.get("Додаткова інформація") or attrs.get("додаткові комплектуючи"))
-            W.add(sku=mdl, name=name, brand=brand, category=cat, tags=tags, price=price, specs=specs, sheet=ws.title,
+            W.add(sku=mdl, name=name, brand=brand, category=cat, tags=tags, price=price, specs=specs, sheet=ws.title, images=col_images,
                   short=typ.capitalize() + ("; " + text(attrs.get("дисплей")) + " дисплей" if attrs.get("дисплей") else "") if typ else None,
                   description=desc_html([extra, text(attrs.get("перехідники до радіаторів")) and "Перехідники до радіаторів: " + text(attrs.get("перехідники до радіаторів"))]))
 
@@ -1037,7 +1153,7 @@ def _parse_it_thermostats(W: Writer, ws):
     assert text(g[3][0]) == "модель" and text(g[4][0]).startswith("ціна"), "ТЕРМОСТАТИ: змінилась розмітка таблиці 1"
     assert text(g[33][0]) == "модель" and text(g[45][0]).startswith("ціна"), "ТЕРМОСТАТИ: змінилась розмітка таблиці 2"
     assert text(g[52][0]) == "модель" and text(g[60][0]).startswith("ціна"), "ТЕРМОСТАТИ: змінилась розмітка таблиці 3"
-    _parse_columnar(W, ws, g, 3, 30, category_for=lambda a, d, p: ("termorehuliatory", "Терморегулятор"))
+    _parse_columnar(W, ws, g, 3, 30, category_for=lambda a, d, p: ("termorehuliatory", "Терморегулятор"), image_rows=(1, 2))
 
     def cat2(attrs, descr, place):
         t = text(attrs.get("тип")).lower()
@@ -1047,7 +1163,7 @@ def _parse_it_thermostats(W: Writer, ws):
             return "termorehuliatory", "Терморегулятор для газового котла"
         return "termorehuliatory", "Терморегулятор"
 
-    _parse_columnar(W, ws, g, 32, 49, category_for=cat2)
+    _parse_columnar(W, ws, g, 32, 49, category_for=cat2, image_rows=(30, 31))
 
     def cat3(attrs, descr, place):
         if descr:
@@ -1056,7 +1172,7 @@ def _parse_it_thermostats(W: Writer, ws):
             return "antyobledeninnia", "Метеостанція (контролер сніготанення)"
         return "antyobledeninnia", "Терморегулятор для зовнішнього обігріву"
 
-    _parse_columnar(W, ws, g, 51, 62, category_for=cat3)
+    _parse_columnar(W, ws, g, 51, 62, category_for=cat3, image_rows=(49, 50))
 
 
 def _parse_it_film(W: Writer, ws):
@@ -1082,6 +1198,7 @@ def _parse_it_film(W: Writer, ws):
                   category="pid-laminat", tags=["pid-laminat", "plivka", power_tag_m2(t["density"]), "koreia"], price=price, unit="м²",
                   specs=[sp("power_w_m2", t["density"]), sp("roll_width_m", width / 100), sp("model", t["models"]), sp("thickness_mm", 0.34),
                          sp("country", "Корея")],
+                  images=MEDIA.at(W.file, ws.title, 2, t["col"]),
                   short="Ціна за 1 м². Крок нарізання 0,25 м, у рулоні 100 м. Монтаж під ламінат на підкладку.",
                   description=desc_html([text(g[1][5])] + t["lines"]), sheet=ws.title)
 
@@ -1089,7 +1206,7 @@ def _parse_it_film(W: Writer, ws):
 def _parse_it_selfreg(W: Writer, ws):
     g = grid(ws)
     brand, extra, country = None, "", None
-    for row in g:
+    for rn, row in enumerate(g, 1):
         t1 = text(cell(row, 1))
         if t1.startswith("Саморегульований кабель ELTRACE"):
             brand, extra, country = "eltrace", "", "frantsiia"
@@ -1104,7 +1221,7 @@ def _parse_it_selfreg(W: Writer, ws):
         if m and brand and money(cell(row, 4)):
             w = float(m.group(2))
             sku = f"TRACECO {int(w)}W" if m.group(1) == "TRACECO" else f"SRL{int(w)}-2CR{extra}"
-            W.add(sku=sku, name=f"Саморегулюючий кабель {BRAND_NAMES[brand]} {sku.replace(' EXTRA', ' Extra')} — {int(w)} Вт/м",
+            W.add(row=rn, sku=sku, name=f"Саморегулюючий кабель {BRAND_NAMES[brand]} {sku.replace(' EXTRA', ' Extra')} — {int(w)} Вт/м",
                   brand=brand, category="samorehuliuiuchyi-kabel", tags=["truby", "vodostoky-ta-pokrivlia", "vidriznyi", country],
                   price=cell(row, 4), unit="м",
                   specs=[sp("power_w_m", w), sp("max_length_m", num(cell(row, 2))), sp("dimensions", text(cell(row, 3)) + " мм"),
@@ -1117,7 +1234,7 @@ def _parse_it_selfreg(W: Writer, ws):
             if price is None:
                 continue
             per_m = "грн/м" in text(cell(row, 4))
-            W.add(sku=re.sub(r"\s*\(.*$", "", t2), name=re.sub(r"\s*\(.*$", "", t2) + " Fenix", brand="fenix", category="antyobledeninnia",
+            W.add(row=rn, sku=re.sub(r"\s*\(.*$", "", t2), name=re.sub(r"\s*\(.*$", "", t2) + " Fenix", brand="fenix", category="antyobledeninnia",
                   tags=["vodostoky-ta-pokrivlia"], price=price, unit="м" if per_m else "шт",
                   price_note="під замовлення" if "замовлення" in text(cell(row, 4)) else ("ціна за упаковку" if not per_m else None),
                   specs=[sp("step", text(cell(row, 3)))], short=re.search(r"\((.*)\)", t2).group(1) if "(" in t2 else None, sheet=ws.title)
@@ -1128,7 +1245,7 @@ def _parse_it_energy(W: Writer, ws, kind_by_title):
     g = grid(ws)
     title, header = "", None
     seen = set()
-    for row in g:
+    for rn, row in enumerate(g, 1):
         t1 = text(cell(row, 1))
         if t1 == "Бренд" and text(cell(row, 2)).startswith("Модель"):
             header = {text(v): i for i, v in enumerate(row) if text(v)}
@@ -1182,7 +1299,7 @@ def _parse_it_energy(W: Writer, ws, kind_by_title):
         m = re.search(r"Номінальна (?:потужність|ємність) - ?([\d.,]+ ?(?:кВт|Аh|Ah))", spec_text)
         if m:
             name += f" ({m.group(1)})"
-        W.add(sku=f"{BRAND_NAMES[brand]} {model}", name=name, brand=brand, category="enerhetyka", tags=[BRAND_COUNTRY.get(brand)] if BRAND_COUNTRY.get(brand) else [],
+        W.add(row=rn, sku=f"{BRAND_NAMES[brand]} {model}", name=name, brand=brand, category="enerhetyka", tags=[BRAND_COUNTRY.get(brand)] if BRAND_COUNTRY.get(brand) else [],
               price=price, price_note=None if price else "ціну уточнюйте", specs=specs, sheet=ws.title,
               description=desc_html(spec_text.split("\n")))
 
@@ -1205,29 +1322,30 @@ def parse_in_therm():
         name, price, descr = text(g[3][c]), money(g[5][c]), text(g[4][c])
         if name and price:
             W.add(sku=name, name=f"Нагрівальний килимок {name}", brand="in-therm", category="kylymky-z-pidihrivom", tags=["dlia-domu"],
-                  price=price, specs=[sp("warranty", "12 місяців")], description=desc_html(descr.split("\n")), sheet=ws.title)
+                  price=price, specs=[sp("warranty", "12 місяців")], description=desc_html(descr.split("\n")), sheet=ws.title,
+                  images=MEDIA.at(W.file, ws.title, 7, c) + MEDIA.at(W.file, ws.title, 8, c))
 
     ws = wb["ЗВП"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         mark, descr, price = text(cell(row, 1)), text(cell(row, 2)), cell(row, 3)
         if not mark or money(price) is None:
             continue
         is_kit = mark.startswith("W")
         name = f"Захист від протікання IN-THERM {mark}" + (" (готовий комплект)" if is_kit else "")
-        W.add(sku=f"ZVP {mark}", name=name, brand="in-therm", category="zakhyst-vid-protikannia", tags=["dlia-domu", "kytai"], price=price,
+        W.add(row=rn, sku=f"ZVP {mark}", name=name, brand="in-therm", category="zakhyst-vid-protikannia", tags=["dlia-domu", "kytai"], price=price,
               short=text(cell(row, 4)) or None, description=desc_html([descr]), sheet=ws.title)
 
     ws = wb["ІЧ ПАНЕЛІ FENIX"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t = text(cell(row, 1))
         if t.startswith("ECOSUN") and money(cell(row, 7)):
-            W.add(sku=t, name=f"Інфрачервона панель Fenix {t} — {fmt(num(cell(row, 2)))} Вт", brand="fenix", category="infrachervoni-obihrivachi",
+            W.add(row=rn, sku=t, name=f"Інфрачервона панель Fenix {t} — {fmt(num(cell(row, 2)))} Вт", brand="fenix", category="infrachervoni-obihrivachi",
                   tags=[], price=cell(row, 7),
                   specs=[sp("power_w", num(cell(row, 2))), sp("voltage_v", text(cell(row, 3))), sp("weight_kg", num(cell(row, 4))),
                          sp("dimensions", text(cell(row, 6)) + " мм"), sp("ip", "IP 44"), sp("color", "білий")],
                   short="Високотемпературна стельова панель для приміщень з висотою стелі 3,5–8 м, локального обігріву та вулиці.", sheet=ws.title)
         elif t.startswith("Крепление") and money(cell(row, 7)):
-            W.add(sku="ECOSUN S+ bracket", name="Кріплення Fenix для панелей ECOSUN S+ зі зміною кута нахилу", brand="fenix",
+            W.add(row=rn, sku="ECOSUN S+ bracket", name="Кріплення Fenix для панелей ECOSUN S+ зі зміною кута нахилу", brand="fenix",
                   category="infrachervoni-obihrivachi", tags=[], price=cell(row, 7), sheet=ws.title)
     W.flush()
 
@@ -1241,14 +1359,14 @@ def parse_smart():
     W = Writer("smart", "SMART (прайс 2026)", "2026-smart-thermostats.xlsx", "2026-01-01")
     wb = load_xlsx(W.file)
     ws = wb["Prices"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         model = text(cell(row, 0))
         if not model or money(cell(row, 1)) is None or model == "Модель":
             continue
         tags = ["mekhanichnyi"] if model.startswith("RTC") else ["tsyfrovyi"]
         if "WT" in model or "PRO+" in model:
             tags.append("wi-fi")
-        W.add(sku=model, name=f"Терморегулятор {model}", brand="smart", category="termorehuliatory", tags=tags, price=cell(row, 1),
+        W.add(row=rn, sku=model, name=f"Терморегулятор {model}", brand="smart", category="termorehuliatory", tags=tags, price=cell(row, 1),
               specs=[sp("max_load_a", "16", 16.0)], sheet=ws.title)
     W.flush()
 
@@ -1267,11 +1385,11 @@ def parse_rd():
 
     # --- Nexans
     ws = wb[" Nexans"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t = text(cell(row, 1))
         if t.startswith("TXLP/2R"):
             length, power = num(cell(row, 3)), num(cell(row, 2))
-            W.add(sku=t, name=_cable_name("Nexans", "", t, length, power, 17).replace("  ", " "), brand="nexans", category="nahrivalnyi-kabel",
+            W.add(row=rn, sku=t, name=_cable_name("Nexans", "", t, length, power, 17).replace("  ", " "), brand="nexans", category="nahrivalnyi-kabel",
                   tags=["u-stiazhku", "dvozhylnyi", "17-vt-m"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("length_m", length), sp("power_w_m", 17.0), sp("resistance_ohm", num(cell(row, 5))),
                          sp("area_range_m2", text(cell(row, 6))), sp("tape_m", num(cell(row, 4))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
@@ -1279,7 +1397,7 @@ def parse_rd():
         elif t.startswith("MILLIMAT"):
             sku = re.sub(r"\s+", " ", t).replace("m 2", "m²")
             area, power = num(cell(row, 6)), num(cell(row, 2))
-            W.add(sku=sku, name=_mat_name("Nexans", "", sku, area, power, 150).replace("  ", " "), brand="nexans", category="nahrivalni-maty",
+            W.add(row=rn, sku=sku, name=_mat_name("Nexans", "", sku, area, power, 150).replace("  ", " "), brand="nexans", category="nahrivalni-maty",
                   tags=["pid-plytku", "dvozhylnyi", "150-vt-m2"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("area_m2", area), sp("size_m", text(cell(row, 3))), sp("power_w_m2", 150.0),
                          sp("resistance_ohm", num(cell(row, 5))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
@@ -1287,20 +1405,20 @@ def parse_rd():
         elif t.startswith("RED DEFROST SNOW"):
             sku = t.rstrip(")")
             length, power = num(cell(row, 3)), num(cell(row, 2))
-            W.add(sku=sku, name=f"Секція для сніготанення Nexans {sku} — {fmt(length)} м, {fmt(power)} Вт (28 Вт/м)", brand="nexans",
+            W.add(row=rn, sku=sku, name=f"Секція для сніготанення Nexans {sku} — {fmt(length)} м, {fmt(power)} Вт (28 Вт/м)", brand="nexans",
                   category="antyobledeninnia", tags=["vidkryti-maidanchyky", "vodostoky-ta-pokrivlia", "dvozhylnyi", "28-vt-m"], price=cell(row, 7),
                   specs=[sp("power_w", power), sp("length_m", length), sp("power_w_m", 28.0), sp("resistance_ohm", num(cell(row, 5))), code_spec(cell(row, 6))],
                   short="Двожильний екранований кабель Nexans DEFROST SNOW для систем антиобледеніння відкритих площ і водостоків.", sheet=ws.title)
 
     # --- Wärme
     ws = wb["Wärme"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t = text(cell(row, 1))
         if t.startswith("Комплект Wärme Twin flex cable"):
             sku = t.replace("Комплект ", "")
             length = num(cell(row, 2))
             power = num(re.search(r"(\d+)\s*W", t).group(1))
-            W.add(sku=sku, name=f"Нагрівальний кабель {sku} — {fmt(length)} м, {fmt(power)} Вт (15 Вт/м)", brand="warme", category="nahrivalnyi-kabel",
+            W.add(row=rn, sku=sku, name=f"Нагрівальний кабель {sku} — {fmt(length)} м, {fmt(power)} Вт (15 Вт/м)", brand="warme", category="nahrivalnyi-kabel",
                   tags=["pid-plytku", "u-stiazhku", "dvozhylnyi", "tonkyi-kabel", "15-vt-m"], price=cell(row, 6), kit=cell(row, 8),
                   specs=[sp("power_w", power), sp("length_m", length), sp("area_range_m2", text(cell(row, 3))), sp("resistance_ohm", num(cell(row, 4))),
                          sp("tape_m", num(cell(row, 5))), sp("cores", "двожильний"), code_spec(cell(row, 7))],
@@ -1309,7 +1427,7 @@ def parse_rd():
             sku = t.replace("Комплект ", "")
             area = num(cell(row, 2))
             power = num(re.search(r"(\d+)\s*W", t).group(1))
-            W.add(sku=sku, name=_mat_name("Wärme", "", sku.replace("Wärme ", ""), area, power, 150).replace("  ", " "), brand="warme", category="nahrivalni-maty",
+            W.add(row=rn, sku=sku, name=_mat_name("Wärme", "", sku.replace("Wärme ", ""), area, power, 150).replace("  ", " "), brand="warme", category="nahrivalni-maty",
                   tags=["pid-plytku", "dvozhylnyi", "150-vt-m2"], price=cell(row, 5), kit=cell(row, 7),
                   specs=[sp("power_w", power), sp("area_m2", area), sp("size_m", text(cell(row, 3))), sp("power_w_m2", 150.0),
                          sp("resistance_ohm", num(cell(row, 4))), sp("cores", "двожильний"), code_spec(cell(row, 6))],
@@ -1317,13 +1435,13 @@ def parse_rd():
 
     # --- Profitherm
     ws = wb["Profitherm"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t = text(cell(row, 1))
         if t.startswith("PROFI THERM 2"):
             sku = re.sub(r"\s+нагрівальна секція\s*$", "", t)
             sku = re.sub(r"\s+", " ", sku)
             length, power = num(cell(row, 3)), num(cell(row, 2))
-            W.add(sku=sku, name=_cable_name("Profi Therm", "", sku.replace("PROFI THERM", ""), length, power, 19).replace("  ", " "), brand="profitherm",
+            W.add(row=rn, sku=sku, name=_cable_name("Profi Therm", "", sku.replace("PROFI THERM", ""), length, power, 19).replace("  ", " "), brand="profitherm",
                   category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi", "19-vt-m"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("length_m", length), sp("power_w_m", 19.0), sp("resistance_ohm", num(cell(row, 4))),
                          sp("area_range_m2", text(cell(row, 5))), sp("tape_m", num(cell(row, 6))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
@@ -1331,25 +1449,25 @@ def parse_rd():
         elif t.startswith("PROFI THERM 150"):
             sku = re.sub(r"\s+нагрівальній мат\s*$", "", t)
             area, power = num(cell(row, 5)), num(cell(row, 2))
-            W.add(sku=sku, name=_mat_name("Profi Therm", "", sku.replace("PROFI THERM", ""), area, power, 150).replace("  ", " "), brand="profitherm",
+            W.add(row=rn, sku=sku, name=_mat_name("Profi Therm", "", sku.replace("PROFI THERM", ""), area, power, 150).replace("  ", " "), brand="profitherm",
                   category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "150-vt-m2"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("area_m2", area), sp("size_m", text(cell(row, 3))), sp("power_w_m2", 150.0),
                          sp("resistance_ohm", num(cell(row, 4))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
                   short="Нагрівальний мат Profi Therm 150 Вт/м² на основі двожильного кабелю для плиткового клею.", sheet=ws.title)
 
     ws = wb[" Profitherm Eko "]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t = re.sub(r"\s+", " ", text(cell(row, 1)))
         if t.startswith("PROFI THERM Eko -2"):
             length, power = num(cell(row, 3)), num(cell(row, 2))
-            W.add(sku=t, name=_cable_name("Profi Therm", "Eko", t.replace("PROFI THERM Eko -2", "").strip(), length, power, 16.5).replace("  ", " "),
+            W.add(row=rn, sku=t, name=_cable_name("Profi Therm", "Eko", t.replace("PROFI THERM Eko -2", "").strip(), length, power, 16.5).replace("  ", " "),
                   brand="profitherm", category="nahrivalnyi-kabel", tags=["u-stiazhku", "dvozhylnyi", "16-5-vt-m"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("length_m", length), sp("power_w_m", 16.5), sp("resistance_ohm", num(cell(row, 4))),
                          sp("area_range_m2", text(cell(row, 5))), sp("tape_m", num(cell(row, 6))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
                   short="Двожильний нагрівальний кабель Profi Therm Eko 16,5 Вт/м — бюджетна серія для укладання в стяжку.", sheet=ws.title)
         elif t.startswith("PROFI THERM Eko mat"):
             area, power = num(cell(row, 3)), num(cell(row, 2))
-            W.add(sku=t, name=_mat_name("Profi Therm", "Eko", t.replace("PROFI THERM Eko mat", "").strip(), area, power, 150).replace("  ", " "),
+            W.add(row=rn, sku=t, name=_mat_name("Profi Therm", "Eko", t.replace("PROFI THERM Eko mat", "").strip(), area, power, 150).replace("  ", " "),
                   brand="profitherm", category="nahrivalni-maty", tags=["pid-plytku", "dvozhylnyi", "150-vt-m2"], price=cell(row, 5), kit=cell(row, 7),
                   specs=[sp("power_w", power), sp("area_m2", area), sp("power_w_m2", 150.0), sp("resistance_ohm", num(cell(row, 4))),
                          sp("cores", "двожильний"), code_spec(cell(row, 6))],
@@ -1357,7 +1475,7 @@ def parse_rd():
         elif re.match(r"^PROFI THERM [EЕ]ko Flex", t):
             sku = re.sub(r"\s*Вт\.?\s*$", " Вт", t).replace("Еко", "Eko")
             length, power = num(cell(row, 4)), num(cell(row, 2))
-            W.add(sku=sku, name=_cable_name("Profi Therm", "Eko Flex", "", length, power, 11).replace("  ", " ").replace(" —", " —"),
+            W.add(row=rn, sku=sku, name=_cable_name("Profi Therm", "Eko Flex", "", length, power, 11).replace("  ", " ").replace(" —", " —"),
                   brand="profitherm", category="nahrivalnyi-kabel", tags=["pid-plytku", "tonkyi-kabel", "dvozhylnyi"], price=cell(row, 7), kit=cell(row, 9),
                   specs=[sp("power_w", power), sp("length_m", length), sp("area_range_m2", text(cell(row, 3))), sp("resistance_ohm", num(cell(row, 5))),
                          sp("tape_m", num(cell(row, 6))), sp("cores", "двожильний"), code_spec(cell(row, 8))],
@@ -1366,7 +1484,7 @@ def parse_rd():
     # --- Термостати та датчики (Nexans, Wärme Technik, Profitherm, OJ Electronics)
     ws = wb["Термостати та датчики"]
     brand = None
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t1 = text(cell(row, 1))
         for key, b in (("Nexans", "nexans"), ("Wärme", "warme"), ("Profitherm", "profitherm"), ("Oj Electronics", "oj-electronics")):
             if t1.startswith("Терморегулятори " + key):
@@ -1401,26 +1519,26 @@ def parse_rd():
                 tags.append("datchyk-pidlohy")
         bn_ = BRAND_NAMES[brand]
         has_brand = name.lower().startswith(bn_.lower()) or name.lower().startswith(("profitherm", "wärme"))
-        W.add(sku=name, name=f"{kind} {'' if has_brand else bn_ + ' '}{name}", brand=brand, category=cat, tags=tags, price=price,
+        W.add(row=rn, sku=name, name=f"{kind} {'' if has_brand else bn_ + ' '}{name}", brand=brand, category=cat, tags=tags, price=price,
               specs=[code_spec(cell(row, 4)), sp("max_load_a", "16", 16.0) if re.search(r"3[56]00\s*Вт", descr) else None],
               short=rest or None, description=desc_html([descr]), sheet=ws.title)
 
     # --- Саморегулюючий кабель
     ws = wb["Самрег"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t1 = text(cell(row, 1))
         price = cell(row, 4)
         if money(price) is None or not t1:
             continue
         descr = text(cell(row, 2))
         if t1.startswith("Комплект муфт"):
-            W.add(sku=t1, name=t1 + " Profi Therm", brand="profitherm", category="montazh-ta-aksesuary", tags=["truby"], price=price, sheet=ws.title)
+            W.add(row=rn, sku=t1, name=t1 + " Profi Therm", brand="profitherm", category="montazh-ta-aksesuary", tags=["truby"], price=price, sheet=ws.title)
             continue
         brand = "nexans" if "DEFROST" in t1 else "profitherm"
         on_order = "DEFROST" in t1 or re.search(r"PL\d+", t1) is not None
         w = re.search(r"(\d+)\s*Вт/м", descr) or re.search(r"(?:PRO|PL|PIPE)\s*(\d+)", t1) or re.search(r"(\d+)MSR", t1)
         sku = re.sub(r"^(Саморегулюючий кабель|Кабель для антикригових систем)\s*", "", t1)
-        W.add(sku=sku, name=f"Саморегулюючий кабель {sku}" + (f" — {w.group(1)} Вт/м" if w else ""), brand=brand,
+        W.add(row=rn, sku=sku, name=f"Саморегулюючий кабель {sku}" + (f" — {w.group(1)} Вт/м" if w else ""), brand=brand,
               category="samorehuliuiuchyi-kabel", tags=["truby", "vidriznyi"] + (["pid-zamovlennia"] if on_order else []), price=price, unit="м",
               price_note="на замовлення, 100% передплата" if on_order else None,
               specs=[sp("power_w_m", float(w.group(1))) if w else None, code_spec(cell(row, 3)) if re.match(r"^[\dA-Z]+$", text(cell(row, 3))) else None],
@@ -1428,22 +1546,22 @@ def parse_rd():
 
     # --- Заземлення Zuver
     ws = wb["заземлення Zuver"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t1 = text(cell(row, 1))
         if t1 == "ZUVER 4.4":
             parts = [text(cell(row, i)) for i in range(3, 9) if text(cell(row, i))]
-            W.add(sku=t1, name=f"Комплект заземлення Zuver 4.4 для приватного будинку", brand="zuver", category="zazemlennia", tags=["dlia-domu"],
+            W.add(row=rn, sku=t1, name=f"Комплект заземлення Zuver 4.4 для приватного будинку", brand="zuver", category="zazemlennia", tags=["dlia-domu"],
                   price=cell(row, 10), specs=[code_spec(cell(row, 9))], description=bullets_html(parts), short=text(cell(row, 2)), sheet=ws.title)
         elif t1 and money(cell(row, 9)) and t1 not in ("Найменування",):
-            W.add(sku=t1, name=f"{t1} Zuver", brand="zuver", category="zazemlennia", tags=[], price=cell(row, 9),
+            W.add(row=rn, sku=t1, name=f"{t1} Zuver", brand="zuver", category="zazemlennia", tags=[], price=cell(row, 9),
                   unit="м" if "м.п" in text(cell(row, 3)) and "бандаж" not in t1.lower() else "шт", short=text(cell(row, 3)), sheet=ws.title)
 
     # --- Акваблок
     ws = wb["Акваблок"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t1 = text(cell(row, 1))
         if t1.startswith(("Комплект Акваблок", "Датчик Акваблок")) and money(cell(row, 7)):
-            W.add(sku=t1, name=t1 + " — бездротова система захисту від протікання", brand="akvablok", category="zakhyst-vid-protikannia", tags=["dlia-domu"],
+            W.add(row=rn, sku=t1, name=t1 + " — бездротова система захисту від протікання", brand="akvablok", category="zakhyst-vid-protikannia", tags=["dlia-domu"],
                   price=cell(row, 7),
                   specs=[sp("dimensions", text(cell(row, 3))) if text(cell(row, 3)) else None, spec("kit", "Комплектація", text(cell(row, 4))),
                          sp("power_supply", text(cell(row, 5))), code_spec(cell(row, 6))],
@@ -1451,12 +1569,12 @@ def parse_rd():
 
     # --- Комплектуючі
     ws = wb["комплек-щі"]
-    for row in ws.iter_rows(values_only=True):
+    for rn, row in enumerate(ws.iter_rows(values_only=True), 1):
         t0 = text(cell(row, 0))
         if t0 and money(cell(row, 3)) and t0 != "Матеріали для монтажу":
             unit = "м" if "м/п" in text(cell(row, 1)) else "шт"
             tags = ["vodostoky-ta-pokrivlia"] if re.search(r"жолоб|труб", t0.lower()) else []
-            W.add(sku=t0, name=t0, brand=None, category="montazh-ta-aksesuary", tags=tags, price=cell(row, 3), unit=unit,
+            W.add(row=rn, sku=t0, name=t0, brand=None, category="montazh-ta-aksesuary", tags=tags, price=cell(row, 3), unit=unit,
                   specs=[code_spec(cell(row, 2))], price_note="продається лише разом з нагрівальним кабелем", sheet=ws.title)
     W.flush()
 
@@ -1478,6 +1596,7 @@ def parse_easytherm():
         header, section, insulation, warranty = None, {}, None, None
         rows = grid(ws)
         for idx, row in enumerate(rows):
+            rn = idx + 1
             vals = {i: text(v) for i, v in enumerate(row) if text(v)}
             if not vals:
                 continue
@@ -1553,7 +1672,7 @@ def parse_easytherm():
                         specs.append(sp("outer_insulation", m_out.group(1).strip()))
                 if warranty:
                     specs.append(sp("warranty", warranty))
-                W.add(sku=sku, name=nm, brand=pbrand, category=cat, tags=tags, price=price, specs=specs, short=short, sheet=ws.title)
+                W.add(row=rn, sku=sku, name=nm, brand=pbrand, category=cat, tags=tags, price=price, specs=specs, short=short, sheet=ws.title)
                 continue
             # терморегулятори, датчики, саморег, аксесуари, гумовий мат
             specs = [sp("color", color) if color and color != "-" else None, sp("warranty", warranty) if warranty else None]
@@ -1569,23 +1688,23 @@ def parse_easytherm():
                     specs.append(sp("max_load_a", "16", 16.0))
                     if m_w:
                         specs.append(spec("max_power_w", "Макс. потужність навантаження", m_w.group(1), float(m_w.group(1)), "Вт"))
-                W.add(sku=sku, name=name, brand=pbrand, category=cat, tags=tags, price=price, specs=specs, sheet=ws.title)
+                W.add(row=rn, sku=sku, name=name, brand=pbrand, category=cat, tags=tags, price=price, specs=specs, sheet=ws.title)
             elif low.startswith("кабель саморегулюючий"):
                 w = re.search(r"SR\s*(\d+)", name)
-                W.add(sku=sku, name=name + (f" — {w.group(1)} Вт/м" if w else ""), brand=pbrand, category="samorehuliuiuchyi-kabel",
+                W.add(row=rn, sku=sku, name=name + (f" — {w.group(1)} Вт/м" if w else ""), brand=pbrand, category="samorehuliuiuchyi-kabel",
                       tags=["truby", "vodostoky-ta-pokrivlia", "vidriznyi"], price=price, unit="м",
                       specs=[sp("power_w_m", float(w.group(1))) if w else None], short="Ціна за погонний метр.", sheet=ws.title)
             elif low.startswith("гумовий нагрівальний мат"):
-                W.add(sku=sku, name=name, brand=pbrand, category="kylymky-z-pidihrivom", tags=["vidkryti-maidanchyky", "dlia-domu"], price=price,
+                W.add(row=rn, sku=sku, name=name, brand=pbrand, category="kylymky-z-pidihrivom", tags=["vidkryti-maidanchyky", "dlia-domu"], price=price,
                       specs=specs, short="Гумовий мат вуличного застосування: ґанок, сходи, вхідна група.", sheet=ws.title)
             elif low.startswith("датчик"):
                 outdoor = "сніготан" in low
-                W.add(sku=sku, name=name, brand=pbrand, category="antyobledeninnia" if outdoor else "montazh-ta-aksesuary",
+                W.add(row=rn, sku=sku, name=name, brand=pbrand, category="antyobledeninnia" if outdoor else "montazh-ta-aksesuary",
                       tags=["vodostoky-ta-pokrivlia"] if outdoor else ["datchyk-pidlohy"], price=price, specs=specs, sheet=ws.title)
             else:
                 unit = "м" if re.search(r",\s*1\s*м$", name) else "шт"
                 tags = ["vodostoky-ta-pokrivlia"] if re.search(r"водост|лотк", low) else []
-                W.add(sku=sku, name=name, brand=pbrand, category="montazh-ta-aksesuary", tags=tags, price=price, unit=unit, specs=specs, sheet=ws.title)
+                W.add(row=rn, sku=sku, name=name, brand=pbrand, category="montazh-ta-aksesuary", tags=tags, price=price, unit=unit, specs=specs, sheet=ws.title)
     W.flush()
 
 
