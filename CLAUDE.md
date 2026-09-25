@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-ElectroHeat (repo `EnergyUA`, npm package `electro-heat`): a catalog site for electric underfloor heating. It runs on Next.js 16 App Router with Turbopack, React 19, Prisma 6 on PostgreSQL, and Tailwind 4. The UI, the docs in `docs/` and most code comments are in Ukrainian, and new user-facing text should be too. The `@/*` import alias points to `src/*`.
+ElectroHeat (repo `EnergyUA`, npm package `electro-heat`; public working name «ТеплоКабель»): a catalog site for electric underfloor heating. It runs on Next.js 16 App Router with Turbopack, React 19, Prisma 6 on PostgreSQL, and Tailwind 4. The UI, the docs in `docs/` and most code comments are in Ukrainian, and new user-facing text should be too. The `@/*` import alias points to `src/*`.
 
 ## Commands
 
@@ -31,7 +31,8 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 ## Architecture
 
 ### Public catalog (`src/app`)
-- The routes are `/`, `/catalog`, `/catalog/[slug]` (with `?tag=a,b` label filter), `/tag/[slug]` and `/product/[slug]`. Every page is server-rendered and queries Prisma directly through the singleton in `src/lib/prisma.ts`.
+- The routes are `/`, `/catalog`, `/catalog/[slug]` (with `?tag=a,b` label filter), `/tag/[slug]`, `/product/[slug]`, `/brands` and `/brand/[slug]`. Every page is server-rendered and queries Prisma directly through the singleton in `src/lib/prisma.ts`.
+- **Design:** light theme, working name «ТеплоКабель» (`src/lib/siteConfig.ts`: name, tagline, contacts from `NEXT_PUBLIC_SITE_PHONE` / `NEXT_PUBLIC_SITE_EMAIL`, hidden when empty; placeholder logo in `src/components/layout/Logo.tsx`). All colors are CSS variables in `src/app/globals.css` (warm accent, cool secondary, yellow tertiary for «Акція» badges); components never hardcode hex. Product lists share `PRODUCT_CARD_SELECT` / `cardSpecs` from `src/lib/productCard.ts`; section covers come from `src/lib/catalogSections.ts`. Palette rationale and page structure: `docs/CATALOG-PRICELISTS-UK.md`, «Дизайн сайту».
 - **Visibility rule:** catalog listings show a product only if `published: true`, `archived: false` and `mergedIntoProductId: null` (`PUBLIC_PRODUCT_WHERE` in `src/lib/publicCatalog.ts`). Cross-source duplicates are soft-merged into a canonical product, not deleted, and `/product/[slug]` of a merged duplicate redirects to the canonical product. Any new public listing query must apply the same filter.
 - **Category tree:** the public root is `katalog` (`CATALOG_ROOT_SLUG` in `src/lib/catalogRoot.ts`) with the sections from `scripts/lib/pricelistTaxonomy.ts`. The root `arkhiv` holds the old donor catalog: the legacy root `tepla-pidloga` with its flat children `et-*` (et-market), `inh-*` (in-heat) and `vs-*` (vsesezon/Prom). `ensureCatalogStructure` (`scripts/lib/catalogStructure.ts`) creates/repairs this on every seed and import. The product upsert key is `externalSource` + `externalId`.
 - **Tags (labels):** `Tag` / `ProductTag` give a product any number of labels (application, construction, thermostat features, power, country). Labels are defined in the taxonomy (`scripts/lib/pricelistTaxonomy.ts`, groups in `src/lib/tagGroups.ts`) and assigned by the price-list parser. The admin can edit them too: a product saved from the admin gets `tagsManual = true` and the importer stops replacing its tags (a reset endpoint re-reads them from the product's JSON file); a tag created or edited in the admin gets `manual = true` and the seed no longer overwrites its name/group/description.

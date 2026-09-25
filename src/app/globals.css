@@ -1,15 +1,43 @@
 @import "tailwindcss";
 
+/*
+ * Світла тема «ТеплоКабель». Палітра — «збірна» з сайтів постачальників теплої підлоги:
+ * теплий акцент (червоно-помаранчевий — «тепло», як у Nexans / Hemstedt / Fenix / Heat Plus),
+ * холодний другорядний (глибокий синій — «техніка», як у Easytherm / Extherm), нейтральні світлі поверхні.
+ * Усі кольори — через змінні, компоненти не хардкодять hex.
+ */
 :root {
-  --background: #0c0f14;
-  --foreground: #f1f5f9;
-  --muted: #94a3b8;
-  --surface: #131820;
-  --surface-hover: #1a2130;
-  --border: #2a3344;
-  --card: #111620;
-  --accent: #f4a261;
-  --accent-dim: #c77c3e;
+  --background: #f5f6f8;
+  --surface: #ffffff;
+  --surface-hover: #f0f2f5;
+  --surface-2: #eef1f5;
+  --card: #ffffff;
+  --border: #e2e6ec;
+  --border-strong: #cfd6df;
+  --foreground: #14202e;
+  --muted: #5d6b7b;
+  --muted-2: #8a96a5;
+
+  /* теплий акцент: червоно-помаранчевий між Nexans #e5392e і Hemstedt #e30613, трохи тепліший для «тепла» */
+  --accent: #e2472a;
+  --accent-dim: #c4371d;
+  --accent-soft: #fdece7;
+  --accent-contrast: #ffffff;
+
+  /* холодний другорядний: синій Easytherm #428bca / In-Therm #337ab7, глибший для тексту й посилань */
+  --secondary: #2a6bb0;
+  --secondary-soft: #e6eef9;
+
+  /* третій — жовтий Magnum #f9c623 / In-Therm #fbde1b: лише для бейджів «акція», «новинка» */
+  --tertiary: #f6c025;
+  --tertiary-soft: #fff6d6;
+
+  --success: #1f8f5f;
+  --success-soft: #e6f5ee;
+
+  --shadow-sm: 0 1px 2px rgba(20, 32, 46, 0.06), 0 1px 3px rgba(20, 32, 46, 0.04);
+  --shadow-md: 0 6px 20px rgba(20, 32, 46, 0.08);
+  --radius: 14px;
 }
 
 @theme inline {
@@ -18,8 +46,83 @@
   --font-sans: var(--font-manrope);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Фото товарів завжди на білому: у постачальників фон білий, а на світлій темі обрізки/прозорість не видно. */
+.product-photo {
+  background: #fff;
+}
+
+/* Основні кнопки */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(226, 71, 42, 0.25);
+}
+.btn-primary:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--secondary);
+  background: var(--secondary-soft);
+}
+
+/* Текст із HTML-опису товару */
+.prose-uk {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.prose-uk p + p,
+.prose-uk ul + p,
+.prose-uk p + ul {
+  margin-top: 0.75rem;
+}
+.prose-uk ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose-uk li + li {
+  margin-top: 0.25rem;
+}
+.prose-uk strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose-uk a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

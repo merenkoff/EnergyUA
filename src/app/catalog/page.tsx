@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Breadcrumbs } from "@/components/catalog/Breadcrumbs";
 import { CategoryCard } from "@/components/catalog/CategoryCard";
-import { CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
-import { prisma } from "@/lib/prisma";
-import { PUBLIC_PRODUCT_WHERE } from "@/lib/publicCatalog";
-
-type CatalogSection = {
-  id: string;
-  slug: string;
-  nameUk: string;
-  description: string | null;
-  _count: { products: number; children: number };
-};
+import { loadCatalogSections } from "@/lib/catalogSections";
 
 export const metadata: Metadata = {
   title: "Каталог",
@@ -19,47 +9,32 @@ export const metadata: Metadata = {
 };
 
 export default async function CatalogIndexPage() {
-  const root = await prisma.category.findUnique({
-    where: { slug: CATALOG_ROOT_SLUG },
-    select: { id: true, description: true },
-  });
-
-  const sections: CatalogSection[] = root
-    ? await prisma.category.findMany({
-        where: { parentId: root.id },
-        orderBy: [{ sortOrder: "asc" }, { nameUk: "asc" }],
-        include: {
-          _count: { select: { products: { where: PUBLIC_PRODUCT_WHERE }, children: true } },
-        },
-      })
-    : [];
+  const sections = await loadCatalogSections();
+  const withProducts = sections.filter((s) => (s._count?.products ?? 0) > 0);
+  const empty = sections.filter((s) => (s._count?.products ?? 0) === 0);
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <nav className="text-sm text-[var(--muted)]">
-        <Link href="/" className="hover:text-[var(--accent)]">
-          Головна
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-[var(--foreground)]">Каталог</span>
-      </nav>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight">Каталог</h1>
+    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <Breadcrumbs items={[{ href: "/", label: "Головна" }, { label: "Каталог" }]} />
+      <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Каталог</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
-        {root?.description ?? "Оберіть розділ. Усередині розділу товари можна звузити мітками: застосування, конструкція, потужність, країна."}
+        Оберіть розділ. Усередині — фільтри за застосуванням, конструкцією, потужністю та країною виробництва.
       </p>
-      {!root ? (
-        <p className="mt-8 text-sm text-[var(--muted)]">
-          Немає кореневої категорії <code className="rounded bg-[var(--card)] px-1">{CATALOG_ROOT_SLUG}</code> — виконайте{" "}
-          <code className="rounded bg-[var(--card)] px-1">npm run db:seed</code>.
-        </p>
-      ) : sections.length === 0 ? (
-        <p className="mt-8 text-sm text-[var(--muted)]">Підрозділів ще немає. Додайте категорії або запустіть імпорт.</p>
+      {sections.length === 0 ? (
+        <p className="mt-8 text-sm text-[var(--muted)]">Розділів ще немає — виконайте seed та імпорт.</p>
       ) : (
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sections.map((c) => (
-            <CategoryCard key={c.id} category={c} />
-          ))}
-        </div>
+        <>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {withProducts.map((c) => (
+              <CategoryCard key={c.slug} category={c} size="lg" />
+            ))}
+          </div>
+          {empty.length ? (
+            <p className="mt-8 text-sm text-[var(--muted-2)]">
+              Незабаром: {empty.map((c) => c.nameUk).join(", ")}.
+            </p>
+          ) : null}
+        </>
       )}
     </main>
   );
