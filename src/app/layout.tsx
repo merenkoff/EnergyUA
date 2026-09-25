@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SITE } from "@/lib/siteConfig";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -14,10 +15,10 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: {
-    default: "ElectroHeat — електрична тепла підлога",
-    template: "%s · ElectroHeat",
+    default: `${SITE.name} — ${SITE.tagline}`,
+    template: `%s · ${SITE.name}`,
   },
-  description: "Каталог електричної теплої підлоги: мати, кабелі, комплектація. Підбір і консультація.",
+  description: SITE.description,
 };
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+      <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)]">
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
