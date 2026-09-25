@@ -159,12 +159,14 @@ async function main() {
 
     const existing = await prisma.product.findUnique({
       where: { externalSource_externalId: { externalSource: PRICELIST_SOURCE, externalId: p.id } },
-      select: { id: true },
+      select: { id: true, tagsManual: true },
     });
     let productId: string;
+    let tagsManual = false;
     if (existing) {
       await prisma.product.update({ where: { id: existing.id }, data });
       productId = existing.id;
+      tagsManual = existing.tagsManual;
       updated++;
     } else {
       let slug = productSlug(p);
@@ -207,11 +209,13 @@ async function main() {
       if (wantImages.length) await prisma.productImage.createMany({ data: wantImages.map((im) => ({ productId, ...im })) });
     }
 
-    // Мітки — повна заміна
-    const tagIds = p.tags.map((t) => structure.tags.get(t)!).filter(Boolean);
-    await prisma.productTag.deleteMany({ where: { productId, tagId: { notIn: tagIds } } });
-    if (tagIds.length) {
-      await prisma.productTag.createMany({ data: tagIds.map((tagId) => ({ productId, tagId })), skipDuplicates: true });
+    // Мітки — повна заміна з прайсу, якщо їх не редагували в адмінці (tagsManual)
+    if (!tagsManual) {
+      const tagIds = p.tags.map((t) => structure.tags.get(t)!).filter(Boolean);
+      await prisma.productTag.deleteMany({ where: { productId, tagId: { notIn: tagIds } } });
+      if (tagIds.length) {
+        await prisma.productTag.createMany({ data: tagIds.map((tagId) => ({ productId, tagId })), skipDuplicates: true });
+      }
     }
   }
 

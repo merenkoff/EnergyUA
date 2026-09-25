@@ -31,7 +31,9 @@ export async function POST(req: Request) {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    path: `/ops/${routeSecret}`,
+    // path "/" — cookie має доходити і до /api/admin/*, інакше збереження з адмінки повертає 401.
+    // Сам cookie httpOnly і підписаний, а сторінки /ops/<secret> додатково перевіряють сегмент URL.
+    path: "/",
     maxAge: 7 * 24 * 60 * 60,
   });
   return res;

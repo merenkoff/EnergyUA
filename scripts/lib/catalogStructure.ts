@@ -54,14 +54,21 @@ export async function ensureCatalogStructure(prisma: PrismaClient) {
     sections.set(c.slug, row.id);
   }
 
+  // Мітки з таксономії: створюємо відсутні; відредаговані в адмінці (manual = true) не перезаписуємо.
   const tags = new Map<string, string>();
   for (const t of TAGS) {
     const row = await prisma.tag.upsert({
       where: { slug: t.slug },
       create: { slug: t.slug, nameUk: t.nameUk, groupSlug: t.groupSlug, description: t.description ?? null, sortOrder: t.sortOrder },
-      update: { nameUk: t.nameUk, groupSlug: t.groupSlug, description: t.description ?? null, sortOrder: t.sortOrder },
-      select: { id: true },
+      update: {},
+      select: { id: true, manual: true },
     });
+    if (!row.manual) {
+      await prisma.tag.update({
+        where: { id: row.id },
+        data: { nameUk: t.nameUk, groupSlug: t.groupSlug, description: t.description ?? null, sortOrder: t.sortOrder },
+      });
+    }
     tags.set(t.slug, row.id);
   }
 

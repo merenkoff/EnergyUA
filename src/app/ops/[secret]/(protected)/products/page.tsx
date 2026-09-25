@@ -5,7 +5,7 @@ const PAGE_SIZE = 40;
 
 type Props = {
   params: Promise<{ secret: string }>;
-  searchParams: Promise<{ q?: string; page?: string; archived?: string }>;
+  searchParams: Promise<{ q?: string; page?: string; archived?: string; tag?: string }>;
 };
 
 export default async function AdminProductsPage({ params, searchParams }: Props) {
@@ -13,11 +13,13 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
   const sp = await searchParams;
   const q = (sp.q ?? "").trim();
   const archivedFilter = sp.archived === "1" ? true : sp.archived === "0" ? false : undefined;
+  const tagSlug = (sp.tag ?? "").trim();
   const page = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
   const skip = (page - 1) * PAGE_SIZE;
 
   const where = {
     ...(archivedFilter !== undefined ? { archived: archivedFilter } : {}),
+    ...(tagSlug ? { tags: { some: { tag: { slug: tagSlug } } } } : {}),
     ...(q
       ? {
           OR: [
@@ -29,7 +31,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
       : {}),
   };
 
-  const [total, rows] = await Promise.all([
+  const [total, rows, tagOptions] = await Promise.all([
     prisma.product.count({ where }),
     prisma.product.findMany({
       where,
@@ -45,8 +47,10 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
         archived: true,
         priceUah: true,
         category: { select: { nameUk: true, slug: true } },
+        tagsManual: true,
       },
     }),
+    prisma.tag.findMany({ orderBy: [{ groupSlug: "asc" }, { sortOrder: "asc" }], select: { slug: true, nameUk: true, groupSlug: true } }),
   ]);
 
   const pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -54,6 +58,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
     const u = new URLSearchParams();
     if (q) u.set("q", q);
     if (sp.archived) u.set("archived", sp.archived);
+    if (tagSlug) u.set("tag", tagSlug);
     Object.entries(extra).forEach(([k, v]) => u.set(k, v));
     const s = u.toString();
     return s ? `?${s}` : "";
@@ -78,6 +83,19 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
           <option value="">Усі товари</option>
           <option value="0">Активні (не архів)</option>
           <option value="1">Лише архів</option>
+        </select>
+        <select
+          name="tag"
+          defaultValue={tagSlug}
+          className="max-w-[260px] rounded-lg border border-zinc-600 bg-zinc-900 px-3 py-2 text-sm text-zinc-100"
+        >
+          <option value="">Будь-яка мітка</option>
+          {tagOptions.map((t) => (
+            <option key={t.slug} value={t.slug}>
+              {t.groupSlug ? `${t.groupSlug}: ` : ""}
+              {t.nameUk}
+            </option>
+          ))}
         </select>
         <button type="submit" className="rounded-lg bg-zinc-700 px-4 py-2 text-sm hover:bg-zinc-600">
           Шукати
@@ -117,6 +135,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
                     <span className="text-zinc-500">чернетка</span>
                   )}
                   {p.archived ? <span className="ml-2 rounded bg-amber-900/50 px-1.5 py-0.5 text-xs text-amber-300">архів</span> : null}
+                  {p.tagsManual ? <span className="ml-2 rounded bg-sky-900/50 px-1.5 py-0.5 text-xs text-sky-300" title="Мітки задано вручну">мітки вручну</span> : null}
                 </td>
                 <td className="px-3 py-2 text-right">
                   <Link

@@ -81,6 +81,8 @@ model Product {
   /// Архівна картка (старий каталог з донорів et_market / in_heat / vsesezon).
   /// Не показується в публічному каталозі, поки прапорець не знято в адмінці.
   archived             Boolean   @default(false)
+  /// Мітки задано вручну в адмінці: імпорт прайсів (import:pricelists) їх більше не перезаписує.
+  tagsManual           Boolean   @default(false) @map("tags_manual")
   images               ProductImage[]
   specs                ProductSpec[]
   tags                 ProductTag[]
@@ -107,6 +109,8 @@ model Tag {
   groupSlug   String?      @map("group_slug")
   description String?      @db.Text
   sortOrder   Int          @default(0) @map("sort_order")
+  /// Створено або відредаговано в адмінці: seed (ensureCatalogStructure) більше не перезаписує назву/групу/опис із таксономії.
+  manual      Boolean      @default(false)
   products    ProductTag[]
   createdAt   DateTime     @default(now()) @map("created_at")
 

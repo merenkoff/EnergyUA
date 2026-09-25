@@ -98,11 +98,14 @@ export function AdminProductEditor({
   product,
   categories,
   brands,
+  tagsSection,
 }: {
   routeSecret: string;
   product: ProductPayload;
   categories: CatOpt[];
   brands: BrandOpt[];
+  /** Секція «Мітки» (AdminProductTags) — зберігається окремо від основної форми. */
+  tagsSection?: React.ReactNode;
 }) {
   const router = useRouter();
   const [msg, setMsg] = useState<string | null>(null);
@@ -494,6 +497,8 @@ export function AdminProductEditor({
           </p>
         ) : null}
       </section>
+
+      {tagsSection}
 
       <section>
         <h2 className="mb-3 text-lg font-medium text-zinc-200">Зображення</h2>
