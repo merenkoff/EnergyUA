@@ -1,0 +1,35 @@
+{
+  "id": "rd/w-rme-technik-star-white",
+  "supplier": "rd",
+  "brand": "warme",
+  "sku": "Wärme Technik Star White",
+  "nameUk": "Терморегулятор Wärme Technik Star White",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi",
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 4515,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "з 2-ма датчиками: підлоги і повітря",
+  "description": "<p>Електронний програмований терморегулятор\nз сенсорным экраном і технологією WiFi управління для IOS і Android\nМакс. струм 16А Діапазон налаштування температури +5°С…+90°С Розмір 86 / 86 / 44,4 (дисплейний блок 11,8мм, монтажний блок 32,6 мм)\nгарантія 3 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "98740",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

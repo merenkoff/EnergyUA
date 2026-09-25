@@ -1,0 +1,32 @@
+{
+  "id": "rd/kriplennia-dlia-montazhu-v-zholobakh-aliuminiievi",
+  "supplier": "rd",
+  "brand": null,
+  "sku": "Кріплення для монтажу в жолобах алюмінієві",
+  "nameUk": "Кріплення для монтажу в жолобах алюмінієві",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "vodostoky-ta-pokrivlia"
+  ],
+  "priceUah": 21,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "продається лише разом з нагрівальним кабелем",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "1395",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "комплек-щі",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

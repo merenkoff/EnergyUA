@@ -1,0 +1,24 @@
+{
+  "id": "easytherm-extherm/55511",
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "sku": "55511",
+  "nameUk": "Кріплення для водостоку 15мм*200мм",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "vodostoky-ta-pokrivlia"
+  ],
+  "priceUah": 24,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": " Самрег_Easytherm_Аксесуари",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

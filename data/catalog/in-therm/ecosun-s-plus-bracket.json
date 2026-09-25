@@ -1,0 +1,24 @@
+{
+  "id": "in-therm/ecosun-s-plus-bracket",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "ECOSUN S+ bracket",
+  "nameUk": "Кріплення Fenix для панелей ECOSUN S+ зі зміною кута нахилу",
+  "category": "infrachervoni-obihrivachi",
+  "tags": [
+    "chekhiia"
+  ],
+  "priceUah": 410,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІЧ ПАНЕЛІ FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

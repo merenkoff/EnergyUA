@@ -1,0 +1,81 @@
+{
+  "id": "in-therm/bluesun-bsm12208",
+  "supplier": "in-therm",
+  "brand": "bluesun",
+  "sku": "Bluesun BSM12208",
+  "nameUk": "Акумулятор LiFePO4 Bluesun BSM12208 (208 Аh)",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Номінальна ємність - 208 Аh</p><p>Номінальна напруга - 12.8 V</p><p>Максимальний струм заряду - 200 А</p><p>Хімія (тип) - LiFePO4</p><p>Напруга повного заряду - 14.6 V</p><p>Мінімальна напруга - 10 V</p><p>Напруга зарядки - 14.4–14.6 V</p><p>Піковий струм заряду/розряду - 240 А</p><p>Зв'язок CE/UN38.3/MSDS</p><p>Кількість циклів ~ 6000</p><p>Робоча температура 0℃~50℃</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "12,8",
+      "number": 12.8,
+      "unit": "В"
+    },
+    {
+      "slug": "capacity_ah",
+      "labelUk": "Ємність",
+      "value": "208",
+      "number": 208.0,
+      "unit": "А·год"
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2662,4",
+      "number": 2662.4,
+      "unit": "Вт"
+    },
+    {
+      "slug": "vaha-netto-kh",
+      "labelUk": "Вага нетто, кг",
+      "value": "22.3",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "vaha-brutto-kh",
+      "labelUk": "Вага брутто, кг",
+      "value": "25.5",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "50.2х18.65х24.2",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "1 рік",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

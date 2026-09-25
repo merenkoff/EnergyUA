@@ -1,0 +1,85 @@
+{
+  "id": "ar-ryxon-flex/fh-l-2120",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "FH L 2120",
+  "nameUk": "Нагрівальний мат Arnold Rak Premium FH L 2120 — 2 м², 400 Вт (200 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-laminat",
+    "odnozhylnyi",
+    "200-vt-m2",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 9124,
+  "priceKitUah": 9399,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Одножильний мат серії Premium для сухого монтажу під ламінат (у нівелюючу суміш).",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "400",
+      "number": 400.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "2",
+      "number": 2.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5х4,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "одножильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ, екран — алюмінієва фольга",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Premium_AR_кабель_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

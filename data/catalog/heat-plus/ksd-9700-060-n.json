@@ -1,0 +1,22 @@
+{
+  "id": "heat-plus/ksd-9700-060-n",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "KSD-9700-060-N",
+  "nameUk": "KSD-9700-060-N",
+  "category": "montazh-ta-aksesuary",
+  "tags": [],
+  "priceUah": 31,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>KSD-9700-060-N; Термозапобіжник у пластиковому корпусі, контакт нормально закритий, температура розмикання контакту 60°С,</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

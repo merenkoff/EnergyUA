@@ -1,0 +1,32 @@
+{
+  "id": "heat-plus/wh303-white",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "WH303 White",
+  "nameUk": "Електрична рушникосушарка Heat Plus WH303 White White біла",
+  "category": "rushnykosusharky",
+  "tags": [
+    "vanna"
+  ],
+  "priceUah": 7755,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Рушникосушарки",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

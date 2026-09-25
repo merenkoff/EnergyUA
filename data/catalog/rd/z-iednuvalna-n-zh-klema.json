@@ -1,0 +1,22 @@
+{
+  "id": "rd/z-iednuvalna-n-zh-klema",
+  "supplier": "rd",
+  "brand": "zuver",
+  "sku": "З'єднувальна н/ж клема",
+  "nameUk": "З'єднувальна н/ж клема Zuver",
+  "category": "zazemlennia",
+  "tags": [],
+  "priceUah": 363,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "З'єднувальна н/ж клема для підключення до штиря заземлення (d16 мм, та дроту/полоси з проміжною пластиною NI)",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "заземлення Zuver",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

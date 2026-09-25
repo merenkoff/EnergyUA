@@ -1,0 +1,48 @@
+{
+  "id": "in-therm/me323",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "ME323",
+  "nameUk": "Термоголовка для радіатора IN-THERM ME323",
+  "category": "termorehuliatory",
+  "tags": [
+    "wi-fi",
+    "zigbee",
+    "kytai"
+  ],
+  "priceUah": 920,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Китай",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "2 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "protocol",
+      "labelUk": "Протокол",
+      "value": "Hub Zigbee/Wi-Fi",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

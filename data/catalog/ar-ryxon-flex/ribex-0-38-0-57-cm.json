@@ -1,0 +1,46 @@
+{
+  "id": "ar-ryxon-flex/ribex-0-38-0-57-cm",
+  "supplier": "ar-ryxon-flex",
+  "brand": null,
+  "sku": "Ribex 0,38*0,57 cm",
+  "nameUk": "Килимок з підігрівом Ribex 0,38*0,57 cm — 0,38x0,57 м, 50 Вт",
+  "category": "kylymky-z-pidihrivom",
+  "tags": [
+    "dlia-domu"
+  ],
+  "priceUah": 2541,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "50",
+      "number": 50.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,38x0,57",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "0,22",
+      "number": 0.22,
+      "unit": "м²"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Premium_AR_кабель_мати",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

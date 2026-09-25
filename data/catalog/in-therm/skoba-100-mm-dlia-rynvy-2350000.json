@@ -1,0 +1,33 @@
+{
+  "id": "in-therm/skoba-100-mm-dlia-rynvy-2350000",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "Скоба 100 мм для ринви 2350000",
+  "nameUk": "Скоба 100 мм для ринви 2350000 Fenix",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "chekhiia"
+  ],
+  "priceUah": 540,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціна за упаковку",
+  "shortDescription": "1 уп. = 25 шт",
+  "description": null,
+  "specs": [
+    {
+      "slug": "step",
+      "labelUk": "Крок фіксації",
+      "value": "Кожні 0,25 м",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "САМРЕГ+КОМПЛ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

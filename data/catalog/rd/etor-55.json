@@ -1,0 +1,33 @@
+{
+  "id": "rd/etor-55",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETOR-55",
+  "nameUk": "Датчик OJ Electronics ETOR-55",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "daniia"
+  ],
+  "priceUah": 16065,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "датчик вологи для водостоків",
+  "description": "<p>ETOR-55 - датчик для водостоків з кабелем довжиною 10 м. Реєструє вологість.Тип монтажу:в жолобах і водостоках. Розміри (ДхШхВ):105х30х13 мм. Довжина кабелю:10 м. Діапазон температур:-50 ... +70°С. Ступінь захисту:IP68. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "695",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

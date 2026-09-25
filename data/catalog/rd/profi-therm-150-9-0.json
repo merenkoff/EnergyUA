@@ -1,0 +1,77 @@
+{
+  "id": "rd/profi-therm-150-9-0",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM 150/9.0",
+  "nameUk": "Нагрівальний мат Profi Therm 150/9.0 — 9 м², 1350 Вт (150 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "150-vt-m2",
+    "z-komplektom"
+  ],
+  "priceUah": 19350,
+  "priceKitUah": 19383,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Нагрівальний мат Profi Therm 150 Вт/м² на основі двожильного кабелю для плиткового клею.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1350",
+      "number": 1350.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "9",
+      "number": 9.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5x18,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "35,8",
+      "number": 35.8,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "15396",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Profitherm",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

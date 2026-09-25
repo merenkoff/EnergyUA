@@ -1,0 +1,78 @@
+{
+  "id": "easytherm-extherm/ett-eco-30-240",
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "sku": "ETT ECO 30-240",
+  "nameUk": "Нагрівальний кабель Extherm ETT ECO 30-240 — 8 м, 240 Вт (30 Вт/м)",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "vidkryti-maidanchyky",
+    "dvozhylnyi",
+    "30-vt-m",
+    "nimechchyna"
+  ],
+  "priceUah": 4098,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний кабель 30 Вт/м для зовнішньої установки: сходи, доріжки, водостоки.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "240",
+      "number": 240.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "30",
+      "number": 30.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "7",
+      "number": 7.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "тефлон FEP (200° C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "PVC (90° C)",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Кабелі_30Вт_Extherm",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

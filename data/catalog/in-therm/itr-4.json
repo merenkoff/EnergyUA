@@ -1,0 +1,69 @@
+{
+  "id": "in-therm/itr-4",
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "sku": "ITR 4",
+  "nameUk": "Терморегулятор для зовнішнього обігріву Eberle ITR 4",
+  "category": "antyobledeninnia",
+  "tags": [
+    "din-reika",
+    "nimechchyna",
+    "dlia-snihotanennia"
+  ],
+  "priceUah": 3140,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Німеччина",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "10 А",
+      "number": 10.0,
+      "unit": "А"
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 40",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "на DIN-рейку",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "zones",
+      "labelUk": "Кількість зон",
+      "value": "одна",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

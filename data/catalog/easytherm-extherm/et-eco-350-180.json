@@ -1,0 +1,77 @@
+{
+  "id": "easytherm-extherm/et-eco-350-180",
+  "supplier": "easytherm-extherm",
+  "brand": "extherm",
+  "sku": "ET ECO 350-180",
+  "nameUk": "Нагрівальний мат Extherm ET ECO 350-180 — 3,5 м², 630 Вт (180 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "180-vt-m2",
+    "nimechchyna"
+  ],
+  "priceUah": 12226,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний мат 180 Вт/м² для укладання в плитковий клей.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "630",
+      "number": 630.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "3,5",
+      "number": 3.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "180",
+      "number": 180.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "3",
+      "number": 3.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "тефлон FEP (200° C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "PVC (90° C)",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Мати_Кабелі_Extherm",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

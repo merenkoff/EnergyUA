@@ -1,0 +1,135 @@
+{
+  "id": "in-therm/brf-im-2608w",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "BRF-IM 2608W",
+  "nameUk": "Нагрівальний кабель Hemstedt BRF-IM 27 Вт/м — 96,61 м, 2608 Вт",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "vidkryti-maidanchyky",
+    "dvozhylnyi",
+    "27-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 19840,
+  "priceKitUah": 20320,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель BRF-IM використовується для обігріву водостоків, відкритих площ, балконів. Для обігріву відкритих площ рекомендується укладати кроком 7.5 см (10 см за наявності утеплювача). Для більш швидкого нагріву рекомендується укладати якомога ближче до поверхні. При укладанні у стяжку на вулиці необхідно додавати пластифікатор. У водостоки (труби) діаметром 100-120 мм кабель укладається в 2 нитки, меншим диметром в 1 нитку.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2608",
+      "number": 2608.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "27",
+      "number": 27.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "96,61",
+      "number": 96.61,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_270",
+      "labelUk": "Площа при 270 Вт/м² (крок 0,1 м)",
+      "value": "9,66",
+      "number": 9.66,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_360",
+      "labelUk": "Площа при 360 Вт/м² (крок 0,75 м)",
+      "value": "7,25",
+      "number": 7.25,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_540",
+      "labelUk": "Площа при 540 Вт/м² (крок 0,5 м)",
+      "value": "4,83",
+      "number": 4.83,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "7",
+      "number": 7.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 110 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 105 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

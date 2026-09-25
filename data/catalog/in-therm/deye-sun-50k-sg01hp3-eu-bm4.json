@@ -1,0 +1,67 @@
+{
+  "id": "in-therm/deye-sun-50k-sg01hp3-eu-bm4",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye SUN-50K-SG01HP3-EU-BM4",
+  "nameUk": "Гібридний інвертор Deye SUN-50K-SG01HP3-EU-BM4",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Трифазний</p><p>Номінальна потужність 50 кВт</p><p>Максимальна потужність 55 кВт</p><p>Температура розрядки: від -40 до +60℃</p><p>Мінімальна вхідна напруга PV-поля 160 В</p><p>Максимальна вхідна напруга PV-поля 850 В</p><p>Номінальна вхідна/вихідна напруга 220/400 В</p><p>Номінальний вхідний/вихідний змінний струм 75.8/72.5 A</p><p>Форма вихідного сигналу: чиста синусоїда</p><p>Індикація LCD дисплей</p><p>Клас захисту IP65</p><p>Оснащений двома MPPT контролерами.</p><p>Сумісний з акумуляторами Li-ion, LFP та Lead Acid (свинцево-кислотного типу) з напругою 160-800 В</p><p>Інтелектуальне повітряне охолодження</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "50000",
+      "number": 50000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "peak_power_w",
+      "labelUk": "Пікова потужність",
+      "value": "55000",
+      "number": 55000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "80",
+      "number": 80.0,
+      "unit": "кг"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "89.4х52.7х29.4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "phases",
+      "labelUk": "Фази",
+      "value": "трифазний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

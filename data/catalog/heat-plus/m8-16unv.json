@@ -1,0 +1,55 @@
+{
+  "id": "heat-plus/m8-16unv",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M8.16UNV",
+  "nameUk": "Терморегулятор Heat Plus M8.16UNV сенсорний, універсальний 16А, білий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "sensornyi"
+  ],
+  "priceUah": 1848,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмований",
+  "description": "<p>Терморегулятор ідеально підходить для керування газовим котлом та клапаном водяної теплої підлоги одночасно.</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмований",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х13,3 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "in-therm/fit-3f",
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "sku": "FIT 3F",
+  "nameUk": "Терморегулятор Eberle FIT 3F",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "datchyk-pidlohy",
+    "nimechchyna"
+  ],
+  "priceUah": 4050,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Програмований",
+  "description": null,
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "програмований",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "adaptive",
+      "labelUk": "Адаптивна функція",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Німеччина",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "sensor_floor",
+      "labelUk": "Датчик підлоги",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "5…40",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16 А",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 30",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "у підрозетник",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

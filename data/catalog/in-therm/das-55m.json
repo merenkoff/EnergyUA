@@ -1,0 +1,113 @@
+{
+  "id": "in-therm/das-55m",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "DAS 55m",
+  "nameUk": "Кабель для обігріву труб Hemstedt DAS 30 Вт/м з термостатом — 55 м, 1650 Вт",
+  "category": "antyobledeninnia",
+  "tags": [
+    "truby",
+    "vodostoky-ta-pokrivlia",
+    "z-vbudovanym-termostatom",
+    "30-vt-m",
+    "nimechchyna"
+  ],
+  "priceUah": 15280,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>рекомендуэмо заміняти на DAS 5 m</p><p>Кабель DAS із вбудованим термостатом для обігріву дахів, водостоків та труб великого діаметру. Біметалевий термостат включає кабель при зниженні температури нижче 5 С на датчику, вимикає при підвищенні 15 С. У водостоки (труби) діаметром 100-120 мм кабель укладається в 2 нитки, меншим диметром в 1 нитку. Під час обігріву труби її необхідно теплоізолювати. Товщина тілоізоляції повинна бути не менше радіуса труби, що обігрівається.</p><p>Температура увімкнення кабелю при зниженні температури +5 С</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1650",
+      "number": 1650.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "30",
+      "number": 30.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "55",
+      "number": 55.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "4",
+      "number": 4.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 110 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 110 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

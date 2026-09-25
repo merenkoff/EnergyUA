@@ -38,4 +38,8 @@ for f in "${IMPORT_FILES[@]}"; do
   npx tsx scripts/cli/import-manifest-categories.ts --file "$f"
 done
 
+# Після wipe-all товари з прайсів теж видалено — заливаємо знову (ідемпотентно, у звичайному режимі теж не зайве).
+echo "[railway-catalog-rebuild] Імпорт каталогу з прайсів (data/catalog) …"
+npx tsx scripts/cli/import-pricelist-catalog.ts
+
 echo "[railway-catalog-rebuild] Готово. URL картинок у БД — зовнішні (http/https). На Railway увімкни MIRROR_PRODUCT_IMAGES=yes і MEDIA_ROOT на volume — mirror у railway-entrypoint завантажить файли локально."

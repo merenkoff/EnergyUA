@@ -1,0 +1,77 @@
+{
+  "id": "rd/w-rme-twin-mat-75-w",
+  "supplier": "rd",
+  "brand": "warme",
+  "sku": "Wärme Twin mat 75 W",
+  "nameUk": "Нагрівальний мат Wärme Twin mat 75 W — 0,5 м², 75 Вт (150 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "150-vt-m2",
+    "z-komplektom"
+  ],
+  "priceUah": 3177,
+  "priceKitUah": 3213,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Нагрівальний мат Wärme Twin mat 150 Вт/м² на основі двожильного кабелю для плиткового клею.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "75",
+      "number": 75.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5х1",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "710,71",
+      "number": 710.7099999999999,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "21537",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Wärme",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

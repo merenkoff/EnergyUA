@@ -1,0 +1,53 @@
+{
+  "id": "easytherm-extherm/55520",
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "sku": "55520",
+  "nameUk": "Електромеманічний терморегулятор Easytherm EASY MECH, 16А, 3000Вт",
+  "category": "termorehuliatory",
+  "tags": [
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 1328,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "Білий",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "max_power_w",
+      "labelUk": "Макс. потужність навантаження",
+      "value": "3000",
+      "number": 3000.0,
+      "unit": "Вт"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Термостати_Easytherm",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

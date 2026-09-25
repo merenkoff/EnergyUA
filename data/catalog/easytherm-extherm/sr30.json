@@ -1,0 +1,34 @@
+{
+  "id": "easytherm-extherm/sr30",
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "sku": "SR30",
+  "nameUk": "Кабель саморегулюючий Easytherm SR 30 — 30 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vodostoky-ta-pokrivlia",
+    "vidriznyi"
+  ],
+  "priceUah": 399,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": "Ціна за погонний метр.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "30",
+      "number": 30.0,
+      "unit": "Вт/м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": " Самрег_Easytherm_Аксесуари",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

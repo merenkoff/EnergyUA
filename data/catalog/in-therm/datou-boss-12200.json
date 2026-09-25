@@ -1,0 +1,79 @@
+{
+  "id": "in-therm/datou-boss-12200",
+  "supplier": "in-therm",
+  "brand": "datou-boss",
+  "sku": "Datou Boss 12200",
+  "nameUk": "Акумулятор LiFePO4 Datou Boss 12200 (200 Аh)",
+  "category": "enerhetyka",
+  "tags": [],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Номінальна ємність - 200 Аh</p><p>Номінальна напруга - 12.8 V</p><p>Максимальний струм заряду - 100 А</p><p>Максимальний струм розряду - 200 А</p><p>Хімія (тип) - LiFePO4</p><p>Напруга повного заряду - 14.6V</p><p>Мінімальна напруга - 8.8V</p><p>Напруга зарядки (буферний режим) - 14.4–14.6 V</p><p>Напруга зарядки (циклічний режим) - 14.6V</p><p>Піковий струм розряду (100 мс) - 300 А</p><p>Струм короткого замикання - 400 А</p><p>Номінальний струм заряду - 100 А</p><p>Номінальний струм розряду - 200 А</p><p>Кількість циклів ~ 6000</p><p>З чого складається - Елементи живлення формату prismatic LiFePO4 (3.2V/100Ah), BMS 12.8V 200A з балансуванням.</p><p>Робоча температура -20... +75° С</p><p>Клас захисту IP65</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "12,8",
+      "number": 12.8,
+      "unit": "В"
+    },
+    {
+      "slug": "capacity_ah",
+      "labelUk": "Ємність",
+      "value": "200",
+      "number": 200.0,
+      "unit": "А·год"
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2560",
+      "number": 2560.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "vaha-netto-kh",
+      "labelUk": "Вага нетто, кг",
+      "value": "16",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "vaha-brutto-kh",
+      "labelUk": "Вага брутто, кг",
+      "value": "17.5",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "50х26х22",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "1 рік",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "magnum-tp/etf-633-44-55",
+  "supplier": "magnum-tp",
+  "brand": "oj-electronics",
+  "sku": "ETF-633/44/55",
+  "nameUk": "Трубний датчик температури OJ Electronics ETF-633/44/55",
+  "category": "antyobledeninnia",
+  "tags": [
+    "truby",
+    "pid-zamovlennia",
+    "daniia"
+  ],
+  "priceUah": 3445,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 2023; під замовлення; 65,00 € за курсом 53",
+  "shortDescription": null,
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 2,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

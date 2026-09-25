@@ -1,0 +1,78 @@
+{
+  "id": "rd/millimat-150-1050w-7-0-m2",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "MILLIMAT/150 1050W 7,0 m²",
+  "nameUk": "Нагрівальний мат Nexans MILLIMAT/150 1050W 7,0 m² — 7 м², 1050 Вт (150 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "150-vt-m2",
+    "norvehiia",
+    "z-komplektom"
+  ],
+  "priceUah": 25137,
+  "priceKitUah": 25230,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Нагрівальний мат Nexans Millimat/150 на основі двожильного екранованого кабелю для плиткового клею.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1050",
+      "number": 1050.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "7",
+      "number": 7.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "size_m",
+      "labelUk": "Розмір мату",
+      "value": "0,5x14,0",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "50,4",
+      "number": 50.4,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "949",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Nexans",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

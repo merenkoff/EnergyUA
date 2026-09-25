@@ -1,10 +1,8 @@
 import { cache } from "react";
+import { CATALOG_ROOT_SLUG, MATS_CATEGORY_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
 
-const ROOT_SLUG = "tepla-pidloga";
-
-/** Очікуваний slug демо-категорії з seed (нагрівальні мати). */
-export const MATS_CATEGORY_SLUG = "nagrivalni-maty";
+export { MATS_CATEGORY_SLUG };
 
 /**
  * Посилання на розділ матів, лише якщо категорія є в БД і під коренем каталогу.
@@ -15,7 +13,7 @@ export const resolveMatsCatalogHref = cache(async (): Promise<string | null> => 
   const cat = await prisma.category.findFirst({
     where: {
       slug: MATS_CATEGORY_SLUG,
-      parent: { slug: ROOT_SLUG },
+      parent: { slug: CATALOG_ROOT_SLUG },
     },
     select: { slug: true },
   });

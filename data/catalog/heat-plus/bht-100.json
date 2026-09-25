@@ -1,0 +1,60 @@
+{
+  "id": "heat-plus/bht-100",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "BHT-100",
+  "nameUk": "Терморегулятор Heat Plus BHT-100, білий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi"
+  ],
+  "priceUah": 1328,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, з таймером",
+  "description": "<p>Таймер вкл./викл.(до 16 часов)</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, з таймером",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х13,3 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Виносний: від 10 до 40 С (завод)/ від 10-90 С (ручна), Вбудований: від 10 до 40 С",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "magnum-tp/c-f-17-1700w",
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "sku": "C&F-17 1700W",
+  "nameUk": "Нагрівальний кабель Magnum C&F-17 — 100 м, 1700 Вт (17 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "17-vt-m",
+    "bezmuftove-ziednannia",
+    "niderlandy"
+  ],
+  "priceUah": 22790,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 1566; ціна за курсом € = 53",
+  "shortDescription": "Секція двожильного кабелю Magnum C&F-17 для укладання в стяжку 3,5–5 см. Безмуфтове з’єднання лазерним зварюванням.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1700",
+      "number": 1700.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "100",
+      "number": 100.0,
+      "unit": "м"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "31",
+      "number": 31.0,
+      "unit": "Ом"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "7,5 – 12,5",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "7",
+      "number": 7.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "XLPE",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "PVC, суцільна алюмінієва оболонка",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "VDE",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове (лазерне зварювання)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 1,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

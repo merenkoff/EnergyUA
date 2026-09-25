@@ -1,0 +1,33 @@
+{
+  "id": "rd/etf-622",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETF-622",
+  "nameUk": "Датчик OJ Electronics ETF-622",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "datchyk-pidlohy",
+    "daniia"
+  ],
+  "priceUah": 2463,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "датчик температури для трубопроводів і ємностей",
+  "description": "<p>ETF-622 - датчик температури для трубопроводів та ємностей. Розмір мідної частини:8х12 мм Діаметр отвору:3.5 мм. Діапазон температур:-40 ... +120°С Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "1048",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

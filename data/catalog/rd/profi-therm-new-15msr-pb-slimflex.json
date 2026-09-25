@@ -1,0 +1,40 @@
+{
+  "id": "rd/profi-therm-new-15msr-pb-slimflex",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "Profi therm new 15MSR-PB slimflex",
+  "nameUk": "Саморегулюючий кабель Profi therm new 15MSR-PB slimflex — 15 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vidriznyi"
+  ],
+  "priceUah": 252,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Для захисту побутових тробопроводів від замерзання, для захисту дахів, водостоків і жолобів від намерзання льоду; макс.довжина секції 57м (при 10°С та 16А автоматичному вимикачу); геометричні розміри: 8,3 мм х 5,4 мм</p>",
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "15",
+      "number": 15.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "22721",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Самрег",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

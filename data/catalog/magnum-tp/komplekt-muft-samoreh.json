@@ -1,0 +1,24 @@
+{
+  "id": "magnum-tp/komplekt-muft-samoreh",
+  "supplier": "magnum-tp",
+  "brand": null,
+  "sku": "Комплект муфт саморег",
+  "nameUk": "Комплект муфт на саморегулюючий кабель (з роботою)",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "truby"
+  ],
+  "priceUah": 705,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 2026",
+  "shortDescription": null,
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 1,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

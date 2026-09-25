@@ -1,0 +1,32 @@
+{
+  "id": "smart/rtc-70-sl",
+  "supplier": "smart",
+  "brand": "smart",
+  "sku": "RTC-70 SL",
+  "nameUk": "Терморегулятор RTC-70 SL",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi"
+  ],
+  "priceUah": 450,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-smart-thermostats.xlsx",
+    "sheet": "Prices",
+    "date": "2026-01-01",
+    "supplierName": "SMART (прайс 2026)"
+  }
+}

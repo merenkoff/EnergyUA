@@ -1,0 +1,32 @@
+{
+  "id": "rd/kriplennia-dlia-nahrivannia-v-trubakh-aliuminiieve-dlia-samreha",
+  "supplier": "rd",
+  "brand": null,
+  "sku": "Кріплення для нагрівання в трубах алюмінієве для самрега",
+  "nameUk": "Кріплення для нагрівання в трубах алюмінієве для самрега",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "vodostoky-ta-pokrivlia"
+  ],
+  "priceUah": 105,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "продається лише разом з нагрівальним кабелем",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "23360",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "комплек-щі",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

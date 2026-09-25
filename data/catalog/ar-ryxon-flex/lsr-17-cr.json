@@ -1,0 +1,42 @@
+{
+  "id": "ar-ryxon-flex/lsr-17-cr",
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "sku": "LSR-17-CR",
+  "nameUk": "Саморегулюючий кабель Ryxon LSR-17-CR, 17 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vodostoky-ta-pokrivlia",
+    "vidriznyi",
+    "latviia"
+  ],
+  "priceUah": 343,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": null,
+  "shortDescription": "Саморегулюючий кабель для захисту труб і водостоків від замерзання. Ціна за погонний метр.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полімер",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "RYXON_самрег_",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

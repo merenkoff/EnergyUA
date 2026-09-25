@@ -1,0 +1,112 @@
+{
+  "id": "in-therm/fs-24m",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "FS 24m",
+  "nameUk": "Кабель для обігріву труб Hemstedt FS 10 Вт/м з термостатом — 24 м, 240 Вт",
+  "category": "antyobledeninnia",
+  "tags": [
+    "truby",
+    "z-vbudovanym-termostatom",
+    "10-vt-m",
+    "nimechchyna"
+  ],
+  "priceUah": 7650,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель FS із вбудованим термостатом для обігріву труб та водопроводів. Біметалічний термостат включає кабель при зниженні температури нижче 5 °С на датчику, вимикає при підвищенні вище 15 °С. При обігріванні труби необхідно її теплоізолювати. Товщина утеплювача повинна бути не менше радіуса труби, що обігрівається.</p><p>Температура увімкнення кабелю при зниженні температури +5 С</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "240",
+      "number": 240.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "10",
+      "number": 10.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "24",
+      "number": 24.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2",
+      "number": 2.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 110 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 110 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

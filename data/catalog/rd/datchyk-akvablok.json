@@ -1,0 +1,46 @@
+{
+  "id": "rd/datchyk-akvablok",
+  "supplier": "rd",
+  "brand": "akvablok",
+  "sku": "Датчик Акваблок",
+  "nameUk": "Датчик Акваблок — бездротова система захисту від протікання",
+  "category": "zakhyst-vid-protikannia",
+  "tags": [
+    "dlia-domu"
+  ],
+  "priceUah": 3360,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "kit",
+      "labelUk": "Комплектація",
+      "value": "1шт",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_supply",
+      "labelUk": "Живлення",
+      "value": "А23 1шт",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "22551",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Акваблок",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

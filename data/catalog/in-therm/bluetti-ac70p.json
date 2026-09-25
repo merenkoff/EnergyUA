@@ -1,0 +1,79 @@
+{
+  "id": "in-therm/bluetti-ac70p",
+  "supplier": "in-therm",
+  "brand": "bluetti",
+  "sku": "Bluetti AC70P",
+  "nameUk": "Зарядна станція Bluetti AC70P",
+  "category": "enerhetyka",
+  "tags": [],
+  "priceUah": 27999,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Тип акумулятора: LiFePo 4</p><p>Ємність батареї, Вт/год: 864</p><p>Номінальне навантаження: 1000 W</p><p>Максимальне навантаження: 1500 W</p><p>Підключення пристроїв:</p><p>Вихідні роз'єми: USB Type-C, USB Type-A, авторозетка 12 В, розетка 220-240 В</p><p>Параметри входу</p><p>Вхід адаптера змінного струму: 200 Вт Макс</p><p>Сонячний вхід: Макс. 200 Вт, VOC 12-28 В, 8 A</p><p>Автомобільний вхід: 12/24 В від порту прикурювача</p><p>Параметри виходу</p><p>2x розетка AC 220-240 В/4.3А, 1000Вт</p><p>2x USB-A: 5V/2.4A</p><p>2x USB-C макс. 100 Вт</p><p>1x прикурювач: 12В/10А</p><p>1 x Бездротова зарядка: 15 Вт</p><p>Додаткові особливості:</p><p>1. Швидка зарядка.</p><p>Способи зарядки: сонячна панель, мережа 230 В, від автомобіля</p><p>Тривалість зарядки: від мережі ≈ 1,5-2 г (турбозарядка 950 Вт)</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO4",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1000",
+      "number": 1000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "peak_power_w",
+      "labelUk": "Пікова потужність",
+      "value": "2000",
+      "number": 2000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "capacity_wh",
+      "labelUk": "Ємність",
+      "value": "884",
+      "number": 884.0,
+      "unit": "Вт·год"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "так",
+      "number": null,
+      "unit": "кг"
+    },
+    {
+      "slug": "harantiia-mis",
+      "labelUk": "Гарантія, міс",
+      "value": "12",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "robota-z-mobilnym-dodatkom",
+      "labelUk": "Робота з мобільним додатком",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "12 міс",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ЗАРЯДНІ СТАНЦІЇ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

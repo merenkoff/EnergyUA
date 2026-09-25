@@ -1,0 +1,30 @@
+{
+  "id": "rd/strichka-elektromontazhna-krok-kriplennia-2-5cm",
+  "supplier": "rd",
+  "brand": null,
+  "sku": "Стрічка електромонтажна, крок кріплення 2,5cm",
+  "nameUk": "Стрічка електромонтажна, крок кріплення 2,5см",
+  "category": "montazh-ta-aksesuary",
+  "tags": [],
+  "priceUah": 42,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "продається лише разом з нагрівальним кабелем",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "52",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "комплек-щі",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

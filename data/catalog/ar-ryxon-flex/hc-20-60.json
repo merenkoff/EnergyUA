@@ -1,0 +1,87 @@
+{
+  "id": "ar-ryxon-flex/hc-20-60",
+  "supplier": "ar-ryxon-flex",
+  "brand": "ryxon",
+  "sku": "HC-20-60",
+  "nameUk": "Нагрівальний кабель Ryxon HC-20-60 — 60 м, 1200 Вт (20 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "u-stiazhku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "20-vt-m",
+    "latviia",
+    "z-komplektom"
+  ],
+  "priceUah": 7448,
+  "priceKitUah": 7723,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Тонкий двожильний кабель 20 Вт/м, Ø 3,6 мм — у плитковий клей або стяжку. Комплект: кабель + гофра + коробка.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1200",
+      "number": 1200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "60",
+      "number": 60.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "6",
+      "number": 6.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "6,0 м² – 7,5 м²",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "3,6",
+      "number": 3.6,
+      "unit": "мм"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "20",
+      "number": 20.0,
+      "unit": "м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "RYXON_кабель",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

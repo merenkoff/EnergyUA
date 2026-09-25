@@ -1,0 +1,60 @@
+{
+  "id": "in-therm/tff-524-004",
+  "supplier": "in-therm",
+  "brand": "eberle",
+  "sku": "TFF 524 004",
+  "nameUk": "Датчик Eberle TFF 524 004 — датчик температури",
+  "category": "antyobledeninnia",
+  "tags": [
+    "nimechchyna"
+  ],
+  "priceUah": 890,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "country",
+      "labelUk": "Країна виробництва",
+      "value": "Німеччина",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "ip",
+      "labelUk": "Ступінь захисту",
+      "value": "IP 67",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mounting",
+      "labelUk": "Монтаж",
+      "value": "водосток, грунт",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "purpose",
+      "labelUk": "Призначення",
+      "value": "водосток, грунт",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ТЕРМОСТАТИ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

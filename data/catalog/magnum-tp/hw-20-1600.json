@@ -1,0 +1,105 @@
+{
+  "id": "magnum-tp/hw-20-1600",
+  "supplier": "magnum-tp",
+  "brand": "mhw",
+  "sku": "HW 20-1600",
+  "nameUk": "Нагрівальний кабель MHW HW 20-1600 — 80 м, 1600 Вт (20 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "20-vt-m",
+    "z-komplektom"
+  ],
+  "priceUah": 10865,
+  "priceKitUah": 11289,
+  "priceUnit": "шт",
+  "priceNote": "Ціна 205,00 € за курсом 53",
+  "shortDescription": "Секція двожильного екранованого кабелю 20 Вт/м, Ø 4,8 мм, для укладання в стяжку або плитковий клей.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1600",
+      "number": 1600.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "80",
+      "number": 80.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4,8",
+      "number": 4.8,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "PVC, екран — алюміній",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2,5",
+      "number": 2.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 3,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

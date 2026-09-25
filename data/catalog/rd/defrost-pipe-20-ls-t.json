@@ -1,0 +1,42 @@
+{
+  "id": "rd/defrost-pipe-20-ls-t",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "DEFROST PIPE 20 LS/T",
+  "nameUk": "Саморегулюючий кабель DEFROST PIPE 20 LS/T — 20 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vidriznyi",
+    "pid-zamovlennia",
+    "norvehiia"
+  ],
+  "priceUah": 1155,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "на замовлення, 100% передплата",
+  "shortDescription": null,
+  "description": "<p>Для захисту тробопроводів від замерзання, підтримки необхідної температури трубопроводів і ємностей, для захисту дахів, водостоків і жолобів від намерзання льоду</p>",
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "21888",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Самрег",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

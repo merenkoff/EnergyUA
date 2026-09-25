@@ -1,0 +1,26 @@
+{
+  "id": "ar-ryxon-flex/tdu1",
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "sku": "TDU1",
+  "nameUk": "Терморегулятор Flex TDU1",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "datchyk-pidlohy",
+    "latviia"
+  ],
+  "priceUah": 1730,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Призначений для керування систем підтримання температури -25˚…+100˚. Застосування: універсальний. Монтується на DIN-рейку.",
+  "description": "<p>Режим роботи: нагрівання, охолодження. Датчик температури: NTC 10kOm при +25˚. Максимальний струм: 40А (8кВт). Споживання приладу: не більше 2Вт.</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "FLEX_Терморегулятори",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

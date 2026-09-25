@@ -1,0 +1,35 @@
+{
+  "id": "rd/profitherm-wi-fi-onyx-black",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "Profitherm Wi-Fi Onyx Black",
+  "nameUk": "Терморегулятор Profitherm Wi-Fi Onyx Black",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi",
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 4725,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "з 2-ма датчиками: підлоги і повітря",
+  "description": "<p>Електронний програмований\nтерморегулятор\nз сенсорным экраном і\nтехнологією WiFi управління для IOS і Android\nМакс. струм 16А\nмежі регулювання 0 +45\nгарантія 2 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "19878",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "ar-ryxon-flex/6108-20-ec",
+  "supplier": "ar-ryxon-flex",
+  "brand": "arnold-rak",
+  "sku": "6108-20 EC",
+  "nameUk": "Нагрівальний кабель Arnold Rak Standart 6108-20 EC — 60 м, 1200 Вт (20 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "20-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 10015,
+  "priceKitUah": 10290,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний кабель Standart 20 Вт/м для укладання в стяжку. Комплект: кабель + гофра + коробка.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1200",
+      "number": 1200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "60",
+      "number": 60.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_range_m2",
+      "labelUk": "Площа обігріву (діапазон)",
+      "value": "6,0 - 9,2",
+      "number": null,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "5",
+      "number": 5.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "tape_m",
+      "labelUk": "Монтажна стрічка на комплект",
+      "value": "15",
+      "number": 15.0,
+      "unit": "м"
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ, екран — алюмінієва фольга",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Standart_AR_кабель 20 Вт",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

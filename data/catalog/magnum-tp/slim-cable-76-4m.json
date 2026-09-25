@@ -1,0 +1,112 @@
+{
+  "id": "magnum-tp/slim-cable-76-4m",
+  "supplier": "magnum-tp",
+  "brand": "magnum",
+  "sku": "Slim Cable 76,4m",
+  "nameUk": "Нагрівальний кабель Magnum Slim Cable 3,5 мм — 76,4 м, 1200 Вт (15,7 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "niderlandy"
+  ],
+  "priceUah": 14681,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 2012; ціна за курсом € = 53",
+  "shortDescription": "Тонкий двожильний кабель Magnum 3,5 мм для укладання в плитковий клей (крок 10 см). Виробник C&F Technics, Нідерланди.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1200",
+      "number": 1200.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "76,4",
+      "number": 76.4,
+      "unit": "м"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "7,64",
+      "number": 7.64,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "15,7",
+      "number": 15.7,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "3,5",
+      "number": 3.5,
+      "unit": "мм"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "PTFE",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "PVC, екран — алюміній",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "VDE",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 1,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

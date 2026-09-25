@@ -1,0 +1,41 @@
+{
+  "id": "rd/etn4-1999",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETN4-1999",
+  "nameUk": "Терморегулятор OJ Electronics ETN4-1999",
+  "category": "termorehuliatory",
+  "tags": [
+    "din-reika",
+    "datchyk-pidlohy",
+    "daniia"
+  ],
+  "priceUah": 9009,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор ETN4-1999 датчик підлоги (у комплекті)",
+  "description": "<p>ETN4-1999- терморегулятор «все в одному» для монтажу на DIN-рейку з тонким датчиком температури підлоги ETF-144 / 99T (в комплекті). Діапазон температур:-19.5 …+70°C. Розміри:86х52.5х58 мм (ДхШхВ). Навантаження:16А / 3500Вт. Ступінь захисту:IP20. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "9257",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

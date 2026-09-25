@@ -1,0 +1,34 @@
+{
+  "id": "magnum-tp/ac8400h",
+  "supplier": "magnum-tp",
+  "brand": "castle",
+  "sku": "AC8400H",
+  "nameUk": "Програматор Castle AC8400H (сенсорний, чорний / срібний)",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "sensornyi",
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 1500,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Версія з Wi-Fi — 2500 грн.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 4,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

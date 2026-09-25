@@ -1,0 +1,34 @@
+{
+  "id": "magnum-tp/ac602h-wifi",
+  "supplier": "magnum-tp",
+  "brand": "castle",
+  "sku": "AC602H WiFi",
+  "nameUk": "Програматор Castle AC602H Wi-Fi (білий / чорний)",
+  "category": "termorehuliatory",
+  "tags": [
+    "prohramovanyi",
+    "wi-fi",
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 2500,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 4,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

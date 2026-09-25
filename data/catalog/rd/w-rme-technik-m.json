@@ -1,0 +1,39 @@
+{
+  "id": "rd/w-rme-technik-m",
+  "supplier": "rd",
+  "brand": "warme",
+  "sku": "Wärme Technik М",
+  "nameUk": "Терморегулятор Wärme Technik М",
+  "category": "termorehuliatory",
+  "tags": [
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 1260,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "містить датчик температури повітря (вбудований) і поставляється з зовнішнім датчиком (монтуется в підлогу)",
+  "description": "<p>максимальне навантаження 3600 Вт Діапазон налаштування температури +5°С…+40°С Розмір 86 / 86 / 41 мм\nгарантія 3 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "22224",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

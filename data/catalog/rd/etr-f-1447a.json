@@ -1,0 +1,41 @@
+{
+  "id": "rd/etr-f-1447a",
+  "supplier": "rd",
+  "brand": "oj-electronics",
+  "sku": "ETR/F-1447A",
+  "nameUk": "Терморегулятор OJ Electronics ETR/F-1447A",
+  "category": "antyobledeninnia",
+  "tags": [
+    "din-reika",
+    "dlia-snihotanennia",
+    "daniia"
+  ],
+  "priceUah": 10395,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор ETR/F-1447A для системами обігріву в водостоках має зовнішній датчик температури повітря (у комплекті)",
+  "description": "<p>ETR - використовується для керування кабельними системами обігріву в водостоках на невеликих об'єктах, наприклад котеджах.Діапазон температур:-15 …+10°C. Тип монтажу:на DIN-рейку. Розміри:86х52.5х58 мм (ДхШхВ). Навантаження:16А / 3500Вт. Ступінь захисту:IP20. Гарантія: 5 років</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "662",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

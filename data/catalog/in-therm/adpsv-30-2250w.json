@@ -1,0 +1,136 @@
+{
+  "id": "in-therm/adpsv-30-2250w",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "ADPSV 30 2250W",
+  "nameUk": "Нагрівальний кабель Fenix ADPSV 30 Вт/м — 76 м, 2250 Вт",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "vidkryti-maidanchyky",
+    "dvozhylnyi",
+    "ftoroplastova-izoliatsiia",
+    "30-vt-m",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 11150,
+  "priceKitUah": 11930,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель ADPSV 30 Вт/м використовується для обігріву водостоків, труб, відкритих площ, балконів. Для обігріву відкритих площ рекомендується укладати кроком 7.5 см (10 см за наявності утеплювача). Для більш швидкого нагріву рекомендується укладати якомога ближче до поверхні. При укладанні у стяжку на вулиці необхідно додавати пластифікатор. У водостоки (труби) діаметром 100-120 мм кабель укладається в 2 нитки, меншим диметром в 1 нитку.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2250",
+      "number": 2250.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "30",
+      "number": 30.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "76",
+      "number": 76.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_240",
+      "labelUk": "Площа при 240 Вт/м² (крок 0,125 м)",
+      "value": "9,5",
+      "number": 9.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_300",
+      "labelUk": "Площа при 300 Вт/м² (крок 0,10 м)",
+      "value": "7,6",
+      "number": 7.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_400",
+      "labelUk": "Площа при 400 Вт/м² (крок 0,075 м)",
+      "value": "5,7",
+      "number": 5.7,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_600",
+      "labelUk": "Площа при 600 Вт/м² (крок 0,05 м)",
+      "value": "3,8",
+      "number": 3.8,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "5",
+      "number": 5.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С) + поліетилен (додаткова ізоляція)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "6",
+      "number": 6.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "10 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

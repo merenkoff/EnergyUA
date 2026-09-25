@@ -1,0 +1,60 @@
+{
+  "id": "heat-plus/m79-716",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M79.716",
+  "nameUk": "Терморегулятор Heat Plus M79.716 чорний матовий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi"
+  ],
+  "priceUah": 1440,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, сумісний із серіями Schneider Unica, Аsfora, Legrand Valena",
+  "description": "<p>Вимір температури відбувається в 3-ох режимах: по внутрішньому датчику терморегулятора, по зовнішньому та по обох датчиках одночасно.</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, сумісний із серіями Schneider Unica, Аsfora, Legrand Valena",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "84х84х15мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Діапазон налаштування: 5-60 °С, захист від випадкової зміни налаштувань",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "чорний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

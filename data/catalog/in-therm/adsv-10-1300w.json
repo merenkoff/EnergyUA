@@ -1,0 +1,129 @@
+{
+  "id": "in-therm/adsv-10-1300w",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "ADSV 10 1300W",
+  "nameUk": "Нагрівальний кабель Fenix ADSV 10 Вт/м — 131,3 м, 1300 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "pid-plytku",
+    "tonkyi-kabel",
+    "dvozhylnyi",
+    "ftoroplastova-izoliatsiia",
+    "10-vt-m",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 12870,
+  "priceKitUah": 13650,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Тонкий кабель для укладання під плитку. Монтаж проводиться на готову стяжку під покриття для підлоги в клейовий розчин або самовирівнюючу суміш. За рахунок різного кроку укладання цей кабель можна використовувати як для повноцінного опалення (до 250 Вт/м.кв.), так і для укладання під дерев'яні покриття для підлоги (100 Вт/м.кв.). Кабель утоплюється в клейовий розчин, не підвищуючи висоту підлоги. Перед залитим стяжки рекомендується укладати утеплювач. Має дві переваги над кабелем для укладання в стяжку: 1) швидший прогрів підлоги (трохи економічніше); 2) простіший монтаж.</p><p>-1.7669425184522414</p><p>2250*</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1300",
+      "number": 1300.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "10",
+      "number": 10.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "131,3",
+      "number": 131.3,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_100",
+      "labelUk": "Площа при 100 Вт/м² (крок 0,1 м)",
+      "value": "13,13",
+      "number": 13.13,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_125",
+      "labelUk": "Площа при 125 Вт/м² (крок 0,08 м)",
+      "value": "10,5",
+      "number": 10.5,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_167",
+      "labelUk": "Площа при 167 Вт/м² (крок 0,06 м)",
+      "value": "7,88",
+      "number": 7.88,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "Довічна гарантія",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

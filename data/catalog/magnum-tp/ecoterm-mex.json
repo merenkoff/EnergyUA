@@ -1,0 +1,33 @@
+{
+  "id": "magnum-tp/ecoterm-mex",
+  "supplier": "magnum-tp",
+  "brand": "ecoterm",
+  "sku": "ECOTERM MEX",
+  "nameUk": "Терморегулятор EcoTerm MEX (механічний)",
+  "category": "termorehuliatory",
+  "tags": [
+    "mekhanichnyi",
+    "datchyk-pidlohy"
+  ],
+  "priceUah": 1050,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "16 А / 3500 Вт, +5…+45 °C, з виносним датчиком.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 4,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

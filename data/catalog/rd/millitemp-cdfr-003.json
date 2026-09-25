@@ -1,0 +1,42 @@
+{
+  "id": "rd/millitemp-cdfr-003",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "MILLITEMP CDFR-003",
+  "nameUk": "Терморегулятор Nexans MILLITEMP CDFR-003",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "datchyk-pidlohy",
+    "norvehiia"
+  ],
+  "priceUah": 4005,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Терморегулятор MILLITEMP CDFR-003 містить датчик температури повітря (вбудований) і поставляється з зовнішнім датчиком (монтуется в підлогу)",
+  "description": "<p>Великий цифровий дисплей з підсвічуванням та двома датчиками\nПрограмування:4 події на добу, 5 + 2 дні\nНавантаження макс.: 16 А / 3600 Вт\nДіапазон температур: +5…+40°С \nРозмір: 84х84х40 мм \nСтупінь захисту: IP21\nФункція проти замерзання\nТип монтажа — занурений\nГарантія: 2 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "1809",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

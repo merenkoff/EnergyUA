@@ -1,0 +1,32 @@
+{
+  "id": "easytherm-extherm/55534",
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "sku": "55534",
+  "nameUk": "Датчик вологості та температури повітря для систем сніготанення круглий ЕТ-440",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia"
+  ],
+  "priceUah": 5040,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Термостати_Easytherm",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

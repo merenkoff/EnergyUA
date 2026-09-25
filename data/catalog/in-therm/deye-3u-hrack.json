@@ -1,0 +1,24 @@
+{
+  "id": "in-therm/deye-3u-hrack",
+  "supplier": "in-therm",
+  "brand": "deye",
+  "sku": "Deye 3U-HRACK",
+  "nameUk": "Акумуляторна батарея Deye 3U-HRACK",
+  "category": "enerhetyka",
+  "tags": [
+    "kytai"
+  ],
+  "priceUah": null,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "ціну уточнюйте",
+  "shortDescription": null,
+  "description": "<p>Стандартна стійка 19 дюймів</p><p>на 12 окремих батарей</p><p>та єдиним блоком керування кластером високовольтних акумуляторів</p><p>для модулів серії Deye BOS-G</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ІНВ+ПАНЕЛІ+АККУ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "id": "in-therm/adsv-20-720w",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "ADSV 20 720W",
+  "nameUk": "Нагрівальний кабель IN-THERM ADSV 20 Вт/м — 36 м, 720 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "pid-plytku",
+    "dvozhylnyi",
+    "ftoroplastova-izoliatsiia",
+    "20-vt-m",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 4240,
+  "priceKitUah": 4540,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель для теплої підлоги використовується для укладання в стяжку 3-8 см. Перед укладанням кабелю необхідно укладати утеплювач (рекомендується екструдований пінополістирол від 2 см, у крайньому випадку підкладку для ламінату 5 мм). Кабель не рекомендується укладати безпосередньо на утеплювач. Утеплювач необхідно залити чорновою стяжкою, у крайньому випадку покласти зверху металеву сітку (армовану або просічно-витяжну). У разі укладання сітки необхідно залишити простір між кабелем та утеплювачем, щоб при залитті рідким розчином для стяжки заповнити цей простір сумішшю. Стяжка має бути з мінімальною кількістю повітряних порожнин.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "720",
+      "number": 720.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "36",
+      "number": 36.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_125",
+      "labelUk": "Площа при 125 Вт/м² (крок 160 м)",
+      "value": "5,76",
+      "number": 5.76,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_143",
+      "labelUk": "Площа при 143 Вт/м² (крок 140 м)",
+      "value": "5,04",
+      "number": 5.04,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_167",
+      "labelUk": "Площа при 167 Вт/м² (крок 120 м)",
+      "value": "4,32",
+      "number": 4.32,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_200",
+      "labelUk": "Площа при 200 Вт/м² (крок 100 м)",
+      "value": "3,6",
+      "number": 3.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "73,8",
+      "number": 73.8,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "1,5",
+      "number": 1.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "IN-THERM",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

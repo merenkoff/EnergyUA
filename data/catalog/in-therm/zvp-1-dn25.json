@@ -1,0 +1,25 @@
+{
+  "id": "in-therm/zvp-1-dn25",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "ZVP 1” DN25",
+  "nameUk": "Захист від протікання IN-THERM 1” DN25",
+  "category": "zakhyst-vid-protikannia",
+  "tags": [
+    "dlia-domu",
+    "kytai"
+  ],
+  "priceUah": 2340,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Комплектуючі для збірних комплектів",
+  "description": "<p>Крани із додатковим ручним закриттям 1” DN25 для збірних комплектів</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ЗВП",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

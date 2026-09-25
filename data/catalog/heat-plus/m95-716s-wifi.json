@@ -1,0 +1,56 @@
+{
+  "id": "heat-plus/m95-716s-wifi",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M95.716S",
+  "nameUk": "Терморегулятор Heat Plus M95.716S WiFI дзеркальний , сенсорний, 16А, чорний матовий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "sensornyi",
+    "wi-fi"
+  ],
+  "priceUah": 2555,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмуємий, сенсорний, з WI-FI",
+  "description": "<p>Цей терморегулятор можна поєднати з багатьма рамками електрофурнітури інших виробників. Є чотири режими автоматичних налаштувань. Усі налаштування терморегулятора доступні з кабінету дистанційного керування на телефоні. Є 10 варіантів підбору зовнішніх датчиків за опором (3–47 кОм). У вимкненому стані на екрані може відображатися температура у приміщенні.</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмуємий, сенсорний, з WI-FI",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Виносний: від 5-60 С, Вбудований:від 5 до 60 С. Економічний режим.",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "чорний, дзеркальний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

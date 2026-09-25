@@ -5,25 +5,29 @@ const PAGE_SIZE = 40;
 
 type Props = {
   params: Promise<{ secret: string }>;
-  searchParams: Promise<{ q?: string; page?: string }>;
+  searchParams: Promise<{ q?: string; page?: string; archived?: string }>;
 };
 
 export default async function AdminProductsPage({ params, searchParams }: Props) {
   const { secret } = await params;
   const sp = await searchParams;
   const q = (sp.q ?? "").trim();
+  const archivedFilter = sp.archived === "1" ? true : sp.archived === "0" ? false : undefined;
   const page = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
   const skip = (page - 1) * PAGE_SIZE;
 
-  const where = q
-    ? {
-        OR: [
-          { nameUk: { contains: q, mode: "insensitive" as const } },
-          { slug: { contains: q, mode: "insensitive" as const } },
-          { sku: { contains: q, mode: "insensitive" as const } },
-        ],
-      }
-    : {};
+  const where = {
+    ...(archivedFilter !== undefined ? { archived: archivedFilter } : {}),
+    ...(q
+      ? {
+          OR: [
+            { nameUk: { contains: q, mode: "insensitive" as const } },
+            { slug: { contains: q, mode: "insensitive" as const } },
+            { sku: { contains: q, mode: "insensitive" as const } },
+          ],
+        }
+      : {}),
+  };
 
   const [total, rows] = await Promise.all([
     prisma.product.count({ where }),
@@ -38,6 +42,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
         nameUk: true,
         sku: true,
         published: true,
+        archived: true,
         priceUah: true,
         category: { select: { nameUk: true, slug: true } },
       },
@@ -48,6 +53,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
   const qs = (extra: Record<string, string>) => {
     const u = new URLSearchParams();
     if (q) u.set("q", q);
+    if (sp.archived) u.set("archived", sp.archived);
     Object.entries(extra).forEach(([k, v]) => u.set(k, v));
     const s = u.toString();
     return s ? `?${s}` : "";
@@ -64,6 +70,15 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
           placeholder="Пошук: назва, slug, SKU"
           className="min-w-[200px] flex-1 rounded-lg border border-zinc-600 bg-zinc-900 px-3 py-2 text-sm text-zinc-100"
         />
+        <select
+          name="archived"
+          defaultValue={sp.archived ?? ""}
+          className="rounded-lg border border-zinc-600 bg-zinc-900 px-3 py-2 text-sm text-zinc-100"
+        >
+          <option value="">Усі товари</option>
+          <option value="0">Активні (не архів)</option>
+          <option value="1">Лише архів</option>
+        </select>
         <button type="submit" className="rounded-lg bg-zinc-700 px-4 py-2 text-sm hover:bg-zinc-600">
           Шукати
         </button>
@@ -101,6 +116,7 @@ export default async function AdminProductsPage({ params, searchParams }: Props)
                   ) : (
                     <span className="text-zinc-500">чернетка</span>
                   )}
+                  {p.archived ? <span className="ml-2 rounded bg-amber-900/50 px-1.5 py-0.5 text-xs text-amber-300">архів</span> : null}
                 </td>
                 <td className="px-3 py-2 text-right">
                   <Link

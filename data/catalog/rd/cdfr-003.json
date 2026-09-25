@@ -1,0 +1,33 @@
+{
+  "id": "rd/cdfr-003",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "CDFR-003",
+  "nameUk": "Терморегулятор Nexans CDFR-003",
+  "category": "termorehuliatory",
+  "tags": [
+    "datchyk-pidlohy",
+    "norvehiia"
+  ],
+  "priceUah": 294,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "датчик температури підлоги",
+  "description": "<p>Датчик CDFR-003 - датчик температури підлоги на проводі довжиною 2,5 м.\nВикористовується для підтримки комфортної температури підлоги. Тип монтажу:в Гофротрубі в підлозі. Довжина кабелю:3 м. Ступінь захисту:IP67. Опір: 10 кОм при +25°С Гарантія:2 роки</p>",
+  "specs": [
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "2025",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Термостати та датчики",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

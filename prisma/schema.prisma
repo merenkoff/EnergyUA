@@ -50,6 +50,12 @@ model Product {
   priceUah         Decimal?       @map("price_uah") @db.Decimal(12, 2)
   /// Показувати ціну в каталозі чи лише «за запитом».
   priceVisible     Boolean        @default(false) @map("price_visible")
+  /// Ціна комплекту з прайсу (секція + гофра + коробка / термостат), грн.
+  priceKitUah      Decimal?       @map("price_kit_uah") @db.Decimal(12, 2)
+  /// Одиниця ціни: шт (за замовчуванням), м (погонний), м² (плівка).
+  priceUnit        String?        @map("price_unit")
+  /// Примітка до ціни: «під замовлення», «акційна ціна», курс валюти тощо.
+  priceNote        String?        @map("price_note")
   categoryId       String         @map("category_id")
   category         Category       @relation(fields: [categoryId], references: [id])
   brandId          String?        @map("brand_id")
@@ -72,8 +78,12 @@ model Product {
   mergedIntoProductId  String?   @map("merged_into_product_id")
   mergedInto           Product?  @relation("ProductDuplicateMerge", fields: [mergedIntoProductId], references: [id], onDelete: SetNull)
   mergedDuplicates     Product[] @relation("ProductDuplicateMerge")
+  /// Архівна картка (старий каталог з донорів et_market / in_heat / vsesezon).
+  /// Не показується в публічному каталозі, поки прапорець не знято в адмінці.
+  archived             Boolean   @default(false)
   images               ProductImage[]
   specs                ProductSpec[]
+  tags                 ProductTag[]
   createdAt            DateTime  @default(now()) @map("created_at")
   updatedAt            DateTime  @updatedAt @map("updated_at")
 
@@ -81,9 +91,38 @@ model Product {
   @@index([categoryId])
   @@index([brandId])
   @@index([published, sortOrder])
+  @@index([archived, published])
   @@index([nameNormKey])
   @@index([mergedIntoProductId])
   @@map("products")
+}
+
+/// Мітка (label): один товар може мати багато міток — застосування, конструкція, країна, потужність.
+/// На відміну від категорії, мітки не утворюють дерево і не є «папкою» товару.
+model Tag {
+  id          String       @id @default(cuid())
+  slug        String       @unique
+  nameUk      String       @map("name_uk")
+  /// Група міток (zastosuvannia, konstruktsiia, funktsii, kraina, potuzhnist, …) — для згрупованого виводу.
+  groupSlug   String?      @map("group_slug")
+  description String?      @db.Text
+  sortOrder   Int          @default(0) @map("sort_order")
+  products    ProductTag[]
+  createdAt   DateTime     @default(now()) @map("created_at")
+
+  @@index([groupSlug, sortOrder])
+  @@map("tags")
+}
+
+model ProductTag {
+  productId String  @map("product_id")
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tagId     String  @map("tag_id")
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([productId, tagId])
+  @@index([tagId])
+  @@map("product_tags")
 }
 
 model ProductImage {

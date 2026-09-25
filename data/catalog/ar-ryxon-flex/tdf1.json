@@ -1,0 +1,26 @@
+{
+  "id": "ar-ryxon-flex/tdf1",
+  "supplier": "ar-ryxon-flex",
+  "brand": "flex",
+  "sku": "TDF1",
+  "nameUk": "Терморегулятор Flex TDF1",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "datchyk-pidlohy",
+    "latviia"
+  ],
+  "priceUah": 1730,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Призначений для керування систем підтримання температури +5˚…+40˚. Застосування: тепла підлога. Монтується на DIN-рейку.",
+  "description": "<p>Діапазон регулювання температури: +5˚…+40˚. Датчик температури: NTC 10kOm. Максимальний струм: 40А (8кВт). Споживання приладу: не більше 2Вт.</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "FLEX_Терморегулятори",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

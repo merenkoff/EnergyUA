@@ -1,0 +1,30 @@
+{
+  "id": "ar-ryxon-flex/montazhna-strichka-25-mm-10-m",
+  "supplier": "ar-ryxon-flex",
+  "brand": null,
+  "sku": "Монтажна стрічка 25 мм/ 10 м",
+  "nameUk": "Монтажна стрічка 25 мм/ 10 м",
+  "category": "montazh-ta-aksesuary",
+  "tags": [],
+  "priceUah": 338,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "unit",
+      "labelUk": "Одиниця",
+      "value": "шт",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
+    "sheet": "Кріплення",
+    "date": "2026-06-08",
+    "supplierName": "Arnold Rak / Ryxon / Flex (прайс 08.06.2026)"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "rd/komplekt-akvablok-dbl-3-4",
+  "supplier": "rd",
+  "brand": "akvablok",
+  "sku": "Комплект Акваблок DBL 3/4",
+  "nameUk": "Комплект Акваблок DBL 3/4 — бездротова система захисту від протікання",
+  "category": "zakhyst-vid-protikannia",
+  "tags": [
+    "dlia-domu"
+  ],
+  "priceUah": 11016,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "80*70*116",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "kit",
+      "labelUk": "Комплектація",
+      "value": "кран 1, датчик 2",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_supply",
+      "labelUk": "Живлення",
+      "value": "АА 3ш, А23 1шт",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "22689",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Акваблок",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

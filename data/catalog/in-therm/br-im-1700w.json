@@ -1,0 +1,142 @@
+{
+  "id": "in-therm/br-im-1700w",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "BR-IM 1700W",
+  "nameUk": "Нагрівальний кабель Hemstedt BR-IM 17 Вт/м — 99 м, 1700 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "bezmuftove-ziednannia",
+    "17-vt-m",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 16520,
+  "priceKitUah": 17300,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель BR-IM та BR-IM-Z для теплої підлоги використовуються для укладання в стяжку 3-8 см. Вони також ідеально підходять для повного обігріву приміщень, у системах сніготанення на відкритих майданчиках, у системах антиоблідення на дахах, для обігріву труб та ґрунту. Перед укладанням кабелю потрібно укладати утеплювач (рекомендується екструдований пінополістирол від 2 см, в крайньому випадку підкладку для ламінату 5 мм). Кабель не рекомендується укладати безпосередньо на утеплювач. Утеплювач необхідно залити чорновою стяжкою, у крайньому випадку покласти зверху металеву сітку (армовану або просічно-витяжну). У разі укладання сітки необхідно залишити простір між кабелем та утеплювачем, щоб при залитті рідким розчином для стяжки заповнити цей простір сумішшю. Стяжка має бути з мінімальною кількістю повітряних порожнин.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1700",
+      "number": 1700.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "99",
+      "number": 99.0,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_113",
+      "labelUk": "Площа при 113 Вт/м² (крок 0,15 м)",
+      "value": "14,85",
+      "number": 14.85,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_136",
+      "labelUk": "Площа при 136 Вт/м² (крок 0,125 м)",
+      "value": "12,38",
+      "number": 12.38,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_170",
+      "labelUk": "Площа при 170 Вт/м² (крок 0,1 м)",
+      "value": "9,9",
+      "number": 9.9,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_227",
+      "labelUk": "Площа при 227 Вт/м² (крок 0,075 м)",
+      "value": "7,42",
+      "number": 7.42,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "4",
+      "number": 4.0,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 110 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "поліетилен (темп. плавлення 105 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "8",
+      "number": 8.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М2",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

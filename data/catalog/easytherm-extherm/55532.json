@@ -1,0 +1,30 @@
+{
+  "id": "easytherm-extherm/55532",
+  "supplier": "easytherm-extherm",
+  "brand": "easytherm",
+  "sku": "55532",
+  "nameUk": "Контролер для систем сніготанення ЕТ-220 з WiFi",
+  "category": "montazh-ta-aksesuary",
+  "tags": [],
+  "priceUah": 5800,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "3 роки",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
+    "sheet": "Термостати_Easytherm",
+    "date": "2026-04-01",
+    "supplierName": "Easytherm / Extherm / Hot Fly (прайс 01.04.2026)"
+  }
+}

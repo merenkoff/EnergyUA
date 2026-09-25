@@ -1,0 +1,105 @@
+{
+  "id": "shtoller/s6104-20-ec",
+  "supplier": "shtoller",
+  "brand": "shtoller",
+  "sku": "S6104-20 EC",
+  "nameUk": "Нагрівальний кабель Shtoller Ecotherm S6104-20 EC — 25 м, 500 Вт (20 Вт/м)",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "dvozhylnyi",
+    "20-vt-m",
+    "nimechchyna"
+  ],
+  "priceUah": 5446,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний кабель Ecotherm тм Shtoller 20Вт/пог.(Німеччина)",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "500",
+      "number": 500.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "25",
+      "number": 25.0,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "FEP (Тефлон)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "ПВХ (Полівиіилхлорид)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "screen",
+      "labelUk": "Матеріал захистного екрану",
+      "value": "алюмінієва фольга",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "3",
+      "number": 3.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "5",
+      "number": 5.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "max_temp",
+      "labelUk": "Максимальна робоча температура зовнішньої оболонки",
+      "value": "80 ° C",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2025-09-10-shtoller.docx",
+    "sheet": "Кабель Ecotherm",
+    "date": "2025-09-10",
+    "supplierName": "Shtoller / Ecotherm (прайс 10.09.2025)"
+  }
+}

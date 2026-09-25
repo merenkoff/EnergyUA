@@ -1,0 +1,34 @@
+{
+  "id": "rd/profi-therm-pl20",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "Profi therm PL20",
+  "nameUk": "Саморегулюючий кабель Profi therm PL20 — 20 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vidriznyi",
+    "pid-zamovlennia"
+  ],
+  "priceUah": 786,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "на замовлення, 100% передплата",
+  "shortDescription": null,
+  "description": "<p>20Вт/м.п., Для захисту побутових тробопроводів від замерзання, для захисту дахів, водостоків і жолобів від намерзання льоду; (при 10°С та 16А автоматичному вимикачу). Гарантія 3 роки</p>",
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "20",
+      "number": 20.0,
+      "unit": "Вт/м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Самрег",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

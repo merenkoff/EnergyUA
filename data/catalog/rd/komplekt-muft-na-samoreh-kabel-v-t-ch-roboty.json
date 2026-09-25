@@ -1,0 +1,24 @@
+{
+  "id": "rd/komplekt-muft-na-samoreh-kabel-v-t-ch-roboty",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "Комплект муфт на саморег.кабель (в т.ч. роботи)",
+  "nameUk": "Комплект муфт на саморег.кабель (в т.ч. роботи) Profi Therm",
+  "category": "montazh-ta-aksesuary",
+  "tags": [
+    "truby"
+  ],
+  "priceUah": 474,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "Самрег",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

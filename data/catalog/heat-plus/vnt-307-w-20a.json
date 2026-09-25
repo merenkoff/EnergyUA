@@ -1,0 +1,62 @@
+{
+  "id": "heat-plus/vnt-307-w-20a",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "ВНТ 307 W 20A",
+  "nameUk": "Терморегулятор Heat Plus ВНТ 307 W 20A накладний білий",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi",
+    "prohramovanyi",
+    "sensornyi"
+  ],
+  "priceUah": 2237,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, програмований, сенсорний",
+  "description": "<p>1.Програми: 5робочих+2 вихідних(завод) або 6+1 за власним налаштуванням); 2. Захист від дітей. 3.Передбачена функція реверсу</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, програмований, сенсорний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "20",
+      "number": 20.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "86х86х13,3 мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Виносний: от 5 до 50 С (завод)/ от 5-95 С (ручна), Вбудований:от 5 до 90 С",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

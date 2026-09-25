@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CategoryCard } from "@/components/catalog/CategoryCard";
+import { CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
+import { PUBLIC_PRODUCT_WHERE } from "@/lib/publicCatalog";
 
 type CatalogSection = {
   id: string;
@@ -13,10 +15,8 @@ type CatalogSection = {
 
 export const metadata: Metadata = {
   title: "Каталог",
-  description: "Розділи каталогу теплої підлоги.",
+  description: "Розділи каталогу теплої підлоги та суміжного обладнання.",
 };
-
-const CATALOG_ROOT_SLUG = "tepla-pidloga";
 
 export default async function CatalogIndexPage() {
   const root = await prisma.category.findUnique({
@@ -29,7 +29,7 @@ export default async function CatalogIndexPage() {
         where: { parentId: root.id },
         orderBy: [{ sortOrder: "asc" }, { nameUk: "asc" }],
         include: {
-          _count: { select: { products: true, children: true } },
+          _count: { select: { products: { where: PUBLIC_PRODUCT_WHERE }, children: true } },
         },
       })
     : [];
@@ -45,8 +45,7 @@ export default async function CatalogIndexPage() {
       </nav>
       <h1 className="mt-4 text-3xl font-semibold tracking-tight">Каталог</h1>
       <p className="mt-2 max-w-2xl text-[var(--muted)]">
-        {root?.description ??
-          "Оберіть розділ. Імпортовані товари з ЕТ-маркет, IN-HEAT та Vsesezon згруповані в підрозділах поруч із власними категоріями; прив’язка йде до товару (externalSource + externalId), а не до «дерева донора»."}
+        {root?.description ?? "Оберіть розділ. Усередині розділу товари можна звузити мітками: застосування, конструкція, потужність, країна."}
       </p>
       {!root ? (
         <p className="mt-8 text-sm text-[var(--muted)]">

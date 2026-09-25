@@ -1,0 +1,142 @@
+{
+  "id": "in-therm/asl1p-570w",
+  "supplier": "in-therm",
+  "brand": "fenix",
+  "sku": "ASL1P 570W",
+  "nameUk": "Нагрівальний кабель Fenix ASL1P 18 Вт/м — 32,5 м, 570 Вт",
+  "category": "nahrivalnyi-kabel",
+  "tags": [
+    "u-stiazhku",
+    "odnozhylnyi",
+    "ftoroplastova-izoliatsiia",
+    "18-vt-m",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 3760,
+  "priceKitUah": 4060,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Кабель для теплої підлоги використовується для укладання в стяжку 3-8 см. Перед укладенням кабелю необхідно укладати утеплювач (рекомендується екструдований пінополістирол від 2 см, у крайньому випадку підкладку для ламінату 5 мм). Кабель не рекомендується укладати безпосередньо на утеплювач. Утеплювач необхідно залити чорновою стяжкою, у крайньому випадку покласти зверху металеву сітку (армовану або просічно-витяжну). У разі укладання сітки необхідно залишити простір між кабелем та утеплювачем, щоб при залитті рідким розчином для стяжки заповнити цей простір сумішшю. Стяжка має бути з мінімальною кількістю повітряних пустот.</p>",
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "570",
+      "number": 570.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "18",
+      "number": 18.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "32,5",
+      "number": 32.5,
+      "unit": "м"
+    },
+    {
+      "slug": "area_at_113",
+      "labelUk": "Площа при 113 Вт/м² (крок 0,16 м)",
+      "value": "1,9",
+      "number": 1.9,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_129",
+      "labelUk": "Площа при 129 Вт/м² (крок 0,14 м)",
+      "value": "4,55",
+      "number": 4.55,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_150",
+      "labelUk": "Площа при 150 Вт/м² (крок 0,12 м)",
+      "value": "3,9",
+      "number": 3.9,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_180",
+      "labelUk": "Площа при 180 Вт/м² (крок 0,10 м)",
+      "value": "3,25",
+      "number": 3.25,
+      "unit": "м²"
+    },
+    {
+      "slug": "area_at_225",
+      "labelUk": "Площа при 225 Вт/м² (крок 0,08 м)",
+      "value": "2,6",
+      "number": 2.6,
+      "unit": "м²"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "одножильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2 х 2.5 м",
+      "number": null,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторопласт (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "Довічна гарантія",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "FENIX",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

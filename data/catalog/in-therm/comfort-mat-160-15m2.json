@@ -1,0 +1,134 @@
+{
+  "id": "in-therm/comfort-mat-160-15m2",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "COMFORT Mat 160 15m2",
+  "nameUk": "Нагрівальний мат IN-THERM COMFORT Mat 160 Вт/м² — 15 м², 2400 Вт",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "160-vt-m2",
+    "chekhiia",
+    "z-komplektom"
+  ],
+  "priceUah": 21770,
+  "priceKitUah": 21830,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "2400",
+      "number": 2400.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "160",
+      "number": 160.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "15",
+      "number": 15.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "162,1",
+      "number": 162.1,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "15",
+      "number": 15.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "1,5",
+      "number": 1.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "муфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "кополіестер (темп. плавлення 220 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4",
+      "number": 4.0,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "15 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "laying_step_m",
+      "labelUk": "Крок укладання",
+      "value": "0,1",
+      "number": 0.1,
+      "unit": "м"
+    },
+    {
+      "slug": "mat_width_m",
+      "labelUk": "Ширина мату",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м"
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "IN-THERM COMFORT",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

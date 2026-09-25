@@ -1,0 +1,26 @@
+{
+  "id": "magnum-tp/etor-55",
+  "supplier": "magnum-tp",
+  "brand": "oj-electronics",
+  "sku": "ETOR-55",
+  "nameUk": "Датчик вологи для ринви OJ Electronics ETOR-55 (кабель 10 м)",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vodostoky-ta-pokrivlia",
+    "pid-zamovlennia",
+    "daniia"
+  ],
+  "priceUah": 19186,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": "Арт. 2018; під замовлення; 362,00 € за курсом 53",
+  "shortDescription": "Встановлюється в жолобі або водостічній трубі, реєструє наявність вологи. Працює з ETR2/ETO2.",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 2,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "in-therm/zvp-w15",
+  "supplier": "in-therm",
+  "brand": "in-therm",
+  "sku": "ZVP W15",
+  "nameUk": "Захист від протікання IN-THERM W15 (готовий комплект)",
+  "category": "zakhyst-vid-protikannia",
+  "tags": [
+    "dlia-domu",
+    "kytai"
+  ],
+  "priceUah": 3630,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Готові комплекти (один моторизований кран та один датчик-контролер)",
+  "description": "<p>Комплект: 1) кран з електроприводом DN15 1/2\" з додатковим ручним закриттям крана; 2) контролер + датчик в одному корпусі, працює від батарейок (немає в комплекті)</p>",
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ЗВП",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

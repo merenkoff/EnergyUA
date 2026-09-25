@@ -109,6 +109,8 @@ export async function importUnifiedProduct(
       priceVisible: p.priceVisible,
       categoryId,
       published: publish,
+      // Донори (et_market / in_heat / vsesezon) — старий каталог: одразу в архів, на сайті не показуються.
+      archived: true,
       externalSource: extSource,
       externalId: extId,
       externalUrl: p.sourceUrl?.trim() || null,
@@ -125,6 +127,7 @@ export async function importUnifiedProduct(
       priceUah: p.priceUah != null ? new Prisma.Decimal(p.priceUah) : undefined,
       priceVisible: p.priceVisible,
       published: publish,
+      archived: true,
       categoryId,
       externalUrl: p.sourceUrl?.trim() || undefined,
       sourceCategoryUrl: p.sourceCategoryUrl?.trim() ?? undefined,

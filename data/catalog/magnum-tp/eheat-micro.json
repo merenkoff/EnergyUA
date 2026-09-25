@@ -1,0 +1,56 @@
+{
+  "id": "magnum-tp/eheat-micro",
+  "supplier": "magnum-tp",
+  "brand": "hts-global",
+  "sku": "eHeat Micro",
+  "nameUk": "Саморегулюючий кабель HTS eHeat Micro — 17 Вт/м",
+  "category": "samorehuliuiuchyi-kabel",
+  "tags": [
+    "truby",
+    "vidriznyi",
+    "17-vt-m",
+    "shveitsariia"
+  ],
+  "priceUah": 583,
+  "priceKitUah": null,
+  "priceUnit": "м",
+  "priceNote": "Арт. 2027; 11,00 €/м за курсом 53",
+  "shortDescription": "Стрічковий саморегулюючий кабель 17 Вт/м при +10 °C з екраном з алюмінієвої фольги.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "17",
+      "number": 17.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "220–240",
+      "number": null,
+      "unit": "В"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "5 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "manufacturer",
+      "labelUk": "Виробник",
+      "value": "HTS Global Technologies GmbH (Швейцарія)",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-magnum-tp.pdf",
+    "page": 1,
+    "date": "2026-01-01",
+    "supplierName": "Прайс «ТП 2026» (Magnum, MHW, Terneo, EcoTerm, Castle), курс € = 53"
+  }
+}

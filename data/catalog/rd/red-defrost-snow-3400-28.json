@@ -1,0 +1,64 @@
+{
+  "id": "rd/red-defrost-snow-3400-28",
+  "supplier": "rd",
+  "brand": "nexans",
+  "sku": "RED DEFROST SNOW 3400/28",
+  "nameUk": "Секція для сніготанення Nexans RED DEFROST SNOW 3400/28 — 116,8 м, 3400 Вт (28 Вт/м)",
+  "category": "antyobledeninnia",
+  "tags": [
+    "vidkryti-maidanchyky",
+    "vodostoky-ta-pokrivlia",
+    "dvozhylnyi",
+    "28-vt-m",
+    "norvehiia"
+  ],
+  "priceUah": 21420,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний екранований кабель Nexans DEFROST SNOW для систем антиобледеніння відкритих площ і водостоків.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "3400",
+      "number": 3400.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "116,8",
+      "number": 116.8,
+      "unit": "м"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "28",
+      "number": 28.0,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "15,6",
+      "number": 15.6,
+      "unit": "Ом"
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "375",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Nexans",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

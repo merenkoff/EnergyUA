@@ -1,0 +1,60 @@
+{
+  "id": "heat-plus/m1-16",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "M1.16",
+  "nameUk": "Терморегулятор Heat Plus M1.16, білий/чорний",
+  "category": "termorehuliatory",
+  "tags": [
+    "tsyfrovyi"
+  ],
+  "priceUah": 1328,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Цифровий, сумісний із серіями Schneider Unica, Legrand Valena та рамками з внутрішнім розміром 56*56 мм, такими як Schneider Exxact",
+  "description": "<p>Регулювання температури тільки по зовнішньому датчику - стара версія! Нова версія регулятора має вбудований датчик повітря та зовнішній датчик підлоги.</p>",
+  "specs": [
+    {
+      "slug": "type",
+      "labelUk": "Тип",
+      "value": "Цифровий, сумісний із серіями Schneider Unica, Legrand Valena та рамками з внутрішнім розміром 56*56 мм, такими як Schneider Exxact",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "max_load_a",
+      "labelUk": "Макс. навантаження",
+      "value": "16",
+      "number": 16.0,
+      "unit": "А"
+    },
+    {
+      "slug": "dimensions",
+      "labelUk": "Розміри",
+      "value": "84х84х15мм",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "temp_range",
+      "labelUk": "Діапазон температур",
+      "value": "Діапазон налаштування: 5-40 °С, захист від випадкової зміни налаштувань",
+      "number": null,
+      "unit": "°C"
+    },
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий, чорний",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Терморегулятори Heat_Plus",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

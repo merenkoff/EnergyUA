@@ -1,0 +1,32 @@
+{
+  "id": "heat-plus/xn-wh-801",
+  "supplier": "heat-plus",
+  "brand": "heat-plus",
+  "sku": "XN-WH 801",
+  "nameUk": "Електрична рушникосушарка Heat Plus XN-WH 801 біла",
+  "category": "rushnykosusharky",
+  "tags": [
+    "vanna"
+  ],
+  "priceUah": 4347,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "color",
+      "labelUk": "Колір",
+      "value": "білий",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-05-heat-plus.xlsx",
+    "sheet": "Рушникосушарки",
+    "date": "2026-05-01",
+    "supplierName": "Heat Plus (прайс 05.2026)"
+  }
+}

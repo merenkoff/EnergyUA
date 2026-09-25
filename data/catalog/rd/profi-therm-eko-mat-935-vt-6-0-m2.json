@@ -1,0 +1,70 @@
+{
+  "id": "rd/profi-therm-eko-mat-935-vt-6-0-m2",
+  "supplier": "rd",
+  "brand": "profitherm",
+  "sku": "PROFI THERM Eko mat 935 Вт 6,0 m2",
+  "nameUk": "Нагрівальний мат Profi Therm Eko 935 Вт 6,0 м2 — 6 м², 935 Вт (150 Вт/м²)",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "150-vt-m2",
+    "z-komplektom"
+  ],
+  "priceUah": 8571,
+  "priceKitUah": 8607,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Двожильний нагрівальний мат Profi Therm Eko — бюджетна серія для плиткового клею.",
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "935",
+      "number": 935.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "6",
+      "number": 6.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "resistance_ohm",
+      "labelUk": "Опір",
+      "value": "51,7",
+      "number": 51.7,
+      "unit": "Ом"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "supplier_code",
+      "labelUk": "Код постачальника",
+      "value": "14406",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": " Profitherm Eko ",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

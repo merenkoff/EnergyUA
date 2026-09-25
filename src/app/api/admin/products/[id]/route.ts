@@ -51,7 +51,18 @@ export async function PATCH(req: Request, ctx: { params: Promise<{ id: string }>
   }
 
   if (typeof body.priceVisible === "boolean") data.priceVisible = body.priceVisible;
+  if (body.priceKitUah === null) data.priceKitUah = null;
+  else if (typeof body.priceKitUah === "number" && Number.isFinite(body.priceKitUah)) {
+    data.priceKitUah = new Prisma.Decimal(body.priceKitUah);
+  } else if (typeof body.priceKitUah === "string" && body.priceKitUah.trim()) {
+    data.priceKitUah = new Prisma.Decimal(body.priceKitUah.replace(",", "."));
+  }
+  if (body.priceUnit === null) data.priceUnit = null;
+  else if (typeof body.priceUnit === "string") data.priceUnit = body.priceUnit.trim() || null;
+  if (body.priceNote === null) data.priceNote = null;
+  else if (typeof body.priceNote === "string") data.priceNote = body.priceNote.trim() || null;
   if (typeof body.published === "boolean") data.published = body.published;
+  if (typeof body.archived === "boolean") data.archived = body.archived;
   if (typeof body.sortOrder === "number" && Number.isFinite(body.sortOrder)) data.sortOrder = body.sortOrder;
 
   if (body.seoTitle === null) data.seoTitle = null;

@@ -1,0 +1,22 @@
+{
+  "id": "rd/nahel",
+  "supplier": "rd",
+  "brand": "zuver",
+  "sku": "Нагель",
+  "nameUk": "Нагель Zuver",
+  "category": "zazemlennia",
+  "tags": [],
+  "priceUah": 861,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": "Нагель для ZUVER 4.4",
+  "description": null,
+  "specs": [],
+  "source": {
+    "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
+    "sheet": "заземлення Zuver",
+    "date": "2026-09-15",
+    "supplierName": "Прайс РД (Nexans / Wärme / Profitherm), 15.09.2026"
+  }
+}

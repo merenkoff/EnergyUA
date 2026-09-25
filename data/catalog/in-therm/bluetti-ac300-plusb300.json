@@ -1,0 +1,79 @@
+{
+  "id": "in-therm/bluetti-ac300-plusb300",
+  "supplier": "in-therm",
+  "brand": "bluetti",
+  "sku": "Bluetti AC300+B300",
+  "nameUk": "Зарядна станція Bluetti AC300+B300",
+  "category": "enerhetyka",
+  "tags": [],
+  "priceUah": 64990,
+  "priceKitUah": null,
+  "priceUnit": "шт",
+  "priceNote": null,
+  "shortDescription": null,
+  "description": "<p>Ємність: 2764,8 Вт·год</p><p>Тип: LiFePO4 (Літій-залізо-фосфатна)</p><p>Цикли: Більше 4000 циклів</p><p>Система керування: MPPT контролер, BMS</p><p>Тип інвертора: Чиста синусоїда</p><p>Пікова потужність: 6000 Вт</p><p>ВХІД</p><p>Вхід змінного струму (AC): Макс. 3000 Вт</p><p>Сонячна панель (панелі): макс. 2400 Вт</p><p>ЗАГАЛЬНЕ</p><p>Вага: 22 кг</p><p>Розміри (Д×Ш×В): 520 мм ×320 мм × 358 мм</p>",
+  "specs": [
+    {
+      "slug": "battery_type",
+      "labelUk": "Тип акумулятора",
+      "value": "LiFePO5",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "3000",
+      "number": 3000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "peak_power_w",
+      "labelUk": "Пікова потужність",
+      "value": "6000",
+      "number": 6000.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "capacity_wh",
+      "labelUk": "Ємність",
+      "value": "2764,8",
+      "number": 2764.8,
+      "unit": "Вт·год"
+    },
+    {
+      "slug": "weight_kg",
+      "labelUk": "Вага",
+      "value": "32 + 29",
+      "number": null,
+      "unit": "кг"
+    },
+    {
+      "slug": "harantiia-mis",
+      "labelUk": "Гарантія, міс",
+      "value": "12",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "robota-z-mobilnym-dodatkom",
+      "labelUk": "Робота з мобільним додатком",
+      "value": "так",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "12 міс",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "ЗАРЯДНІ СТАНЦІЇ",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { AdminCategoryEditor } from "@/components/admin/AdminCategoryEditor";
+import { CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
 
-const CATALOG_ROOT_SLUG = "tepla-pidloga";
 
 export default async function AdminNewCategoryPage({
   params,

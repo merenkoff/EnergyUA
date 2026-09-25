@@ -1,0 +1,145 @@
+{
+  "id": "in-therm/di-si-h-7m2",
+  "supplier": "in-therm",
+  "brand": "hemstedt",
+  "sku": "Di Si H 7m2",
+  "nameUk": "Нагрівальний мат Hemstedt Di Si H 150 Вт/м² — 7 м², 1050 Вт",
+  "category": "nahrivalni-maty",
+  "tags": [
+    "pid-plytku",
+    "dvozhylnyi",
+    "samokleiucha-sitka",
+    "bezmuftove-ziednannia",
+    "ftoroplastova-izoliatsiia",
+    "aktsiia",
+    "150-vt-m2",
+    "nimechchyna",
+    "z-komplektom"
+  ],
+  "priceUah": 16815,
+  "priceKitUah": 16875,
+  "priceUnit": "шт",
+  "priceNote": "Акційна ціна; звичайна ціна 17700 грн",
+  "shortDescription": null,
+  "description": null,
+  "specs": [
+    {
+      "slug": "power_w",
+      "labelUk": "Потужність",
+      "value": "1050",
+      "number": 1050.0,
+      "unit": "Вт"
+    },
+    {
+      "slug": "power_w_m2",
+      "labelUk": "Питома потужність",
+      "value": "150",
+      "number": 150.0,
+      "unit": "Вт/м²"
+    },
+    {
+      "slug": "area_m2",
+      "labelUk": "Площа обігріву",
+      "value": "7",
+      "number": 7.0,
+      "unit": "м²"
+    },
+    {
+      "slug": "length_m",
+      "labelUk": "Довжина кабелю",
+      "value": "84",
+      "number": 84.0,
+      "unit": "м"
+    },
+    {
+      "slug": "cores",
+      "labelUk": "Кількість жил",
+      "value": "двожильний",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "voltage_v",
+      "labelUk": "Напруга",
+      "value": "230",
+      "number": 230.0,
+      "unit": "В"
+    },
+    {
+      "slug": "power_w_m",
+      "labelUk": "Погонна потужність",
+      "value": "12,5",
+      "number": 12.5,
+      "unit": "Вт/м"
+    },
+    {
+      "slug": "cold_lead_m",
+      "labelUk": "Кабель живлення",
+      "value": "2,5",
+      "number": 2.5,
+      "unit": "м"
+    },
+    {
+      "slug": "connection",
+      "labelUk": "З’єднання",
+      "value": "безмуфтове",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "outer_insulation",
+      "labelUk": "Зовнішня ізоляція",
+      "value": "полівінілхлорид (темп. плавлення 105 C)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "inner_insulation",
+      "labelUk": "Внутрішня ізоляція",
+      "value": "фторполімер (темп. плавлення 250 С)",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "cable_diameter_mm",
+      "labelUk": "Діаметр кабелю",
+      "value": "4,5",
+      "number": 4.5,
+      "unit": "мм"
+    },
+    {
+      "slug": "warranty",
+      "labelUk": "Гарантія",
+      "value": "20 років",
+      "number": null,
+      "unit": null
+    },
+    {
+      "slug": "mat_width_m",
+      "labelUk": "Ширина мату",
+      "value": "0,5",
+      "number": 0.5,
+      "unit": "м"
+    },
+    {
+      "slug": "laying_step_m",
+      "labelUk": "Крок укладання",
+      "value": "0,8",
+      "number": 0.8,
+      "unit": "м"
+    },
+    {
+      "slug": "certification",
+      "labelUk": "Сертифікація",
+      "value": "М1",
+      "number": null,
+      "unit": null
+    }
+  ],
+  "source": {
+    "file": "data/pricelists/2026-08-13-in-therm.xlsx",
+    "sheet": "HEMSTEDT DI SI",
+    "date": "2026-08-13",
+    "supplierName": "ТОВ «ІН-ТЕРМ» (прайс 13.08.2026)"
+  }
+}
