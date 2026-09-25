@@ -7,6 +7,8 @@
   [{ "supplier": "ar-ryxon-flex", "brand": "ryxon", "match": {"skuPrefix": ["HM-200-"]},
      "urls": ["https://…/photo.jpg"], "page": "https://…", "note": "…" }, …]
   match — {"skuPrefix": [...]} (артикул починається з рядка, без урахування регістру) або {"sku": [...]} (точно).
+  urls — рядки або {"url": "…", "cropBottom": 0.1}: cropBottom — частка висоти, яку відрізати знизу
+  (підпис дистриб'ютора під фото); можна задати і на весь запис.
 
 Скрипт зберігає кожен URL як data/catalog-media/<sha256>.<jpg|png> (як extract_pricelist_images.py: до 1200 px,
 webp → jpg/png) і пише data/catalog-media/external.json: { "<url>": {"file", "width", "height"} }.
@@ -42,7 +44,7 @@ def download(url: str) -> bytes:
     return r.stdout
 
 
-def normalize(data: bytes) -> tuple[bytes, str, int, int]:
+def normalize(data: bytes, crop_bottom: float = 0.0) -> tuple[bytes, str, int, int]:
     """Будь-який формат → jpg (або png, якщо є прозорість), не більше MAX_SIDE по більшій стороні."""
     from PIL import Image
 
@@ -50,7 +52,9 @@ def normalize(data: bytes) -> tuple[bytes, str, int, int]:
     im.load()
     has_alpha = im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info)
     fmt = (im.format or "").lower()
-    if max(im.size) <= MAX_SIDE and fmt in ("jpeg", "png") and not (fmt == "png" and not has_alpha and len(data) > 200_000):
+    if crop_bottom:
+        im = im.crop((0, 0, im.width, int(round(im.height * (1 - crop_bottom)))))
+    elif max(im.size) <= MAX_SIDE and fmt in ("jpeg", "png") and not (fmt == "png" and not has_alpha and len(data) > 200_000):
         return data, ("jpg" if fmt == "jpeg" else "png"), im.width, im.height
     im.thumbnail((MAX_SIDE, MAX_SIDE))
     buf = io.BytesIO()
@@ -65,19 +69,21 @@ def main() -> None:
     refresh = "--refresh" in sys.argv
     sources = json.loads(SOURCES.read_text(encoding="utf-8")) if SOURCES.exists() else []
     state: dict[str, dict] = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() and not refresh else {}
-    wanted: list[str] = []
+    wanted: dict[str, float] = {}
     for s in sources:
         for u in s.get("urls", []):
-            if u not in wanted:
-                wanted.append(u)
+            if isinstance(u, dict):
+                wanted.setdefault(u["url"], float(u.get("cropBottom") or s.get("cropBottom") or 0))
+            else:
+                wanted.setdefault(u, float(s.get("cropBottom") or 0))
     ok = failed = reused = 0
-    for url in wanted:
+    for url, crop in wanted.items():
         cur = state.get(url)
-        if cur and (OUT / cur["file"]).exists():
+        if cur and (OUT / cur["file"]).exists() and float(cur.get("cropBottom") or 0) == crop:
             reused += 1
             continue
         try:
-            data, ext, w, h = normalize(download(url))
+            data, ext, w, h = normalize(download(url), crop)
         except Exception as e:  # noqa: BLE001
             print(f"  ! {url}: {e}")
             failed += 1
@@ -86,7 +92,7 @@ def main() -> None:
         path = OUT / file
         if not path.exists():
             path.write_bytes(data)
-        state[url] = {"file": file, "width": w, "height": h}
+        state[url] = {"file": file, "width": w, "height": h, **({"cropBottom": crop} if crop else {})}
         ok += 1
         print(f"  + {file[:10]}… {w}x{h}  {url}")
     # прибираємо записи про URL, яких більше немає в джерелах, і їхні файли, якщо їх ніхто не використовує

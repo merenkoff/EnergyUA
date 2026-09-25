@@ -92,7 +92,7 @@ class ExternalImages:
             return []
         out: list[str] = []
         for u in best[2]:
-            f = self.file_by_url.get(u)
+            f = self.file_by_url.get(u["url"] if isinstance(u, dict) else u)
             if f and f not in out:
                 out.append(f)
         return out
