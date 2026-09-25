@@ -13,6 +13,12 @@
   "shortDescription": "Нагель для ZUVER 4.4",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "85b38eb89337dcb20e670f032f56693a736a1d8d933773eb9d3356fe7acf851e.jpg",
+      "alt": "Нагель Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

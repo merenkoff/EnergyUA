@@ -103,6 +103,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "bb4d2f8cac969c75c90bba86426bba8a41164da6c55ad8dbb9230f5ff199333a.jpg",
+      "alt": "Кабель для обігріву труб Hemstedt FS 10 Вт/м з термостатом — 48 м, 480 Вт"
+    },
+    {
+      "file": "9629e4bad231c7f5e0ba018aea72fe7ad1f3a55702c355be369c568f4c0db552.png",
+      "alt": "Кабель для обігріву труб Hemstedt FS 10 Вт/м з термостатом — 48 м, 480 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT",

@@ -67,6 +67,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6dffb81c6028138504886afa46c38ca9ef7baf95d0212905fb2522d9a3b19091.jpg",
+      "alt": "Метеостанція (контролер сніготанення) Eberle EM 524 90"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

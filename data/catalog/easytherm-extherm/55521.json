@@ -45,6 +45,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "a0fd966fb55cb378a8d0f092079aac2a772a53be9737a514039159bc03ca0f0c.png",
+      "alt": "Програмований терморегулятор Easytherm EASY PRO, 16А, 3000Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

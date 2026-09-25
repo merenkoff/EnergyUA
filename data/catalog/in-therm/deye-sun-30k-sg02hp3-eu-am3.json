@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "8c5979a41a3d019dc0ba59f1e3260954f267e844cb8e6b9adc69a9fd58bb27a9.png",
+      "alt": "Гібридний інвертор Deye SUN-30K-SG02HP3-EU-AM3"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

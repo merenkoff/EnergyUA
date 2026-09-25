@@ -75,6 +75,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "4aebb4f531ff43fd95c78b5cfd61a5507cad23e69e14340f146d16d5f37a2f54.png",
+      "alt": "Нагрівальний кабель Profi Therm 2 19/1240 — 65 м, 1240 Вт (19 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Profitherm",

@@ -105,6 +105,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "60cb01d953ad68d68504cebcbf8c11794f34662394132e86ec2ddc2e0af0077e.png",
+      "alt": "Терморегулятор IN-THERM PWT 002"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

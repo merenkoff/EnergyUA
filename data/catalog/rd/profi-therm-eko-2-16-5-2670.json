@@ -75,6 +75,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ebf922b0bef63f6e8244d337e962fdfeb2f4e17609bbf7180f9dd2ecfd9bea51.jpg",
+      "alt": "Нагрівальний кабель Profi Therm Eko 16,5 2670 — 162 м, 2670 Вт (16,5 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Profitherm Eko ",

@@ -54,6 +54,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "cdbaaeac7182a47318245e2eecd0e972aaa4d9b2a1eeeaad0d1ec3c5594c6e3c.png",
+      "alt": "Терморегулятор Heat Plus BHT-6000 В - чорний, W - білий; S-сірий, графіт, з WI FI"
+    },
+    {
+      "file": "28b3807daffc109f77e4c94c1f7296daada6356c161313c87d3e85fe9a92e575.png",
+      "alt": "Терморегулятор Heat Plus BHT-6000 В - чорний, W - білий; S-сірий, графіт, з WI FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

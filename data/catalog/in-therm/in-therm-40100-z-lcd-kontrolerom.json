@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "73300922c059793203ace0cd3c0d80eb583e6de120be60965f361e887f4ff08f.jpg",
+      "alt": "Нагрівальний килимок IN-THERM 40100 з LCD контролером"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "НАГРІВАЛЬНІ КИЛИМКИ",

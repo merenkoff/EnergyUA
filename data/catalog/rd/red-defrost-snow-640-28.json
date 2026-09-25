@@ -55,6 +55,7 @@
       "unit": null
     }
   ],
+  "images": [],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Nexans",

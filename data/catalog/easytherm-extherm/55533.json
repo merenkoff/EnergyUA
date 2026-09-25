@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ebf4e5b1ce6b93c2fc952f26a815846831a4d96618f28216757a385cff527b32.png",
+      "alt": "Датчик температури повітря для систем сніготанення ЕТ-330"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "1d0085170a3f91f525e78e9cde65863f9dbc251d6e029c842a542be3bf5eb025.png",
+      "alt": "Гібридний інвертор Deye SUN-12K-SG05LP3-EU-SM2"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

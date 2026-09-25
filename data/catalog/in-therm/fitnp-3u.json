@@ -89,6 +89,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7f54b39806ec3750c11ca926401a63d27d42985465d056da2b9fb69ae80f5764.jpg",
+      "alt": "Терморегулятор Eberle FITnp 3U"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

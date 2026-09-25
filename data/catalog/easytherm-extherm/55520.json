@@ -44,6 +44,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "e59f970334548e1c9a3275a7a0f56d0af328fb4011db1d9850b103f3df8370fe.jpg",
+      "alt": "Електромеманічний терморегулятор Easytherm EASY MECH, 16А, 3000Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ca8f05f1e6f92b66782385672f50bce73567290d84b5433e073f8143a0aabe6f.png",
+      "alt": "Скоба 100 мм для ринви 2350000 Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

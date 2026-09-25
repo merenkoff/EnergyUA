@@ -13,6 +13,12 @@
   "shortDescription": "Антикорозійний бандаж пластичний 50 мм, 2 м.п.",
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "4b26154705471e5ad1258ea207e0ae0eaa741be0ffbe83062c199ff750fe7c46.jpg",
+      "alt": "Антикорозійний бандаж Zuver"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "заземлення Zuver",

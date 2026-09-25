@@ -46,6 +46,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "d0cfaf742600db74e453dc9b0d6cd56ab287b7e7dc1b31601ed73de5fc14c612.png",
+      "alt": "Електромеханічний термостат Extherm, 3600Вт, 16А"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Extherm",

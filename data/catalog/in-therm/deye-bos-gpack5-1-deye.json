@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "dc97529f6d349a8ed7ecaa7d866e7c7e4eb5e5f6a0f6685f2be3f24f9cb81fe1.png",
+      "alt": "Акумуляторна батарея Deye BOS-GPack5.1 Deye (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

@@ -74,6 +74,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "56b83e92b8f34df2797553620532eb11be7253ed03aed66d5d101827cfa67818.jpg",
+      "alt": "Терморегулятор Eberle F2A-50"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

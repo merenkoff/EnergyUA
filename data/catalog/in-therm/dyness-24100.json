@@ -70,6 +70,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "8b38b062d6e834a34e20832255046296143ca054d82ffc18371f66fe7c6ee99b.jpg",
+      "alt": "Акумулятор LiFePO4 Dyness 24100 (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

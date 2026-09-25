@@ -104,6 +104,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "dfc6522cb4d5391ff08373a56e7ee4bab7063b7f8751bced3697fe4b3ed6c89c.png",
+      "alt": "Терморегулятор IN-THERM WL 91"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

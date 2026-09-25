@@ -60,6 +60,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "9f6fc5f4133dc904f969932d0a858cd1d78f15e26c9acd7e91148ee602e131be.png",
+      "alt": "Терморегулятор для зовнішнього обігріву Eberle ITR 4"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

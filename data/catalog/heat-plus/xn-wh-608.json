@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "153e2b6955a92e2c25d045710ac55c8bf62e302b2547901a522871c3d3057e14.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-WH 608 біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "b2dd9032a924bdf223a533a88947f2997a5e51f5a2675a340cf4cd3ccc0acaa8.jpg",
+      "alt": "Датчик OJ Electronics ETF-744/99"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

@@ -1,6 +1,6 @@
 # Деплой на Railway
 
-У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + імпорт каталогу з прайсів `data/catalog` + опційно реімпорт архівного каталогу донорів, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (`next start` + опційно фоновий mirror фото за `MIRROR_PRODUCT_IMAGES=yes`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
+У корені репозиторію лежить [`railway.json`](../railway.json): збірка через Railpack, **pre-deploy** — одна команда **`npm run db:predeploy:railway`** (міграції + seed + імпорт каталогу з прайсів `data/catalog` + опційно реімпорт архівного каталогу донорів, якщо **`RAILWAY_REBUILD_CATALOG=yes`**). **start** — [`scripts/railway-entrypoint.sh`](../scripts/railway-entrypoint.sh) (копіювання фото з прайсів `data/catalog-media` на volume, `next start` + опційно фоновий mirror фото за `MIRROR_PRODUCT_IMAGES=yes`). Деталі фото — [`MEDIA-STORAGE.md`](MEDIA-STORAGE.md).
 
 ## Що зробити в Railway (один раз)
 

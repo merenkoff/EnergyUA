@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "3642a096159dd047ecca213ab898ffb694ad2e9daec9d38e57304cf9e94dd52a.jpg",
+      "alt": "Універсальне кріплення для монтажу в лотках та водостоках (косичка), 1м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

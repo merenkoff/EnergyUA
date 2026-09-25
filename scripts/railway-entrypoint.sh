@@ -36,6 +36,22 @@ dewatermark() {
   fi
 }
 
+# Фото з прайсів постачальників (data/catalog-media/<sha256>.<ext>) — у БД вони вже записані як /api/media/…
+# імпортом у pre-deploy; сам файл кладемо на volume тут, бо в pre-deploy volume не змонтований.
+CATALOG_MEDIA_DIR="${CATALOG_MEDIA_DIR:-data/catalog-media}"
+if [[ -d "$CATALOG_MEDIA_DIR" ]]; then
+  TARGET="${MEDIA_ROOT:-storage/media}"
+  mkdir -p "$TARGET"
+  copied=0
+  for f in "$CATALOG_MEDIA_DIR"/*.jpg "$CATALOG_MEDIA_DIR"/*.png; do
+    [[ -f "$f" ]] || continue
+    if [[ ! -e "$TARGET/$(basename "$f")" ]]; then
+      cp "$f" "$TARGET/" && copied=$((copied + 1))
+    fi
+  done
+  echo "[railway-entrypoint] catalog-media → $TARGET: скопійовано $copied нових"
+fi
+
 if [[ "${MIRROR_PRODUCT_IMAGES:-}" == "yes" ]]; then
   echo "[railway-entrypoint] MIRROR_PRODUCT_IMAGES=yes → mirror-product-images.ts у фоні"
   (

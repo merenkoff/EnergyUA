@@ -21,6 +21,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a12e721e07be5a1b5e2bca4ae4bc147e3c28d90fad76a52072d25902f87ce827.png",
+      "alt": "Контролер для систем сніготанення ЕТ-110"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

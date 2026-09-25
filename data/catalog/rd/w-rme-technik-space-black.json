@@ -26,6 +26,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "fdb1a0d327dea6af3aab2570b18447f811ca0d7b097e7724ea86abd5daa43097.jpg",
+      "alt": "Терморегулятор Wärme Technik Space Black"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

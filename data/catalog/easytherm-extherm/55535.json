@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "38614748dda8ee8f32e3aff5f5ae964bf6904bd1e190d3a6311de5dca876225b.jpg",
+      "alt": "Датчик вологості та температури повітря для систем сніготанення довгастий ЕТ-550"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

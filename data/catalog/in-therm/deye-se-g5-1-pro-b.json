@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "f1b12d078e1d8ca15ac4b67d058f89d0b23cb42ac8df7dde52a6d1e72d629746.png",
+      "alt": "Акумуляторна батарея Deye SE-G5.1 Pro-B (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

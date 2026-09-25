@@ -69,6 +69,7 @@
       "unit": null
     }
   ],
+  "images": [],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Кабелі_30Вт_Extherm",

@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "4e4830f227c91c34040c9f9b0dbf5982356616dda52daf3f0f44aba8873d80c9.png",
+      "alt": "Кріплення для водостоку 15мм*200мм"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

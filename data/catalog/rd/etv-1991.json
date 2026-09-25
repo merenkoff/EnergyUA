@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "ad7e9bce27d8309f15b2de0722109675aa81c23fc700ed5e2e6690db848c1ee5.png",
+      "alt": "Терморегулятор OJ Electronics ETV-1991"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

@@ -63,6 +63,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7fe14720d4f2aa4a75cee4c5a291c7860e138ff75ef9e925fc841d60a5ee8ce5.jpg",
+      "alt": "Акумулятор LiFePO4 MFUZOP 12300 (300 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

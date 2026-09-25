@@ -45,6 +45,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "bbbc6d1cc1d9d6b8e90075d457a125df1dc5b9c91d42bb6924a1b79856878fe8.jpg",
+      "alt": "Програмований терморегулятор Easytherm ET40M, 16А, 3200Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

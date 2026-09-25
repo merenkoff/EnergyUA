@@ -13,6 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { Prisma, PrismaClient } from "@prisma/client";
+import { getMediaRoot, isSafeMediaFilename } from "../../src/lib/mediaStorage";
 import { ensureCatalogStructure } from "../lib/catalogStructure";
 import type { PricelistProduct } from "../lib/pricelistProduct";
 import { BRAND_SLUGS, PRICELIST_SOURCE, SECTION_SLUGS, TAG_SLUGS } from "../lib/pricelistTaxonomy";
@@ -20,6 +21,9 @@ import { normalizeNameKey } from "../lib/productDuplicateSimilarity";
 
 const prisma = new PrismaClient();
 const CATALOG_DIR = path.resolve(process.cwd(), "data/catalog");
+const MEDIA_DIR = path.resolve(process.cwd(), "data/catalog-media");
+/** sourceUrl рядків product_images, які створює цей імпорт (щоб не чіпати фото, завантажені в адмінці). */
+const IMAGE_SOURCE_PREFIX = "pricelist:";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(name);
@@ -41,6 +45,10 @@ function readProducts(only?: string): PricelistProduct[] {
       if (p.brand && !BRAND_SLUGS.has(p.brand)) errors.push(`${where}: невідомий бренд ${p.brand}`);
       for (const t of p.tags) if (!TAG_SLUGS.has(t)) errors.push(`${where}: невідома мітка ${t}`);
       if (!p.nameUk?.trim()) errors.push(`${where}: порожня назва`);
+      for (const im of p.images ?? []) {
+        if (!isSafeMediaFilename(im.file)) errors.push(`${where}: некоректне ім'я файлу фото ${im.file}`);
+        else if (!fs.existsSync(path.join(MEDIA_DIR, im.file))) errors.push(`${where}: немає файлу data/catalog-media/${im.file}`);
+      }
       out.push(p);
     }
   }
@@ -49,6 +57,31 @@ function readProducts(only?: string): PricelistProduct[] {
     throw new Error(`Файли товарів не пройшли перевірку: ${errors.length} помилок`);
   }
   return out;
+}
+
+/**
+ * Копіює фото з data/catalog-media у MEDIA_ROOT, якщо папка існує (локально — storage/media, створюємо).
+ * На Railway у pre-deploy volume не змонтований, тому там копіює railway-entrypoint.sh при старті.
+ */
+function copyMediaToRoot(): void {
+  const root = getMediaRoot();
+  const isLocalDefault = !process.env.MEDIA_ROOT?.trim();
+  if (!fs.existsSync(root)) {
+    if (!isLocalDefault) {
+      console.error(`[import-pricelists] MEDIA_ROOT ${root} недоступний — фото скопіює entrypoint при старті`);
+      return;
+    }
+    fs.mkdirSync(root, { recursive: true });
+  }
+  let copied = 0;
+  for (const f of fs.readdirSync(MEDIA_DIR)) {
+    if (!isSafeMediaFilename(f)) continue;
+    const dst = path.join(root, f);
+    if (fs.existsSync(dst)) continue;
+    fs.copyFileSync(path.join(MEDIA_DIR, f), dst);
+    copied++;
+  }
+  console.error(`[import-pricelists] фото в ${root}: скопійовано ${copied} нових`);
 }
 
 function productSlug(p: PricelistProduct): string {
@@ -161,6 +194,19 @@ async function main() {
     await prisma.productSpec.deleteMany({ where: { productId } });
     if (specRows.length) await prisma.productSpec.createMany({ data: specRows });
 
+    // Фото з прайсу — заміна лише рядків цього імпорту (адмінські завантаження лишаються)
+    const wantImages = (p.images ?? []).map((im, i) => ({ url: `/api/media/${im.file}`, sourceUrl: IMAGE_SOURCE_PREFIX + im.file, altUk: im.alt ?? p.nameUk, sortOrder: i }));
+    const haveImages = await prisma.productImage.findMany({
+      where: { productId, sourceUrl: { startsWith: IMAGE_SOURCE_PREFIX } },
+      select: { id: true, url: true, sortOrder: true },
+      orderBy: { sortOrder: "asc" },
+    });
+    const same = haveImages.length === wantImages.length && haveImages.every((h, i) => h.url === wantImages[i].url && h.sortOrder === wantImages[i].sortOrder);
+    if (!same) {
+      await prisma.productImage.deleteMany({ where: { productId, sourceUrl: { startsWith: IMAGE_SOURCE_PREFIX } } });
+      if (wantImages.length) await prisma.productImage.createMany({ data: wantImages.map((im) => ({ productId, ...im })) });
+    }
+
     // Мітки — повна заміна
     const tagIds = p.tags.map((t) => structure.tags.get(t)!).filter(Boolean);
     await prisma.productTag.deleteMany({ where: { productId, tagId: { notIn: tagIds } } });
@@ -180,6 +226,7 @@ async function main() {
   }
 
   console.error(`[import-pricelists] створено ${created}, оновлено ${updated}, знято з публікації ${staleIds.length}`);
+  copyMediaToRoot();
 }
 
 main()

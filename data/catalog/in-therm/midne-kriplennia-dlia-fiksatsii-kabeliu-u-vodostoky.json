@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "42fa5bb19b46261fb979d1b53e784da8ed58387359e6884e47cd283c5c916d64.jpg",
+      "alt": "Мідне кріплення для фіксації кабелю у водостоки Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

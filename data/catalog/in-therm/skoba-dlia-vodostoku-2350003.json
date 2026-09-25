@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "85e6ea4eb38370da4aad5fbe99270065261a5205c55bd4071cd11c1bd2735762.png",
+      "alt": "Скоба для водостоку 2350003 Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

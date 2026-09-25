@@ -134,6 +134,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ecbc123ea6da115abb6790bf36326eca1a9602bd3a888a19536f22c68b702a9e.jpg",
+      "alt": "Нагрівальний кабель IN-THERM ADSV 20 Вт/м — 92 м, 1850 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "IN-THERM",

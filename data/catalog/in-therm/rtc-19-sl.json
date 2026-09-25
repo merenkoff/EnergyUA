@@ -88,6 +88,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "9c3e4af8ad383589053041362ac1f1465148792fd63f39629a16045b35e6c604.png",
+      "alt": "Терморегулятор IN-THERM RTC 19 SL"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "e2c7cbb7f68b7da03cbc6fb0e47c4211a9b7a5c31f6932e8082a4e406f4337be.png",
+      "alt": "Інфрачервона нагрівальна плівка IN-THERM T 220 — 220 Вт/м², ширина 100 см"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ПЛІВКОВА ПІДЛОГА",

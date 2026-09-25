@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "113d470450f77941a29f4e1b463f76520285d5acfe6d01fc3a407a7d14467f57.png",
+      "alt": "Саморегулююча інфрачервона нагрівальна плівка IN-THERM MH — 220 Вт/м², ширина 50 см"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ПЛІВКОВА ПІДЛОГА",

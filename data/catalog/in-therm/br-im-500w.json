@@ -133,6 +133,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "73c39a1305c37fef115d442e1cea0b9e826589aa38ff46dd1be271b6ca086587.jpg",
+      "alt": "Нагрівальний кабель Hemstedt BR-IM 17 Вт/м — 31 м, 500 Вт"
+    },
+    {
+      "file": "7128bc6682130f4788e91b32f38c5b74e44f6776baa9f9d301905a25b84fb51b.jpg",
+      "alt": "Нагрівальний кабель Hemstedt BR-IM 17 Вт/м — 31 м, 500 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT",

@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": "<p>Стандартна стійка 19 дюймів</p><p>на 12 окремих батарей</p><p>та єдиним блоком керування кластером високовольтних акумуляторів</p><p>для модулів серії Deye BOS-G</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "52d50216a8f115066c1088642a637914c025f34d43327a2d9867db97ccfee538.jpg",
+      "alt": "Акумуляторна батарея Deye 3U-HRACK"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

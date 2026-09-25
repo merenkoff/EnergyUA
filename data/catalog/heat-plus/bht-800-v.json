@@ -53,6 +53,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "2584d6d63353f9090de4d89a746f9d4441eeead6a627cfb0d70d485314b5c2e9.png",
+      "alt": "Терморегулятор Heat Plus BHT-800 В, чорний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

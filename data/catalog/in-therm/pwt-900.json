@@ -105,6 +105,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c3e9df67007363e556b695ff0e235374c73eb449ed4f7a13766cf14ac8fe76c4.jpg",
+      "alt": "Терморегулятор IN-THERM PWT 900"
+    },
+    {
+      "file": "df297a52e7da3eee0e0a1d3ec57c76960fcdfeb62b3356e58532d0f0ba0a2cd4.jpg",
+      "alt": "Терморегулятор IN-THERM PWT 900"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

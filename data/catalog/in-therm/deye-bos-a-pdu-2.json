@@ -30,6 +30,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "689a6f09046a757fe46e479b4214c86221071d0c49ce4b39c8efa2d609b96ae3.png",
+      "alt": "Акумуляторна батарея Deye BOS-A-PDU-2"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

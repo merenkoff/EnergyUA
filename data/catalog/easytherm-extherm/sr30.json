@@ -25,6 +25,7 @@
       "unit": "Вт/м"
     }
   ],
+  "images": [],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

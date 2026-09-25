@@ -134,6 +134,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "78622891e5b9ffc43125ec5554296d241b54a0c615b34c9ad6c7f9efe853f0e1.png",
+      "alt": "Нагрівальний мат Hemstedt DH 150 Вт/м² — 4,5 м², 675 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT",

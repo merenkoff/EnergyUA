@@ -65,6 +65,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "0a0dd8b1c43e18555e046ebbc2db4c6e19fcfe078b9d2cbb745d25662e312e82.jpg",
+      "alt": "Терморегулятор для зовнішнього обігріву Eberle DTR-E"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

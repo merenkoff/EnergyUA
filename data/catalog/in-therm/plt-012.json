@@ -88,6 +88,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6c786197fb7ab1f0afbe25ed1c552d9cf27b4c09b054df3603d61d4881ef8476.png",
+      "alt": "Терморегулятор IN-THERM PLT 012"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

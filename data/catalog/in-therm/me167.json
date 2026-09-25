@@ -53,6 +53,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "22122091d46321dc5bc6dcc63cc6240846e644b02cb671eadd0f786f78b28aaf.png",
+      "alt": "Термоголовка для радіатора IN-THERM ME167"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

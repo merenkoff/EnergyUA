@@ -16,6 +16,12 @@
   "shortDescription": "Комплектуючі для збірних комплектів",
   "description": "<p>Блок живлення для збірних комплектів</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "ff420bd9476dfb1b8a8e0ffeff3246be355de8ba46e2a2ccef99171cb4902bed.jpg",
+      "alt": "Захист від протікання IN-THERM Блок живлення"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗВП",

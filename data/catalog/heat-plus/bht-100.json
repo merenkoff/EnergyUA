@@ -51,6 +51,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "aec073452dc42cfc26c0709250a800dbf1a879fc71e24fe7fcb8cd2958814962.png",
+      "alt": "Терморегулятор Heat Plus BHT-100, білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

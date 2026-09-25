@@ -21,6 +21,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "90ffefe986685587f6ca49c86aa429f764c4f81d2f36d9dbea69bbd150691d02.png",
+      "alt": "Контролер для систем сніготанення ЕТ-220 з WiFi"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "d8189ccaf9292cf4cea9e2119b0b234c63168f11285dc4316a28743537004457.jpg",
+      "alt": "Електрична рушникосушарка Heat Plus XN-WH 615 N біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

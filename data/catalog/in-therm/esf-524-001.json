@@ -51,6 +51,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "50ea23773a49aa7e2f765b5effb0bfb6d6401e6b74f76b61879d47d359f934aa.jpg",
+      "alt": "Датчик Eberle ESF 524 001 — датчик льоду та снігу з підігрівом"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

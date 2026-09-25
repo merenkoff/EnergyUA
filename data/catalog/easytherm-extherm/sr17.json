@@ -25,6 +25,12 @@
       "unit": "Вт/м"
     }
   ],
+  "images": [
+    {
+      "file": "2c5bda7f64d97299c502c7e70a7ceb25ce74ae67f44b001457274f0cd353c32b.png",
+      "alt": "Кабель саморегулюючий Easytherm SR 17 — 17 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "76158cd667358070a0aa42a42e37a15d563af184d1e70c37d1795204b36b6744.png",
+      "alt": "Розпірна скоба для водостоку 2350014 Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

@@ -104,6 +104,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ef3bbc5a8e440a8b9820e68fcda9cbb716269b3a2fa7dd4fc9a5f1e111d7f9bb.png",
+      "alt": "Терморегулятор IN-THERM PT 516"
+    },
+    {
+      "file": "cf0b66212eef1c07fee1c37eebd436f411a07dbefba82578c8135333af910249.png",
+      "alt": "Терморегулятор IN-THERM PT 516"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

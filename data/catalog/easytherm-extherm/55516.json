@@ -15,6 +15,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "fc14c260d51528f805952ce6d6849a33c8f649b0ee46d3b80d72f46a1555be9e.png",
+      "alt": "Ремонтний комплект для нагрівального мату (кабелю) Extherm"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

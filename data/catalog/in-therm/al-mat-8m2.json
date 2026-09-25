@@ -111,6 +111,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "67bf8cbd699e33287b9134eb0e552dd19bdeb4e5cd8630684dee31b3f9690f18.png",
+      "alt": "Алюмінієвий мат Fenix AL MAT 140 Вт/м² — 8 м², 1120 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "FENIX",

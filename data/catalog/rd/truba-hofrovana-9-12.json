@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "89be7328d0de1dffab23696b91d099b447f5399edd9fb0bb707af908678a4ab7.jpg",
+      "alt": "Труба гофрована 9/12"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "комплек-щі",

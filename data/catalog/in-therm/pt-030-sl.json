@@ -110,6 +110,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ecb991f48e2f3ad4f8597b777af8d63e925c1fc2e5cc1a310c5cc3aead039b3a.png",
+      "alt": "Терморегулятор IN-THERM PT 030 SL"
+    },
+    {
+      "file": "a15853bae3dc69c46fb1c89003a70347fcae7a8e90e99bf552d3640ce1a9d958.png",
+      "alt": "Терморегулятор IN-THERM PT 030 SL"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

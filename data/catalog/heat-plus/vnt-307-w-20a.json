@@ -53,6 +53,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a4c4b2f962beb757f83baf1ff7ea393ba413156bb14ca281ce431c7259b75e55.jpg",
+      "alt": "Терморегулятор Heat Plus ВНТ 307 W 20A накладний білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

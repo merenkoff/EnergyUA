@@ -51,6 +51,7 @@
       "unit": null
     }
   ],
+  "images": [],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

@@ -88,6 +88,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "cce7ab47870e10c98f6d106d485d78d37cf49978fac1b85c0dea8167620ce5f2.png",
+      "alt": "Терморегулятор Eberle RTR-E 6121"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

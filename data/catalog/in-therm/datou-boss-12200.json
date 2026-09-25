@@ -70,6 +70,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "622067ee4f790bba443b7b79f8dc68eadbd33e13dac88ea7201ef9954ca6519b.jpg",
+      "alt": "Акумулятор LiFePO4 Datou Boss 12200 (200 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

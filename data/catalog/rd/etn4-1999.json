@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "0e9ecdf97660f37f0a00c9dd2036c4dee01c5c382980e923725eb293e046c985.jpg",
+      "alt": "Терморегулятор OJ Electronics ETN4-1999"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

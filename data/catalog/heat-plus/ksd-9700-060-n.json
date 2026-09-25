@@ -13,6 +13,12 @@
   "shortDescription": null,
   "description": "<p>KSD-9700-060-N; Термозапобіжник у пластиковому корпусі, контакт нормально закритий, температура розмикання контакту 60°С,</p>",
   "specs": [],
+  "images": [
+    {
+      "file": "5cc7ff56dd5d6facf05683a888fd84b2825da9e9f1bd2fcbe07123ec8ef462da.png",
+      "alt": "KSD-9700-060-N"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

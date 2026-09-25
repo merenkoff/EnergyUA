@@ -24,6 +24,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "6fcc21ccabab846e79ace8c855734a262c428bb1777cc36968071602d97ac846.png",
+      "alt": "Скоба 150 мм для жолоба 2350007 Fenix"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

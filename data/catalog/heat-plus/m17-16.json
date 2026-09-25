@@ -51,6 +51,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "07df799d0aa6c2b49fff46cb09dca08c4164e8b6534114ee054d7c83127afe13.jpg",
+      "alt": "Терморегулятор Heat Plus M17.16, Білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

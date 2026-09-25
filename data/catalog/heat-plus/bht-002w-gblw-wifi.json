@@ -41,6 +41,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "32c394fe056e1b7624ab065b54f1a3d5c035fc945681e98f74329729b12a49ad.png",
+      "alt": "Терморегулятор Heat Plus BHT-002W-GBLW сенсорний, 16А, для керування газовим котлом, WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

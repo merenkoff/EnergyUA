@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "cc437d3c9f413ac58a6abb8ea8b1b39afab51e995f32b0e0e2f8657c0eb6a785.jpg",
+      "alt": "Саморегулюючий кабель IN-THERM SRL16-2CR — 16 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "САМРЕГ+КОМПЛ",

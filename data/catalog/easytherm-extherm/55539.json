@@ -44,6 +44,12 @@
       "unit": "Вт"
     }
   ],
+  "images": [
+    {
+      "file": "9480c546ea7899bc80de687a940c508ee025bd728b1ea6f5666577ee8b2a9a34.jpg",
+      "alt": "Терморегулятор Easytherm ET-20M, 3200 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

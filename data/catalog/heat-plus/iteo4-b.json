@@ -53,6 +53,20 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "528d5084a9993fc55167766883904aa7a77a67e0b60a15360619874aeef0600b.png",
+      "alt": "Терморегулятор Heat Plus iTeo4 B- чорний/ W -білий"
+    },
+    {
+      "file": "135b5bed823d263f701d79a3c7f1ab0f850ee66934c741e6cf0169ab9a3c5b97.png",
+      "alt": "Терморегулятор Heat Plus iTeo4 B- чорний/ W -білий"
+    },
+    {
+      "file": "a63053fc2cc223f6256adf00e697098d0dfc7a1b77703e30fc29c96983497581.jpg",
+      "alt": "Терморегулятор Heat Plus iTeo4 B- чорний/ W -білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

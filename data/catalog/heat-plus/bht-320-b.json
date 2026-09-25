@@ -53,6 +53,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "70f04d07c46a3db9c5bf092fc15ebef1f3ddb81a360ced02364349716d86fa4d.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-320 B- чорний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

@@ -30,6 +30,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "4133973908955b3d1a9bc30223ac7f06e3cbf2383413caca293054e45e99a272.png",
+      "alt": "Терморегулятор Profitherm-MEX Black"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

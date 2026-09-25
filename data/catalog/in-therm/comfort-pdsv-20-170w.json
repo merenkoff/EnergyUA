@@ -125,6 +125,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "dd72540f55074c6ef164885a90c86b720f4f926fd39056aa03d170052d40a753.png",
+      "alt": "Нагрівальний кабель IN-THERM COMFORT PDSV 20 Вт/м — 8 м, 170 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "IN-THERM COMFORT",

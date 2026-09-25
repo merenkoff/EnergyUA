@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "8427d8b5df76b1fbca557e00779dfaf8edf7d038287ad0f3b8f98c96b9723ce7.png",
+      "alt": "Терморегулятор Heat Plus BHT-300W/B сенсорний, білий корпус/білий екран, чорний корпус/чорний екран, WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

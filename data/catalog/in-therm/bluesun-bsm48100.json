@@ -72,6 +72,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "7c99a20a79279998fbe51eb54621d8c0b7ff643e83468928954f8c44a74cd58e.jpg",
+      "alt": "Акумулятор LiFePO4 Bluesun BSM48100 (100 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

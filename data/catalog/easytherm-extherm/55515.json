@@ -13,6 +13,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "505f2c3af7927383c8b0b7da7ab31c0d5526062e3e8e01f4d2d8c95d5bcf9d16.jpg",
+      "alt": "Монтажна стрічка 20мм, 1м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

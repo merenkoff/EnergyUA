@@ -97,6 +97,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "c4e845759570bdbea0522624273f4a52bc5d614d62b670ae0dd3636a672fa347.png",
+      "alt": "Терморегулятор для газового котла IN-THERM PWTG 098"
+    },
+    {
+      "file": "e9fac15b693ed23fa5f246feea2e8070849aff4e648b0dc28980ef61f6301872.png",
+      "alt": "Терморегулятор для газового котла IN-THERM PWTG 098"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

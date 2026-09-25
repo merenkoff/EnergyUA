@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "03f770b5be2117b94252a3b079763f8c5056066a769953f636a2f6aba46c2bf4.jpg",
+      "alt": "Датчик вологості та температури повітря для систем сніготанення круглий ЕТ-440"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Термостати_Easytherm",

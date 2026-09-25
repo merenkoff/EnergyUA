@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ca411a532c5c3c9a7fd240fc38013e38b4b3186b93b6cd968a55eebbdce8e56d.jpg",
+      "alt": "Гібридний інвертор Deye SUN-10K-SG02LP1-EU-AM3"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

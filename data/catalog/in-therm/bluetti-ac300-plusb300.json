@@ -70,6 +70,7 @@
       "unit": null
     }
   ],
+  "images": [],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗАРЯДНІ СТАНЦІЇ",

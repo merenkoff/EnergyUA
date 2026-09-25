@@ -58,6 +58,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "60481c504faaa9c1010ccc370d490f29ffff0ba66e4e9a6f49e05ed91738c0ce.png",
+      "alt": "Акумуляторна батарея Deye BOS-A-Pack7.68 (200 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",

@@ -68,6 +68,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "778a367183f0b947d97278ef0db31d634b3806ad3fe47d2bf452087fbf64219b.png",
+      "alt": "Нагрівальний мат Profi Therm 150/2.5 — 2,5 м², 375 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Profitherm",

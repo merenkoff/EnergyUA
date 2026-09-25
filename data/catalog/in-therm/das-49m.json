@@ -104,6 +104,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "cf783afa541a5a6258a248c7cf4019f2bc22f9d82e034831bfcea72455476f14.jpg",
+      "alt": "Кабель для обігріву труб Hemstedt DAS 30 Вт/м з термостатом — 49 м, 1470 Вт"
+    },
+    {
+      "file": "111c90b6ca8a667ddb6c0771380d52ac0d53942b5c07f573941728a2ad3007d8.jpg",
+      "alt": "Кабель для обігріву труб Hemstedt DAS 30 Вт/м з термостатом — 49 м, 1470 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "HEMSTEDT",

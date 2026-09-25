@@ -13,6 +13,12 @@
   "shortDescription": null,
   "description": null,
   "specs": [],
+  "images": [
+    {
+      "file": "9c451e3f8c24b27e28254e3ee04b0c4dae71e93cae697c35d4eb0275f06967c5.png",
+      "alt": "Гофра для датчика теплої підлоги 13 мм, 1м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

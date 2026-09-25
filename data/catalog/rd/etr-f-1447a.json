@@ -32,6 +32,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "ac0153e9abacdd4bf8874ef882ba1f65b2ca1d52c4c40772c70ce6b7587d60e7.png",
+      "alt": "Терморегулятор OJ Electronics ETR/F-1447A"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

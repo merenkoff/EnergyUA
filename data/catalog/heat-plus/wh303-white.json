@@ -23,6 +23,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "abaa27942fe8c2fb4954fff48296b1fc0be6d6d51b0f211afec26640a97097a8.png",
+      "alt": "Електрична рушникосушарка Heat Plus WH303 White White біла"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Рушникосушарки",

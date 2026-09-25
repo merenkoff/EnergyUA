@@ -33,6 +33,12 @@
       "unit": "А"
     }
   ],
+  "images": [
+    {
+      "file": "c219ab92d2cf9666a914f800712800cba06498d5f8e3be6d6aae28fae1d6dc88.png",
+      "alt": "Терморегулятор Nexans MILLITEMP CDFR-003"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

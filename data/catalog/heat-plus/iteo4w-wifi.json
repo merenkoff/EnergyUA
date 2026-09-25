@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "28952a88248ca5708a3cbaa0a4d4c5f043db2d8c9dfc5ae9562ebb8e2063d0a2.jpg",
+      "alt": "Терморегулятор Heat Plus iTeo4W, білий,чорний керування по WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

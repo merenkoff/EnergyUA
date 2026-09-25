@@ -53,6 +53,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "01fa9f2f8c5184b39cd11db10467d24ed694cdc889ef1a189f0aa454441574a3.png",
+      "alt": "Термоголовка для радіатора IN-THERM ME168"
+    },
+    {
+      "file": "e107ac4c31d604b9d3a2da1e0017eee99e95e4c89bd8fdaf905af2461e049701.png",
+      "alt": "Термоголовка для радіатора IN-THERM ME168"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ТЕРМОСТАТИ",

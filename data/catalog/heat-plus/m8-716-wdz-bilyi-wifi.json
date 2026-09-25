@@ -48,6 +48,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a3dab85020e9f422469119645322bd96efacaa229d7833c0c5ccb493775f7509.jpg",
+      "alt": "Терморегулятор Heat Plus M8.716 WDZ-Білий, двозонний, з WI-FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

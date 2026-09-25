@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "ba5fe6436fc49ab669c5fe7270c98134fdbc79f458183db4fbbf15d62cc6a07a.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-2000 В - чорний, WI FI"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

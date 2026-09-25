@@ -40,6 +40,8 @@ export type PricelistProduct = {
   /** Опис: текст або HTML (абзаци), без inline-стилів. */
   description?: string | null;
   specs: PricelistSpec[];
+  /** Фото з прайсу: файли в data/catalog-media/<sha256>.<ext>, перший — обкладинка. */
+  images?: Array<{ file: string; alt?: string | null }>;
   source: {
     /** Файл прайсу відносно кореня репозиторію. */
     file: string;

@@ -26,6 +26,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "12706e725c1c3899c93691cb2868d3a6373929542ba9ec69ae63d896b059ff06.png",
+      "alt": "Терморегулятор Profitherm Wi-Fi Peаrl White"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Термостати та датчики",

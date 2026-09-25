@@ -53,6 +53,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "01af7fb86e3ae46c22502842b25e196799eedfd1ae3c2a56e5f4a6009225c661.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-002W/B, білий/чорний"
+    },
+    {
+      "file": "d6992a59a726d7f4f7866ceba3fb629be063fa64f48263f764d4fb0523c5e525.jpg",
+      "alt": "Терморегулятор Heat Plus BHT-002W/B, білий/чорний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

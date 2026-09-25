@@ -53,6 +53,16 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "118db8d4d8771f2711bac1e868e86629fa187dc606cdca9716a27881daf8375c.png",
+      "alt": "Терморегулятор Heat Plus M2-1.716 сенсорний, 16A, W - білий; B - чорний; S - срібний"
+    },
+    {
+      "file": "e463221afef20e694a34be7437c89f319aeba3569b280f2ba7aad771079edc59.png",
+      "alt": "Терморегулятор Heat Plus M2-1.716 сенсорний, 16A, W - білий; B - чорний; S - срібний"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

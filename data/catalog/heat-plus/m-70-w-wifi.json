@@ -54,6 +54,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "a96a4e9250bb63551e0cfd38bdd2c7b57459da5a369fa9eab4a8cd0d360f6abd.jpg",
+      "alt": "Терморегулятор Heat Plus M.70 W сенсорний, WIFI,16А, білий"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-05-heat-plus.xlsx",
     "sheet": "Терморегулятори Heat_Plus",

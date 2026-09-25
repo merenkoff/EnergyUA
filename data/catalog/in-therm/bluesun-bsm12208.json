@@ -72,6 +72,12 @@
       "unit": null
     }
   ],
+  "images": [
+    {
+      "file": "56e6c72dbc4eac608ecf8de2da721689c4cc3fe66413e23a448dd7abaeda2990.jpg",
+      "alt": "Акумулятор LiFePO4 Bluesun BSM12208 (208 Аh)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ІНВ+ПАНЕЛІ+АККУ",
