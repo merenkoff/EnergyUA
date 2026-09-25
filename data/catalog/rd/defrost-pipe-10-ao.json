@@ -33,7 +33,16 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "8c520bcdf9db4c3b16338c642a988e3844565cf16e4976687da27fd056198817.jpg",
+      "alt": "Саморегулюючий кабель DEFROST PIPE 10 AO — 10 Вт/м"
+    },
+    {
+      "file": "d8bd1e2ae965693624ee25af9b757e9df90dbbd6bf4d085c3f30ea1cf8463ac3.jpg",
+      "alt": "Саморегулюючий кабель DEFROST PIPE 10 AO — 10 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Самрег",

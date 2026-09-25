@@ -25,7 +25,20 @@
       "unit": "Вт/м"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "5919ce88405ecdc81a817c4cd5050f76ff02e0a0de223406acaca5ff6586f1f1.jpg",
+      "alt": "Кабель саморегулюючий Easytherm SR 30 — 30 Вт/м"
+    },
+    {
+      "file": "b12dcc5134650d0cefafcfd8ed113184c84909c46d6a2c56808e91e54700fa30.jpg",
+      "alt": "Кабель саморегулюючий Easytherm SR 30 — 30 Вт/м"
+    },
+    {
+      "file": "c1b7a65aaf9aedce17a09d4bba973847e7e8dc27af2f5ec29556e10d652ded1b.jpg",
+      "alt": "Кабель саморегулюючий Easytherm SR 30 — 30 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": " Самрег_Easytherm_Аксесуари",

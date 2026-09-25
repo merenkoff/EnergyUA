@@ -25,7 +25,20 @@
       "unit": "А"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "cae8d300fc1221283f43a4b61869456ecf61eed423d96b2fca0af3c720c6ce40.png",
+      "alt": "Терморегулятор Magnum Standard Control (механічний)"
+    },
+    {
+      "file": "52061ea2032ba43671ae873f6611aabe615f6bf41c868bdcb268bf2372d8df7f.jpg",
+      "alt": "Терморегулятор Magnum Standard Control (механічний)"
+    },
+    {
+      "file": "478b75e55fd134be02f1bd48dcf1e1b57924f02eaba23d23cca72a68c4c5fdd5.jpg",
+      "alt": "Терморегулятор Magnum Standard Control (механічний)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 2,

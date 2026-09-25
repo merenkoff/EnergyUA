@@ -11,7 +11,10 @@ data/pricelists/*.xlsx|docx|pdf        сирі прайси (комітятьс
         │  npm run extract:pricelist-images   scripts/pricelists/extract_pricelist_images.py (Python)
         ▼
 data/catalog-media/<sha256>.<ext> + index.json   фото, вшиті в xlsx (комітяться, генеруються)
-        │  npm run parse:pricelists    scripts/pricelists/parse_pricelists.py (Python, читає index.json)
+data/catalog-media/external-sources.json         правила «артикул → URL фото на сайті бренду» (вручну)
+        │  npm run fetch:brand-images  scripts/pricelists/fetch_external_images.py → external.json + файли
+        ▼
+        │  npm run parse:pricelists    scripts/pricelists/parse_pricelists.py (Python, читає index.json + external*.json)
         ▼
 data/catalog/<постачальник>/<sku>.json  один файл = один товар (комітяться, генеруються)
         │  npm run import:pricelists   scripts/cli/import-pricelist-catalog.ts (tsx)
@@ -123,9 +126,40 @@ Slug-и розділів, міток і брендів у JSON перевіря�
 (локально — `storage/media`); на Railway volume у pre-deploy не змонтований, тому копіює `railway-entrypoint.sh` при старті
 (лише відсутні файли).
 
-Покриття після етапу 2 (товарів з фото / усього): In-Therm 439/450, Heat Plus 63/67, РД 173/196,
-Easytherm/Extherm/Hot Fly 30/168 (лише термостати й аксесуари), Arnold Rak/Ryxon/Flex 0/208, Magnum 0/120 (у PDF лише іконки),
-Shtoller 0/36, SMART 0/15 — разом 705/1260.
+### Фото з сайтів брендів
+
+У прайсах Arnold Rak / Ryxon / Flex, Magnum, Shtoller, SMART і в частині Easytherm / Extherm / Hot Fly фото немає.
+Для них джерело — офіційні сайти брендів (або їхніх дистриб'юторів в Україні), описані вручну в
+`data/catalog-media/external-sources.json`:
+
+```jsonc
+{ "supplier": "ar-ryxon-flex", "brand": "ryxon",
+  "match": { "skuPrefix": ["HM-200-"] },          // або { "sku": ["LSR-17-CR", …] } — точні артикули
+  "urls": ["https://www.ryxon.eu/…/heating_mats.jpg",
+           { "url": "https://extherm.com.ua/img/EM_1.jpg", "cropBottom": 0.1 }],  // відрізати підпис знизу
+  "page": "https://www.ryxon.eu/products/heating-mats", "note": "…" }
+```
+
+`npm run fetch:brand-images` (`scripts/pricelists/fetch_external_images.py`) завантажує кожен URL, зменшує до 1200 px
+(webp → jpg/png; важкий PNG з прозорістю → JPEG на білому тлі), кладе в `data/catalog-media/<sha256>.<ext>` і пише
+`external.json` (URL → файл). Парсер підставляє ці файли товару, **якщо фото з прайсу не знайшлося**: спершу точний
+артикул, далі найдовший префікс. Записи з порожнім `urls` — «шукали, не знайшли», з приміткою чому.
+
+Звідки взято: Ryxon — ryxon.eu; Arnold Rak — arnoldrak.com.ua і rak-waermetechnik.de (arnold-rak.de недоступний);
+Flex — офіційного сайту немає, використано фото Ryxon без брендування (той самий завод); Easytherm / Extherm / Hot Fly —
+YML-фід імпортера Onteplo (`extherm.com.ua/img/…`, знизу відрізано підпис «brand by Onteplo») + сторінки extherm.com.ua
+та hot-fly.com.ua; Magnum і Heat Wave (MHW) — magnum-heating.com.ua, magnumheating.com, kkplus.shop; Terneo —
+ds-electronics.com.ua (виробник); OJ Electronics — ojelectronics.com; HTS — hts-global.com (лише технічні рендери);
+Shtoller — shtoller.ua; Nexans DEFROST — nexans.no (DAM-рендери); Heat Plus — heatplus.ua; Bluetti — bluettipower.eu;
+Fenix ECOSUN S+ — рендер із fenixgroup.cz (сайт блокує автоматичні запити капчею, тому файл додано з локальної копії).
+
+Покриття після етапу 2 (товарів з фото / усього): In-Therm 447/450, Heat Plus 65/67, РД 184/196,
+Easytherm/Extherm/Hot Fly 168/168, Arnold Rak/Ryxon/Flex 195/208, Magnum 109/120, Shtoller 36/36, SMART 2/15 —
+разом **1206/1260**. Без фото лишилися: термостати Flex TDF1/TDU1/TDS1; аксесуари Arnold Rak (муфти, кріплення,
+стрічка, трос) і килимок Ribex; термостати SMART (крім RTC-70 SL і PWT002), Castle і EcoTerm (сайтів немає або
+заблоковані); саморегулюючі кабелі та муфти Profi Therm (на profitherm.ua їх немає) і кріплення для труб/жолобів;
+Heat Plus M79.716B і рушникосушарка XN-WH 606; датчики Eberle та термоголовка ME323 (лише фото in-therm.ua з водяним знаком).
+Для них лишається адмінка (завантаження фото вручну).
 
 Якщо фото прив'язалось не до того товару: знайти хеш у `index.json` (або відкрити файл у `data/catalog-media/`), додати
 правило в `IMAGE_RULES` чи хеш у `BLACKLIST`, перезапустити extract + parse і переглянути diff `images` у `data/catalog/`.
@@ -138,10 +172,8 @@ Shtoller 0/36, SMART 0/15 — разом 705/1260.
 адмінка: прапорець «архівний», ціна комплекту, одиниця та примітка до ціни.
 
 **Етап 2 — фото (зроблено, див. «Фото з прайсів» нижче).** Фото, вшиті в xlsx, витягнуто в `data/catalog-media/` і
-прив'язано до товарів; імпорт пише їх у `product_images`, entrypoint кладе файли на volume. Без фото лишилися
-бренди, чиї прайси не містять зображень (Arnold Rak / Ryxon / Flex, Magnum, Shtoller, SMART, мати й кабелі
-Easytherm / Extherm / Hot Fly, Nexans DEFROST) — для них потрібні фото з офіційних сайтів (таблиця вище);
-з цього середовища ці сайти недоступні (мережева політика), тож це окремий крок.
+прив'язано до товарів; для брендів без фото в прайсі фото завантажено з офіційних сайтів за правилами
+`external-sources.json`; імпорт пише їх у `product_images`, entrypoint кладе файли на volume. Разом 1206/1260 товарів з фото.
 
 **Етап 3 — мітки в адмінці.** Редагування міток на картці товару та сторінка міток (створення, групи).
 Зараз мітки задає лише парсер.

@@ -33,7 +33,12 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "26139b341438fcba1d7d4264b5c0ee88bebe91bfec5501bb0fa4ec4c4fd3a914.jpg",
+      "alt": "Саморегулюючий кабель Ryxon LSR-40-CT, 40 Вт/м (FEP)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "RYXON_самрег_",

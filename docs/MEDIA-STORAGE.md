@@ -50,8 +50,8 @@ tar czf data/media-seed/<донор>.tgz -C <каталог з файлами> .
 
 ## Фото з прайсів постачальників (`data/catalog-media/`)
 
-Фото нового каталогу (етап 2 у [`CATALOG-PRICELISTS-UK.md`](CATALOG-PRICELISTS-UK.md)) витягуються з xlsx-прайсів у
-`data/catalog-media/<sha256>.<ext>` (283 файли, ~12 МБ, комітяться) і потрапляють у БД одразу як `/api/media/<файл>`
+Фото нового каталогу (етап 2 у [`CATALOG-PRICELISTS-UK.md`](CATALOG-PRICELISTS-UK.md)) витягуються з xlsx-прайсів
+або завантажуються з сайтів брендів (`external-sources.json`) у `data/catalog-media/<sha256>.<ext>` (~400 файлів, ~30 МБ, комітяться) і потрапляють у БД одразу як `/api/media/<файл>`
 з `source_url = pricelist:<файл>` під час `import:pricelists` у pre-deploy. Mirror ці рядки не чіпає (URL уже локальний).
 Сам файл на volume кладе `railway-entrypoint.sh` при старті: копіює `data/catalog-media/*.jpg|png` у `MEDIA_ROOT`,
 пропускаючи наявні. Локально те саме робить імпорт у `storage/media`. Якщо на сторінці товару 404 на таке фото —

@@ -74,7 +74,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "b20536dc8425dbeb7efa46800bd4efe31e26ac68303040fbe8b71f2340ad4379.jpg",
+      "alt": "Нагрівальний кабель Hot Fly HFC 135.0 — 135 м, 2430 Вт (18 Вт/м)"
+    },
+    {
+      "file": "28c7e4a7b0d0f7cd47207114085f1162642731d7e4684dfb1ed544b9dc4af989.jpg",
+      "alt": "Нагрівальний кабель Hot Fly HFC 135.0 — 135 м, 2430 Вт (18 Вт/м)"
+    },
+    {
+      "file": "eb25a07c01af61681808f8c02b64705a66900d69b518c07200d852c35a7b5d74.jpg",
+      "alt": "Нагрівальний кабель Hot Fly HFC 135.0 — 135 м, 2430 Вт (18 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Hot Fly",

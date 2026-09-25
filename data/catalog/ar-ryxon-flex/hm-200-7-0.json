@@ -62,7 +62,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "289eeb1849529cbfac8c4078cbfc4b80233990a6a2d2e893251ecdac007cab19.jpg",
+      "alt": "Нагрівальний мат Ryxon HM-200-7.0 — 7 м², 1400 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "986e1cd43b1d701933c82ab88820894c670eb8f769a0cda4c38389c4527bbbdb.jpg",
+      "alt": "Нагрівальний мат Ryxon HM-200-7.0 — 7 м², 1400 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "e79649af4cdc8b6c6cfcf598b89fb19e8ab3c60ec3b9b4ef8e262b6919a8dabc.jpg",
+      "alt": "Нагрівальний мат Ryxon HM-200-7.0 — 7 м², 1400 Вт (200 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "RYXON_мати",

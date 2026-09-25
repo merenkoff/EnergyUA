@@ -89,7 +89,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "5d71bfd0505ffb2ec1538f7bb3267b4f2a8c0f4675dcbc58cabe3d1723987648.jpg",
+      "alt": "Алюмінієвий мат Magnum Aluminium Mat 140 Вт/м² — 9 м², 1260 Вт"
+    },
+    {
+      "file": "c15b1f7106c1d661b47aed8537005e0a6012dec5ee2e3a8b0bd550f5f84afd3a.jpg",
+      "alt": "Алюмінієвий мат Magnum Aluminium Mat 140 Вт/м² — 9 м², 1260 Вт"
+    },
+    {
+      "file": "25ebc6e72f773cb6eba76763b3509d5c0bc85e551f6680c13fedc8d56c2460f6.jpg",
+      "alt": "Алюмінієвий мат Magnum Aluminium Mat 140 Вт/м² — 9 м², 1260 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

@@ -104,7 +104,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "4430c2a8ebfd1d2ba4daea938eccacb7596c9c844c7452882fb1e9948fb39126.jpg",
+      "alt": "Нагрівальний мат Magnum Mat 150 Вт/м² — 8 м², 1200 Вт"
+    },
+    {
+      "file": "4fca39a7a16b7c589e1aea06fa23546944b071406cd8589eeb0f108f552d4c11.jpg",
+      "alt": "Нагрівальний мат Magnum Mat 150 Вт/м² — 8 м², 1200 Вт"
+    },
+    {
+      "file": "67ea59cffdbbcf231e25025a3d4debebf8ca8e7cf4a65891a8bc41fc28f07033.jpg",
+      "alt": "Нагрівальний мат Magnum Mat 150 Вт/м² — 8 м², 1200 Вт"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

@@ -27,7 +27,20 @@
       "unit": "А"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "b28ff4bb6aab197a5d418a995d47d1519c4b7051df9ce0110f401b07faa36a01.jpg",
+      "alt": "Терморегулятор Terneo sx (Wi-Fi, сенсорний)"
+    },
+    {
+      "file": "e04d0d6364ebc2efce448924cf6c43db2f16a13354ab086d12af12f811eeca00.png",
+      "alt": "Терморегулятор Terneo sx (Wi-Fi, сенсорний)"
+    },
+    {
+      "file": "7ddcd947dcc051f28cea3577d72a7b79bfa457ffb2b81dc1b0a282c12460b954.jpg",
+      "alt": "Терморегулятор Terneo sx (Wi-Fi, сенсорний)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 4,

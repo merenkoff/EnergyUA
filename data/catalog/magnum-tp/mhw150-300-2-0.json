@@ -103,7 +103,12 @@
       "unit": "м"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "cb1a99fca256592e2235e87738a39a91eae3b551ece30ae6f647770b0ede3e88.jpg",
+      "alt": "Нагрівальний мат MHW MHW150-300-2.0 — 2 м², 300 Вт (150 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 3,

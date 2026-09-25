@@ -70,7 +70,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "a8ef742db1bc2ab25b0516fabcf8dfc322626a75664c7ab71a8250d8df171dad.jpg",
+      "alt": "Зарядна станція Bluetti AC70P"
+    },
+    {
+      "file": "2473e6c91aa09ba04d6f765d4e97641759548d6cba09ebd821c09e51f3de1388.jpg",
+      "alt": "Зарядна станція Bluetti AC70P"
+    },
+    {
+      "file": "60fb5feef0a01cccbcd5c1edfe4db5fb10a61bdd738b6aa6e5aa231f020caf4e.jpg",
+      "alt": "Зарядна станція Bluetti AC70P"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-08-13-in-therm.xlsx",
     "sheet": "ЗАРЯДНІ СТАНЦІЇ",

@@ -27,7 +27,20 @@
       "unit": "А"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "25f665a26c5e5b44692d5bad44bb3a4e5d0c5bb908f8f0e3fa5b62d35129740b.jpg",
+      "alt": "Терморегулятор Magnum F32 Smart WiFi (чорний / білий)"
+    },
+    {
+      "file": "c250c81f80ab079f886ec41b7377d9ba261d93ab378066264026cb8a17f4956e.png",
+      "alt": "Терморегулятор Magnum F32 Smart WiFi (чорний / білий)"
+    },
+    {
+      "file": "0e2ef36dcb045b42c846d8a7024e8ed57854608723ea9fb888e711fc1c1e8265.jpg",
+      "alt": "Терморегулятор Magnum F32 Smart WiFi (чорний / білий)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 2,

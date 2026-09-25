@@ -103,7 +103,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "03eda7a426f6202f766322ff49aab47ef16c3637475ef8ba458039a6aa0e3ac7.jpg",
+      "alt": "Нагрівальний кабель Magnum Slim Cable 3,5 мм — 86,0 м, 1350 Вт (15,7 Вт/м)"
+    },
+    {
+      "file": "36b9883e18116279f17faa3c2aa056a60c231e5fbf9b37d873496c11a8501706.jpg",
+      "alt": "Нагрівальний кабель Magnum Slim Cable 3,5 мм — 86,0 м, 1350 Вт (15,7 Вт/м)"
+    },
+    {
+      "file": "22c038d5761fada574b88792e072005f0d1c34516049dca514941200bed769f5.jpg",
+      "alt": "Нагрівальний кабель Magnum Slim Cable 3,5 мм — 86,0 м, 1350 Вт (15,7 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

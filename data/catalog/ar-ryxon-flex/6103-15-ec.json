@@ -90,7 +90,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "e38d0e80a832ca287535324470ed98e2aeef1b4383cef52272320674d7a6dec9.jpg",
+      "alt": "Нагрівальний кабель Arnold Rak Standart 6103-15 EC — 17 м, 255 Вт (15 Вт/м)"
+    },
+    {
+      "file": "7f656b4d2cfbe0f2f07183f16a06914fbf3fb0942996ad77566198011aa34674.jpg",
+      "alt": "Нагрівальний кабель Arnold Rak Standart 6103-15 EC — 17 м, 255 Вт (15 Вт/м)"
+    },
+    {
+      "file": "2978073dcb2ccf27e335c32bccfff2e30388517df7488f990adaa546bd638144.jpg",
+      "alt": "Нагрівальний кабель Arnold Rak Standart 6103-15 EC — 17 м, 255 Вт (15 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "Standart_AR_кабель 15 Вт",

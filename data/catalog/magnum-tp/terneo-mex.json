@@ -25,7 +25,20 @@
       "unit": "А"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "41dfad1e270071eb243bd91c70ade7cfc5225cc34c446758f3b816da387666f2.jpg",
+      "alt": "Терморегулятор Terneo mex (механічний)"
+    },
+    {
+      "file": "e25e96953f5d3fb2c70fc393f0cbf8ca01c7c45e2cd0b0cecaff18e3ba70d0b8.jpg",
+      "alt": "Терморегулятор Terneo mex (механічний)"
+    },
+    {
+      "file": "f0b1de3515a53ca2c7ef271f5cb353f6f51fdc45f6b7c7e3633c67a6663600a1.jpg",
+      "alt": "Терморегулятор Terneo mex (механічний)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 4,

@@ -26,7 +26,20 @@
       "unit": "А"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "5deaf6c21f83b458df34a9d1b7c9cd4ad56456a4dda6e73afe55f84a18536fab.jpg",
+      "alt": "Терморегулятор Magnum Intelligent Control (програмований)"
+    },
+    {
+      "file": "f80800421db3da6b0435d28bdd011a08276b27a6b7ea705f5e967a4bcfe809c9.jpg",
+      "alt": "Терморегулятор Magnum Intelligent Control (програмований)"
+    },
+    {
+      "file": "90e7b54fc958056d72b23a1b857715c196eee464e0fc274d94c86d7ac283f70b.jpg",
+      "alt": "Терморегулятор Magnum Intelligent Control (програмований)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 2,

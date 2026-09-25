@@ -33,7 +33,16 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "6eb19ade134ceba068da72592c899df8d92d42b9d149ff655adb4e8b8d6e92b7.jpg",
+      "alt": "Саморегулюючий кабель DEFROST PIPE 20 LS/T — 20 Вт/м"
+    },
+    {
+      "file": "1f68571a1c5018f1650c9fc4a298aaa488e9735066264668ce80f2cbdfc2184c.jpg",
+      "alt": "Саморегулюючий кабель DEFROST PIPE 20 LS/T — 20 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": "Самрег",

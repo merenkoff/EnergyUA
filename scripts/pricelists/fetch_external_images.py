@@ -31,6 +31,7 @@ from extract_pricelist_images import MAX_SIDE, OUT  # noqa: E402
 
 SOURCES = OUT / "external-sources.json"
 STATE = OUT / "external.json"
+MAX_PNG_BYTES = 400_000  # більший PNG з прозорістю → JPEG на білому тлі
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 ElectroHeat-catalog"
 
 
@@ -60,7 +61,12 @@ def normalize(data: bytes, crop_bottom: float = 0.0) -> tuple[bytes, str, int, i
     buf = io.BytesIO()
     if has_alpha:
         im.convert("RGBA").save(buf, format="PNG", optimize=True)
-        return buf.getvalue(), "png", im.width, im.height
+        if len(buf.getvalue()) <= MAX_PNG_BYTES:
+            return buf.getvalue(), "png", im.width, im.height
+        # важкий PNG з прозорістю: кладемо на біле тло (каталог і так на білому) і зберігаємо як JPEG
+        bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
+        im = Image.alpha_composite(bg, im.convert("RGBA"))
+        buf = io.BytesIO()
     im.convert("RGB").save(buf, format="JPEG", quality=88, optimize=True)
     return buf.getvalue(), "jpg", im.width, im.height
 

@@ -55,7 +55,16 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "b7bd7844d17521cfd710a2cd7e801c2687c184305327a0ea2c17b4511f5ce228.jpg",
+      "alt": "Секція для сніготанення Nexans RED DEFROST SNOW 1550/28 — 56,6 м, 1550 Вт (28 Вт/м)"
+    },
+    {
+      "file": "91b4a424c6bc813d236ae3ab89303b576e73f02fd93a9621a48da71185494517.jpg",
+      "alt": "Секція для сніготанення Nexans RED DEFROST SNOW 1550/28 — 56,6 м, 1550 Вт (28 Вт/м)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-09-15-rd-nexans-profitherm.xlsx",
     "sheet": " Nexans",

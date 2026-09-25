@@ -74,7 +74,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "8a5276a2f6e4d09e747198cf9ce7fb09150ecd34ce4112efe74ef736e80f861c.jpg",
+      "alt": "Нагрівальний мат Easytherm EM3.50 — 3,5 м², 700 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "b30354629841dfbf4de1c9f7b9dadb9895bca60c39d8136723a5946c963178a2.jpg",
+      "alt": "Нагрівальний мат Easytherm EM3.50 — 3,5 м², 700 Вт (200 Вт/м²)"
+    },
+    {
+      "file": "ed7628f724f4e349fcd03e59006f525f1abc76493fd6aa051cf9ff38fe3b96bd.jpg",
+      "alt": "Нагрівальний мат Easytherm EM3.50 — 3,5 м², 700 Вт (200 Вт/м²)"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-04-01-easytherm-extherm-hotfly.xlsx",
     "sheet": "Мати_Кабелі_Easytherm",

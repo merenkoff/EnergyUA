@@ -48,7 +48,12 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "e97f22cd455df4e56a7c1475f21166cf72891c8049db1fe6c15ffe880daf65ea.png",
+      "alt": "Саморегулюючий кабель HTS 28TTL2-BO будівельного та промислового класу — 28 Вт/м"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-magnum-tp.pdf",
     "page": 1,

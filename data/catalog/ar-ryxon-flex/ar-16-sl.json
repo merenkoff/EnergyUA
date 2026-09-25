@@ -39,7 +39,20 @@
       "unit": null
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "f44cb9aba4cdb08453dd4a676f85ff35778a2ba84f77fcef74967e6977b30a1e.jpg",
+      "alt": "Терморегулятор Arnold Rak AR 16 SL з датчиком підлоги"
+    },
+    {
+      "file": "e2f9ffa867155d1ca600e456f1a76d32fa7ac43ff55df0ac91d42c63ae2c9cad.jpg",
+      "alt": "Терморегулятор Arnold Rak AR 16 SL з датчиком підлоги"
+    },
+    {
+      "file": "8f3430ea5202fa7a142cc3afd3d2f1426ea276d264dac55cbc550efd5307ee83.jpg",
+      "alt": "Терморегулятор Arnold Rak AR 16 SL з датчиком підлоги"
+    }
+  ],
   "source": {
     "file": "data/pricelists/2026-06-08-arnold-rak-ryxon-flex.xlsx",
     "sheet": "Терморегулятори AR",
