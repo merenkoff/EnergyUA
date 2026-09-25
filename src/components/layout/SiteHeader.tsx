@@ -31,7 +31,7 @@ export async function SiteHeader() {
           <Link href="/brands" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
             Бренди
           </Link>
-          <Link href="/#pidbir" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
+          <Link href="/calc" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
             Підбір
           </Link>
           <Link href="/#kontakty" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">

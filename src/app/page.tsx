@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CalcForm } from "@/components/catalog/CalcForm";
 import { CategoryCard } from "@/components/catalog/CategoryCard";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { loadCatalogSections } from "@/lib/catalogSections";
@@ -56,8 +57,8 @@ export default async function Home() {
               <Link href="/catalog" className="btn-primary">
                 Відкрити каталог
               </Link>
-              <Link href="#pidbir" className="btn-secondary">
-                Підібрати за застосуванням
+              <Link href="/calc" className="btn-secondary">
+                Підібрати за площею
               </Link>
             </div>
             <ul className="mt-10 grid max-w-lg grid-cols-3 gap-4 text-sm">
@@ -92,9 +93,23 @@ export default async function Home() {
       {/* Підбір за застосуванням */}
       {picks.length ? (
         <section id="pidbir" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-14 sm:px-6">
-          <div className="flex flex-wrap items-end justify-between gap-3">
+          <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-sm)] sm:p-6">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight">Підбір за площею</h2>
+                <p className="mt-1 text-[var(--muted)]">Вільна площа, покриття, приміщення — і готовий список матів або кабелю з термостатом.</p>
+              </div>
+              <Link href="/calc" className="text-sm font-semibold text-[var(--secondary)] hover:underline">
+                Як це працює →
+              </Link>
+            </div>
+            <div className="mt-5">
+              <CalcForm compact />
+            </div>
+          </div>
+          <div className="mt-10 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Підбір за застосуванням</h2>
+              <h2 className="text-2xl font-bold tracking-tight">Або за застосуванням</h2>
               <p className="mt-1 text-[var(--muted)]">Куди монтуєте? Покажемо лише те, що підходить.</p>
             </div>
           </div>
