@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CategoryCard } from "@/components/catalog/CategoryCard";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { TagChips, type TagChip } from "@/components/catalog/TagChips";
+import { TAG_GROUP_LABEL, tagGroupOrder } from "@/lib/tagGroups";
 import { CATALOG_ROOT_SLUG } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
 import { PUBLIC_PRODUCT_WHERE } from "@/lib/publicCatalog";
@@ -91,15 +92,7 @@ export default async function CatalogCategoryPage({ params, searchParams }: Prop
       })
     : [];
   const countByTag = new Map(tagRows.map((r) => [r.tagId, r._count._all]));
-  const GROUP_LABEL: Record<string, string> = {
-    zastosuvannia: "Застосування",
-    konstruktsiia: "Конструкція",
-    funktsii: "Функції",
-    potuzhnist: "Потужність",
-    kraina: "Країна",
-    komplektatsiia: "Комплектація",
-  };
-  const GROUP_ORDER = Object.keys(GROUP_LABEL);
+  const GROUP_LABEL = TAG_GROUP_LABEL;
   const chipsByGroup = new Map<string, TagChip[]>();
   for (const t of tagDefs.sort((a, b) => a.sortOrder - b.sortOrder)) {
     const g = t.groupSlug ?? "";
@@ -107,7 +100,7 @@ export default async function CatalogCategoryPage({ params, searchParams }: Prop
     arr.push({ slug: t.slug, nameUk: t.nameUk, groupSlug: t.groupSlug, count: countByTag.get(t.id), active: activeTags.includes(t.slug) });
     chipsByGroup.set(g, arr);
   }
-  const groups = [...chipsByGroup.entries()].sort((a, b) => GROUP_ORDER.indexOf(a[0]) - GROUP_ORDER.indexOf(b[0]));
+  const groups = [...chipsByGroup.entries()].sort((a, b) => tagGroupOrder(a[0]) - tagGroupOrder(b[0]));
 
   const breadcrumbs = [
     { href: "/", label: "Головна" },

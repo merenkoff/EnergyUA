@@ -34,7 +34,7 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 - The routes are `/`, `/catalog`, `/catalog/[slug]` (with `?tag=a,b` label filter), `/tag/[slug]` and `/product/[slug]`. Every page is server-rendered and queries Prisma directly through the singleton in `src/lib/prisma.ts`.
 - **Visibility rule:** catalog listings show a product only if `published: true`, `archived: false` and `mergedIntoProductId: null` (`PUBLIC_PRODUCT_WHERE` in `src/lib/publicCatalog.ts`). Cross-source duplicates are soft-merged into a canonical product, not deleted, and `/product/[slug]` of a merged duplicate redirects to the canonical product. Any new public listing query must apply the same filter.
 - **Category tree:** the public root is `katalog` (`CATALOG_ROOT_SLUG` in `src/lib/catalogRoot.ts`) with the sections from `scripts/lib/pricelistTaxonomy.ts`. The root `arkhiv` holds the old donor catalog: the legacy root `tepla-pidloga` with its flat children `et-*` (et-market), `inh-*` (in-heat) and `vs-*` (vsesezon/Prom). `ensureCatalogStructure` (`scripts/lib/catalogStructure.ts`) creates/repairs this on every seed and import. The product upsert key is `externalSource` + `externalId`.
-- **Tags (labels):** `Tag` / `ProductTag` give a product any number of labels (application, construction, thermostat features, power, country). Labels are defined in the taxonomy and assigned by the price-list parser; the admin can't edit them yet.
+- **Tags (labels):** `Tag` / `ProductTag` give a product any number of labels (application, construction, thermostat features, power, country). Labels are defined in the taxonomy (`scripts/lib/pricelistTaxonomy.ts`, groups in `src/lib/tagGroups.ts`) and assigned by the price-list parser. The admin can edit them too: a product saved from the admin gets `tagsManual = true` and the importer stops replacing its tags (a reset endpoint re-reads them from the product's JSON file); a tag created or edited in the admin gets `manual = true` and the seed no longer overwrites its name/group/description.
 
 ### Catalog from supplier price lists (`data/pricelists`, `data/catalog`)
 - Raw price lists are committed in `data/pricelists/` (index in its README). `npm run parse:pricelists` (Python: openpyxl, python-docx, pdfplumber) turns them into one JSON per product in `data/catalog/<supplier>/` (format: `scripts/lib/pricelistProduct.ts`). Those JSON files are generated, never hand-edited.
@@ -45,8 +45,8 @@ There is no test suite. CI (`.github/workflows/ci.yml`) only runs `npm ci`, `npm
 
 ### Admin (`/ops/[secret]/…`)
 - The URL segment must equal `ADMIN_ROUTE_SECRET`, which defaults to `dev` in development only. `ops/[secret]/layout.tsx` returns 404 when the secret doesn't match or admin isn't configured. The `(protected)` route group calls `requireAdminSession`.
-- The product editor has the «Архівний» checkbox (`archived`), kit price, price unit and price note; the list can filter archive vs active.
-- The session is an HMAC-signed cookie (`eh_admin_sess`). It is signed with `ADMIN_SESSION_SECRET`, or with `ADMIN_PASSWORD` when that is unset (`src/lib/adminAuth.ts`).
+- The product editor has the «Архівний» checkbox (`archived`), kit price, price unit and price note, and a «Мітки» section (`AdminProductTags`); the list can filter archive vs active and by tag. `/ops/[secret]/tags` manages tags (`AdminTagsManager`, API in `src/app/api/admin/tags`).
+- The session is an HMAC-signed cookie (`eh_admin_sess`, `path=/` so that it reaches `/api/admin/*`). It is signed with `ADMIN_SESSION_SECRET`, or with `ADMIN_PASSWORD` when that is unset (`src/lib/adminAuth.ts`).
 - There is no middleware. Each `src/app/api/admin/**` route handler checks the cookie itself with `verifyAdminSessionToken`, so new admin API routes must do the same.
 
 ### Product images

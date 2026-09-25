@@ -23,6 +23,9 @@ export default async function AdminProtectedLayout({
           <Link href={`/ops/${secret}/categories`} className="text-emerald-400 hover:underline">
             Категорії
           </Link>
+          <Link href={`/ops/${secret}/tags`} className="text-emerald-400 hover:underline">
+            Мітки
+          </Link>
           <Link href="/catalog" className="text-zinc-400 hover:text-zinc-200">
             Публічний сайт
           </Link>

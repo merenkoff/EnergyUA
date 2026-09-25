@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdminProductEditor } from "@/components/admin/AdminProductEditor";
+import { AdminProductTags } from "@/components/admin/AdminProductTags";
+import { loadTagGroups } from "@/lib/adminTags";
+import { PRICELIST_SOURCE } from "@/lib/catalogRoot";
 import { prisma } from "@/lib/prisma";
 
 export default async function AdminProductPage({
@@ -21,17 +24,19 @@ export default async function AdminProductPage({
         orderBy: { definition: { sortOrder: "asc" } },
       },
       mergedInto: { select: { id: true, slug: true, nameUk: true } },
+      tags: { select: { tagId: true } },
     },
   });
 
   if (!product) notFound();
 
-  const [categoriesRaw, brands] = await Promise.all([
+  const [categoriesRaw, brands, tagGroups] = await Promise.all([
     prisma.category.findMany({
       orderBy: [{ parentId: "asc" }, { nameUk: "asc" }],
       select: { id: true, nameUk: true, parent: { select: { nameUk: true } } },
     }),
     prisma.brand.findMany({ orderBy: { name: "asc" }, select: { id: true, name: true } }),
+    loadTagGroups(),
   ]);
 
   const categories = categoriesRaw.map((c) => ({
@@ -99,7 +104,22 @@ export default async function AdminProductPage({
           Публічна картка
         </a>
       </p>
-      <AdminProductEditor routeSecret={secret} product={payload} categories={categories} brands={brands} />
+      <AdminProductEditor
+        routeSecret={secret}
+        product={payload}
+        categories={categories}
+        brands={brands}
+        tagsSection={
+          <AdminProductTags
+            routeSecret={secret}
+            productId={product.id}
+            initialTagIds={product.tags.map((t) => t.tagId)}
+            initialManual={product.tagsManual}
+            fromPricelist={product.externalSource === PRICELIST_SOURCE}
+            groups={tagGroups}
+          />
+        }
+      />
     </div>
   );
 }

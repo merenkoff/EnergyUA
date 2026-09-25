@@ -9,8 +9,12 @@ export async function POST(req: Request) {
   } catch {
     routeSecret = getAdminRouteSecret();
   }
-  const path = routeSecret ? `/ops/${routeSecret}` : "/";
   const res = NextResponse.json({ ok: true });
-  res.cookies.set(cookieName(), "", { httpOnly: true, path, maxAge: 0 });
+  // Cookie ставиться з path "/"; старий cookie з path /ops/<secret> (до виправлення) прибираємо теж.
+  // Два Set-Cookie з одним іменем — лише через headers.append: res.cookies.set перезаписує попередній.
+  res.headers.append("Set-Cookie", `${cookieName()}=; Path=/; Max-Age=0; HttpOnly; SameSite=lax`);
+  if (routeSecret) {
+    res.headers.append("Set-Cookie", `${cookieName()}=; Path=/ops/${routeSecret}; Max-Age=0; HttpOnly; SameSite=lax`);
+  }
   return res;
 }

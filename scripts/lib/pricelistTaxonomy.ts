@@ -108,16 +108,7 @@ export const CATALOG_SECTIONS: TaxonomyCategory[] = [
   },
 ];
 
-export type TaxonomyTagGroup = { slug: string; nameUk: string; sortOrder: number };
-
-export const TAG_GROUPS: TaxonomyTagGroup[] = [
-  { slug: "zastosuvannia", nameUk: "Застосування", sortOrder: 10 },
-  { slug: "konstruktsiia", nameUk: "Конструкція", sortOrder: 20 },
-  { slug: "funktsii", nameUk: "Функції", sortOrder: 30 },
-  { slug: "potuzhnist", nameUk: "Потужність", sortOrder: 40 },
-  { slug: "kraina", nameUk: "Країна виробництва", sortOrder: 50 },
-  { slug: "komplektatsiia", nameUk: "Комплектація", sortOrder: 60 },
-];
+export { TAG_GROUPS, type TagGroupDef as TaxonomyTagGroup } from "../../src/lib/tagGroups";
 
 export type TaxonomyTag = { slug: string; nameUk: string; groupSlug: string; sortOrder: number; description?: string };
 
