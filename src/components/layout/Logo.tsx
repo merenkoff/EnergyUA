@@ -16,7 +16,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       </span>
       <span className="flex flex-col leading-none">
         <span className="text-[1.15rem] font-bold tracking-tight text-[var(--foreground)]">
-          Тепло<span className="text-[var(--accent)]">Кабель</span>
+          <span className="text-[var(--accent)]">Є</span>-тепло
         </span>
         {!compact ? <span className="mt-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--muted-2)]">{SITE.tagline}</span> : null}
       </span>
