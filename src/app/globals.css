@@ -126,3 +126,25 @@ body {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Тіло статті (markdown → HTML) */
+.article-body { color: var(--foreground); font-size: 1.0625rem; line-height: 1.75; max-width: 72ch; }
+.article-body > p:first-child { font-size: 1.15rem; color: var(--foreground); font-weight: 500; }
+.article-body h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; margin: 2.25rem 0 0.75rem; scroll-margin-top: 130px; text-wrap: balance; }
+.article-body h3 { font-size: 1.125rem; font-weight: 700; margin: 1.5rem 0 0.5rem; scroll-margin-top: 130px; }
+.article-body p { margin: 0.75rem 0; }
+.article-body ul, .article-body ol { margin: 0.75rem 0; padding-left: 1.4rem; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li + li { margin-top: 0.35rem; }
+.article-body a { color: var(--secondary); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: var(--accent-dim); }
+.article-body strong { font-weight: 700; }
+.article-body blockquote { margin: 1rem 0; padding: 0.75rem 1rem; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; color: var(--foreground); }
+.article-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9375rem; display: block; overflow-x: auto; }
+.article-body th, .article-body td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+.article-body th { background: var(--surface-2); font-weight: 600; }
+.article-body tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 50%, transparent); }
+.article-body code { background: var(--surface-2); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+.article-body hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+.article-body h2#chasti-pytannia + h3, .article-body h2#chasti-pytannia ~ h3 { font-size: 1.05rem; }

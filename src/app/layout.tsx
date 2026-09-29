@@ -14,11 +14,15 @@ const manrope = Manrope({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  ...(SITE.url ? { metadataBase: new URL(SITE.url) } : {}),
   title: {
     default: `${SITE.name} — ${SITE.tagline}`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
+  // Поки сайт на тимчасовому домені: SITE_NOINDEX=1 → noindex на всіх сторінках (і Disallow у robots.txt).
+  ...(SITE.noindex ? { robots: { index: false, follow: false } } : {}),
+  openGraph: { siteName: SITE.name, locale: "uk_UA", type: "website" },
 };
 
 export default function RootLayout({
