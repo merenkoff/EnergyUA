@@ -36,13 +36,19 @@ export default async function ArticlesPage() {
                     <Link
                       key={a.slug}
                       href={`/articles/${a.slug}`}
-                      className="group flex flex-col rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-sm)] transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-md)]"
+                      className="group flex flex-col overflow-hidden rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-sm)] transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-md)]"
                     >
-                      <h3 className="text-lg font-semibold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent-dim)]">{a.title}</h3>
-                      <p className="mt-2 line-clamp-3 text-sm text-[var(--muted)]">{a.description}</p>
-                      <p className="mt-auto pt-4 text-xs text-[var(--muted-2)]">
-                        {formatArticleDate(a.date)} · {a.readingMinutes} хв читання
-                      </p>
+                      {a.image ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={a.image} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
+                      ) : null}
+                      <div className="flex flex-1 flex-col p-5">
+                        <h3 className="text-lg font-semibold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent-dim)]">{a.title}</h3>
+                        <p className="mt-2 line-clamp-3 text-sm text-[var(--muted)]">{a.description}</p>
+                        <p className="mt-auto pt-4 text-xs text-[var(--muted-2)]">
+                          {formatArticleDate(a.date)} · {a.readingMinutes} хв читання
+                        </p>
+                      </div>
                     </Link>
                   ))}
                 </div>

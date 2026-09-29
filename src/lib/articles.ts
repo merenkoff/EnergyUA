@@ -25,6 +25,9 @@ export type ArticleMeta = {
   categoryLabel: string;
   keywords: string[];
   readingMinutes: number;
+  /** Обкладинка (шлях від кореня сайту, напр. /articles/foto.jpg): картка в списку, og:image, JSON-LD. */
+  image: string | null;
+  imageAlt: string;
 };
 
 export type ArticleFaq = { question: string; answer: string };
@@ -133,6 +136,10 @@ function renderMarkdown(md: string, headings: ArticleHeading[]): string {
     const attrs = external ? ' target="_blank" rel="noopener"' : "";
     return `<a href="${href}"${title ? ` title="${title}"` : ""}${attrs}>${text}</a>`;
   };
+  renderer.image = ({ href, title, text }: Tokens.Image) => {
+    const cap = title ? `<figcaption>${title}</figcaption>` : "";
+    return `<figure><img src="${href}" alt="${text}" loading="lazy" decoding="async">${cap}</figure>`;
+  };
   return marked.parse(md, { renderer, gfm: true, async: false }) as string;
 }
 
@@ -154,6 +161,8 @@ function toArticle(slug: string, raw: string): Article {
     categoryLabel: ARTICLE_CATEGORIES[category] ?? category,
     keywords: (meta.keywords ?? "").split(",").map((k) => k.trim()).filter(Boolean),
     readingMinutes: Math.max(1, Math.round(words / 180)),
+    image: meta.image?.trim() || null,
+    imageAlt: meta.imageAlt?.trim() || meta.title?.trim() || "",
     html: html + (faqHtml ? `\n<h2 id="chasti-pytannia">Часті питання</h2>\n${faqHtml}` : ""),
     faq,
     headings: faq.length ? [...headings, { id: "chasti-pytannia", text: "Часті питання" }] : headings,
