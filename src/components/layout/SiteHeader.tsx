@@ -34,6 +34,9 @@ export async function SiteHeader() {
           <Link href="/calc" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
             Підбір
           </Link>
+          <Link href="/articles" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
+            Статті
+          </Link>
           <Link href="/#kontakty" className="rounded-lg px-3 py-2 text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]">
             Контакти
           </Link>

@@ -58,6 +58,26 @@ export async function SiteFooter() {
               </Link>
             </li>
           </ul>
+          <h3 className="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted-2)]">Корисне</h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/articles" className="text-[var(--muted)] hover:text-[var(--accent-dim)]">
+                Статті про теплу підлогу
+              </Link>
+            </li>
+            <li>
+              <Link href="/calc" className="text-[var(--muted)] hover:text-[var(--accent-dim)]">
+                Підбір за площею
+              </Link>
+            </li>
+            {SITE.olx.map((o) => (
+              <li key={o.href}>
+                <a href={o.href} target="_blank" rel="noopener" className="text-[var(--muted)] hover:text-[var(--accent-dim)]">
+                  {o.title} (OLX)
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted-2)]">Контакти</h3>

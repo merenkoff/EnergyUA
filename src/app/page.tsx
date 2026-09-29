@@ -7,12 +7,13 @@ import { prisma } from "@/lib/prisma";
 import { PRODUCT_CARD_SELECT } from "@/lib/productCard";
 import { PUBLIC_PRODUCT_WHERE } from "@/lib/publicCatalog";
 import { SITE, phoneHref } from "@/lib/siteConfig";
+import { ARTICLE_CATEGORIES, listArticles } from "@/lib/articles";
 
 /** Мітки «застосування» для блоку підбору на головній (порядок показу). */
 const PICK_TAGS = ["pid-plytku", "pid-laminat", "u-stiazhku", "vanna", "vodostoky-ta-pokrivlia", "vidkryti-maidanchyky", "truby"];
 
 export default async function Home() {
-  const [sections, pickTags, brands, featured] = await Promise.all([
+  const [sections, pickTags, brands, featured, articles] = await Promise.all([
     loadCatalogSections(),
     prisma.tag.findMany({
       where: { slug: { in: PICK_TAGS } },
@@ -29,7 +30,9 @@ export default async function Home() {
       take: 4,
       select: PRODUCT_CARD_SELECT,
     }),
+    listArticles(),
   ]);
+  const topArticles = articles.slice(0, 3);
   const picks = PICK_TAGS.map((s) => pickTags.find((t) => t.slug === s)).filter((t): t is NonNullable<typeof t> => Boolean(t && t._count.products));
   const topBrands = brands.sort((a, b) => b._count.products - a._count.products).slice(0, 12);
   const totalProducts = sections.reduce((n, s) => n + (s._count?.products ?? 0), 0);
@@ -186,6 +189,37 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Статті */}
+      {topArticles.length ? (
+        <section className="border-y border-[var(--border)] bg-[var(--surface)]">
+          <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted-2)]">Корисне</p>
+                <h2 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">Статті про теплу підлогу</h2>
+              </div>
+              <Link href="/articles" className="text-sm font-semibold text-[var(--accent-dim)] hover:underline">
+                Усі статті →
+              </Link>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {topArticles.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/articles/${a.slug}`}
+                  className="group flex flex-col rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-sm)] transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-md)]"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted-2)]">{ARTICLE_CATEGORIES[a.category] ?? a.category}</p>
+                  <h3 className="mt-2 text-lg font-semibold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent-dim)]">{a.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-[var(--muted)]">{a.description}</p>
+                  <p className="mt-auto pt-4 text-xs text-[var(--muted-2)]">{a.readingMinutes} хв читання</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Переваги + контакти */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
