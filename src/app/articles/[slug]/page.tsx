@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: a.description,
     keywords: a.keywords,
     alternates: { canonical: `/articles/${a.slug}` },
-    openGraph: { type: "article", title: a.title, description: a.description, publishedTime: a.date, modifiedTime: a.updated, locale: "uk_UA" },
+    openGraph: {
+      type: "article",
+      title: a.title,
+      description: a.description,
+      publishedTime: a.date,
+      modifiedTime: a.updated,
+      locale: "uk_UA",
+      ...(a.image ? { images: [{ url: a.image, alt: a.imageAlt }] } : {}),
+    },
   };
 }
 
@@ -41,6 +49,7 @@ export default async function ArticlePage({ params }: Props) {
       publisher: { "@type": "Organization", name: SITE.name },
       mainEntityOfPage: abs(`/articles/${a.slug}`),
       keywords: a.keywords.join(", "),
+      ...(a.image ? { image: abs(a.image) } : {}),
     },
     {
       "@context": "https://schema.org",
@@ -75,6 +84,10 @@ export default async function ArticlePage({ params }: Props) {
             <time dateTime={a.date}>{formatArticleDate(a.date)}</time>
             {a.updated && a.updated !== a.date ? <> · оновлено {formatArticleDate(a.updated)}</> : null} · {a.readingMinutes} хв читання
           </p>
+          {a.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={a.image} alt={a.imageAlt} className="mt-6 aspect-[16/9] w-full rounded-[var(--radius)] border border-[var(--border)] object-cover" />
+          ) : null}
 
           {a.headings.length > 2 ? (
             <nav aria-label="Зміст" className="mt-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 text-sm">

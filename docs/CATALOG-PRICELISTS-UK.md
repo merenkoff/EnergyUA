@@ -236,7 +236,10 @@ In-Therm (`#337ab7`): посилання «усі →», бейджі. Трет�
 ## Статті для SEO/AEO
 
 Статті лежать у `content/articles/<slug>.md` (Markdown з простим frontmatter: `title`, `description`, `date`,
-`updated`, `category`, `keywords`). Категорії: `remont`, `montazh`, `vybir`, `ekspluatatsiia`
+`updated`, `category`, `keywords`, опційно `image` і `imageAlt`: обкладинка для картки в списку, шапки статті,
+`og:image` і JSON-LD). Фото статей лежать у `public/articles/` (стиснуті до ≤1200 px, JPEG q85), у тексті
+вставляються звичайним `![alt](/articles/foto.jpg "підпис")` і рендеряться як `<figure>` з підписом.
+Фото з kabel-pol.com.ua (сайт майстра) вичищені від напису сайту інпейнтингом (OpenCV) перед публікацією. Категорії: `remont`, `montazh`, `vybir`, `ekspluatatsiia`
 (`ARTICLE_CATEGORIES` у `src/lib/articles.ts`). Сторінки: `/articles` (список за категоріями) і
 `/articles/[slug]` (стаття, зміст з H2, блок «Потрібен майстер» з оголошеннями OLX, «Читайте також»).
 Три останні статті показуються на головній.
@@ -283,7 +286,7 @@ JSON-LD `FAQPage` разом з `Article` і `BreadcrumbList`. Заголовк�
 приміщення → питома потужність → мати / кабель з каталогу й терморегулятор. Сортування за ціною та порівняння
 брендів — за потреби далі.
 
-**Статті SEO/AEO (зроблено, див. «Статті для SEO/AEO» вище).** 8 статей у `content/articles/`, сторінки
+**Статті SEO/AEO (зроблено, див. «Статті для SEO/AEO» вище).** 11 статей у `content/articles/`, сторінки
 `/articles`, FAQ → JSON-LD, sitemap/robots, блок з OLX-оголошеннями майстра.
 
 **Етап 6 — актуалізація.** Прайси приходять з різною датою; показувати «ціна станом на <дата прайсу>»
